@@ -1,0 +1,114 @@
+
+step 2, process data with v4 processor logic
+using sequential processing for diagnostic stability
+processed raw files: 500/6750
+processed raw files: 1000/6750
+processed raw files: 1500/6750
+processed raw files: 2000/6750
+processed raw files: 2500/6750
+processed raw files: 3000/6750
+processed raw files: 3500/6750
+processed raw files: 4000/6750
+processed raw files: 4500/6750
+processed raw files: 5000/6750
+processed raw files: 5500/6750
+processed raw files: 6000/6750
+processed raw files: 6500/6750
+processed raw files: 6750/6750
+processed samples: 6750
+raw label distribution: {1: 2250, 2: 2250, 3: 2250}
+user/group distribution: {2: 2250, 3: 2250, 7: 2250}
+single sample shape: (1028, 30, 3)
+
+step 3, resize
+processed_data shape: (6750, 1500, 30, 3)
+processed_data range: min=-25.7878, max=23.8204, mean=0.0008, std=0.9778
+label map: {1: 0, 2: 1, 3: 2}
+
+step 4, reproduce v4 split
+group count: 3
+temp has only 1 group, using random stratified split for valid/test
+train: n=4500, users=[3, 7], labels={0: 1500, 1: 1500, 2: 1500}
+valid: n=1125, users=[2], labels={0: 375, 1: 375, 2: 375}
+test: n=1125, users=[2], labels={0: 375, 1: 375, 2: 375}
+
+step 5, load v4 checkpoint
+device: cuda:0
+checkpoint epoch: 0
+checkpoint best_val_acc: 34.666666666666664
+
+train: evaluating 300/4500 samples with batch_size=16
+train: evaluated batch 5/19
+train: evaluated batch 10/19
+train: evaluated batch 15/19
+train: evaluated batch 19/19
+
+================================================================================
+train prediction diagnostics
+================================================================================
+accuracy: 0.6800
+target distribution: {0: 100, 1: 100, 2: 100}
+prediction distribution: {0: 154, 1: 31, 2: 115}
+confusion matrix, rows=true labels, cols=pred labels
+[[79  4 17]
+ [73 27  0]
+ [ 2  0 98]]
+
+valid: evaluating 300/1125 samples with batch_size=16
+valid: evaluated batch 5/19
+valid: evaluated batch 10/19
+valid: evaluated batch 15/19
+valid: evaluated batch 19/19
+
+================================================================================
+valid prediction diagnostics
+================================================================================
+accuracy: 0.3500
+target distribution: {0: 100, 1: 100, 2: 100}
+prediction distribution: {0: 265, 1: 33, 2: 2}
+confusion matrix, rows=true labels, cols=pred labels
+[[92  8  0]
+ [87 12  1]
+ [86 13  1]]
+
+test: evaluating 300/1125 samples with batch_size=16
+test: evaluated batch 5/19
+test: evaluated batch 10/19
+test: evaluated batch 15/19
+test: evaluated batch 19/19
+
+================================================================================
+test prediction diagnostics
+================================================================================
+accuracy: 0.3267
+target distribution: {0: 100, 1: 100, 2: 100}
+prediction distribution: {0: 246, 1: 52, 2: 2}
+confusion matrix, rows=true labels, cols=pred labels
+[[81 19  0]
+ [83 16  1]
+ [82 17  1]]
+
+================================================================================
+Per user/gesture processed-data statistics
+================================================================================
+Columns: user, label, n, sample_mean_mean, sample_mean_std, sample_std_mean
+user= 2 label= 0 n= 750 mean_mu=+0.0058 mean_std=0.1040 std_mu=0.9997
+user= 2 label= 1 n= 750 mean_mu=+0.0047 mean_std=0.1060 std_mu=0.9794
+user= 2 label= 2 n= 750 mean_mu=+0.0053 mean_std=0.1106 std_mu=1.0059
+user= 3 label= 0 n= 750 mean_mu=+0.0040 mean_std=0.0497 std_mu=0.9945
+user= 3 label= 1 n= 750 mean_mu=+0.0014 mean_std=0.1175 std_mu=0.9793
+user= 3 label= 2 n= 750 mean_mu=-0.0000 mean_std=0.0000 std_mu=0.9006
+user= 7 label= 0 n= 750 mean_mu=+0.0009 mean_std=0.0345 std_mu=0.9807
+user= 7 label= 1 n= 750 mean_mu=-0.0150 mean_std=0.1159 std_mu=1.0086
+user= 7 label= 2 n= 750 mean_mu=-0.0000 mean_std=0.0000 std_mu=0.8940
+
+Distance between user/gesture centroids using sample means:
+label=0 user2-user3: abs(mean_mu diff)=0.0018
+label=0 user2-user7: abs(mean_mu diff)=0.0049
+label=0 user3-user7: abs(mean_mu diff)=0.0031
+label=1 user2-user3: abs(mean_mu diff)=0.0032
+label=1 user2-user7: abs(mean_mu diff)=0.0196
+label=1 user3-user7: abs(mean_mu diff)=0.0164
+label=2 user2-user3: abs(mean_mu diff)=0.0053
+label=2 user2-user7: abs(mean_mu diff)=0.0053
+label=2 user3-user7: abs(mean_mu diff)=0.0000

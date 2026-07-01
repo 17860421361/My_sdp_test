@@ -1,0 +1,11 @@
+================================================================================
+当前 preset：high_quality
+当前 pipeline：{'denoise': {'method': 'butterworth', 'order': 5, 'cutoff': 0.3}, 'calibrate': {'method': 'stc'}, 'normalize': {'method': 'z-score'}}
+当前 model：mambacsi
+保存目录：/home/test/bupt_hjk/test_wider/result/condition_v2+high_quality+mambacsi
+类别数：3，原始手势标签：[np.int64(1), np.int64(2), np.int64(3)]
+训练集 4725 | 验证集 1035 | 测试集 990
+step 5，创建模型
+模型参数量 1247299
+训练设备: cuda:0
+step 6: 开始训练 80 轮

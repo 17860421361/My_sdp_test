@@ -1,0 +1,15 @@
+================================================================================
+当前 preset：fast
+当前 pipeline：{'denoise': {'method': 'savgol', 'window_length': 7, 'polyorder': 3}, 'calibrate': {'method': 'linear'}, 'normalize': {'method': 'min-max'}}
+当前 model：cnn2dmodel
+保存目录：/home/test/bupt_hjk/test_gait/result/user_id_v2+fast+cnn2dmodel
+类别数：9，原始用户标签：[np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9)]
+训练集 12430 | 验证集 3106 | 测试集 3121
+step 5，创建模型
+模型参数量 99465
+训练设备: cuda:1
+step 6: 开始训练 60 轮
+
+组合运行失败
+preset=fast, model=cnn2dmodel
+error=OutOfMemoryError('CUDA out of memory. Tried to allocate 23.44 GiB. GPU 1 has a total capacity of 79.25 GiB of which 22.13 GiB is free. Including non-PyTorch memory, this process has 57.11 GiB memory in use. Of the allocated memory 56.57 GiB is allocated by PyTorch, and 33.49 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)')

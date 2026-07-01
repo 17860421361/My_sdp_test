@@ -1,0 +1,39 @@
+================================================================================
+当前 preset：robust
+当前 pipeline：{'denoise': {'method': 'wavelet'}, 'calibrate': {'method': 'robust'}, 'normalize': {'method': 'z-score'}}
+当前 model：graphneuralcsi
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+graphneuralcsi
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 34374
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.7530, Train Acc: 21.56% | Val Loss: 1.8026, Val Acc: 20.04% | Duration: 37.55s | LR: 0.000300
+  -> new best acc: 20.04%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+graphneuralcsi/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.6969, Train Acc: 27.69% | Val Loss: 1.8590, Val Acc: 16.85% | Duration: 37.53s | LR: 0.000300
+Epoch [3/20] | Train Loss: 1.6760, Train Acc: 26.69% | Val Loss: 1.8483, Val Acc: 12.92% | Duration: 37.49s | LR: 0.000300
+Epoch [4/20] | Train Loss: 1.6676, Train Acc: 26.69% | Val Loss: 1.8623, Val Acc: 16.85% | Duration: 37.52s | LR: 0.000300
+Epoch [5/20] | Train Loss: 1.6682, Train Acc: 28.50% | Val Loss: 1.8639, Val Acc: 16.85% | Duration: 37.55s | LR: 0.000300
+Epoch [6/20] | Train Loss: 1.6530, Train Acc: 28.81% | Val Loss: 1.8512, Val Acc: 16.67% | Duration: 37.62s | LR: 0.000300
+Epoch [7/20] | Train Loss: 1.6468, Train Acc: 29.69% | Val Loss: 1.8589, Val Acc: 17.04% | Duration: 37.56s | LR: 0.000300
+Epoch [8/20] | Train Loss: 1.6353, Train Acc: 30.31% | Val Loss: 1.8479, Val Acc: 16.29% | Duration: 37.57s | LR: 0.000030
+Epoch [9/20] | Train Loss: 1.6358, Train Acc: 30.56% | Val Loss: 1.8313, Val Acc: 16.85% | Duration: 37.60s | LR: 0.000030
+Epoch [10/20] | Train Loss: 1.6346, Train Acc: 29.12% | Val Loss: 1.8628, Val Acc: 16.85% | Duration: 37.72s | LR: 0.000030
+Epoch [11/20] | Train Loss: 1.6328, Train Acc: 30.31% | Val Loss: 2.0414, Val Acc: 16.67% | Duration: 37.65s | LR: 0.000030
+Epoch [12/20] | Train Loss: 1.6310, Train Acc: 30.62% | Val Loss: 1.8522, Val Acc: 16.67% | Duration: 37.61s | LR: 0.000030
+Epoch [13/20] | Train Loss: 1.6264, Train Acc: 30.25% | Val Loss: 1.8543, Val Acc: 16.67% | Duration: 37.62s | LR: 0.000030
+Epoch [14/20] | Train Loss: 1.6195, Train Acc: 31.50% | Val Loss: 1.9608, Val Acc: 16.67% | Duration: 37.53s | LR: 0.000003
+Epoch [15/20] | Train Loss: 1.6337, Train Acc: 31.00% | Val Loss: 1.8827, Val Acc: 16.48% | Duration: 37.49s | LR: 0.000003
+Epoch [16/20] | Train Loss: 1.6309, Train Acc: 30.69% | Val Loss: 1.8301, Val Acc: 16.67% | Duration: 37.53s | LR: 0.000003
+Epoch [17/20] | Train Loss: 1.6223, Train Acc: 30.06% | Val Loss: 1.8498, Val Acc: 16.67% | Duration: 37.44s | LR: 0.000003
+Epoch [18/20] | Train Loss: 1.6240, Train Acc: 30.44% | Val Loss: 2.0474, Val Acc: 16.48% | Duration: 37.56s | LR: 0.000003
+Epoch [19/20] | Train Loss: 1.6274, Train Acc: 31.62% | Val Loss: 1.8390, Val Acc: 16.48% | Duration: 37.56s | LR: 0.000003
+Epoch [20/20] | Train Loss: 1.6235, Train Acc: 29.69% | Val Loss: 1.8933, Val Acc: 16.48% | Duration: 37.62s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+graphneuralcsi/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.1926
+
+============================================================
+pipeline 演示完成
+============================================================

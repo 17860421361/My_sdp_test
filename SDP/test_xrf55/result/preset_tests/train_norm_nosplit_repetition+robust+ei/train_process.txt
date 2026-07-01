@@ -1,0 +1,91 @@
+================================================================================
+当前 preset：robust
+当前 pipeline：{'denoise': {'method': 'wavelet'}, 'calibrate': {'method': 'robust'}, 'normalize': {'method': 'z-score'}}
+当前 model：ei
+保存目录：/home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei
+类别数：55，原始标签：[np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9), np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(14), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(19), np.int64(20), np.int64(21), np.int64(22), np.int64(23), np.int64(24), np.int64(25), np.int64(26), np.int64(27), np.int64(28), np.int64(29), np.int64(30), np.int64(31), np.int64(32), np.int64(33), np.int64(34), np.int64(35), np.int64(36), np.int64(37), np.int64(38), np.int64(39), np.int64(40), np.int64(41), np.int64(42), np.int64(43), np.int64(44), np.int64(45), np.int64(46), np.int64(47), np.int64(48), np.int64(49), np.int64(50), np.int64(51), np.int64(52), np.int64(53), np.int64(54), np.int64(55)]
+训练集 1980 | 验证集 660 | 测试集 660
+step 5，创建模型
+模型参数量 301049
+训练设备: cuda:1
+step 6: 开始训练 50 轮
+Epoch [1/50] | Train Loss: 3.8568, Train Acc: 7.93% | Val Loss: 3.5937, Val Acc: 16.36% | Duration: 0.99s | LR: 0.000300
+  -> new best acc: 16.36%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [2/50] | Train Loss: 3.4011, Train Acc: 17.88% | Val Loss: 3.0159, Val Acc: 23.03% | Duration: 1.08s | LR: 0.000300
+  -> new best acc: 23.03%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [3/50] | Train Loss: 2.8943, Train Acc: 24.75% | Val Loss: 2.5364, Val Acc: 33.94% | Duration: 1.17s | LR: 0.000300
+  -> new best acc: 33.94%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [4/50] | Train Loss: 2.4763, Train Acc: 32.17% | Val Loss: 2.1451, Val Acc: 46.82% | Duration: 1.02s | LR: 0.000300
+  -> new best acc: 46.82%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [5/50] | Train Loss: 2.1179, Train Acc: 39.34% | Val Loss: 1.8298, Val Acc: 54.85% | Duration: 1.08s | LR: 0.000300
+  -> new best acc: 54.85%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [6/50] | Train Loss: 1.8748, Train Acc: 44.09% | Val Loss: 1.6900, Val Acc: 54.55% | Duration: 1.12s | LR: 0.000300
+Epoch [7/50] | Train Loss: 1.6395, Train Acc: 52.12% | Val Loss: 1.4195, Val Acc: 59.24% | Duration: 1.15s | LR: 0.000300
+  -> new best acc: 59.24%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [8/50] | Train Loss: 1.4618, Train Acc: 56.26% | Val Loss: 1.2940, Val Acc: 61.67% | Duration: 1.09s | LR: 0.000300
+  -> new best acc: 61.67%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [9/50] | Train Loss: 1.3119, Train Acc: 61.82% | Val Loss: 1.1696, Val Acc: 68.79% | Duration: 1.03s | LR: 0.000300
+  -> new best acc: 68.79%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [10/50] | Train Loss: 1.2250, Train Acc: 63.74% | Val Loss: 1.0905, Val Acc: 68.79% | Duration: 1.07s | LR: 0.000300
+Epoch [11/50] | Train Loss: 1.1271, Train Acc: 65.86% | Val Loss: 0.9947, Val Acc: 73.33% | Duration: 0.97s | LR: 0.000300
+  -> new best acc: 73.33%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [12/50] | Train Loss: 1.0413, Train Acc: 68.33% | Val Loss: 0.9259, Val Acc: 73.18% | Duration: 1.14s | LR: 0.000300
+Epoch [13/50] | Train Loss: 0.9070, Train Acc: 72.17% | Val Loss: 0.8636, Val Acc: 75.00% | Duration: 1.16s | LR: 0.000300
+  -> new best acc: 75.00%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [14/50] | Train Loss: 0.8622, Train Acc: 73.94% | Val Loss: 0.8181, Val Acc: 75.30% | Duration: 1.03s | LR: 0.000300
+  -> new best acc: 75.30%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [15/50] | Train Loss: 0.8484, Train Acc: 73.43% | Val Loss: 0.8041, Val Acc: 76.82% | Duration: 1.19s | LR: 0.000300
+  -> new best acc: 76.82%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [16/50] | Train Loss: 0.7546, Train Acc: 77.63% | Val Loss: 0.8491, Val Acc: 73.48% | Duration: 1.08s | LR: 0.000300
+Epoch [17/50] | Train Loss: 0.7325, Train Acc: 76.67% | Val Loss: 0.7553, Val Acc: 75.91% | Duration: 1.02s | LR: 0.000300
+Epoch [18/50] | Train Loss: 0.6764, Train Acc: 79.49% | Val Loss: 0.7146, Val Acc: 78.18% | Duration: 1.05s | LR: 0.000300
+  -> new best acc: 78.18%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [19/50] | Train Loss: 0.6467, Train Acc: 79.90% | Val Loss: 0.6648, Val Acc: 80.30% | Duration: 1.04s | LR: 0.000300
+  -> new best acc: 80.30%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [20/50] | Train Loss: 0.6218, Train Acc: 80.45% | Val Loss: 0.6697, Val Acc: 78.64% | Duration: 1.02s | LR: 0.000300
+Epoch [21/50] | Train Loss: 0.5791, Train Acc: 81.92% | Val Loss: 0.6509, Val Acc: 79.70% | Duration: 1.00s | LR: 0.000300
+Epoch [22/50] | Train Loss: 0.5570, Train Acc: 83.64% | Val Loss: 0.6715, Val Acc: 78.64% | Duration: 1.03s | LR: 0.000300
+Epoch [23/50] | Train Loss: 0.5291, Train Acc: 83.54% | Val Loss: 0.6356, Val Acc: 80.76% | Duration: 1.05s | LR: 0.000300
+  -> new best acc: 80.76%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [24/50] | Train Loss: 0.5293, Train Acc: 83.89% | Val Loss: 0.6377, Val Acc: 81.36% | Duration: 1.09s | LR: 0.000300
+  -> new best acc: 81.36%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [25/50] | Train Loss: 0.4851, Train Acc: 85.05% | Val Loss: 0.6315, Val Acc: 79.85% | Duration: 1.26s | LR: 0.000300
+Epoch [26/50] | Train Loss: 0.4575, Train Acc: 85.96% | Val Loss: 0.5553, Val Acc: 82.58% | Duration: 1.12s | LR: 0.000300
+  -> new best acc: 82.58%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [27/50] | Train Loss: 0.4358, Train Acc: 86.52% | Val Loss: 0.5672, Val Acc: 82.42% | Duration: 1.17s | LR: 0.000300
+Epoch [28/50] | Train Loss: 0.4439, Train Acc: 85.86% | Val Loss: 0.5450, Val Acc: 83.94% | Duration: 1.07s | LR: 0.000300
+  -> new best acc: 83.94%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [29/50] | Train Loss: 0.4127, Train Acc: 87.07% | Val Loss: 0.5826, Val Acc: 82.27% | Duration: 1.03s | LR: 0.000300
+Epoch [30/50] | Train Loss: 0.4001, Train Acc: 88.33% | Val Loss: 0.5390, Val Acc: 81.67% | Duration: 1.08s | LR: 0.000300
+Epoch [31/50] | Train Loss: 0.3669, Train Acc: 88.94% | Val Loss: 0.4848, Val Acc: 83.48% | Duration: 1.14s | LR: 0.000300
+Epoch [32/50] | Train Loss: 0.3649, Train Acc: 88.64% | Val Loss: 0.5237, Val Acc: 82.58% | Duration: 1.09s | LR: 0.000300
+Epoch [33/50] | Train Loss: 0.3783, Train Acc: 88.08% | Val Loss: 0.5153, Val Acc: 82.73% | Duration: 1.12s | LR: 0.000300
+Epoch [34/50] | Train Loss: 0.3552, Train Acc: 88.74% | Val Loss: 0.5167, Val Acc: 83.03% | Duration: 1.12s | LR: 0.000300
+Epoch [35/50] | Train Loss: 0.3482, Train Acc: 89.65% | Val Loss: 0.5305, Val Acc: 82.42% | Duration: 1.06s | LR: 0.000300
+Epoch [36/50] | Train Loss: 0.3420, Train Acc: 89.80% | Val Loss: 0.5237, Val Acc: 83.33% | Duration: 1.07s | LR: 0.000300
+Epoch [37/50] | Train Loss: 0.3136, Train Acc: 90.71% | Val Loss: 0.5123, Val Acc: 84.70% | Duration: 1.01s | LR: 0.000300
+  -> new best acc: 84.70%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [38/50] | Train Loss: 0.2647, Train Acc: 93.13% | Val Loss: 0.4455, Val Acc: 85.45% | Duration: 1.11s | LR: 0.000030
+  -> new best acc: 85.45%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [39/50] | Train Loss: 0.2219, Train Acc: 94.24% | Val Loss: 0.4241, Val Acc: 86.52% | Duration: 1.07s | LR: 0.000030
+  -> new best acc: 86.52%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [40/50] | Train Loss: 0.2030, Train Acc: 94.95% | Val Loss: 0.4361, Val Acc: 86.97% | Duration: 1.07s | LR: 0.000030
+  -> new best acc: 86.97%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [41/50] | Train Loss: 0.2006, Train Acc: 94.95% | Val Loss: 0.4216, Val Acc: 85.91% | Duration: 1.02s | LR: 0.000030
+Epoch [42/50] | Train Loss: 0.2157, Train Acc: 94.29% | Val Loss: 0.4283, Val Acc: 86.21% | Duration: 1.03s | LR: 0.000030
+Epoch [43/50] | Train Loss: 0.1802, Train Acc: 95.05% | Val Loss: 0.4238, Val Acc: 86.67% | Duration: 1.02s | LR: 0.000030
+Epoch [44/50] | Train Loss: 0.2017, Train Acc: 94.85% | Val Loss: 0.4126, Val Acc: 86.21% | Duration: 0.97s | LR: 0.000030
+Epoch [45/50] | Train Loss: 0.2078, Train Acc: 94.55% | Val Loss: 0.4265, Val Acc: 85.91% | Duration: 1.02s | LR: 0.000030
+Epoch [46/50] | Train Loss: 0.1816, Train Acc: 95.91% | Val Loss: 0.4162, Val Acc: 86.97% | Duration: 1.08s | LR: 0.000030
+Epoch [47/50] | Train Loss: 0.2069, Train Acc: 94.60% | Val Loss: 0.4127, Val Acc: 87.73% | Duration: 1.07s | LR: 0.000030
+  -> new best acc: 87.73%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+Epoch [48/50] | Train Loss: 0.1982, Train Acc: 94.65% | Val Loss: 0.3993, Val Acc: 87.58% | Duration: 1.04s | LR: 0.000030
+Epoch [49/50] | Train Loss: 0.1833, Train Acc: 95.61% | Val Loss: 0.4132, Val Acc: 86.52% | Duration: 1.08s | LR: 0.000030
+Epoch [50/50] | Train Loss: 0.1831, Train Acc: 95.35% | Val Loss: 0.4079, Val Acc: 86.97% | Duration: 1.05s | LR: 0.000030
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+robust+ei/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.8136
+
+============================================================
+pipeline 演示完成
+============================================================

@@ -1,0 +1,15 @@
+================================================================================
+当前 preset：activity_detection
+当前 pipeline：{'denoise': {'method': 'savgol', 'window_length': 11, 'polyorder': 3}, 'calibrate': {'method': 'polynomial', 'degree': 2}, 'normalize': {'method': 'z-score'}}
+当前 model：efficientnetcsi
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+efficientnetcsi
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 896422
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+
+组合运行失败
+preset=activity_detection, model=efficientnetcsi
+error=OutOfMemoryError('CUDA out of memory. Tried to allocate 840.00 MiB. GPU 0 has a total capacity of 79.25 GiB of which 311.25 MiB is free. Including non-PyTorch memory, this process has 78.93 GiB memory in use. Of the allocated memory 78.33 GiB is allocated by PyTorch, and 94.04 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)')

@@ -1,0 +1,49 @@
+step 2: process_data
+   处理完成: 2404 个样本
+   标签分布: {1: 398, 3: 405, 5: 405, 2: 387, 0: 404, 6: 405}
+   分组分布: {8: 270, 6: 268, 7: 268, 3: 265, 2: 266, 1: 264, 9: 267, 4: 267, 5: 269}
+   样本形状: (80, 512, 3)
+   类别数: 6 (原始标签: [0, 1, 2, 3, 5, 6])
+step 3: split_data
+训练集 1600 | 验证集 534 | 测试集 270
+step 4: 构造 DataLoader
+step 5: create_registered_model
+模型参数量 635654
+训练设备: cuda
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.7017, Train Acc: 31.88% | Val Loss: 1.6029, Val Acc: 27.34% | Duration: 0.85s | LR: 0.000300
+  -> new best acc: 27.34%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/activity_detection+csitime/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.4979, Train Acc: 47.69% | Val Loss: 1.3695, Val Acc: 52.06% | Duration: 0.59s | LR: 0.000300
+  -> new best acc: 52.06%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/activity_detection+csitime/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.2191, Train Acc: 63.56% | Val Loss: 1.1606, Val Acc: 62.36% | Duration: 0.51s | LR: 0.000300
+  -> new best acc: 62.36%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/activity_detection+csitime/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 0.9704, Train Acc: 75.88% | Val Loss: 0.9462, Val Acc: 72.85% | Duration: 0.50s | LR: 0.000300
+  -> new best acc: 72.85%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/activity_detection+csitime/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 0.7919, Train Acc: 81.56% | Val Loss: 1.2183, Val Acc: 57.49% | Duration: 0.58s | LR: 0.000300
+Epoch [6/20] | Train Loss: 0.6702, Train Acc: 87.38% | Val Loss: 1.1019, Val Acc: 62.55% | Duration: 0.56s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.5715, Train Acc: 90.94% | Val Loss: 0.8539, Val Acc: 63.86% | Duration: 0.56s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.4416, Train Acc: 94.06% | Val Loss: 0.6873, Val Acc: 82.02% | Duration: 0.56s | LR: 0.000300
+  -> new best acc: 82.02%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/activity_detection+csitime/best_checkpoint.pth
+Epoch [9/20] | Train Loss: 0.4156, Train Acc: 93.81% | Val Loss: 1.0536, Val Acc: 64.98% | Duration: 0.53s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.3189, Train Acc: 97.56% | Val Loss: 0.5632, Val Acc: 84.08% | Duration: 0.51s | LR: 0.000300
+  -> new best acc: 84.08%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/activity_detection+csitime/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 0.2606, Train Acc: 97.88% | Val Loss: 0.6769, Val Acc: 78.28% | Duration: 0.52s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.2448, Train Acc: 98.06% | Val Loss: 0.5429, Val Acc: 86.70% | Duration: 0.56s | LR: 0.000300
+  -> new best acc: 86.70%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/activity_detection+csitime/best_checkpoint.pth
+Epoch [13/20] | Train Loss: 0.2113, Train Acc: 98.56% | Val Loss: 0.5874, Val Acc: 80.52% | Duration: 0.50s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.1725, Train Acc: 99.12% | Val Loss: 0.6541, Val Acc: 79.96% | Duration: 0.49s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.1447, Train Acc: 99.56% | Val Loss: 0.4111, Val Acc: 90.07% | Duration: 0.55s | LR: 0.000300
+  -> new best acc: 90.07%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/activity_detection+csitime/best_checkpoint.pth
+Epoch [16/20] | Train Loss: 0.1176, Train Acc: 99.81% | Val Loss: 0.6363, Val Acc: 78.09% | Duration: 0.48s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.1113, Train Acc: 99.62% | Val Loss: 0.7135, Val Acc: 75.47% | Duration: 0.50s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.1027, Train Acc: 99.81% | Val Loss: 0.5773, Val Acc: 77.90% | Duration: 0.46s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.0848, Train Acc: 99.88% | Val Loss: 0.7249, Val Acc: 77.34% | Duration: 0.55s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.0681, Train Acc: 99.94% | Val Loss: 0.5422, Val Acc: 82.58% | Duration: 0.50s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/activity_detection+csitime/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.9007
+测试集准确率: 0.8667
+
+============================================================
+pipeline 演示完成
+============================================================

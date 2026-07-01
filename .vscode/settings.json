@@ -1,0 +1,14 @@
+{
+    "git.enabled": true,
+    "git.autoRepositoryDetection": true,
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "python.analysis.extraPaths": [
+        "./SDP/SDP-Sensing-Data-Protocol-for-Scalable-Wireless-Sensing-main/src",
+        "/home/test/bupt_hjk/SDP/SDP-Sensing-Data-Protocol-for-Scalable-Wireless-Sensing-main/src"
+    ],
+    "python.autoComplete.extraPaths": [
+        "./SDP/SDP-Sensing-Data-Protocol-for-Scalable-Wireless-Sensing-main/src",
+        "/home/test/bupt_hjk/SDP/SDP-Sensing-Data-Protocol-for-Scalable-Wireless-Sensing-main/src"
+    ]
+}

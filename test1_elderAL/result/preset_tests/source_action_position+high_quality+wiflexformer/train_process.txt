@@ -1,0 +1,47 @@
+================================================================================
+当前 preset：high_quality
+当前 pipeline：{'denoise': {'method': 'butterworth', 'order': 5, 'cutoff': 0.3}, 'calibrate': {'method': 'stc'}, 'normalize': {'method': 'z-score'}}
+当前 model：wiflexformer
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 213846
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.7266, Train Acc: 23.12% | Val Loss: 1.6290, Val Acc: 29.59% | Duration: 0.50s | LR: 0.000300
+  -> new best acc: 29.59%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.5034, Train Acc: 40.19% | Val Loss: 1.6324, Val Acc: 32.02% | Duration: 0.45s | LR: 0.000300
+  -> new best acc: 32.02%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.0661, Train Acc: 61.12% | Val Loss: 1.2277, Val Acc: 49.44% | Duration: 0.50s | LR: 0.000300
+  -> new best acc: 49.44%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 0.8180, Train Acc: 69.44% | Val Loss: 1.2655, Val Acc: 50.00% | Duration: 0.50s | LR: 0.000300
+  -> new best acc: 50.00%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 0.6735, Train Acc: 76.56% | Val Loss: 0.9430, Val Acc: 64.98% | Duration: 0.50s | LR: 0.000300
+  -> new best acc: 64.98%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 0.5624, Train Acc: 80.62% | Val Loss: 0.9051, Val Acc: 66.29% | Duration: 0.51s | LR: 0.000300
+  -> new best acc: 66.29%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+Epoch [7/20] | Train Loss: 0.4418, Train Acc: 85.19% | Val Loss: 0.8723, Val Acc: 65.92% | Duration: 0.51s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.3727, Train Acc: 88.44% | Val Loss: 1.0709, Val Acc: 63.30% | Duration: 0.46s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.2994, Train Acc: 91.88% | Val Loss: 1.0400, Val Acc: 62.92% | Duration: 0.52s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.2347, Train Acc: 93.38% | Val Loss: 1.2992, Val Acc: 62.36% | Duration: 0.50s | LR: 0.000300
+Epoch [11/20] | Train Loss: 0.1890, Train Acc: 94.69% | Val Loss: 1.0593, Val Acc: 64.98% | Duration: 0.47s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.1577, Train Acc: 95.25% | Val Loss: 0.9382, Val Acc: 69.29% | Duration: 0.49s | LR: 0.000300
+  -> new best acc: 69.29%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+Epoch [13/20] | Train Loss: 0.1560, Train Acc: 95.56% | Val Loss: 0.8589, Val Acc: 74.91% | Duration: 0.50s | LR: 0.000300
+  -> new best acc: 74.91%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+Epoch [14/20] | Train Loss: 0.1097, Train Acc: 97.31% | Val Loss: 1.2783, Val Acc: 64.79% | Duration: 0.50s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.0756, Train Acc: 98.38% | Val Loss: 1.9212, Val Acc: 54.49% | Duration: 0.49s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.0835, Train Acc: 97.50% | Val Loss: 1.3205, Val Acc: 65.92% | Duration: 0.49s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.0647, Train Acc: 98.69% | Val Loss: 1.1287, Val Acc: 70.41% | Duration: 0.50s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.0770, Train Acc: 98.00% | Val Loss: 2.9935, Val Acc: 30.15% | Duration: 0.49s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.0585, Train Acc: 98.31% | Val Loss: 1.3296, Val Acc: 67.04% | Duration: 0.49s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.0308, Train Acc: 99.56% | Val Loss: 0.7801, Val Acc: 80.15% | Duration: 0.54s | LR: 0.000030
+  -> new best acc: 80.15%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+wiflexformer/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.7481
+
+============================================================
+pipeline 演示完成
+============================================================

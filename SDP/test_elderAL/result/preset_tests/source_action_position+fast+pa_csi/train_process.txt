@@ -1,0 +1,51 @@
+================================================================================
+当前 preset：fast
+当前 pipeline：{'denoise': {'method': 'savgol', 'window_length': 7, 'polyorder': 3}, 'calibrate': {'method': 'linear'}, 'normalize': {'method': 'min-max'}}
+当前 model：pa_csi
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 1679910
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.7168, Train Acc: 27.62% | Val Loss: 1.6778, Val Acc: 24.72% | Duration: 0.43s | LR: 0.000300
+  -> new best acc: 24.72%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.5096, Train Acc: 40.00% | Val Loss: 1.3338, Val Acc: 41.76% | Duration: 0.43s | LR: 0.000300
+  -> new best acc: 41.76%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.1351, Train Acc: 56.69% | Val Loss: 1.3129, Val Acc: 49.25% | Duration: 0.45s | LR: 0.000300
+  -> new best acc: 49.25%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 0.9006, Train Acc: 67.19% | Val Loss: 0.9658, Val Acc: 64.23% | Duration: 0.45s | LR: 0.000300
+  -> new best acc: 64.23%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 0.7201, Train Acc: 73.44% | Val Loss: 0.8506, Val Acc: 67.79% | Duration: 0.45s | LR: 0.000300
+  -> new best acc: 67.79%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 0.4924, Train Acc: 84.31% | Val Loss: 0.8801, Val Acc: 69.85% | Duration: 0.48s | LR: 0.000300
+  -> new best acc: 69.85%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [7/20] | Train Loss: 0.3800, Train Acc: 89.00% | Val Loss: 0.7705, Val Acc: 72.28% | Duration: 0.43s | LR: 0.000300
+  -> new best acc: 72.28%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [8/20] | Train Loss: 0.3454, Train Acc: 88.81% | Val Loss: 0.8503, Val Acc: 68.73% | Duration: 0.44s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.2342, Train Acc: 93.81% | Val Loss: 0.7416, Val Acc: 74.16% | Duration: 0.45s | LR: 0.000300
+  -> new best acc: 74.16%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [10/20] | Train Loss: 0.1660, Train Acc: 95.31% | Val Loss: 0.7911, Val Acc: 76.97% | Duration: 0.44s | LR: 0.000300
+  -> new best acc: 76.97%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 0.1344, Train Acc: 96.44% | Val Loss: 0.7602, Val Acc: 76.78% | Duration: 0.45s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.1259, Train Acc: 96.06% | Val Loss: 0.8694, Val Acc: 73.78% | Duration: 0.43s | LR: 0.000300
+Epoch [13/20] | Train Loss: 0.1240, Train Acc: 96.00% | Val Loss: 0.7585, Val Acc: 76.40% | Duration: 0.43s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.0972, Train Acc: 97.25% | Val Loss: 0.8011, Val Acc: 75.09% | Duration: 0.44s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.0683, Train Acc: 98.44% | Val Loss: 1.0749, Val Acc: 73.97% | Duration: 0.45s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.0335, Train Acc: 99.44% | Val Loss: 0.6905, Val Acc: 79.96% | Duration: 0.45s | LR: 0.000030
+  -> new best acc: 79.96%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [17/20] | Train Loss: 0.0159, Train Acc: 99.88% | Val Loss: 0.7047, Val Acc: 80.15% | Duration: 0.44s | LR: 0.000030
+  -> new best acc: 80.15%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [18/20] | Train Loss: 0.0143, Train Acc: 99.88% | Val Loss: 0.7137, Val Acc: 80.52% | Duration: 0.44s | LR: 0.000030
+  -> new best acc: 80.52%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [19/20] | Train Loss: 0.0127, Train Acc: 99.94% | Val Loss: 0.7216, Val Acc: 80.71% | Duration: 0.40s | LR: 0.000030
+  -> new best acc: 80.71%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+Epoch [20/20] | Train Loss: 0.0120, Train Acc: 99.94% | Val Loss: 0.7375, Val Acc: 79.96% | Duration: 0.45s | LR: 0.000030
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+pa_csi/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.7222
+
+============================================================
+pipeline 演示完成
+============================================================

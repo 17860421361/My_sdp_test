@@ -1,0 +1,104 @@
+================================================================================
+当前 preset：localization
+当前 pipeline：{'denoise': {'method': 'wavelet'}, 'calibrate': {'method': 'robust'}, 'normalize': {'method': 'z-score'}, 'interpolate': {'method': 'cubic', 'target_K': 64}}
+当前 model：pa_csi
+保存目录：/home/test/bupt_hjk/test_wider/result/condition_v2+localization+pa_csi
+类别数：3，原始手势标签：[np.int64(1), np.int64(2), np.int64(3)]
+训练集 4725 | 验证集 1035 | 测试集 990
+step 5，创建模型
+模型参数量 389379
+训练设备: cuda:0
+step 6: 开始训练 80 轮
+Epoch [1/80] | Train Loss: 0.9265, Train Acc: 52.44% | Val Loss: 0.8830, Val Acc: 54.69% | Duration: 5.09s | LR: 0.000300
+  -> new best acc: 54.69%. saved to /home/test/bupt_hjk/test_wider/result/condition_v2+localization+pa_csi/best_checkpoint.pth
+Epoch [2/80] | Train Loss: 0.8468, Train Acc: 56.32% | Val Loss: 0.8480, Val Acc: 56.62% | Duration: 5.18s | LR: 0.000300
+  -> new best acc: 56.62%. saved to /home/test/bupt_hjk/test_wider/result/condition_v2+localization+pa_csi/best_checkpoint.pth
+Epoch [3/80] | Train Loss: 0.8392, Train Acc: 57.23% | Val Loss: 0.8486, Val Acc: 54.01% | Duration: 5.12s | LR: 0.000300
+Epoch [4/80] | Train Loss: 0.8254, Train Acc: 57.93% | Val Loss: 0.8644, Val Acc: 55.56% | Duration: 5.08s | LR: 0.000300
+Epoch [5/80] | Train Loss: 0.8112, Train Acc: 59.89% | Val Loss: 0.8708, Val Acc: 55.56% | Duration: 5.10s | LR: 0.000300
+Epoch [6/80] | Train Loss: 0.8077, Train Acc: 59.94% | Val Loss: 0.8471, Val Acc: 55.56% | Duration: 5.12s | LR: 0.000300
+Epoch [7/80] | Train Loss: 0.7846, Train Acc: 60.93% | Val Loss: 0.8546, Val Acc: 56.71% | Duration: 5.22s | LR: 0.000300
+  -> new best acc: 56.71%. saved to /home/test/bupt_hjk/test_wider/result/condition_v2+localization+pa_csi/best_checkpoint.pth
+Epoch [8/80] | Train Loss: 0.7734, Train Acc: 61.97% | Val Loss: 0.8453, Val Acc: 55.75% | Duration: 5.15s | LR: 0.000300
+Epoch [9/80] | Train Loss: 0.7548, Train Acc: 63.41% | Val Loss: 0.8304, Val Acc: 57.20% | Duration: 5.21s | LR: 0.000300
+  -> new best acc: 57.20%. saved to /home/test/bupt_hjk/test_wider/result/condition_v2+localization+pa_csi/best_checkpoint.pth
+Epoch [10/80] | Train Loss: 0.7452, Train Acc: 63.37% | Val Loss: 0.9094, Val Acc: 54.59% | Duration: 5.10s | LR: 0.000300
+Epoch [11/80] | Train Loss: 0.7295, Train Acc: 65.54% | Val Loss: 0.8642, Val Acc: 55.46% | Duration: 5.20s | LR: 0.000300
+Epoch [12/80] | Train Loss: 0.7034, Train Acc: 66.73% | Val Loss: 0.8653, Val Acc: 55.56% | Duration: 5.10s | LR: 0.000300
+Epoch [13/80] | Train Loss: 0.6941, Train Acc: 66.86% | Val Loss: 0.8670, Val Acc: 57.97% | Duration: 5.15s | LR: 0.000300
+  -> new best acc: 57.97%. saved to /home/test/bupt_hjk/test_wider/result/condition_v2+localization+pa_csi/best_checkpoint.pth
+Epoch [14/80] | Train Loss: 0.6608, Train Acc: 69.42% | Val Loss: 0.9603, Val Acc: 57.00% | Duration: 5.09s | LR: 0.000300
+Epoch [15/80] | Train Loss: 0.6505, Train Acc: 69.25% | Val Loss: 0.9530, Val Acc: 56.81% | Duration: 5.07s | LR: 0.000300
+Epoch [16/80] | Train Loss: 0.5673, Train Acc: 75.77% | Val Loss: 0.8893, Val Acc: 58.16% | Duration: 5.55s | LR: 0.000030
+  -> new best acc: 58.16%. saved to /home/test/bupt_hjk/test_wider/result/condition_v2+localization+pa_csi/best_checkpoint.pth
+Epoch [17/80] | Train Loss: 0.5430, Train Acc: 76.95% | Val Loss: 0.9082, Val Acc: 56.43% | Duration: 5.27s | LR: 0.000030
+Epoch [18/80] | Train Loss: 0.5283, Train Acc: 77.59% | Val Loss: 0.9260, Val Acc: 56.62% | Duration: 5.17s | LR: 0.000030
+Epoch [19/80] | Train Loss: 0.5120, Train Acc: 78.18% | Val Loss: 0.9431, Val Acc: 57.00% | Duration: 5.24s | LR: 0.000030
+Epoch [20/80] | Train Loss: 0.5037, Train Acc: 79.03% | Val Loss: 0.9558, Val Acc: 56.33% | Duration: 5.12s | LR: 0.000030
+Epoch [21/80] | Train Loss: 0.4874, Train Acc: 79.92% | Val Loss: 0.9721, Val Acc: 56.81% | Duration: 5.14s | LR: 0.000030
+Epoch [22/80] | Train Loss: 0.4689, Train Acc: 81.46% | Val Loss: 0.9677, Val Acc: 56.81% | Duration: 5.39s | LR: 0.000003
+Epoch [23/80] | Train Loss: 0.4661, Train Acc: 81.12% | Val Loss: 0.9737, Val Acc: 56.81% | Duration: 5.22s | LR: 0.000003
+Epoch [24/80] | Train Loss: 0.4696, Train Acc: 80.89% | Val Loss: 0.9782, Val Acc: 56.43% | Duration: 5.20s | LR: 0.000003
+Epoch [25/80] | Train Loss: 0.4647, Train Acc: 81.48% | Val Loss: 0.9777, Val Acc: 56.62% | Duration: 5.29s | LR: 0.000003
+Epoch [26/80] | Train Loss: 0.4643, Train Acc: 81.52% | Val Loss: 0.9774, Val Acc: 56.14% | Duration: 5.13s | LR: 0.000003
+Epoch [27/80] | Train Loss: 0.4671, Train Acc: 81.21% | Val Loss: 0.9809, Val Acc: 55.94% | Duration: 5.17s | LR: 0.000003
+Epoch [28/80] | Train Loss: 0.4624, Train Acc: 81.67% | Val Loss: 0.9810, Val Acc: 56.81% | Duration: 5.19s | LR: 0.000000
+Epoch [29/80] | Train Loss: 0.4604, Train Acc: 81.46% | Val Loss: 0.9824, Val Acc: 56.52% | Duration: 5.57s | LR: 0.000000
+Epoch [30/80] | Train Loss: 0.4645, Train Acc: 81.63% | Val Loss: 0.9843, Val Acc: 56.23% | Duration: 5.42s | LR: 0.000000
+Epoch [31/80] | Train Loss: 0.4625, Train Acc: 81.19% | Val Loss: 0.9844, Val Acc: 56.23% | Duration: 5.55s | LR: 0.000000
+Epoch [32/80] | Train Loss: 0.4620, Train Acc: 81.88% | Val Loss: 0.9835, Val Acc: 56.71% | Duration: 5.40s | LR: 0.000000
+Epoch [33/80] | Train Loss: 0.4591, Train Acc: 81.74% | Val Loss: 0.9835, Val Acc: 56.33% | Duration: 5.37s | LR: 0.000000
+Epoch [34/80] | Train Loss: 0.4637, Train Acc: 81.23% | Val Loss: 0.9824, Val Acc: 56.43% | Duration: 5.46s | LR: 0.000000
+Epoch [35/80] | Train Loss: 0.4614, Train Acc: 81.27% | Val Loss: 0.9871, Val Acc: 56.52% | Duration: 5.60s | LR: 0.000000
+Epoch [36/80] | Train Loss: 0.4626, Train Acc: 81.54% | Val Loss: 0.9817, Val Acc: 56.14% | Duration: 5.48s | LR: 0.000000
+Epoch [37/80] | Train Loss: 0.4588, Train Acc: 81.69% | Val Loss: 0.9806, Val Acc: 56.62% | Duration: 5.63s | LR: 0.000000
+Epoch [38/80] | Train Loss: 0.4632, Train Acc: 81.61% | Val Loss: 0.9839, Val Acc: 56.23% | Duration: 5.44s | LR: 0.000000
+Epoch [39/80] | Train Loss: 0.4621, Train Acc: 81.48% | Val Loss: 0.9857, Val Acc: 56.71% | Duration: 5.37s | LR: 0.000000
+Epoch [40/80] | Train Loss: 0.4614, Train Acc: 81.76% | Val Loss: 0.9809, Val Acc: 56.62% | Duration: 5.19s | LR: 0.000000
+Epoch [41/80] | Train Loss: 0.4659, Train Acc: 81.21% | Val Loss: 0.9865, Val Acc: 56.62% | Duration: 5.18s | LR: 0.000000
+Epoch [42/80] | Train Loss: 0.4603, Train Acc: 81.78% | Val Loss: 0.9847, Val Acc: 56.62% | Duration: 5.24s | LR: 0.000000
+Epoch [43/80] | Train Loss: 0.4610, Train Acc: 81.46% | Val Loss: 0.9894, Val Acc: 55.85% | Duration: 5.40s | LR: 0.000000
+Epoch [44/80] | Train Loss: 0.4614, Train Acc: 81.57% | Val Loss: 0.9851, Val Acc: 56.33% | Duration: 5.36s | LR: 0.000000
+Epoch [45/80] | Train Loss: 0.4617, Train Acc: 81.54% | Val Loss: 0.9838, Val Acc: 56.43% | Duration: 5.30s | LR: 0.000000
+Epoch [46/80] | Train Loss: 0.4615, Train Acc: 81.27% | Val Loss: 0.9838, Val Acc: 56.52% | Duration: 5.12s | LR: 0.000000
+Epoch [47/80] | Train Loss: 0.4612, Train Acc: 81.61% | Val Loss: 0.9854, Val Acc: 56.52% | Duration: 5.29s | LR: 0.000000
+Epoch [48/80] | Train Loss: 0.4621, Train Acc: 81.59% | Val Loss: 0.9831, Val Acc: 56.23% | Duration: 5.23s | LR: 0.000000
+Epoch [49/80] | Train Loss: 0.4627, Train Acc: 81.14% | Val Loss: 0.9820, Val Acc: 56.33% | Duration: 5.16s | LR: 0.000000
+Epoch [50/80] | Train Loss: 0.4608, Train Acc: 81.16% | Val Loss: 0.9877, Val Acc: 56.81% | Duration: 5.17s | LR: 0.000000
+Epoch [51/80] | Train Loss: 0.4635, Train Acc: 81.84% | Val Loss: 0.9898, Val Acc: 56.43% | Duration: 5.11s | LR: 0.000000
+Epoch [52/80] | Train Loss: 0.4621, Train Acc: 81.25% | Val Loss: 0.9858, Val Acc: 56.33% | Duration: 5.27s | LR: 0.000000
+Epoch [53/80] | Train Loss: 0.4619, Train Acc: 81.46% | Val Loss: 0.9871, Val Acc: 56.43% | Duration: 5.16s | LR: 0.000000
+Epoch [54/80] | Train Loss: 0.4581, Train Acc: 81.97% | Val Loss: 0.9836, Val Acc: 56.52% | Duration: 5.19s | LR: 0.000000
+Epoch [55/80] | Train Loss: 0.4631, Train Acc: 81.12% | Val Loss: 0.9859, Val Acc: 56.33% | Duration: 5.09s | LR: 0.000000
+Epoch [56/80] | Train Loss: 0.4626, Train Acc: 81.71% | Val Loss: 0.9816, Val Acc: 56.23% | Duration: 5.15s | LR: 0.000000
+Epoch [57/80] | Train Loss: 0.4631, Train Acc: 81.93% | Val Loss: 0.9847, Val Acc: 56.43% | Duration: 5.15s | LR: 0.000000
+Epoch [58/80] | Train Loss: 0.4614, Train Acc: 81.61% | Val Loss: 0.9880, Val Acc: 56.43% | Duration: 5.11s | LR: 0.000000
+Epoch [59/80] | Train Loss: 0.4617, Train Acc: 81.69% | Val Loss: 0.9806, Val Acc: 56.33% | Duration: 5.17s | LR: 0.000000
+Epoch [60/80] | Train Loss: 0.4602, Train Acc: 81.57% | Val Loss: 0.9854, Val Acc: 56.62% | Duration: 5.27s | LR: 0.000000
+Epoch [61/80] | Train Loss: 0.4639, Train Acc: 81.52% | Val Loss: 0.9814, Val Acc: 56.52% | Duration: 5.34s | LR: 0.000000
+Epoch [62/80] | Train Loss: 0.4622, Train Acc: 81.67% | Val Loss: 0.9844, Val Acc: 56.23% | Duration: 5.18s | LR: 0.000000
+Epoch [63/80] | Train Loss: 0.4609, Train Acc: 81.80% | Val Loss: 0.9880, Val Acc: 57.29% | Duration: 5.21s | LR: 0.000000
+Epoch [64/80] | Train Loss: 0.4587, Train Acc: 81.65% | Val Loss: 0.9850, Val Acc: 56.33% | Duration: 5.19s | LR: 0.000000
+Epoch [65/80] | Train Loss: 0.4584, Train Acc: 81.97% | Val Loss: 0.9813, Val Acc: 56.43% | Duration: 5.12s | LR: 0.000000
+Epoch [66/80] | Train Loss: 0.4632, Train Acc: 81.50% | Val Loss: 0.9865, Val Acc: 56.04% | Duration: 5.33s | LR: 0.000000
+Epoch [67/80] | Train Loss: 0.4610, Train Acc: 81.95% | Val Loss: 0.9834, Val Acc: 56.52% | Duration: 5.40s | LR: 0.000000
+Epoch [68/80] | Train Loss: 0.4599, Train Acc: 81.69% | Val Loss: 0.9843, Val Acc: 56.62% | Duration: 5.39s | LR: 0.000000
+Epoch [69/80] | Train Loss: 0.4602, Train Acc: 81.61% | Val Loss: 0.9894, Val Acc: 56.14% | Duration: 5.44s | LR: 0.000000
+Epoch [70/80] | Train Loss: 0.4623, Train Acc: 81.38% | Val Loss: 0.9820, Val Acc: 56.33% | Duration: 5.54s | LR: 0.000000
+Epoch [71/80] | Train Loss: 0.4599, Train Acc: 81.25% | Val Loss: 0.9863, Val Acc: 56.33% | Duration: 5.41s | LR: 0.000000
+Epoch [72/80] | Train Loss: 0.4592, Train Acc: 81.97% | Val Loss: 0.9821, Val Acc: 56.62% | Duration: 5.42s | LR: 0.000000
+Epoch [73/80] | Train Loss: 0.4620, Train Acc: 81.74% | Val Loss: 0.9837, Val Acc: 56.23% | Duration: 5.46s | LR: 0.000000
+Epoch [74/80] | Train Loss: 0.4611, Train Acc: 82.01% | Val Loss: 0.9835, Val Acc: 56.14% | Duration: 5.53s | LR: 0.000000
+Epoch [75/80] | Train Loss: 0.4613, Train Acc: 81.78% | Val Loss: 0.9893, Val Acc: 56.91% | Duration: 5.40s | LR: 0.000000
+Epoch [76/80] | Train Loss: 0.4616, Train Acc: 81.54% | Val Loss: 0.9873, Val Acc: 56.43% | Duration: 5.33s | LR: 0.000000
+Epoch [77/80] | Train Loss: 0.4648, Train Acc: 81.42% | Val Loss: 0.9841, Val Acc: 56.04% | Duration: 5.34s | LR: 0.000000
+Epoch [78/80] | Train Loss: 0.4618, Train Acc: 81.50% | Val Loss: 0.9863, Val Acc: 56.43% | Duration: 5.49s | LR: 0.000000
+Epoch [79/80] | Train Loss: 0.4612, Train Acc: 81.19% | Val Loss: 0.9877, Val Acc: 56.43% | Duration: 5.37s | LR: 0.000000
+Epoch [80/80] | Train Loss: 0.4566, Train Acc: 81.86% | Val Loss: 0.9846, Val Acc: 56.23% | Duration: 5.34s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_wider/result/condition_v2+localization+pa_csi/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.5727
+
+============================================================
+pipeline 演示完成
+============================================================

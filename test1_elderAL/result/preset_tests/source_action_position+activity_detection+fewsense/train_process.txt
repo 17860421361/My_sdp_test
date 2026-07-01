@@ -1,0 +1,44 @@
+================================================================================
+当前 preset：activity_detection
+当前 pipeline：{'denoise': {'method': 'savgol', 'window_length': 11, 'polyorder': 3}, 'calibrate': {'method': 'polynomial', 'degree': 2}, 'normalize': {'method': 'z-score'}}
+当前 model：fewsense
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+fewsense
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 458086
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.8557, Train Acc: 20.06% | Val Loss: 1.7322, Val Acc: 20.22% | Duration: 0.70s | LR: 0.000300
+  -> new best acc: 20.22%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+fewsense/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.7597, Train Acc: 24.69% | Val Loss: 1.7240, Val Acc: 22.28% | Duration: 0.72s | LR: 0.000300
+  -> new best acc: 22.28%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+fewsense/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.7386, Train Acc: 24.31% | Val Loss: 1.7052, Val Acc: 21.35% | Duration: 0.70s | LR: 0.000300
+Epoch [4/20] | Train Loss: 1.7264, Train Acc: 24.56% | Val Loss: 1.6758, Val Acc: 26.97% | Duration: 0.70s | LR: 0.000300
+  -> new best acc: 26.97%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+fewsense/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 1.7044, Train Acc: 26.06% | Val Loss: 1.6656, Val Acc: 28.28% | Duration: 0.70s | LR: 0.000300
+  -> new best acc: 28.28%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+fewsense/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 1.6948, Train Acc: 26.38% | Val Loss: 1.6816, Val Acc: 26.40% | Duration: 0.71s | LR: 0.000300
+Epoch [7/20] | Train Loss: 1.6912, Train Acc: 28.19% | Val Loss: 1.6640, Val Acc: 27.34% | Duration: 0.73s | LR: 0.000300
+Epoch [8/20] | Train Loss: 1.6725, Train Acc: 28.75% | Val Loss: 1.6511, Val Acc: 26.97% | Duration: 0.73s | LR: 0.000300
+Epoch [9/20] | Train Loss: 1.6752, Train Acc: 29.00% | Val Loss: 1.6494, Val Acc: 28.65% | Duration: 0.72s | LR: 0.000300
+  -> new best acc: 28.65%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+fewsense/best_checkpoint.pth
+Epoch [10/20] | Train Loss: 1.6744, Train Acc: 27.81% | Val Loss: 1.6378, Val Acc: 27.90% | Duration: 0.74s | LR: 0.000300
+Epoch [11/20] | Train Loss: 1.6598, Train Acc: 30.38% | Val Loss: 1.6495, Val Acc: 27.15% | Duration: 0.74s | LR: 0.000300
+Epoch [12/20] | Train Loss: 1.6572, Train Acc: 29.50% | Val Loss: 1.6604, Val Acc: 28.46% | Duration: 0.76s | LR: 0.000300
+Epoch [13/20] | Train Loss: 1.6430, Train Acc: 30.38% | Val Loss: 1.6384, Val Acc: 26.40% | Duration: 0.74s | LR: 0.000300
+Epoch [14/20] | Train Loss: 1.6472, Train Acc: 29.81% | Val Loss: 1.6201, Val Acc: 27.72% | Duration: 0.73s | LR: 0.000300
+Epoch [15/20] | Train Loss: 1.6449, Train Acc: 31.50% | Val Loss: 1.6609, Val Acc: 27.53% | Duration: 0.73s | LR: 0.000300
+Epoch [16/20] | Train Loss: 1.6550, Train Acc: 30.62% | Val Loss: 1.6312, Val Acc: 28.28% | Duration: 0.73s | LR: 0.000300
+Epoch [17/20] | Train Loss: 1.6345, Train Acc: 32.69% | Val Loss: 1.6132, Val Acc: 30.71% | Duration: 0.73s | LR: 0.000300
+  -> new best acc: 30.71%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+fewsense/best_checkpoint.pth
+Epoch [18/20] | Train Loss: 1.6253, Train Acc: 32.50% | Val Loss: 1.6526, Val Acc: 26.78% | Duration: 0.73s | LR: 0.000300
+Epoch [19/20] | Train Loss: 1.6293, Train Acc: 32.50% | Val Loss: 1.6584, Val Acc: 27.72% | Duration: 0.73s | LR: 0.000300
+Epoch [20/20] | Train Loss: 1.6150, Train Acc: 32.44% | Val Loss: 1.6243, Val Acc: 30.52% | Duration: 0.73s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+fewsense/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.3407
+
+============================================================
+pipeline 演示完成
+============================================================

@@ -1,0 +1,44 @@
+================================================================================
+当前 preset：localization
+当前 pipeline：{'denoise': {'method': 'wavelet'}, 'calibrate': {'method': 'robust'}, 'normalize': {'method': 'z-score'}, 'interpolate': {'method': 'cubic', 'target_K': 64}}
+当前 model：cnn1dmodel
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+cnn1dmodel
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 235494
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.6440, Train Acc: 33.69% | Val Loss: 1.6673, Val Acc: 28.84% | Duration: 0.53s | LR: 0.000300
+  -> new best acc: 28.84%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+cnn1dmodel/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.4739, Train Acc: 41.88% | Val Loss: 1.4261, Val Acc: 43.07% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 43.07%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+cnn1dmodel/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.2891, Train Acc: 49.88% | Val Loss: 1.8895, Val Acc: 35.77% | Duration: 0.52s | LR: 0.000300
+Epoch [4/20] | Train Loss: 1.1397, Train Acc: 56.88% | Val Loss: 1.3054, Val Acc: 43.07% | Duration: 0.52s | LR: 0.000300
+Epoch [5/20] | Train Loss: 0.9858, Train Acc: 64.38% | Val Loss: 1.3043, Val Acc: 49.44% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 49.44%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+cnn1dmodel/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 0.8981, Train Acc: 67.38% | Val Loss: 1.4886, Val Acc: 44.94% | Duration: 0.52s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.7997, Train Acc: 70.56% | Val Loss: 1.5106, Val Acc: 44.94% | Duration: 0.52s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.7296, Train Acc: 73.56% | Val Loss: 1.1198, Val Acc: 54.87% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 54.87%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+cnn1dmodel/best_checkpoint.pth
+Epoch [9/20] | Train Loss: 0.6405, Train Acc: 77.56% | Val Loss: 1.4181, Val Acc: 52.62% | Duration: 0.52s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.5785, Train Acc: 81.12% | Val Loss: 1.5897, Val Acc: 39.33% | Duration: 0.52s | LR: 0.000300
+Epoch [11/20] | Train Loss: 0.5136, Train Acc: 83.00% | Val Loss: 2.4952, Val Acc: 36.70% | Duration: 0.53s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.4553, Train Acc: 86.19% | Val Loss: 2.8707, Val Acc: 37.45% | Duration: 0.53s | LR: 0.000300
+Epoch [13/20] | Train Loss: 0.4139, Train Acc: 87.50% | Val Loss: 0.8897, Val Acc: 67.04% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 67.04%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+cnn1dmodel/best_checkpoint.pth
+Epoch [14/20] | Train Loss: 0.3588, Train Acc: 90.06% | Val Loss: 0.8571, Val Acc: 69.66% | Duration: 0.53s | LR: 0.000300
+  -> new best acc: 69.66%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+cnn1dmodel/best_checkpoint.pth
+Epoch [15/20] | Train Loss: 0.3122, Train Acc: 92.00% | Val Loss: 1.2368, Val Acc: 58.43% | Duration: 0.54s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.2649, Train Acc: 93.12% | Val Loss: 1.0001, Val Acc: 65.92% | Duration: 0.52s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.2480, Train Acc: 93.75% | Val Loss: 1.9453, Val Acc: 46.07% | Duration: 0.52s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.2356, Train Acc: 94.31% | Val Loss: 1.0148, Val Acc: 66.29% | Duration: 0.52s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.1940, Train Acc: 95.56% | Val Loss: 1.0785, Val Acc: 65.54% | Duration: 0.52s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.1723, Train Acc: 96.44% | Val Loss: 1.6975, Val Acc: 55.06% | Duration: 0.52s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+cnn1dmodel/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.5593
+
+============================================================
+pipeline 演示完成
+============================================================

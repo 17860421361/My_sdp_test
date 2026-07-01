@@ -1,0 +1,43 @@
+================================================================================
+当前 preset：gesture_recognition
+当前 pipeline：{'denoise': {'method': 'butterworth', 'order': 4, 'cutoff': 0.25}, 'calibrate': {'method': 'stc'}, 'normalize': {'method': 'z-score'}, 'interpolate': {'method': 'cubic', 'target_K': 30}}
+当前 model：cnn1dmodel
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+cnn1dmodel
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 235494
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.6740, Train Acc: 31.25% | Val Loss: 1.6710, Val Acc: 31.27% | Duration: 0.37s | LR: 0.000300
+  -> new best acc: 31.27%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.5227, Train Acc: 42.94% | Val Loss: 1.5826, Val Acc: 30.34% | Duration: 0.36s | LR: 0.000300
+Epoch [3/20] | Train Loss: 1.2958, Train Acc: 55.12% | Val Loss: 1.8495, Val Acc: 26.59% | Duration: 0.36s | LR: 0.000300
+Epoch [4/20] | Train Loss: 1.0704, Train Acc: 65.44% | Val Loss: 1.2045, Val Acc: 51.31% | Duration: 0.36s | LR: 0.000300
+  -> new best acc: 51.31%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 0.8690, Train Acc: 71.75% | Val Loss: 1.9925, Val Acc: 39.51% | Duration: 0.36s | LR: 0.000300
+Epoch [6/20] | Train Loss: 0.7457, Train Acc: 75.00% | Val Loss: 1.0398, Val Acc: 69.10% | Duration: 0.36s | LR: 0.000300
+  -> new best acc: 69.10%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [7/20] | Train Loss: 0.6346, Train Acc: 78.44% | Val Loss: 1.6508, Val Acc: 45.32% | Duration: 0.36s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.5829, Train Acc: 81.44% | Val Loss: 1.8502, Val Acc: 43.45% | Duration: 0.36s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.4927, Train Acc: 84.75% | Val Loss: 1.3550, Val Acc: 43.07% | Duration: 0.36s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.4143, Train Acc: 88.25% | Val Loss: 4.5132, Val Acc: 31.09% | Duration: 0.36s | LR: 0.000300
+Epoch [11/20] | Train Loss: 0.3559, Train Acc: 90.38% | Val Loss: 1.0349, Val Acc: 64.61% | Duration: 0.36s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.2803, Train Acc: 94.06% | Val Loss: 2.0880, Val Acc: 35.21% | Duration: 0.36s | LR: 0.000300
+Epoch [13/20] | Train Loss: 0.2360, Train Acc: 95.06% | Val Loss: 1.1029, Val Acc: 65.73% | Duration: 0.36s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.1898, Train Acc: 96.69% | Val Loss: 0.7584, Val Acc: 75.09% | Duration: 0.36s | LR: 0.000300
+  -> new best acc: 75.09%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [15/20] | Train Loss: 0.1456, Train Acc: 97.50% | Val Loss: 0.9879, Val Acc: 71.54% | Duration: 0.36s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.1261, Train Acc: 98.44% | Val Loss: 5.3842, Val Acc: 22.85% | Duration: 0.36s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.1098, Train Acc: 98.38% | Val Loss: 0.9228, Val Acc: 69.85% | Duration: 0.37s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.1009, Train Acc: 98.62% | Val Loss: 0.9484, Val Acc: 71.16% | Duration: 0.36s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.0735, Train Acc: 99.38% | Val Loss: 0.7645, Val Acc: 76.22% | Duration: 0.36s | LR: 0.000300
+  -> new best acc: 76.22%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [20/20] | Train Loss: 0.0570, Train Acc: 99.25% | Val Loss: 1.5815, Val Acc: 63.11% | Duration: 0.36s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.8333
+
+============================================================
+pipeline 演示完成
+============================================================

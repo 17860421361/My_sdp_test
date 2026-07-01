@@ -1,0 +1,45 @@
+================================================================================
+当前 preset：activity_detection
+当前 pipeline：{'denoise': {'method': 'savgol', 'window_length': 11, 'polyorder': 3}, 'calibrate': {'method': 'polynomial', 'degree': 2}, 'normalize': {'method': 'z-score'}}
+当前 model：resnet2d
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+resnet2d
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 307846
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.7412, Train Acc: 23.12% | Val Loss: 1.7029, Val Acc: 21.91% | Duration: 6.14s | LR: 0.000300
+  -> new best acc: 21.91%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.7167, Train Acc: 26.88% | Val Loss: 1.6701, Val Acc: 29.21% | Duration: 6.17s | LR: 0.000300
+  -> new best acc: 29.21%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.7002, Train Acc: 28.75% | Val Loss: 1.6713, Val Acc: 29.40% | Duration: 6.18s | LR: 0.000300
+  -> new best acc: 29.40%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 1.6947, Train Acc: 29.44% | Val Loss: 1.7196, Val Acc: 23.60% | Duration: 6.20s | LR: 0.000300
+Epoch [5/20] | Train Loss: 1.6629, Train Acc: 32.62% | Val Loss: 1.7153, Val Acc: 26.40% | Duration: 6.18s | LR: 0.000300
+Epoch [6/20] | Train Loss: 1.6483, Train Acc: 31.50% | Val Loss: 1.6665, Val Acc: 30.34% | Duration: 6.20s | LR: 0.000300
+  -> new best acc: 30.34%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [7/20] | Train Loss: 1.6376, Train Acc: 34.31% | Val Loss: 1.7025, Val Acc: 26.97% | Duration: 6.20s | LR: 0.000300
+Epoch [8/20] | Train Loss: 1.6135, Train Acc: 34.38% | Val Loss: 1.7031, Val Acc: 24.34% | Duration: 6.16s | LR: 0.000300
+Epoch [9/20] | Train Loss: 1.5870, Train Acc: 35.75% | Val Loss: 1.6483, Val Acc: 30.90% | Duration: 6.19s | LR: 0.000300
+  -> new best acc: 30.90%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [10/20] | Train Loss: 1.5628, Train Acc: 37.00% | Val Loss: 1.6927, Val Acc: 26.78% | Duration: 6.22s | LR: 0.000300
+Epoch [11/20] | Train Loss: 1.5478, Train Acc: 38.06% | Val Loss: 1.5687, Val Acc: 33.33% | Duration: 6.20s | LR: 0.000300
+  -> new best acc: 33.33%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [12/20] | Train Loss: 1.5304, Train Acc: 39.00% | Val Loss: 1.6125, Val Acc: 32.02% | Duration: 6.19s | LR: 0.000300
+Epoch [13/20] | Train Loss: 1.5209, Train Acc: 40.31% | Val Loss: 1.6065, Val Acc: 32.40% | Duration: 6.17s | LR: 0.000300
+Epoch [14/20] | Train Loss: 1.5128, Train Acc: 39.88% | Val Loss: 1.7676, Val Acc: 30.15% | Duration: 6.20s | LR: 0.000300
+Epoch [15/20] | Train Loss: 1.5051, Train Acc: 38.31% | Val Loss: 1.6755, Val Acc: 33.33% | Duration: 6.20s | LR: 0.000300
+Epoch [16/20] | Train Loss: 1.4981, Train Acc: 40.31% | Val Loss: 1.5953, Val Acc: 33.15% | Duration: 6.19s | LR: 0.000300
+Epoch [17/20] | Train Loss: 1.4926, Train Acc: 42.12% | Val Loss: 1.6389, Val Acc: 27.53% | Duration: 6.20s | LR: 0.000300
+Epoch [18/20] | Train Loss: 1.4613, Train Acc: 42.12% | Val Loss: 1.4839, Val Acc: 44.01% | Duration: 6.20s | LR: 0.000030
+  -> new best acc: 44.01%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [19/20] | Train Loss: 1.4507, Train Acc: 43.12% | Val Loss: 1.4969, Val Acc: 38.39% | Duration: 6.19s | LR: 0.000030
+Epoch [20/20] | Train Loss: 1.4493, Train Acc: 43.38% | Val Loss: 1.4769, Val Acc: 42.13% | Duration: 6.21s | LR: 0.000030
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+resnet2d/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.3889
+
+============================================================
+pipeline 演示完成
+============================================================

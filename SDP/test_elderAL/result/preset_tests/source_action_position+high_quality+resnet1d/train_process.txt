@@ -1,0 +1,44 @@
+================================================================================
+当前 preset：high_quality
+当前 pipeline：{'denoise': {'method': 'butterworth', 'order': 5, 'cutoff': 0.3}, 'calibrate': {'method': 'stc'}, 'normalize': {'method': 'z-score'}}
+当前 model：resnet1d
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+resnet1d
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 1814662
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.6636, Train Acc: 30.62% | Val Loss: 1.5310, Val Acc: 36.33% | Duration: 0.45s | LR: 0.000300
+  -> new best acc: 36.33%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+resnet1d/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.2223, Train Acc: 54.31% | Val Loss: 1.4276, Val Acc: 35.39% | Duration: 0.41s | LR: 0.000300
+Epoch [3/20] | Train Loss: 0.8656, Train Acc: 67.44% | Val Loss: 1.0710, Val Acc: 56.18% | Duration: 0.45s | LR: 0.000300
+  -> new best acc: 56.18%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+resnet1d/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 0.6411, Train Acc: 76.94% | Val Loss: 0.9016, Val Acc: 62.92% | Duration: 0.39s | LR: 0.000300
+  -> new best acc: 62.92%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+resnet1d/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 0.4585, Train Acc: 85.44% | Val Loss: 0.8608, Val Acc: 65.73% | Duration: 0.42s | LR: 0.000300
+  -> new best acc: 65.73%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+resnet1d/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 0.3185, Train Acc: 90.19% | Val Loss: 1.1156, Val Acc: 61.99% | Duration: 0.40s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.2013, Train Acc: 94.56% | Val Loss: 1.3767, Val Acc: 58.24% | Duration: 0.40s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.1582, Train Acc: 95.56% | Val Loss: 0.9444, Val Acc: 67.04% | Duration: 0.42s | LR: 0.000300
+  -> new best acc: 67.04%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+resnet1d/best_checkpoint.pth
+Epoch [9/20] | Train Loss: 0.1092, Train Acc: 97.75% | Val Loss: 1.3468, Val Acc: 59.74% | Duration: 0.42s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.0845, Train Acc: 98.44% | Val Loss: 0.4613, Val Acc: 83.71% | Duration: 0.40s | LR: 0.000300
+  -> new best acc: 83.71%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+resnet1d/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 0.0954, Train Acc: 97.81% | Val Loss: 0.7764, Val Acc: 74.34% | Duration: 0.38s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.0573, Train Acc: 99.00% | Val Loss: 0.5149, Val Acc: 82.21% | Duration: 0.38s | LR: 0.000300
+Epoch [13/20] | Train Loss: 0.0313, Train Acc: 99.75% | Val Loss: 0.5220, Val Acc: 82.96% | Duration: 0.39s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.0279, Train Acc: 99.50% | Val Loss: 0.4989, Val Acc: 81.09% | Duration: 0.40s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.0458, Train Acc: 99.19% | Val Loss: 0.9416, Val Acc: 73.78% | Duration: 0.38s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.0277, Train Acc: 99.56% | Val Loss: 0.4471, Val Acc: 83.71% | Duration: 0.42s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.0347, Train Acc: 99.56% | Val Loss: 1.8407, Val Acc: 62.17% | Duration: 0.48s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.0212, Train Acc: 99.69% | Val Loss: 1.5903, Val Acc: 62.92% | Duration: 0.39s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.0372, Train Acc: 99.12% | Val Loss: 0.8088, Val Acc: 72.47% | Duration: 0.38s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.0220, Train Acc: 99.62% | Val Loss: 1.0035, Val Acc: 69.48% | Duration: 0.39s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+resnet1d/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.7481
+
+============================================================
+pipeline 演示完成
+============================================================

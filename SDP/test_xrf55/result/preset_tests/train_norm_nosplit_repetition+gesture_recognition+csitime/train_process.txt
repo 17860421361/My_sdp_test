@@ -1,0 +1,93 @@
+================================================================================
+当前 preset：gesture_recognition
+当前 pipeline：{'denoise': {'method': 'butterworth', 'order': 4, 'cutoff': 0.25}, 'calibrate': {'method': 'stc'}, 'normalize': {'method': 'z-score'}, 'interpolate': {'method': 'cubic', 'target_K': 30}}
+当前 model：csitime
+保存目录：/home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime
+类别数：55，原始标签：[np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9), np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(14), np.int64(15), np.int64(16), np.int64(17), np.int64(18), np.int64(19), np.int64(20), np.int64(21), np.int64(22), np.int64(23), np.int64(24), np.int64(25), np.int64(26), np.int64(27), np.int64(28), np.int64(29), np.int64(30), np.int64(31), np.int64(32), np.int64(33), np.int64(34), np.int64(35), np.int64(36), np.int64(37), np.int64(38), np.int64(39), np.int64(40), np.int64(41), np.int64(42), np.int64(43), np.int64(44), np.int64(45), np.int64(46), np.int64(47), np.int64(48), np.int64(49), np.int64(50), np.int64(51), np.int64(52), np.int64(53), np.int64(54), np.int64(55)]
+训练集 1980 | 验证集 660 | 测试集 660
+step 5，创建模型
+模型参数量 155831
+训练设备: cuda:1
+step 6: 开始训练 50 轮
+Epoch [1/50] | Train Loss: 3.6870, Train Acc: 11.16% | Val Loss: 3.1017, Val Acc: 20.91% | Duration: 1.20s | LR: 0.000300
+  -> new best acc: 20.91%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [2/50] | Train Loss: 2.8522, Train Acc: 29.65% | Val Loss: 2.6563, Val Acc: 36.52% | Duration: 1.33s | LR: 0.000300
+  -> new best acc: 36.52%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [3/50] | Train Loss: 2.4151, Train Acc: 42.73% | Val Loss: 2.3161, Val Acc: 43.79% | Duration: 1.16s | LR: 0.000300
+  -> new best acc: 43.79%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [4/50] | Train Loss: 2.1043, Train Acc: 51.06% | Val Loss: 2.0673, Val Acc: 50.45% | Duration: 1.29s | LR: 0.000300
+  -> new best acc: 50.45%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [5/50] | Train Loss: 1.8517, Train Acc: 58.13% | Val Loss: 1.8373, Val Acc: 56.36% | Duration: 1.16s | LR: 0.000300
+  -> new best acc: 56.36%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [6/50] | Train Loss: 1.6703, Train Acc: 62.32% | Val Loss: 1.6701, Val Acc: 61.82% | Duration: 1.16s | LR: 0.000300
+  -> new best acc: 61.82%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [7/50] | Train Loss: 1.5015, Train Acc: 67.02% | Val Loss: 1.5614, Val Acc: 63.48% | Duration: 1.18s | LR: 0.000300
+  -> new best acc: 63.48%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [8/50] | Train Loss: 1.3386, Train Acc: 73.03% | Val Loss: 1.4585, Val Acc: 65.61% | Duration: 1.13s | LR: 0.000300
+  -> new best acc: 65.61%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [9/50] | Train Loss: 1.2433, Train Acc: 73.89% | Val Loss: 1.3037, Val Acc: 71.36% | Duration: 1.15s | LR: 0.000300
+  -> new best acc: 71.36%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [10/50] | Train Loss: 1.1318, Train Acc: 76.62% | Val Loss: 1.2486, Val Acc: 70.76% | Duration: 1.20s | LR: 0.000300
+Epoch [11/50] | Train Loss: 1.0073, Train Acc: 80.56% | Val Loss: 1.1768, Val Acc: 73.48% | Duration: 1.17s | LR: 0.000300
+  -> new best acc: 73.48%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [12/50] | Train Loss: 0.9473, Train Acc: 80.61% | Val Loss: 1.1319, Val Acc: 74.70% | Duration: 1.15s | LR: 0.000300
+  -> new best acc: 74.70%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [13/50] | Train Loss: 0.8769, Train Acc: 82.83% | Val Loss: 1.0809, Val Acc: 73.64% | Duration: 1.14s | LR: 0.000300
+Epoch [14/50] | Train Loss: 0.8239, Train Acc: 83.13% | Val Loss: 0.9792, Val Acc: 77.73% | Duration: 1.16s | LR: 0.000300
+  -> new best acc: 77.73%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [15/50] | Train Loss: 0.7457, Train Acc: 85.81% | Val Loss: 0.9597, Val Acc: 75.30% | Duration: 1.15s | LR: 0.000300
+Epoch [16/50] | Train Loss: 0.6869, Train Acc: 87.27% | Val Loss: 0.9201, Val Acc: 76.52% | Duration: 1.15s | LR: 0.000300
+Epoch [17/50] | Train Loss: 0.6650, Train Acc: 87.12% | Val Loss: 0.8777, Val Acc: 78.18% | Duration: 1.13s | LR: 0.000300
+  -> new best acc: 78.18%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [18/50] | Train Loss: 0.6025, Train Acc: 88.64% | Val Loss: 0.7969, Val Acc: 78.18% | Duration: 1.17s | LR: 0.000300
+Epoch [19/50] | Train Loss: 0.5893, Train Acc: 88.54% | Val Loss: 0.7930, Val Acc: 80.61% | Duration: 1.14s | LR: 0.000300
+  -> new best acc: 80.61%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [20/50] | Train Loss: 0.5504, Train Acc: 89.34% | Val Loss: 0.7542, Val Acc: 80.61% | Duration: 1.13s | LR: 0.000300
+Epoch [21/50] | Train Loss: 0.5189, Train Acc: 89.44% | Val Loss: 0.7693, Val Acc: 80.30% | Duration: 1.16s | LR: 0.000300
+Epoch [22/50] | Train Loss: 0.4926, Train Acc: 90.51% | Val Loss: 0.7117, Val Acc: 82.12% | Duration: 1.14s | LR: 0.000300
+  -> new best acc: 82.12%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [23/50] | Train Loss: 0.4445, Train Acc: 92.83% | Val Loss: 0.7150, Val Acc: 80.61% | Duration: 1.20s | LR: 0.000300
+Epoch [24/50] | Train Loss: 0.4552, Train Acc: 91.36% | Val Loss: 0.7184, Val Acc: 82.73% | Duration: 1.17s | LR: 0.000300
+  -> new best acc: 82.73%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [25/50] | Train Loss: 0.4145, Train Acc: 92.22% | Val Loss: 0.6530, Val Acc: 83.94% | Duration: 1.16s | LR: 0.000300
+  -> new best acc: 83.94%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [26/50] | Train Loss: 0.4094, Train Acc: 92.12% | Val Loss: 0.6678, Val Acc: 82.88% | Duration: 1.33s | LR: 0.000300
+Epoch [27/50] | Train Loss: 0.3937, Train Acc: 93.03% | Val Loss: 0.6494, Val Acc: 82.27% | Duration: 1.23s | LR: 0.000300
+Epoch [28/50] | Train Loss: 0.3561, Train Acc: 93.69% | Val Loss: 0.5992, Val Acc: 85.30% | Duration: 1.23s | LR: 0.000300
+  -> new best acc: 85.30%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [29/50] | Train Loss: 0.3573, Train Acc: 92.98% | Val Loss: 0.6365, Val Acc: 84.09% | Duration: 1.41s | LR: 0.000300
+Epoch [30/50] | Train Loss: 0.3443, Train Acc: 93.08% | Val Loss: 0.5961, Val Acc: 83.94% | Duration: 1.24s | LR: 0.000300
+Epoch [31/50] | Train Loss: 0.3339, Train Acc: 93.03% | Val Loss: 0.6003, Val Acc: 85.15% | Duration: 1.40s | LR: 0.000300
+Epoch [32/50] | Train Loss: 0.3191, Train Acc: 93.69% | Val Loss: 0.5706, Val Acc: 84.55% | Duration: 1.21s | LR: 0.000300
+Epoch [33/50] | Train Loss: 0.3057, Train Acc: 93.84% | Val Loss: 0.6211, Val Acc: 82.73% | Duration: 1.21s | LR: 0.000300
+Epoch [34/50] | Train Loss: 0.3228, Train Acc: 93.43% | Val Loss: 0.5912, Val Acc: 84.70% | Duration: 1.26s | LR: 0.000300
+Epoch [35/50] | Train Loss: 0.2996, Train Acc: 94.85% | Val Loss: 0.5415, Val Acc: 85.45% | Duration: 1.22s | LR: 0.000300
+  -> new best acc: 85.45%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [36/50] | Train Loss: 0.2720, Train Acc: 95.00% | Val Loss: 0.4986, Val Acc: 86.21% | Duration: 1.22s | LR: 0.000300
+  -> new best acc: 86.21%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [37/50] | Train Loss: 0.2515, Train Acc: 95.45% | Val Loss: 0.5333, Val Acc: 85.61% | Duration: 1.14s | LR: 0.000300
+Epoch [38/50] | Train Loss: 0.2409, Train Acc: 95.76% | Val Loss: 0.5198, Val Acc: 85.45% | Duration: 1.16s | LR: 0.000300
+Epoch [39/50] | Train Loss: 0.2297, Train Acc: 95.76% | Val Loss: 0.4941, Val Acc: 87.42% | Duration: 1.29s | LR: 0.000300
+  -> new best acc: 87.42%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [40/50] | Train Loss: 0.2226, Train Acc: 96.16% | Val Loss: 0.5260, Val Acc: 84.70% | Duration: 1.17s | LR: 0.000300
+Epoch [41/50] | Train Loss: 0.2052, Train Acc: 96.52% | Val Loss: 0.4703, Val Acc: 87.42% | Duration: 1.25s | LR: 0.000300
+Epoch [42/50] | Train Loss: 0.1967, Train Acc: 96.41% | Val Loss: 0.4886, Val Acc: 87.58% | Duration: 1.24s | LR: 0.000300
+  -> new best acc: 87.58%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [43/50] | Train Loss: 0.2071, Train Acc: 96.46% | Val Loss: 0.5048, Val Acc: 86.21% | Duration: 1.20s | LR: 0.000300
+Epoch [44/50] | Train Loss: 0.1973, Train Acc: 96.67% | Val Loss: 0.4662, Val Acc: 87.88% | Duration: 1.17s | LR: 0.000300
+  -> new best acc: 87.88%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [45/50] | Train Loss: 0.1949, Train Acc: 96.21% | Val Loss: 0.5036, Val Acc: 86.21% | Duration: 1.29s | LR: 0.000300
+Epoch [46/50] | Train Loss: 0.2059, Train Acc: 95.86% | Val Loss: 0.4877, Val Acc: 87.27% | Duration: 1.19s | LR: 0.000300
+Epoch [47/50] | Train Loss: 0.1810, Train Acc: 96.92% | Val Loss: 0.4657, Val Acc: 88.18% | Duration: 1.19s | LR: 0.000300
+  -> new best acc: 88.18%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [48/50] | Train Loss: 0.1636, Train Acc: 97.17% | Val Loss: 0.4411, Val Acc: 88.64% | Duration: 1.34s | LR: 0.000300
+  -> new best acc: 88.64%. saved to /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+Epoch [49/50] | Train Loss: 0.1804, Train Acc: 96.97% | Val Loss: 0.4721, Val Acc: 86.97% | Duration: 1.22s | LR: 0.000300
+Epoch [50/50] | Train Loss: 0.2198, Train Acc: 94.90% | Val Loss: 0.5439, Val Acc: 84.70% | Duration: 1.27s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_xrf55/result/train_norm_nosplit_repetition+gesture_recognition+csitime/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.8197
+
+============================================================
+pipeline 演示完成
+============================================================

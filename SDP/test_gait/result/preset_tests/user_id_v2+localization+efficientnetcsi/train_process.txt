@@ -1,0 +1,15 @@
+================================================================================
+当前 preset：localization
+当前 pipeline：{'denoise': {'method': 'wavelet'}, 'calibrate': {'method': 'robust'}, 'normalize': {'method': 'z-score'}, 'interpolate': {'method': 'cubic', 'target_K': 64}}
+当前 model：efficientnetcsi
+保存目录：/home/test/bupt_hjk/test_gait/result/user_id_v2+localization+efficientnetcsi
+类别数：9，原始用户标签：[np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9)]
+训练集 12430 | 验证集 3106 | 测试集 3121
+step 5，创建模型
+模型参数量 896761
+训练设备: cuda:1
+step 6: 开始训练 60 轮
+
+组合运行失败
+preset=localization, model=efficientnetcsi
+error=OutOfMemoryError('CUDA out of memory. Tried to allocate 2.75 GiB. GPU 1 has a total capacity of 79.25 GiB of which 651.25 MiB is free. Including non-PyTorch memory, this process has 78.60 GiB memory in use. Of the allocated memory 78.02 GiB is allocated by PyTorch, and 75.84 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)')

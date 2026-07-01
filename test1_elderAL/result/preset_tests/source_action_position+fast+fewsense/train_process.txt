@@ -1,0 +1,47 @@
+================================================================================
+当前 preset：fast
+当前 pipeline：{'denoise': {'method': 'savgol', 'window_length': 7, 'polyorder': 3}, 'calibrate': {'method': 'linear'}, 'normalize': {'method': 'min-max'}}
+当前 model：fewsense
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 458086
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.8539, Train Acc: 21.56% | Val Loss: 1.7197, Val Acc: 21.54% | Duration: 0.76s | LR: 0.000300
+  -> new best acc: 21.54%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.7495, Train Acc: 25.75% | Val Loss: 1.7182, Val Acc: 24.53% | Duration: 0.74s | LR: 0.000300
+  -> new best acc: 24.53%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.7311, Train Acc: 24.81% | Val Loss: 1.6797, Val Acc: 24.91% | Duration: 0.72s | LR: 0.000300
+  -> new best acc: 24.91%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 1.7274, Train Acc: 26.00% | Val Loss: 1.6715, Val Acc: 26.97% | Duration: 0.75s | LR: 0.000300
+  -> new best acc: 26.97%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 1.6968, Train Acc: 26.81% | Val Loss: 1.6691, Val Acc: 26.40% | Duration: 0.76s | LR: 0.000300
+Epoch [6/20] | Train Loss: 1.6901, Train Acc: 26.50% | Val Loss: 1.6641, Val Acc: 26.40% | Duration: 0.78s | LR: 0.000300
+Epoch [7/20] | Train Loss: 1.6856, Train Acc: 27.81% | Val Loss: 1.6625, Val Acc: 27.53% | Duration: 0.77s | LR: 0.000300
+  -> new best acc: 27.53%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+Epoch [8/20] | Train Loss: 1.6718, Train Acc: 28.56% | Val Loss: 1.6617, Val Acc: 25.09% | Duration: 0.77s | LR: 0.000300
+Epoch [9/20] | Train Loss: 1.6691, Train Acc: 30.38% | Val Loss: 1.6468, Val Acc: 28.28% | Duration: 0.75s | LR: 0.000300
+  -> new best acc: 28.28%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+Epoch [10/20] | Train Loss: 1.6685, Train Acc: 26.81% | Val Loss: 1.6302, Val Acc: 28.84% | Duration: 0.75s | LR: 0.000300
+  -> new best acc: 28.84%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 1.6503, Train Acc: 30.94% | Val Loss: 1.6375, Val Acc: 27.15% | Duration: 0.75s | LR: 0.000300
+Epoch [12/20] | Train Loss: 1.6498, Train Acc: 29.06% | Val Loss: 1.6575, Val Acc: 27.15% | Duration: 0.75s | LR: 0.000300
+Epoch [13/20] | Train Loss: 1.6368, Train Acc: 29.69% | Val Loss: 1.6333, Val Acc: 27.90% | Duration: 0.80s | LR: 0.000300
+Epoch [14/20] | Train Loss: 1.6376, Train Acc: 32.19% | Val Loss: 1.6223, Val Acc: 25.47% | Duration: 0.73s | LR: 0.000300
+Epoch [15/20] | Train Loss: 1.6320, Train Acc: 31.62% | Val Loss: 1.6546, Val Acc: 28.09% | Duration: 0.76s | LR: 0.000300
+Epoch [16/20] | Train Loss: 1.6375, Train Acc: 32.25% | Val Loss: 1.6151, Val Acc: 27.34% | Duration: 0.76s | LR: 0.000300
+Epoch [17/20] | Train Loss: 1.6120, Train Acc: 33.44% | Val Loss: 1.5939, Val Acc: 30.71% | Duration: 0.74s | LR: 0.000300
+  -> new best acc: 30.71%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+Epoch [18/20] | Train Loss: 1.6130, Train Acc: 33.31% | Val Loss: 1.6288, Val Acc: 29.21% | Duration: 0.74s | LR: 0.000300
+Epoch [19/20] | Train Loss: 1.5938, Train Acc: 34.56% | Val Loss: 1.6215, Val Acc: 28.65% | Duration: 0.73s | LR: 0.000300
+Epoch [20/20] | Train Loss: 1.5970, Train Acc: 34.06% | Val Loss: 1.6219, Val Acc: 31.65% | Duration: 0.73s | LR: 0.000300
+  -> new best acc: 31.65%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+fast+fewsense/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.3333
+
+============================================================
+pipeline 演示完成
+============================================================

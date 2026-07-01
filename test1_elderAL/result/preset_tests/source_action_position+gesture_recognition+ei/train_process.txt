@@ -1,0 +1,45 @@
+================================================================================
+当前 preset：gesture_recognition
+当前 pipeline：{'denoise': {'method': 'butterworth', 'order': 4, 'cutoff': 0.25}, 'calibrate': {'method': 'stc'}, 'normalize': {'method': 'z-score'}, 'interpolate': {'method': 'cubic', 'target_K': 30}}
+当前 model：ei
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+ei
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 225608
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.7361, Train Acc: 27.19% | Val Loss: 1.6701, Val Acc: 32.96% | Duration: 0.13s | LR: 0.000300
+  -> new best acc: 32.96%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+ei/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.5529, Train Acc: 42.94% | Val Loss: 1.3607, Val Acc: 48.88% | Duration: 0.13s | LR: 0.000300
+  -> new best acc: 48.88%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+ei/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.2932, Train Acc: 47.12% | Val Loss: 1.2606, Val Acc: 47.38% | Duration: 0.13s | LR: 0.000300
+Epoch [4/20] | Train Loss: 1.1572, Train Acc: 52.06% | Val Loss: 1.1397, Val Acc: 53.18% | Duration: 0.13s | LR: 0.000300
+  -> new best acc: 53.18%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+ei/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 0.9993, Train Acc: 59.75% | Val Loss: 1.1501, Val Acc: 56.55% | Duration: 0.13s | LR: 0.000300
+  -> new best acc: 56.55%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+ei/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 0.8949, Train Acc: 64.38% | Val Loss: 1.9291, Val Acc: 32.40% | Duration: 0.13s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.7798, Train Acc: 68.69% | Val Loss: 1.2079, Val Acc: 50.94% | Duration: 0.13s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.6808, Train Acc: 73.62% | Val Loss: 1.3681, Val Acc: 50.37% | Duration: 0.13s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.5944, Train Acc: 76.19% | Val Loss: 0.7984, Val Acc: 63.86% | Duration: 0.13s | LR: 0.000300
+  -> new best acc: 63.86%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+ei/best_checkpoint.pth
+Epoch [10/20] | Train Loss: 0.5325, Train Acc: 79.19% | Val Loss: 0.6735, Val Acc: 73.60% | Duration: 0.13s | LR: 0.000300
+  -> new best acc: 73.60%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+ei/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 0.4764, Train Acc: 80.38% | Val Loss: 0.7971, Val Acc: 67.04% | Duration: 0.13s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.4369, Train Acc: 82.56% | Val Loss: 0.8706, Val Acc: 67.42% | Duration: 0.13s | LR: 0.000300
+Epoch [13/20] | Train Loss: 0.4038, Train Acc: 85.44% | Val Loss: 1.0887, Val Acc: 62.55% | Duration: 0.13s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.3986, Train Acc: 84.56% | Val Loss: 1.2653, Val Acc: 55.99% | Duration: 0.13s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.3885, Train Acc: 85.62% | Val Loss: 0.6676, Val Acc: 73.41% | Duration: 0.13s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.3779, Train Acc: 86.81% | Val Loss: 1.4268, Val Acc: 53.93% | Duration: 0.13s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.2986, Train Acc: 88.69% | Val Loss: 0.5994, Val Acc: 75.28% | Duration: 0.13s | LR: 0.000300
+  -> new best acc: 75.28%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+ei/best_checkpoint.pth
+Epoch [18/20] | Train Loss: 0.2477, Train Acc: 92.44% | Val Loss: 0.9307, Val Acc: 66.10% | Duration: 0.13s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.3331, Train Acc: 88.31% | Val Loss: 0.7132, Val Acc: 72.66% | Duration: 0.13s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.2354, Train Acc: 92.75% | Val Loss: 1.8975, Val Acc: 55.24% | Duration: 0.13s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+gesture_recognition+ei/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.7296
+
+============================================================
+pipeline 演示完成
+============================================================

@@ -1,0 +1,45 @@
+================================================================================
+当前 preset：high_quality
+当前 pipeline：{'denoise': {'method': 'butterworth', 'order': 5, 'cutoff': 0.3}, 'calibrate': {'method': 'stc'}, 'normalize': {'method': 'z-score'}}
+当前 model：cnn1dmodel
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+cnn1dmodel
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 235494
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.6868, Train Acc: 30.44% | Val Loss: 1.6508, Val Acc: 31.84% | Duration: 3.36s | LR: 0.000300
+  -> new best acc: 31.84%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+cnn1dmodel/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.5770, Train Acc: 38.12% | Val Loss: 1.5532, Val Acc: 34.83% | Duration: 3.28s | LR: 0.000300
+  -> new best acc: 34.83%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+cnn1dmodel/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.4263, Train Acc: 47.00% | Val Loss: 1.5068, Val Acc: 44.57% | Duration: 3.22s | LR: 0.000300
+  -> new best acc: 44.57%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+cnn1dmodel/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 1.3238, Train Acc: 50.69% | Val Loss: 1.8256, Val Acc: 33.33% | Duration: 3.25s | LR: 0.000300
+Epoch [5/20] | Train Loss: 1.2588, Train Acc: 51.00% | Val Loss: 1.3573, Val Acc: 44.76% | Duration: 3.32s | LR: 0.000300
+  -> new best acc: 44.76%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+cnn1dmodel/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 1.2079, Train Acc: 53.94% | Val Loss: 1.6666, Val Acc: 33.52% | Duration: 3.23s | LR: 0.000300
+Epoch [7/20] | Train Loss: 1.1568, Train Acc: 56.19% | Val Loss: 1.2686, Val Acc: 48.88% | Duration: 3.22s | LR: 0.000300
+  -> new best acc: 48.88%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+cnn1dmodel/best_checkpoint.pth
+Epoch [8/20] | Train Loss: 1.1264, Train Acc: 57.31% | Val Loss: 1.7466, Val Acc: 34.83% | Duration: 3.25s | LR: 0.000300
+Epoch [9/20] | Train Loss: 1.0869, Train Acc: 58.62% | Val Loss: 1.3061, Val Acc: 48.50% | Duration: 3.26s | LR: 0.000300
+Epoch [10/20] | Train Loss: 1.0383, Train Acc: 61.19% | Val Loss: 2.4150, Val Acc: 35.21% | Duration: 3.20s | LR: 0.000300
+Epoch [11/20] | Train Loss: 0.9951, Train Acc: 61.94% | Val Loss: 1.4337, Val Acc: 41.76% | Duration: 3.22s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.9521, Train Acc: 63.94% | Val Loss: 1.4779, Val Acc: 39.70% | Duration: 3.32s | LR: 0.000300
+Epoch [13/20] | Train Loss: 0.9068, Train Acc: 65.81% | Val Loss: 1.1980, Val Acc: 54.49% | Duration: 3.27s | LR: 0.000300
+  -> new best acc: 54.49%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+cnn1dmodel/best_checkpoint.pth
+Epoch [14/20] | Train Loss: 0.8705, Train Acc: 67.88% | Val Loss: 1.8201, Val Acc: 44.76% | Duration: 3.26s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.8532, Train Acc: 67.88% | Val Loss: 1.8749, Val Acc: 42.13% | Duration: 3.23s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.8214, Train Acc: 69.56% | Val Loss: 1.3516, Val Acc: 50.56% | Duration: 3.24s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.7934, Train Acc: 70.38% | Val Loss: 1.3218, Val Acc: 50.56% | Duration: 3.34s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.7225, Train Acc: 74.56% | Val Loss: 0.9335, Val Acc: 64.79% | Duration: 3.21s | LR: 0.000300
+  -> new best acc: 64.79%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+cnn1dmodel/best_checkpoint.pth
+Epoch [19/20] | Train Loss: 0.6894, Train Acc: 76.19% | Val Loss: 1.1723, Val Acc: 55.62% | Duration: 3.24s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.6541, Train Acc: 75.69% | Val Loss: 1.3011, Val Acc: 52.25% | Duration: 3.22s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+high_quality+cnn1dmodel/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.5111
+
+============================================================
+pipeline 演示完成
+============================================================

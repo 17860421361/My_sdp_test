@@ -1,0 +1,46 @@
+================================================================================
+当前 preset：activity_detection
+当前 pipeline：{'denoise': {'method': 'savgol', 'window_length': 11, 'polyorder': 3}, 'calibrate': {'method': 'polynomial', 'degree': 2}, 'normalize': {'method': 'z-score'}}
+当前 model：cnn1dmodel
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 235494
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.7038, Train Acc: 27.12% | Val Loss: 1.6730, Val Acc: 28.46% | Duration: 3.19s | LR: 0.000300
+  -> new best acc: 28.46%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.6211, Train Acc: 35.44% | Val Loss: 2.2005, Val Acc: 17.98% | Duration: 3.18s | LR: 0.000300
+Epoch [3/20] | Train Loss: 1.5317, Train Acc: 38.81% | Val Loss: 1.7648, Val Acc: 29.96% | Duration: 3.23s | LR: 0.000300
+  -> new best acc: 29.96%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 1.4705, Train Acc: 40.88% | Val Loss: 1.5120, Val Acc: 32.58% | Duration: 3.29s | LR: 0.000300
+  -> new best acc: 32.58%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 1.4294, Train Acc: 43.81% | Val Loss: 1.7987, Val Acc: 33.90% | Duration: 3.28s | LR: 0.000300
+  -> new best acc: 33.90%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 1.3699, Train Acc: 45.94% | Val Loss: 1.6557, Val Acc: 26.03% | Duration: 3.20s | LR: 0.000300
+Epoch [7/20] | Train Loss: 1.3169, Train Acc: 48.62% | Val Loss: 1.4915, Val Acc: 38.76% | Duration: 3.20s | LR: 0.000300
+  -> new best acc: 38.76%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel/best_checkpoint.pth
+Epoch [8/20] | Train Loss: 1.2716, Train Acc: 50.25% | Val Loss: 2.0835, Val Acc: 30.71% | Duration: 3.22s | LR: 0.000300
+Epoch [9/20] | Train Loss: 1.2475, Train Acc: 51.50% | Val Loss: 1.2509, Val Acc: 49.06% | Duration: 3.21s | LR: 0.000300
+  -> new best acc: 49.06%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel/best_checkpoint.pth
+Epoch [10/20] | Train Loss: 1.1948, Train Acc: 54.88% | Val Loss: 2.5961, Val Acc: 20.97% | Duration: 3.20s | LR: 0.000300
+Epoch [11/20] | Train Loss: 1.1705, Train Acc: 57.12% | Val Loss: 1.4322, Val Acc: 37.08% | Duration: 3.20s | LR: 0.000300
+Epoch [12/20] | Train Loss: 1.1196, Train Acc: 58.25% | Val Loss: 1.8078, Val Acc: 39.70% | Duration: 3.19s | LR: 0.000300
+Epoch [13/20] | Train Loss: 1.0989, Train Acc: 58.31% | Val Loss: 1.1704, Val Acc: 54.87% | Duration: 3.22s | LR: 0.000300
+  -> new best acc: 54.87%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel/best_checkpoint.pth
+Epoch [14/20] | Train Loss: 1.0488, Train Acc: 60.31% | Val Loss: 1.1477, Val Acc: 55.43% | Duration: 3.20s | LR: 0.000300
+  -> new best acc: 55.43%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel/best_checkpoint.pth
+Epoch [15/20] | Train Loss: 1.0095, Train Acc: 63.25% | Val Loss: 1.3115, Val Acc: 44.19% | Duration: 3.18s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.9787, Train Acc: 65.62% | Val Loss: 1.4938, Val Acc: 47.57% | Duration: 3.18s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.9362, Train Acc: 65.94% | Val Loss: 1.3151, Val Acc: 47.94% | Duration: 3.19s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.8833, Train Acc: 68.81% | Val Loss: 1.2373, Val Acc: 51.31% | Duration: 3.21s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.8645, Train Acc: 69.44% | Val Loss: 1.1987, Val Acc: 54.31% | Duration: 3.21s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.8357, Train Acc: 69.81% | Val Loss: 1.1874, Val Acc: 53.56% | Duration: 3.18s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+activity_detection+cnn1dmodel/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.5222
+
+============================================================
+pipeline 演示完成
+============================================================

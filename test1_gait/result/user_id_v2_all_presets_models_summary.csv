@@ -1,0 +1,27 @@
+preset,model,status,best_val_acc,test_acc,output_dir,error
+high_quality,csimodel,ok,80.77913715389569,0.8852931752643384,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+csimodel,
+high_quality,mlpmodel,ok,84.3850611719253,0.9173341877603332,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+mlpmodel,
+high_quality,cnn1dmodel,ok,81.809401159047,0.9022749118872156,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+cnn1dmodel,
+high_quality,cnn2dmodel,failed,,,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+cnn2dmodel,"OutOfMemoryError('CUDA out of memory. Tried to allocate 23.44 GiB. GPU 1 has a total capacity of 79.25 GiB of which 22.13 GiB is free. Including non-PyTorch memory, this process has 57.11 GiB memory in use. Of the allocated memory 56.57 GiB is allocated by PyTorch, and 33.49 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)')"
+high_quality,lstmmodel,ok,44.81648422408242,0.6055751361743031,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+lstmmodel,
+high_quality,resnet1d,ok,69.5428203477141,0.8202499198974688,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+resnet1d,
+high_quality,resnet2d,ok,86.79974243399872,0.9157321371355336,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+resnet2d,
+high_quality,bilstmattention,ok,65.51835157759176,0.7789170137776353,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+bilstmattention,
+high_quality,efficientnetcsi,failed,,,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+efficientnetcsi,"OutOfMemoryError('CUDA out of memory. Tried to allocate 986.00 MiB. GPU 1 has a total capacity of 79.25 GiB of which 731.25 MiB is free. Including non-PyTorch memory, this process has 78.52 GiB memory in use. Of the allocated memory 77.87 GiB is allocated by PyTorch, and 141.90 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)')"
+high_quality,visiontransformercsi,skipped,,,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+visiontransformercsi,skipped_by_config
+high_quality,mambacsi,skipped,,,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+mambacsi,skipped_by_config
+high_quality,graphneuralcsi,skipped,,,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+graphneuralcsi,skipped_by_config
+high_quality,that,ok,49.06632324533162,0.669336751041333,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+that,
+high_quality,csitime,ok,70.92723760463619,0.8442806792694649,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+csitime,
+high_quality,pa_csi,ok,51.57759175788796,0.6395386094200577,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+pa_csi,
+high_quality,wiflexformer,ok,58.46748229233741,0.7334187760333226,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+wiflexformer,
+high_quality,attentiongru,ok,45.52479072762395,0.669016340916373,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+attentiongru,
+high_quality,ei,ok,67.64327108821635,0.8096763857737904,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+ei,
+high_quality,fewsense,ok,82.61429491307148,0.9061198333867352,/home/test/bupt_hjk/test_gait/result/user_id_v2+high_quality+fewsense,
+fast,csimodel,ok,80.52157115260786,0.8923421980134573,/home/test/bupt_hjk/test_gait/result/user_id_v2+fast+csimodel,
+fast,mlpmodel,ok,83.61236316806182,0.9154117270105736,/home/test/bupt_hjk/test_gait/result/user_id_v2+fast+mlpmodel,
+fast,visiontransformercsi,skipped,,,/home/test/bupt_hjk/test_gait/result/user_id_v2+fast+visiontransformercsi,skipped_by_config
+fast,mambacsi,skipped,,,/home/test/bupt_hjk/test_gait/result/user_id_v2+fast+mambacsi,skipped_by_config
+fast,graphneuralcsi,skipped,,,/home/test/bupt_hjk/test_gait/result/user_id_v2+fast+graphneuralcsi,skipped_by_config
+fast,cnn1dmodel,ok,84.06310367031551,0.9038769625120153,/home/test/bupt_hjk/test_gait/result/user_id_v2+fast+cnn1dmodel,
+fast,cnn2dmodel,failed,,,/home/test/bupt_hjk/test_gait/result/user_id_v2+fast+cnn2dmodel,"OutOfMemoryError('CUDA out of memory. Tried to allocate 23.44 GiB. GPU 1 has a total capacity of 79.25 GiB of which 22.13 GiB is free. Including non-PyTorch memory, this process has 57.11 GiB memory in use. Of the allocated memory 56.57 GiB is allocated by PyTorch, and 33.49 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)')"

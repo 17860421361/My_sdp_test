@@ -1,0 +1,43 @@
+================================================================================
+当前 preset：localization
+当前 pipeline：{'denoise': {'method': 'wavelet'}, 'calibrate': {'method': 'robust'}, 'normalize': {'method': 'z-score'}, 'interpolate': {'method': 'cubic', 'target_K': 64}}
+当前 model：efficientnetcsi
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+efficientnetcsi
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 896422
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.6763, Train Acc: 30.62% | Val Loss: 1.9154, Val Acc: 30.71% | Duration: 7.02s | LR: 0.000300
+  -> new best acc: 30.71%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+efficientnetcsi/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.3785, Train Acc: 45.44% | Val Loss: 1.4996, Val Acc: 41.76% | Duration: 7.01s | LR: 0.000300
+  -> new best acc: 41.76%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+efficientnetcsi/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.0407, Train Acc: 62.81% | Val Loss: 1.8028, Val Acc: 41.20% | Duration: 7.02s | LR: 0.000300
+Epoch [4/20] | Train Loss: 0.6971, Train Acc: 76.38% | Val Loss: 2.3995, Val Acc: 33.52% | Duration: 7.02s | LR: 0.000300
+Epoch [5/20] | Train Loss: 0.4626, Train Acc: 86.44% | Val Loss: 1.3626, Val Acc: 52.06% | Duration: 7.01s | LR: 0.000300
+  -> new best acc: 52.06%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+efficientnetcsi/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 0.3307, Train Acc: 92.12% | Val Loss: 1.4835, Val Acc: 49.44% | Duration: 7.00s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.2043, Train Acc: 96.50% | Val Loss: 1.9981, Val Acc: 39.70% | Duration: 7.00s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.1282, Train Acc: 98.31% | Val Loss: 2.3399, Val Acc: 41.39% | Duration: 7.01s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.0779, Train Acc: 99.12% | Val Loss: 1.5047, Val Acc: 48.13% | Duration: 7.01s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.0573, Train Acc: 99.06% | Val Loss: 1.4305, Val Acc: 48.13% | Duration: 7.01s | LR: 0.000300
+Epoch [11/20] | Train Loss: 0.0492, Train Acc: 99.31% | Val Loss: 4.6814, Val Acc: 37.08% | Duration: 7.02s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.0494, Train Acc: 99.38% | Val Loss: 0.9504, Val Acc: 64.79% | Duration: 7.02s | LR: 0.000030
+  -> new best acc: 64.79%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+efficientnetcsi/best_checkpoint.pth
+Epoch [13/20] | Train Loss: 0.0274, Train Acc: 99.81% | Val Loss: 0.9495, Val Acc: 64.04% | Duration: 7.00s | LR: 0.000030
+Epoch [14/20] | Train Loss: 0.0251, Train Acc: 99.81% | Val Loss: 0.9565, Val Acc: 65.54% | Duration: 7.01s | LR: 0.000030
+  -> new best acc: 65.54%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+efficientnetcsi/best_checkpoint.pth
+Epoch [15/20] | Train Loss: 0.0244, Train Acc: 99.81% | Val Loss: 0.9389, Val Acc: 64.98% | Duration: 7.02s | LR: 0.000030
+Epoch [16/20] | Train Loss: 0.0232, Train Acc: 99.88% | Val Loss: 0.9477, Val Acc: 65.54% | Duration: 7.01s | LR: 0.000030
+Epoch [17/20] | Train Loss: 0.0242, Train Acc: 99.81% | Val Loss: 0.9587, Val Acc: 64.42% | Duration: 7.01s | LR: 0.000030
+Epoch [18/20] | Train Loss: 0.0210, Train Acc: 99.88% | Val Loss: 0.9579, Val Acc: 65.54% | Duration: 7.01s | LR: 0.000030
+Epoch [19/20] | Train Loss: 0.0201, Train Acc: 99.88% | Val Loss: 0.9504, Val Acc: 64.61% | Duration: 7.00s | LR: 0.000030
+Epoch [20/20] | Train Loss: 0.0214, Train Acc: 99.88% | Val Loss: 0.9444, Val Acc: 65.17% | Duration: 7.01s | LR: 0.000030
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+efficientnetcsi/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.6519
+
+============================================================
+pipeline 演示完成
+============================================================

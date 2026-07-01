@@ -1,0 +1,45 @@
+================================================================================
+当前 preset：robust
+当前 pipeline：{'denoise': {'method': 'wavelet'}, 'calibrate': {'method': 'robust'}, 'normalize': {'method': 'z-score'}}
+当前 model：csitime
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+csitime
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 635654
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.6339, Train Acc: 38.81% | Val Loss: 1.5127, Val Acc: 34.83% | Duration: 0.42s | LR: 0.000300
+  -> new best acc: 34.83%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+csitime/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.3237, Train Acc: 56.81% | Val Loss: 1.2598, Val Acc: 57.30% | Duration: 0.40s | LR: 0.000300
+  -> new best acc: 57.30%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+csitime/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.0595, Train Acc: 70.62% | Val Loss: 1.1223, Val Acc: 61.42% | Duration: 0.47s | LR: 0.000300
+  -> new best acc: 61.42%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+csitime/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 0.8565, Train Acc: 79.88% | Val Loss: 0.9370, Val Acc: 70.41% | Duration: 0.41s | LR: 0.000300
+  -> new best acc: 70.41%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+csitime/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 0.7179, Train Acc: 84.94% | Val Loss: 1.3343, Val Acc: 47.75% | Duration: 0.42s | LR: 0.000300
+Epoch [6/20] | Train Loss: 0.6184, Train Acc: 88.94% | Val Loss: 0.7428, Val Acc: 81.09% | Duration: 0.44s | LR: 0.000300
+  -> new best acc: 81.09%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+csitime/best_checkpoint.pth
+Epoch [7/20] | Train Loss: 0.5155, Train Acc: 91.75% | Val Loss: 0.6995, Val Acc: 83.90% | Duration: 0.42s | LR: 0.000300
+  -> new best acc: 83.90%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+csitime/best_checkpoint.pth
+Epoch [8/20] | Train Loss: 0.4492, Train Acc: 93.44% | Val Loss: 1.1344, Val Acc: 52.43% | Duration: 0.42s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.4081, Train Acc: 93.94% | Val Loss: 1.0263, Val Acc: 67.04% | Duration: 0.44s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.3378, Train Acc: 95.00% | Val Loss: 0.5443, Val Acc: 88.20% | Duration: 0.42s | LR: 0.000300
+  -> new best acc: 88.20%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+csitime/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 0.2779, Train Acc: 96.19% | Val Loss: 0.6772, Val Acc: 72.66% | Duration: 0.42s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.2544, Train Acc: 96.81% | Val Loss: 0.5925, Val Acc: 79.03% | Duration: 0.45s | LR: 0.000300
+Epoch [13/20] | Train Loss: 0.2262, Train Acc: 96.94% | Val Loss: 0.6663, Val Acc: 77.53% | Duration: 0.47s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.1922, Train Acc: 97.75% | Val Loss: 0.7253, Val Acc: 74.53% | Duration: 0.46s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.1860, Train Acc: 97.81% | Val Loss: 0.9259, Val Acc: 62.55% | Duration: 0.43s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.1556, Train Acc: 97.81% | Val Loss: 2.9381, Val Acc: 36.70% | Duration: 0.43s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.1319, Train Acc: 98.44% | Val Loss: 0.4139, Val Acc: 87.45% | Duration: 0.46s | LR: 0.000030
+Epoch [18/20] | Train Loss: 0.1219, Train Acc: 98.38% | Val Loss: 0.4160, Val Acc: 86.52% | Duration: 0.42s | LR: 0.000030
+Epoch [19/20] | Train Loss: 0.1148, Train Acc: 98.38% | Val Loss: 0.3981, Val Acc: 87.83% | Duration: 0.43s | LR: 0.000030
+Epoch [20/20] | Train Loss: 0.1112, Train Acc: 98.38% | Val Loss: 0.4245, Val Acc: 86.52% | Duration: 0.44s | LR: 0.000030
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+csitime/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.8556
+
+============================================================
+pipeline 演示完成
+============================================================

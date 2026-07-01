@@ -1,0 +1,52 @@
+================================================================================
+当前 preset：localization
+当前 pipeline：{'denoise': {'method': 'wavelet'}, 'calibrate': {'method': 'robust'}, 'normalize': {'method': 'z-score'}, 'interpolate': {'method': 'cubic', 'target_K': 64}}
+当前 model：attentiongru
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 91014
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.7767, Train Acc: 20.81% | Val Loss: 1.7493, Val Acc: 24.16% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 24.16%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.7466, Train Acc: 24.88% | Val Loss: 1.7127, Val Acc: 24.34% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 24.34%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.6828, Train Acc: 30.88% | Val Loss: 1.6090, Val Acc: 41.39% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 41.39%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 1.5026, Train Acc: 42.50% | Val Loss: 1.3869, Val Acc: 48.50% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 48.50%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 1.3250, Train Acc: 47.56% | Val Loss: 1.2381, Val Acc: 49.06% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 49.06%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 1.1534, Train Acc: 51.62% | Val Loss: 1.1424, Val Acc: 50.94% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 50.94%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [7/20] | Train Loss: 1.0681, Train Acc: 56.12% | Val Loss: 1.0710, Val Acc: 55.43% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 55.43%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [8/20] | Train Loss: 0.9969, Train Acc: 58.62% | Val Loss: 1.0231, Val Acc: 57.12% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 57.12%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [9/20] | Train Loss: 0.9388, Train Acc: 60.69% | Val Loss: 1.0637, Val Acc: 58.43% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 58.43%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [10/20] | Train Loss: 0.9014, Train Acc: 63.00% | Val Loss: 0.9767, Val Acc: 58.99% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 58.99%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 0.8812, Train Acc: 62.56% | Val Loss: 0.9395, Val Acc: 63.86% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 63.86%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [12/20] | Train Loss: 0.8711, Train Acc: 64.69% | Val Loss: 0.9141, Val Acc: 62.17% | Duration: 0.14s | LR: 0.000300
+Epoch [13/20] | Train Loss: 0.8231, Train Acc: 67.62% | Val Loss: 0.9050, Val Acc: 61.61% | Duration: 0.14s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.7842, Train Acc: 69.06% | Val Loss: 1.1123, Val Acc: 57.12% | Duration: 0.14s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.7699, Train Acc: 69.00% | Val Loss: 0.8920, Val Acc: 67.04% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 67.04%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [16/20] | Train Loss: 0.7031, Train Acc: 73.38% | Val Loss: 0.8462, Val Acc: 66.67% | Duration: 0.14s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.6633, Train Acc: 75.00% | Val Loss: 0.8643, Val Acc: 64.42% | Duration: 0.14s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.6498, Train Acc: 74.75% | Val Loss: 0.8080, Val Acc: 71.16% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 71.16%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+Epoch [19/20] | Train Loss: 0.5930, Train Acc: 78.25% | Val Loss: 0.8486, Val Acc: 67.98% | Duration: 0.14s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.5924, Train Acc: 77.88% | Val Loss: 0.7530, Val Acc: 74.16% | Duration: 0.14s | LR: 0.000300
+  -> new best acc: 74.16%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+localization+attentiongru/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.6630
+
+============================================================
+pipeline 演示完成
+============================================================

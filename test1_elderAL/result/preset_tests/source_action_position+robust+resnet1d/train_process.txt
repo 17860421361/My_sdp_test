@@ -1,0 +1,46 @@
+================================================================================
+当前 preset：robust
+当前 pipeline：{'denoise': {'method': 'wavelet'}, 'calibrate': {'method': 'robust'}, 'normalize': {'method': 'z-score'}}
+当前 model：resnet1d
+保存目录：/home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d
+类别数：6，原始动作标签：[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(5), np.int64(6)]
+训练集 1600 | 验证集 534 | 测试集 270
+step 5，创建模型
+模型参数量 1814662
+训练设备: cuda:0
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.5494, Train Acc: 38.31% | Val Loss: 1.7379, Val Acc: 30.52% | Duration: 0.43s | LR: 0.000300
+  -> new best acc: 30.52%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.0974, Train Acc: 59.62% | Val Loss: 1.3216, Val Acc: 47.57% | Duration: 0.39s | LR: 0.000300
+  -> new best acc: 47.57%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 0.7545, Train Acc: 73.88% | Val Loss: 1.1535, Val Acc: 58.99% | Duration: 0.40s | LR: 0.000300
+  -> new best acc: 58.99%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 0.5536, Train Acc: 80.88% | Val Loss: 1.2634, Val Acc: 55.62% | Duration: 0.41s | LR: 0.000300
+Epoch [5/20] | Train Loss: 0.3995, Train Acc: 86.88% | Val Loss: 2.2420, Val Acc: 43.63% | Duration: 0.40s | LR: 0.000300
+Epoch [6/20] | Train Loss: 0.3011, Train Acc: 90.81% | Val Loss: 2.6160, Val Acc: 41.39% | Duration: 0.38s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.2562, Train Acc: 91.44% | Val Loss: 0.9130, Val Acc: 67.04% | Duration: 0.41s | LR: 0.000300
+  -> new best acc: 67.04%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d/best_checkpoint.pth
+Epoch [8/20] | Train Loss: 0.2223, Train Acc: 92.69% | Val Loss: 2.1908, Val Acc: 47.00% | Duration: 0.41s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.1918, Train Acc: 94.31% | Val Loss: 1.2079, Val Acc: 63.30% | Duration: 0.38s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.1435, Train Acc: 96.19% | Val Loss: 1.1131, Val Acc: 65.36% | Duration: 0.39s | LR: 0.000300
+Epoch [11/20] | Train Loss: 0.1107, Train Acc: 97.25% | Val Loss: 0.9021, Val Acc: 70.41% | Duration: 0.40s | LR: 0.000300
+  -> new best acc: 70.41%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d/best_checkpoint.pth
+Epoch [12/20] | Train Loss: 0.1198, Train Acc: 96.81% | Val Loss: 0.8601, Val Acc: 70.60% | Duration: 0.43s | LR: 0.000300
+  -> new best acc: 70.60%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d/best_checkpoint.pth
+Epoch [13/20] | Train Loss: 0.1144, Train Acc: 96.88% | Val Loss: 1.1577, Val Acc: 59.74% | Duration: 0.45s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.1216, Train Acc: 96.12% | Val Loss: 2.6692, Val Acc: 42.51% | Duration: 0.46s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.1205, Train Acc: 96.56% | Val Loss: 1.4385, Val Acc: 63.11% | Duration: 0.44s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.0838, Train Acc: 97.69% | Val Loss: 0.8335, Val Acc: 73.78% | Duration: 0.42s | LR: 0.000300
+  -> new best acc: 73.78%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d/best_checkpoint.pth
+Epoch [17/20] | Train Loss: 0.0846, Train Acc: 97.31% | Val Loss: 0.7588, Val Acc: 75.66% | Duration: 0.42s | LR: 0.000300
+  -> new best acc: 75.66%. saved to /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d/best_checkpoint.pth
+Epoch [18/20] | Train Loss: 0.0794, Train Acc: 97.38% | Val Loss: 1.7432, Val Acc: 52.25% | Duration: 0.40s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.1045, Train Acc: 96.69% | Val Loss: 3.4153, Val Acc: 40.64% | Duration: 0.37s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.0999, Train Acc: 96.81% | Val Loss: 1.0892, Val Acc: 66.10% | Duration: 0.40s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_elderAL/result/source_action_position+robust+resnet1d/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.7111
+
+============================================================
+pipeline 演示完成
+============================================================

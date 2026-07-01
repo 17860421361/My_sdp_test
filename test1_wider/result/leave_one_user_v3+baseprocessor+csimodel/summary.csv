@@ -1,0 +1,4 @@
+heldout_user,train_users,valid_users,test_users,train_size,valid_size,test_size,best_val_acc,test_acc,output_dir
+2,3 7,3 7,2,3600,900,2250,70.33333333333333,0.3337777777777778,/home/test/bupt_hjk/test_wider/result/leave_one_user_v3+baseprocessor+csimodel/test_user2
+3,2 7,2 7,3,3600,900,2250,68.33333333333333,0.48844444444444446,/home/test/bupt_hjk/test_wider/result/leave_one_user_v3+baseprocessor+csimodel/test_user3
+7,2 3,2 3,7,3600,900,2250,66.55555555555556,0.5888888888888889,/home/test/bupt_hjk/test_wider/result/leave_one_user_v3+baseprocessor+csimodel/test_user7

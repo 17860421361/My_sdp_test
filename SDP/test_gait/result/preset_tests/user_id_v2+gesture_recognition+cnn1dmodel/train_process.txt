@@ -1,0 +1,101 @@
+================================================================================
+当前 preset：gesture_recognition
+当前 pipeline：{'denoise': {'method': 'butterworth', 'order': 4, 'cutoff': 0.25}, 'calibrate': {'method': 'stc'}, 'normalize': {'method': 'z-score'}, 'interpolate': {'method': 'cubic', 'target_K': 30}}
+当前 model：cnn1dmodel
+保存目录：/home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel
+类别数：9，原始用户标签：[np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9)]
+训练集 12430 | 验证集 3106 | 测试集 3121
+step 5，创建模型
+模型参数量 236265
+训练设备: cuda:1
+step 6: 开始训练 60 轮
+Epoch [1/60] | Train Loss: 1.6738, Train Acc: 37.52% | Val Loss: 2.2532, Val Acc: 25.37% | Duration: 45.80s | LR: 0.000300
+  -> new best acc: 25.37%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [2/60] | Train Loss: 1.2712, Train Acc: 52.00% | Val Loss: 1.8273, Val Acc: 36.86% | Duration: 45.43s | LR: 0.000300
+  -> new best acc: 36.86%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [3/60] | Train Loss: 1.0710, Train Acc: 60.75% | Val Loss: 1.5718, Val Acc: 42.53% | Duration: 45.41s | LR: 0.000300
+  -> new best acc: 42.53%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [4/60] | Train Loss: 0.9301, Train Acc: 66.24% | Val Loss: 1.8698, Val Acc: 42.47% | Duration: 44.89s | LR: 0.000300
+Epoch [5/60] | Train Loss: 0.8063, Train Acc: 71.38% | Val Loss: 1.5447, Val Acc: 45.49% | Duration: 45.57s | LR: 0.000300
+  -> new best acc: 45.49%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [6/60] | Train Loss: 0.7195, Train Acc: 74.10% | Val Loss: 1.4511, Val Acc: 50.48% | Duration: 44.95s | LR: 0.000300
+  -> new best acc: 50.48%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [7/60] | Train Loss: 0.6696, Train Acc: 75.49% | Val Loss: 1.3348, Val Acc: 51.16% | Duration: 45.94s | LR: 0.000300
+  -> new best acc: 51.16%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [8/60] | Train Loss: 0.6140, Train Acc: 77.41% | Val Loss: 1.8286, Val Acc: 47.36% | Duration: 44.70s | LR: 0.000300
+Epoch [9/60] | Train Loss: 0.5709, Train Acc: 79.19% | Val Loss: 3.1201, Val Acc: 29.33% | Duration: 45.55s | LR: 0.000300
+Epoch [10/60] | Train Loss: 0.5383, Train Acc: 79.84% | Val Loss: 1.4191, Val Acc: 56.99% | Duration: 45.94s | LR: 0.000300
+  -> new best acc: 56.99%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [11/60] | Train Loss: 0.5047, Train Acc: 81.57% | Val Loss: 1.7211, Val Acc: 51.93% | Duration: 46.23s | LR: 0.000300
+Epoch [12/60] | Train Loss: 0.4823, Train Acc: 81.89% | Val Loss: 1.6282, Val Acc: 49.90% | Duration: 45.30s | LR: 0.000300
+Epoch [13/60] | Train Loss: 0.4544, Train Acc: 83.00% | Val Loss: 0.9379, Val Acc: 66.42% | Duration: 48.79s | LR: 0.000300
+  -> new best acc: 66.42%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [14/60] | Train Loss: 0.4408, Train Acc: 83.56% | Val Loss: 1.0407, Val Acc: 64.68% | Duration: 50.10s | LR: 0.000300
+Epoch [15/60] | Train Loss: 0.4222, Train Acc: 84.03% | Val Loss: 1.1910, Val Acc: 61.46% | Duration: 52.17s | LR: 0.000300
+Epoch [16/60] | Train Loss: 0.4128, Train Acc: 84.34% | Val Loss: 1.9885, Val Acc: 51.87% | Duration: 61.08s | LR: 0.000300
+Epoch [17/60] | Train Loss: 0.3928, Train Acc: 85.33% | Val Loss: 1.1736, Val Acc: 63.49% | Duration: 52.62s | LR: 0.000300
+Epoch [18/60] | Train Loss: 0.3748, Train Acc: 85.82% | Val Loss: 1.1077, Val Acc: 64.81% | Duration: 48.24s | LR: 0.000300
+Epoch [19/60] | Train Loss: 0.3729, Train Acc: 85.90% | Val Loss: 1.2149, Val Acc: 58.11% | Duration: 48.02s | LR: 0.000300
+Epoch [20/60] | Train Loss: 0.2904, Train Acc: 89.41% | Val Loss: 0.6916, Val Acc: 77.21% | Duration: 49.01s | LR: 0.000030
+  -> new best acc: 77.21%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [21/60] | Train Loss: 0.2736, Train Acc: 90.51% | Val Loss: 0.6943, Val Acc: 76.53% | Duration: 47.02s | LR: 0.000030
+Epoch [22/60] | Train Loss: 0.2694, Train Acc: 90.60% | Val Loss: 0.6738, Val Acc: 77.30% | Duration: 43.88s | LR: 0.000030
+  -> new best acc: 77.30%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [23/60] | Train Loss: 0.2625, Train Acc: 91.02% | Val Loss: 0.6848, Val Acc: 76.72% | Duration: 44.01s | LR: 0.000030
+Epoch [24/60] | Train Loss: 0.2633, Train Acc: 90.88% | Val Loss: 0.6626, Val Acc: 77.98% | Duration: 44.70s | LR: 0.000030
+  -> new best acc: 77.98%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [25/60] | Train Loss: 0.2556, Train Acc: 91.18% | Val Loss: 0.6580, Val Acc: 78.20% | Duration: 44.69s | LR: 0.000030
+  -> new best acc: 78.20%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [26/60] | Train Loss: 0.2585, Train Acc: 91.07% | Val Loss: 0.6700, Val Acc: 76.46% | Duration: 44.43s | LR: 0.000030
+Epoch [27/60] | Train Loss: 0.2504, Train Acc: 91.26% | Val Loss: 0.6311, Val Acc: 78.78% | Duration: 44.59s | LR: 0.000030
+  -> new best acc: 78.78%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [28/60] | Train Loss: 0.2520, Train Acc: 91.18% | Val Loss: 0.6507, Val Acc: 78.04% | Duration: 44.17s | LR: 0.000030
+Epoch [29/60] | Train Loss: 0.2491, Train Acc: 91.38% | Val Loss: 0.6673, Val Acc: 78.33% | Duration: 44.23s | LR: 0.000030
+Epoch [30/60] | Train Loss: 0.2430, Train Acc: 91.62% | Val Loss: 0.6732, Val Acc: 77.88% | Duration: 43.81s | LR: 0.000030
+Epoch [31/60] | Train Loss: 0.2428, Train Acc: 91.54% | Val Loss: 0.6225, Val Acc: 78.82% | Duration: 44.20s | LR: 0.000030
+  -> new best acc: 78.82%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [32/60] | Train Loss: 0.2374, Train Acc: 92.02% | Val Loss: 0.6614, Val Acc: 78.27% | Duration: 44.36s | LR: 0.000030
+Epoch [33/60] | Train Loss: 0.2361, Train Acc: 91.65% | Val Loss: 0.6882, Val Acc: 77.30% | Duration: 45.37s | LR: 0.000030
+Epoch [34/60] | Train Loss: 0.2392, Train Acc: 91.63% | Val Loss: 0.6169, Val Acc: 79.49% | Duration: 44.67s | LR: 0.000030
+  -> new best acc: 79.49%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [35/60] | Train Loss: 0.2398, Train Acc: 91.56% | Val Loss: 0.6187, Val Acc: 79.33% | Duration: 44.75s | LR: 0.000030
+Epoch [36/60] | Train Loss: 0.2341, Train Acc: 91.58% | Val Loss: 0.6399, Val Acc: 78.40% | Duration: 44.90s | LR: 0.000030
+Epoch [37/60] | Train Loss: 0.2287, Train Acc: 92.00% | Val Loss: 0.6030, Val Acc: 79.62% | Duration: 44.96s | LR: 0.000030
+  -> new best acc: 79.62%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [38/60] | Train Loss: 0.2308, Train Acc: 92.20% | Val Loss: 0.6261, Val Acc: 79.36% | Duration: 44.12s | LR: 0.000030
+Epoch [39/60] | Train Loss: 0.2255, Train Acc: 92.08% | Val Loss: 0.6245, Val Acc: 79.52% | Duration: 44.36s | LR: 0.000030
+Epoch [40/60] | Train Loss: 0.2276, Train Acc: 92.30% | Val Loss: 0.6009, Val Acc: 80.36% | Duration: 44.48s | LR: 0.000030
+  -> new best acc: 80.36%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [41/60] | Train Loss: 0.2262, Train Acc: 92.33% | Val Loss: 0.6131, Val Acc: 79.36% | Duration: 44.62s | LR: 0.000030
+Epoch [42/60] | Train Loss: 0.2255, Train Acc: 92.38% | Val Loss: 0.6342, Val Acc: 79.27% | Duration: 44.51s | LR: 0.000030
+Epoch [43/60] | Train Loss: 0.2206, Train Acc: 92.46% | Val Loss: 0.6105, Val Acc: 79.23% | Duration: 44.40s | LR: 0.000030
+Epoch [44/60] | Train Loss: 0.2207, Train Acc: 92.29% | Val Loss: 0.6093, Val Acc: 79.88% | Duration: 44.09s | LR: 0.000030
+Epoch [45/60] | Train Loss: 0.2210, Train Acc: 92.51% | Val Loss: 0.5949, Val Acc: 80.26% | Duration: 44.45s | LR: 0.000030
+Epoch [46/60] | Train Loss: 0.2126, Train Acc: 92.53% | Val Loss: 0.6056, Val Acc: 80.30% | Duration: 44.35s | LR: 0.000030
+Epoch [47/60] | Train Loss: 0.2155, Train Acc: 92.50% | Val Loss: 0.6166, Val Acc: 79.72% | Duration: 44.24s | LR: 0.000030
+Epoch [48/60] | Train Loss: 0.2114, Train Acc: 92.64% | Val Loss: 0.6353, Val Acc: 78.78% | Duration: 44.72s | LR: 0.000030
+Epoch [49/60] | Train Loss: 0.2055, Train Acc: 93.07% | Val Loss: 0.6978, Val Acc: 76.75% | Duration: 44.74s | LR: 0.000030
+Epoch [50/60] | Train Loss: 0.2073, Train Acc: 92.78% | Val Loss: 0.6038, Val Acc: 79.88% | Duration: 44.20s | LR: 0.000030
+Epoch [51/60] | Train Loss: 0.2109, Train Acc: 92.86% | Val Loss: 0.6186, Val Acc: 79.94% | Duration: 44.00s | LR: 0.000030
+Epoch [52/60] | Train Loss: 0.1982, Train Acc: 93.71% | Val Loss: 0.6103, Val Acc: 80.52% | Duration: 43.97s | LR: 0.000003
+  -> new best acc: 80.52%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [53/60] | Train Loss: 0.1945, Train Acc: 93.52% | Val Loss: 0.5890, Val Acc: 80.71% | Duration: 44.02s | LR: 0.000003
+  -> new best acc: 80.71%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [54/60] | Train Loss: 0.2004, Train Acc: 93.31% | Val Loss: 0.5903, Val Acc: 80.94% | Duration: 44.50s | LR: 0.000003
+  -> new best acc: 80.94%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [55/60] | Train Loss: 0.1965, Train Acc: 93.59% | Val Loss: 0.5932, Val Acc: 80.97% | Duration: 44.90s | LR: 0.000003
+  -> new best acc: 80.97%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [56/60] | Train Loss: 0.1941, Train Acc: 93.68% | Val Loss: 0.5809, Val Acc: 81.13% | Duration: 44.10s | LR: 0.000003
+  -> new best acc: 81.13%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [57/60] | Train Loss: 0.1958, Train Acc: 93.44% | Val Loss: 0.5854, Val Acc: 81.10% | Duration: 45.03s | LR: 0.000003
+Epoch [58/60] | Train Loss: 0.1948, Train Acc: 93.74% | Val Loss: 0.5794, Val Acc: 80.81% | Duration: 44.39s | LR: 0.000003
+Epoch [59/60] | Train Loss: 0.1963, Train Acc: 93.50% | Val Loss: 0.5673, Val Acc: 81.55% | Duration: 44.50s | LR: 0.000003
+  -> new best acc: 81.55%. saved to /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+Epoch [60/60] | Train Loss: 0.1979, Train Acc: 93.27% | Val Loss: 0.5808, Val Acc: 81.49% | Duration: 44.62s | LR: 0.000003
+训练完成，最佳模型保存至: /home/test/bupt_hjk/test_gait/result/user_id_v2+gesture_recognition+cnn1dmodel/best_checkpoint.pth
+step 7: 测试集评估
+测试集准确率: 0.8814
+
+============================================================
+pipeline 演示完成
+============================================================
