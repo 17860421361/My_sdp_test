@@ -11,36 +11,37 @@ step 5: create_registered_model
 模型参数量 635654
 训练设备: cuda
 step 6: 开始训练 20 轮
-Epoch [1/20] | Train Loss: 1.6927, Train Acc: 34.12% | Val Loss: 1.6014, Val Acc: 31.65% | Duration: 0.84s | LR: 0.000300
+Epoch [1/20] | Train Loss: 1.6865, Train Acc: 34.06% | Val Loss: 1.5781, Val Acc: 31.65% | Duration: 0.77s | LR: 0.000300
   -> new best acc: 31.65%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
-Epoch [2/20] | Train Loss: 1.4101, Train Acc: 52.38% | Val Loss: 1.2994, Val Acc: 56.74% | Duration: 0.58s | LR: 0.000300
-  -> new best acc: 56.74%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
-Epoch [3/20] | Train Loss: 1.1319, Train Acc: 67.12% | Val Loss: 1.2056, Val Acc: 55.62% | Duration: 0.58s | LR: 0.000300
-Epoch [4/20] | Train Loss: 0.9159, Train Acc: 77.06% | Val Loss: 0.9404, Val Acc: 74.72% | Duration: 0.57s | LR: 0.000300
-  -> new best acc: 74.72%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
-Epoch [5/20] | Train Loss: 0.7227, Train Acc: 84.12% | Val Loss: 0.9275, Val Acc: 67.42% | Duration: 0.55s | LR: 0.000300
-Epoch [6/20] | Train Loss: 0.6023, Train Acc: 89.31% | Val Loss: 1.0062, Val Acc: 68.54% | Duration: 0.57s | LR: 0.000300
-Epoch [7/20] | Train Loss: 0.5163, Train Acc: 91.62% | Val Loss: 0.7915, Val Acc: 74.53% | Duration: 0.57s | LR: 0.000300
-Epoch [8/20] | Train Loss: 0.4066, Train Acc: 94.88% | Val Loss: 0.7782, Val Acc: 72.10% | Duration: 0.51s | LR: 0.000300
-Epoch [9/20] | Train Loss: 0.3409, Train Acc: 96.00% | Val Loss: 0.5982, Val Acc: 85.39% | Duration: 0.47s | LR: 0.000300
-  -> new best acc: 85.39%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
-Epoch [10/20] | Train Loss: 0.2776, Train Acc: 97.62% | Val Loss: 0.6482, Val Acc: 79.21% | Duration: 0.45s | LR: 0.000300
-Epoch [11/20] | Train Loss: 0.2407, Train Acc: 98.38% | Val Loss: 0.8811, Val Acc: 69.29% | Duration: 0.47s | LR: 0.000300
-Epoch [12/20] | Train Loss: 0.2141, Train Acc: 98.62% | Val Loss: 0.4692, Val Acc: 89.70% | Duration: 0.46s | LR: 0.000300
-  -> new best acc: 89.70%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
-Epoch [13/20] | Train Loss: 0.1878, Train Acc: 99.06% | Val Loss: 1.6534, Val Acc: 48.88% | Duration: 0.48s | LR: 0.000300
-Epoch [14/20] | Train Loss: 0.1716, Train Acc: 98.88% | Val Loss: 1.0777, Val Acc: 64.98% | Duration: 0.48s | LR: 0.000300
-Epoch [15/20] | Train Loss: 0.1438, Train Acc: 99.38% | Val Loss: 0.6669, Val Acc: 75.47% | Duration: 0.45s | LR: 0.000300
-Epoch [16/20] | Train Loss: 0.1109, Train Acc: 99.75% | Val Loss: 0.6272, Val Acc: 75.66% | Duration: 0.46s | LR: 0.000300
-Epoch [17/20] | Train Loss: 0.0935, Train Acc: 99.81% | Val Loss: 0.3090, Val Acc: 92.88% | Duration: 0.47s | LR: 0.000300
-  -> new best acc: 92.88%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
-Epoch [18/20] | Train Loss: 0.0889, Train Acc: 99.94% | Val Loss: 0.7018, Val Acc: 79.96% | Duration: 0.46s | LR: 0.000300
-Epoch [19/20] | Train Loss: 0.0820, Train Acc: 99.75% | Val Loss: 2.6205, Val Acc: 45.51% | Duration: 0.47s | LR: 0.000300
-Epoch [20/20] | Train Loss: 0.0728, Train Acc: 99.88% | Val Loss: 0.4709, Val Acc: 82.40% | Duration: 0.47s | LR: 0.000300
+Epoch [2/20] | Train Loss: 1.4227, Train Acc: 53.56% | Val Loss: 1.3466, Val Acc: 46.44% | Duration: 0.42s | LR: 0.000300
+  -> new best acc: 46.44%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.1326, Train Acc: 68.12% | Val Loss: 1.1666, Val Acc: 67.79% | Duration: 0.44s | LR: 0.000300
+  -> new best acc: 67.79%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 0.8914, Train Acc: 79.69% | Val Loss: 0.9803, Val Acc: 65.92% | Duration: 0.43s | LR: 0.000300
+Epoch [5/20] | Train Loss: 0.7212, Train Acc: 85.12% | Val Loss: 1.3937, Val Acc: 50.75% | Duration: 0.44s | LR: 0.000300
+Epoch [6/20] | Train Loss: 0.6056, Train Acc: 89.94% | Val Loss: 0.7597, Val Acc: 78.84% | Duration: 0.43s | LR: 0.000300
+  -> new best acc: 78.84%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
+Epoch [7/20] | Train Loss: 0.5080, Train Acc: 94.00% | Val Loss: 0.7453, Val Acc: 73.41% | Duration: 0.45s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.4053, Train Acc: 95.94% | Val Loss: 0.7654, Val Acc: 76.97% | Duration: 0.44s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.3419, Train Acc: 97.00% | Val Loss: 0.8999, Val Acc: 70.60% | Duration: 0.48s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.2738, Train Acc: 98.25% | Val Loss: 0.6685, Val Acc: 76.97% | Duration: 0.44s | LR: 0.000300
+Epoch [11/20] | Train Loss: 0.2466, Train Acc: 98.56% | Val Loss: 0.6287, Val Acc: 83.33% | Duration: 0.44s | LR: 0.000300
+  -> new best acc: 83.33%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
+Epoch [12/20] | Train Loss: 0.2136, Train Acc: 98.75% | Val Loss: 0.5028, Val Acc: 85.96% | Duration: 0.46s | LR: 0.000300
+  -> new best acc: 85.96%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
+Epoch [13/20] | Train Loss: 0.1731, Train Acc: 99.31% | Val Loss: 0.5537, Val Acc: 82.77% | Duration: 0.44s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.1499, Train Acc: 99.44% | Val Loss: 0.6153, Val Acc: 79.96% | Duration: 0.44s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.1569, Train Acc: 99.56% | Val Loss: 0.5290, Val Acc: 83.15% | Duration: 0.45s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.1146, Train Acc: 99.69% | Val Loss: 0.3663, Val Acc: 90.07% | Duration: 0.46s | LR: 0.000300
+  -> new best acc: 90.07%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
+Epoch [17/20] | Train Loss: 0.0999, Train Acc: 99.56% | Val Loss: 0.4102, Val Acc: 88.01% | Duration: 0.44s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.0842, Train Acc: 99.88% | Val Loss: 0.3775, Val Acc: 89.70% | Duration: 0.46s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.0727, Train Acc: 99.88% | Val Loss: 0.5488, Val Acc: 82.21% | Duration: 0.44s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.0640, Train Acc: 99.88% | Val Loss: 0.6903, Val Acc: 77.72% | Duration: 0.45s | LR: 0.000300
 训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_elderAL/result/self_design_test/high_quality+csitime/best_checkpoint.pth
 step 7: 测试集评估
-最佳验证准确率: 0.9288
-测试集准确率: 0.8889
+最佳验证准确率: 0.9007
+测试集准确率: 0.9111
 
 ============================================================
 pipeline 演示完成

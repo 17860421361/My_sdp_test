@@ -1,4 +1,4 @@
-"""ElderAL 全预设、全模型 step 版批量实验。"""
+"""ElderAL 全预设、全模型实验；输入保持幅度形式。"""
 
 from __future__ import annotations
 
@@ -235,7 +235,8 @@ def main() -> None:
                 # step 4: 构造 DataLoader。一个预设只构造一次，后续模型共用。
                 batch_size = BATCH_SIZE if BATCH_SIZE is not None else params.get("batch", 32)
                 loaders = step_pipeline.build_loaders(split, pipeline_steps, batch_size)
-                input_shape = split[0][0].shape
+                input_shape = tuple(loaders[0].dataset.data_list.shape[1:])
+                print(f"模型实际输入形状: {input_shape}")
 
         # step 5-7: 在同一个预设处理结果上，依次训练和测试所有模型。
         for model_index, model_name in pending_models:

@@ -9,6 +9,7 @@ create_registered_model -> 训练 -> 测试
 Widar 当前源码逻辑：
 - 任务标签是 gesture_type。
 - 分组依据是 position_id * 1000 + orientation_id * 100 + receiver_id。
+- 模型输入由 dataset_name 自动选择为“幅度 + 相位”。
 """
 
 from __future__ import annotations
@@ -22,7 +23,7 @@ from collections import Counter
 from pathlib import Path
 
 # ==================== 环境设置 ====================
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/wsdp_mplconfig")
 
 import matplotlib
@@ -54,7 +55,6 @@ sys.modules.setdefault("kagglehub", types.ModuleType("kagglehub"))
 from wsdp import readers
 from wsdp.algorithms import apply_preset
 from wsdp.core import _create_data_split, _evaluate_model
-from wsdp.dataset_policy import is_amplitude_primary_dataset
 from wsdp.datasets import CSIDataset
 from wsdp.models import create_model
 from wsdp.processors import ConfigurableProcessor
@@ -86,9 +86,6 @@ PIPELINE_STEPS = None
 # 更换模型
 MODEL_NAME = "mlpmodel"
 
-# Widar 是复数 CSI；True 表示模型同时使用幅度和相位。
-USE_PHASE = False
-
 # 训练超参数；None 表示使用源码或模型参数文件里的默认值
 BATCH_SIZE = None
 LEARNING_RATE = None
@@ -100,7 +97,12 @@ VAL_SPLIT = 0.5
 SEED = 42
 
 # 输出位置
-OUTPUT_DIR = Path(__file__).resolve().parent / "result" / "self_design_test" / f"{PRESET_NAME}+{MODEL_NAME}"
+OUTPUT_DIR = (
+    Path(__file__).resolve().parent
+    / "result"
+    / "self_design_test"
+    / f"auto_amp_phase+{PRESET_NAME}+{MODEL_NAME}"
+)
 # ================== 配置区结束 ==================
 
 class Tee:
@@ -169,44 +171,15 @@ def load_raw_data():
 def process_data(csi_data_list, pipeline_steps, padding_length: int):
     """第二步：按源码 Processor 处理数据，并映射标签和分组。"""
     print("step 2: process_data")
-    manual_phase_zscore = (
-        USE_PHASE
-        and isinstance(pipeline_steps, dict)
-        and pipeline_steps.get("normalize", {}).get("method") == "z-score"
-    )
-    # 如果需要单独处理就需要先剔除normalize
-    effective_pipeline_steps = pipeline_steps
-    if manual_phase_zscore:
-        effective_pipeline_steps = {
-            key: value
-            for key, value in pipeline_steps.items()
-            if key != "normalize"
-        }
-    # 旧逻辑：processor = BaseProcessor() if pipeline_steps is None else ConfigurableProcessor(pipeline_steps)
     processor = (
         BaseProcessor()
-        if effective_pipeline_steps is None
-        else ConfigurableProcessor(effective_pipeline_steps)
+        if pipeline_steps is None
+        else ConfigurableProcessor(pipeline_steps)
     )
     all_data, all_labels, all_groups = processor.process(
         csi_data_list,
         dataset=DATASET_NAME,
     )
-    # 单独处理
-    if manual_phase_zscore:
-        amplitude_phase_data = []
-        for csi in all_data:
-            amplitude = np.abs(csi)
-            phase = np.angle(csi)
-            mean = np.mean(amplitude, axis=0, keepdims=True)
-            std = np.std(amplitude, axis=0, keepdims=True)
-            std = np.where(std < 1e-10, 1.0, std)
-            normalized_amplitude = (amplitude - mean) / std
-            amplitude_phase_data.append(
-                np.concatenate([normalized_amplitude, phase], axis=-1)
-            )
-        all_data = amplitude_phase_data
-
     processed_data = resize_csi_to_fixed_length(
         all_data,
         target_length=padding_length,
@@ -271,27 +244,13 @@ def build_loaders(split, pipeline_steps, batch_size: int):
 
     train_data, val_data, test_data, train_labels, val_labels, test_labels = split
 
-    preserve_real_sign = (
-        is_amplitude_primary_dataset(DATASET_NAME)
-        and isinstance(pipeline_steps, dict)
-        and pipeline_steps.get("normalize", {}).get("method") == "z-score"
-    )
-    manual_phase_zscore = (
-        USE_PHASE
-        and isinstance(pipeline_steps, dict)
-        and pipeline_steps.get("normalize", {}).get("method") == "z-score"
-    )
-
     def make_loader(data, labels, shuffle: bool):
         return DataLoader(
             CSIDataset(
                 data,
                 labels,
-                # 旧逻辑：
-                # use_phase=USE_PHASE,
-                # preserve_real_sign=preserve_real_sign,
-                use_phase=USE_PHASE and not manual_phase_zscore,
-                preserve_real_sign=manual_phase_zscore or preserve_real_sign,
+                dataset_name=DATASET_NAME,
+                pipeline_steps=pipeline_steps,
             ),
             batch_size=batch_size,
             shuffle=shuffle,

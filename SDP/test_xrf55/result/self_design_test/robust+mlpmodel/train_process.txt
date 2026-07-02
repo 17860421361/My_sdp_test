@@ -1,0 +1,100 @@
+step 2: process_data
+   处理完成: 3300 个样本
+   标签分布: {1: 60, 2: 60, 3: 60, 4: 60, 5: 60, 6: 60, 7: 60, 8: 60, 9: 60, 10: 60, 11: 60, 12: 60, 13: 60, 14: 60, 15: 60, 16: 60, 17: 60, 18: 60, 19: 60, 20: 60, 21: 60, 22: 60, 23: 60, 24: 60, 25: 60, 26: 60, 27: 60, 28: 60, 29: 60, 30: 60, 31: 60, 32: 60, 33: 60, 34: 60, 35: 60, 36: 60, 37: 60, 38: 60, 39: 60, 40: 60, 41: 60, 42: 60, 43: 60, 44: 60, 45: 60, 46: 60, 47: 60, 48: 60, 49: 60, 50: 60, 51: 60, 52: 60, 53: 60, 54: 60, 55: 60}
+   分组分布: {1: 165, 2: 165, 3: 165, 4: 165, 5: 165, 6: 165, 7: 165, 8: 165, 9: 165, 10: 165, 11: 165, 12: 165, 13: 165, 14: 165, 15: 165, 16: 165, 17: 165, 18: 165, 19: 165, 20: 165}
+   样本形状: (1000, 30, 9)
+   类别数: 55 (原始标签: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55])
+step 3: split_data
+训练集 1980 | 验证集 660 | 测试集 660
+step 4: 构造 DataLoader
+step 5: create_registered_model
+模型参数量 676983
+训练设备: cuda
+step 6: 开始训练 50 轮
+Epoch [1/50] | Train Loss: 3.7327, Train Acc: 7.53% | Val Loss: 3.4879, Val Acc: 14.09% | Duration: 10.77s | LR: 0.000300
+  -> new best acc: 14.09%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [2/50] | Train Loss: 3.3469, Train Acc: 15.30% | Val Loss: 3.1827, Val Acc: 21.36% | Duration: 10.60s | LR: 0.000300
+  -> new best acc: 21.36%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [3/50] | Train Loss: 3.0278, Train Acc: 21.06% | Val Loss: 2.8933, Val Acc: 29.24% | Duration: 10.61s | LR: 0.000300
+  -> new best acc: 29.24%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [4/50] | Train Loss: 2.7167, Train Acc: 30.45% | Val Loss: 2.5995, Val Acc: 37.73% | Duration: 10.60s | LR: 0.000300
+  -> new best acc: 37.73%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [5/50] | Train Loss: 2.4591, Train Acc: 37.93% | Val Loss: 2.3068, Val Acc: 45.00% | Duration: 10.65s | LR: 0.000300
+  -> new best acc: 45.00%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [6/50] | Train Loss: 2.1524, Train Acc: 47.68% | Val Loss: 2.0956, Val Acc: 48.03% | Duration: 10.57s | LR: 0.000300
+  -> new best acc: 48.03%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [7/50] | Train Loss: 1.9385, Train Acc: 53.48% | Val Loss: 1.9209, Val Acc: 54.55% | Duration: 10.50s | LR: 0.000300
+  -> new best acc: 54.55%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [8/50] | Train Loss: 1.6964, Train Acc: 62.27% | Val Loss: 1.7596, Val Acc: 60.91% | Duration: 10.30s | LR: 0.000300
+  -> new best acc: 60.91%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [9/50] | Train Loss: 1.5087, Train Acc: 66.87% | Val Loss: 1.6083, Val Acc: 63.48% | Duration: 10.48s | LR: 0.000300
+  -> new best acc: 63.48%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [10/50] | Train Loss: 1.3536, Train Acc: 70.00% | Val Loss: 1.4122, Val Acc: 68.18% | Duration: 10.58s | LR: 0.000300
+  -> new best acc: 68.18%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [11/50] | Train Loss: 1.2006, Train Acc: 73.13% | Val Loss: 1.2902, Val Acc: 69.70% | Duration: 10.09s | LR: 0.000300
+  -> new best acc: 69.70%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [12/50] | Train Loss: 1.0879, Train Acc: 76.16% | Val Loss: 1.1906, Val Acc: 73.33% | Duration: 10.22s | LR: 0.000300
+  -> new best acc: 73.33%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [13/50] | Train Loss: 0.9847, Train Acc: 76.57% | Val Loss: 1.1690, Val Acc: 72.58% | Duration: 10.23s | LR: 0.000300
+Epoch [14/50] | Train Loss: 0.8982, Train Acc: 79.80% | Val Loss: 1.0593, Val Acc: 76.52% | Duration: 10.00s | LR: 0.000300
+  -> new best acc: 76.52%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [15/50] | Train Loss: 0.7714, Train Acc: 83.38% | Val Loss: 1.0036, Val Acc: 75.30% | Duration: 10.08s | LR: 0.000300
+Epoch [16/50] | Train Loss: 0.7263, Train Acc: 84.09% | Val Loss: 0.8958, Val Acc: 79.70% | Duration: 10.08s | LR: 0.000300
+  -> new best acc: 79.70%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [17/50] | Train Loss: 0.6648, Train Acc: 86.36% | Val Loss: 0.8563, Val Acc: 79.24% | Duration: 10.48s | LR: 0.000300
+Epoch [18/50] | Train Loss: 0.6104, Train Acc: 87.68% | Val Loss: 0.7848, Val Acc: 82.12% | Duration: 10.47s | LR: 0.000300
+  -> new best acc: 82.12%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [19/50] | Train Loss: 0.5727, Train Acc: 87.68% | Val Loss: 0.7910, Val Acc: 78.94% | Duration: 10.47s | LR: 0.000300
+Epoch [20/50] | Train Loss: 0.5351, Train Acc: 88.23% | Val Loss: 0.7978, Val Acc: 79.09% | Duration: 10.46s | LR: 0.000300
+Epoch [21/50] | Train Loss: 0.4783, Train Acc: 89.09% | Val Loss: 0.7447, Val Acc: 80.91% | Duration: 10.61s | LR: 0.000300
+Epoch [22/50] | Train Loss: 0.4336, Train Acc: 90.56% | Val Loss: 0.6961, Val Acc: 82.27% | Duration: 10.71s | LR: 0.000300
+  -> new best acc: 82.27%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [23/50] | Train Loss: 0.4249, Train Acc: 90.00% | Val Loss: 0.6481, Val Acc: 82.27% | Duration: 10.65s | LR: 0.000300
+Epoch [24/50] | Train Loss: 0.3975, Train Acc: 91.36% | Val Loss: 0.6118, Val Acc: 83.18% | Duration: 10.68s | LR: 0.000300
+  -> new best acc: 83.18%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [25/50] | Train Loss: 0.3888, Train Acc: 90.45% | Val Loss: 0.5980, Val Acc: 84.55% | Duration: 10.60s | LR: 0.000300
+  -> new best acc: 84.55%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [26/50] | Train Loss: 0.3507, Train Acc: 91.67% | Val Loss: 0.5713, Val Acc: 85.00% | Duration: 10.66s | LR: 0.000300
+  -> new best acc: 85.00%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [27/50] | Train Loss: 0.3537, Train Acc: 92.07% | Val Loss: 0.5651, Val Acc: 86.21% | Duration: 10.66s | LR: 0.000300
+  -> new best acc: 86.21%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [28/50] | Train Loss: 0.3124, Train Acc: 93.48% | Val Loss: 0.5319, Val Acc: 86.06% | Duration: 10.65s | LR: 0.000300
+Epoch [29/50] | Train Loss: 0.3179, Train Acc: 92.12% | Val Loss: 0.5411, Val Acc: 85.76% | Duration: 10.70s | LR: 0.000300
+Epoch [30/50] | Train Loss: 0.2722, Train Acc: 94.44% | Val Loss: 0.5162, Val Acc: 86.67% | Duration: 10.68s | LR: 0.000300
+  -> new best acc: 86.67%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [31/50] | Train Loss: 0.2963, Train Acc: 92.58% | Val Loss: 0.5737, Val Acc: 84.55% | Duration: 10.69s | LR: 0.000300
+Epoch [32/50] | Train Loss: 0.2572, Train Acc: 94.04% | Val Loss: 0.5305, Val Acc: 86.06% | Duration: 10.70s | LR: 0.000300
+Epoch [33/50] | Train Loss: 0.2534, Train Acc: 94.24% | Val Loss: 0.4578, Val Acc: 87.73% | Duration: 10.72s | LR: 0.000300
+  -> new best acc: 87.73%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [34/50] | Train Loss: 0.2351, Train Acc: 94.09% | Val Loss: 0.4828, Val Acc: 86.36% | Duration: 10.67s | LR: 0.000300
+Epoch [35/50] | Train Loss: 0.2287, Train Acc: 95.05% | Val Loss: 0.5159, Val Acc: 84.85% | Duration: 10.63s | LR: 0.000300
+Epoch [36/50] | Train Loss: 0.2114, Train Acc: 95.30% | Val Loss: 0.4666, Val Acc: 88.03% | Duration: 10.63s | LR: 0.000300
+  -> new best acc: 88.03%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [37/50] | Train Loss: 0.2028, Train Acc: 95.00% | Val Loss: 0.4664, Val Acc: 87.73% | Duration: 10.63s | LR: 0.000300
+Epoch [38/50] | Train Loss: 0.2014, Train Acc: 95.05% | Val Loss: 0.4920, Val Acc: 86.52% | Duration: 10.60s | LR: 0.000300
+Epoch [39/50] | Train Loss: 0.2081, Train Acc: 94.85% | Val Loss: 0.4898, Val Acc: 86.97% | Duration: 10.60s | LR: 0.000300
+Epoch [40/50] | Train Loss: 0.1669, Train Acc: 96.57% | Val Loss: 0.4126, Val Acc: 88.64% | Duration: 10.68s | LR: 0.000030
+  -> new best acc: 88.64%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [41/50] | Train Loss: 0.1542, Train Acc: 96.87% | Val Loss: 0.4098, Val Acc: 89.39% | Duration: 10.49s | LR: 0.000030
+  -> new best acc: 89.39%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [42/50] | Train Loss: 0.1342, Train Acc: 97.68% | Val Loss: 0.4122, Val Acc: 89.55% | Duration: 10.54s | LR: 0.000030
+  -> new best acc: 89.55%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [43/50] | Train Loss: 0.1369, Train Acc: 96.87% | Val Loss: 0.4052, Val Acc: 89.55% | Duration: 10.55s | LR: 0.000030
+Epoch [44/50] | Train Loss: 0.1296, Train Acc: 97.47% | Val Loss: 0.3966, Val Acc: 89.39% | Duration: 10.49s | LR: 0.000030
+Epoch [45/50] | Train Loss: 0.1203, Train Acc: 97.98% | Val Loss: 0.4005, Val Acc: 89.70% | Duration: 10.47s | LR: 0.000030
+  -> new best acc: 89.70%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [46/50] | Train Loss: 0.1213, Train Acc: 97.88% | Val Loss: 0.3980, Val Acc: 90.45% | Duration: 10.46s | LR: 0.000030
+  -> new best acc: 90.45%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [47/50] | Train Loss: 0.1293, Train Acc: 97.42% | Val Loss: 0.3891, Val Acc: 90.00% | Duration: 10.49s | LR: 0.000030
+Epoch [48/50] | Train Loss: 0.1253, Train Acc: 97.27% | Val Loss: 0.3811, Val Acc: 90.76% | Duration: 10.47s | LR: 0.000030
+  -> new best acc: 90.76%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+Epoch [49/50] | Train Loss: 0.1111, Train Acc: 98.13% | Val Loss: 0.3903, Val Acc: 89.85% | Duration: 10.37s | LR: 0.000030
+Epoch [50/50] | Train Loss: 0.1208, Train Acc: 97.73% | Val Loss: 0.3882, Val Acc: 89.24% | Duration: 10.41s | LR: 0.000030
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_xrf55/result/self_design_test/robust+mlpmodel/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.9076
+测试集准确率: 0.8485
+
+============================================================
+pipeline 演示完成
+============================================================

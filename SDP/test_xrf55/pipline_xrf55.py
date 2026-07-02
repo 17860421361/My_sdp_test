@@ -12,6 +12,7 @@ XRF55 当前源码逻辑：
 - 任务标签是 action_id。
 - 分组依据是 repetition_id。
 - 数据划分固定为 repetition 1-12 train，13-16 valid，17-20 test。
+- `dataset="xrf55"` 使用幅度模型输入，不增加相位通道。
 """
 
 from __future__ import annotations
@@ -39,6 +40,7 @@ os.environ.setdefault("MPLCONFIGDIR", "/tmp/wsdp_mplconfig")
 sys.modules.setdefault("kagglehub", types.ModuleType("kagglehub"))
 
 from wsdp.core import pipeline as wsdp_pipeline
+from wsdp.dataset_policy import uses_phase_amplitude
 
 
 DATASET_NAME = "xrf55"
@@ -144,6 +146,13 @@ def main() -> None:
     algorithm_preset = None
     if PIPELINE_STEPS is None and PRESET_NAME != "baseprocessor":
         algorithm_preset = PRESET_NAME
+
+    input_representation = (
+        "幅度 + 相位"
+        if uses_phase_amplitude(DATASET_NAME)
+        else "幅度"
+    )
+    print(f"模型输入策略: {input_representation}")
 
     wsdp_pipeline(
         input_path=str(input_path),

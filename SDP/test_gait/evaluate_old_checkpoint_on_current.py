@@ -107,12 +107,13 @@ def main() -> None:
     del train_data, val_data, train_labels, val_labels, split
     gc.collect()
 
-    # fast 使用 min-max，USE_PHASE=False；与当前 build_loaders 的模型输入一致。
+    # 旧、新 checkpoint 都来自历史 amplitude-only 输入；此诊断脚本显式
+    # 使用空数据集策略以保持旧 checkpoint 的输入形状。
     test_dataset = CSIDataset(
         test_data,
         test_labels,
-        use_phase=False,
-        preserve_real_sign=False,
+        dataset_name="",
+        pipeline_steps=pipeline_steps,
     )
     test_loader = DataLoader(
         test_dataset,

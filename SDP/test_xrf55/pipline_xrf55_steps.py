@@ -58,7 +58,6 @@ sys.modules.setdefault("kagglehub", types.ModuleType("kagglehub"))
 from wsdp import readers
 from wsdp.algorithms import apply_preset
 from wsdp.core import _create_data_split, _evaluate_model
-from wsdp.dataset_policy import is_amplitude_primary_dataset
 from wsdp.datasets import CSIDataset
 from wsdp.models import create_model
 from wsdp.processors import ConfigurableProcessor
@@ -85,7 +84,7 @@ XRF55_USER_LIMIT = 3
 # 3. 使用自定义算法组合：
 #    PIPELINE_STEPS = {"denoise": {"method": "savgol", "window_length": 7, "polyorder": 3}}
 
-PRESET_NAME = "fast"
+PRESET_NAME = "robust"
 PIPELINE_STEPS = None
 
 # 更换模型
@@ -294,18 +293,13 @@ def build_loaders(split, pipeline_steps, batch_size: int):
 
     train_data, val_data, test_data, train_labels, val_labels, test_labels = split
 
-    preserve_real_sign = (
-        is_amplitude_primary_dataset(DATASET_NAME)
-        and isinstance(pipeline_steps, dict)
-        and pipeline_steps.get("normalize", {}).get("method") == "z-score"
-    )
-
     def make_loader(data, labels, shuffle: bool):
         return DataLoader(
             CSIDataset(
                 data,
                 labels,
-                preserve_real_sign=preserve_real_sign,
+                dataset_name=DATASET_NAME,
+                pipeline_steps=pipeline_steps,
             ),
             batch_size=batch_size,
             shuffle=shuffle,

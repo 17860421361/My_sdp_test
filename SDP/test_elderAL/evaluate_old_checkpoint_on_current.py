@@ -121,11 +121,11 @@ def main() -> None:
     del train_data, val_data, train_labels, val_labels, split
     gc.collect()
 
-    # ElderAL 不属于 amplitude-primary 数据集；当前 loader 默认对输入取绝对值。
     test_dataset = CSIDataset(
         test_data,
         test_labels,
-        preserve_real_sign=False,
+        dataset_name=elder.DATASET_NAME,
+        pipeline_steps=pipeline_steps,
     )
     test_loader = DataLoader(
         test_dataset,
