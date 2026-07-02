@@ -13,11 +13,11 @@ from wsdp.algorithms import apply_preset, list_presets
 from wsdp.models import list_models
 
 
-RUN_NAME = "user_id_v3_auto_amp_phase"
+RUN_NAME = "gait"
 DATASET_NAME = step_pipeline.DATASET_NAME
 DATA_PATH = step_pipeline.DATA_PATH
 
-RESULT_DIR = Path(__file__).resolve().parent / "result" / "preset_tests"
+RESULT_DIR = Path(__file__).resolve().parent / "result" / "new_preset_tests"
 SUMMARY_PATH = RESULT_DIR / f"{RUN_NAME}_all_presets_models_summary.csv"
 SUMMARY_FIELDS = [
     "preset",

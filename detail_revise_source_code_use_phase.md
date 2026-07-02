@@ -207,6 +207,27 @@ pipeline_steps=resolved_pipeline_steps
 input_shape = tuple(train_dataset.data_list.shape[1:])
 ```
 
+对于 Gait/Widar + z-score 这一条路径，train_data[0].shape 确实可以使用。
+因为 z-score 已经在 ConfigurableProcessor 中完成拼接：
+(T,30,3)
+→ [norm_amp, phase]
+→ (T,30,6)
+所以：
+train_data[0].shape
+# (1500, 30, 6)
+和：
+tuple(train_dataset.data_list.shape[1:])
+# (1500, 30, 6)
+结果一样。
+但原来的说法针对的是所有 pipeline。比如 Gait + fast 或 BaseProcessor：
+Processor返回复数：(1500,30,3)
+→ train_data[0].shape = (1500,30,3)
+→ CSIDataset拼接幅度和相位
+→ 模型输入 = (1500,30,6)
+这时 train_data[0].shape 就错了。
+所以准确说法应该改成：
+对于 Gait/Widar + z-score，train_data[0].shape 与模型输入形状相同；但对于非 z-score 和 BaseProcessor，相位是在 CSIDataset 中加入的，两者形状不同。因此统一代码应从 train_dataset.data_list.shape[1:] 获取实际模型输入形状。
+
 不能继续使用 `train_data[0].shape`，因为 Widar/Gait 加入相位后，最后一维
 会从 `A` 变为 `2A`。
 

@@ -1,0 +1,9 @@
+﻿preset,model,status,best_val_acc,test_acc,output_dir,error
+high_quality,csimodel,ok,0.8580167417900837,0.9022749118872156,/home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+high_quality+csimodel,
+high_quality,mlpmodel,ok,0.9294913071474565,0.9525793015059276,/home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+high_quality+mlpmodel,
+high_quality,cnn1dmodel,ok,0.916613007083065,0.9400833066324896,/home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+high_quality+cnn1dmodel,
+high_quality,cnn2dmodel,failed,,,/home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+high_quality+cnn2dmodel,"OutOfMemoryError: CUDA out of memory. Tried to allocate 11.72 GiB. GPU 0 has a total capacity of 79.25 GiB of which 11.66 GiB is free. Including non-PyTorch memory, this process has 49.02 GiB memory in use. Process 4157647 has 18.55 GiB memory in use. Of the allocated memory 48.49 GiB is allocated by PyTorch, and 25.38 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+high_quality,lstmmodel,ok,0.33386992916934966,0.5110541493111183,/home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+high_quality+lstmmodel,
+high_quality,resnet1d,ok,0.9278815196394077,0.9551425825056071,/home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+high_quality+resnet1d,
+high_quality,resnet2d,ok,0.9330328396651641,0.9586670938801666,/home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+high_quality+resnet2d,
+high_quality,bilstmattention,ok,0.8934320669671604,0.9051586030118551,/home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+high_quality+bilstmattention,

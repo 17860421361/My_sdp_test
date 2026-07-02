@@ -54,4 +54,19 @@
 ```
 
 
-
+不会走到 data_list = np.abs(data_array)。
+因为前面手动处理已经执行：
+np.concatenate([normalized_amplitude, phase], axis=-1)
+normalized_amplitude 和 phase 都是实数，所以拼接后的 data_array 也是实数。
+进入 CSIDataset 时：
+use_phase = False
+preserve_real_sign = True
+然后走：
+elif preserve_real_sign:
+    if np.iscomplexobj(data_array):  # False，不进入
+        ...
+    else:
+        data_list = data_array       # 实际走这里
+因此最终直接保留：
+[z-score带正负号的幅度, 正确相位]
+只有手动处理后数据仍然是虚部不为零的复数时，才会执行 np.abs(data_array)；正常的 manual_phase_zscore 流程不会出现这种情况。
