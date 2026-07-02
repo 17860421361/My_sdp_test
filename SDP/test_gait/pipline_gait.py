@@ -11,6 +11,7 @@
 Gait 当前源码逻辑：
 - 任务标签是 user_id。
 - 分组依据是 track_id * 100 + receiver_id。
+- `dataset="gait"` 会让公共源码自动构造“幅度 + 相位”模型输入。
 """
 
 from __future__ import annotations
@@ -36,10 +37,11 @@ os.environ.setdefault("MPLCONFIGDIR", "/tmp/wsdp_mplconfig")
 sys.modules.setdefault("kagglehub", types.ModuleType("kagglehub"))
 
 from wsdp.core import pipeline as wsdp_pipeline
+from wsdp.dataset_policy import uses_phase_amplitude
 
 
 DATASET_NAME = "gait"
-DATA_PATH = DATA_ROOT / "gait"
+DATA_PATH = DATA_ROOT / "Gait_Dataset" / "CSI_Gait"
 
 # ==================== 配置区 ====================
 # 更换算法：修改 PRESET_NAME，或填写 PIPELINE_STEPS。
@@ -70,7 +72,7 @@ OUTPUT_DIR = (
     Path(__file__).resolve().parent
     / "result"
     / "self_design_test"
-    / f"{PRESET_NAME}+{MODEL_NAME}"
+    / f"auto_amp_phase+{PRESET_NAME}+{MODEL_NAME}"
 )
 # ================== 配置区结束 ==================
 
@@ -83,6 +85,13 @@ def main() -> None:
     algorithm_preset = None
     if PIPELINE_STEPS is None and PRESET_NAME != "baseprocessor":
         algorithm_preset = PRESET_NAME
+
+    input_representation = (
+        "幅度 + 相位"
+        if uses_phase_amplitude(DATASET_NAME)
+        else "幅度"
+    )
+    print(f"模型输入策略: {input_representation}")
 
     wsdp_pipeline(
         input_path=str(DATA_PATH),

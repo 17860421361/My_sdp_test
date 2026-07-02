@@ -1,4 +1,4 @@
-"""Gait 全预设、全模型 step 版批量实验。"""
+"""Gait 全预设、全模型实验；输入自动使用幅度和相位。"""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from wsdp.algorithms import apply_preset, list_presets
 from wsdp.models import list_models
 
 
-RUN_NAME = "user_id_v2"
+RUN_NAME = "user_id_v3_auto_amp_phase"
 DATASET_NAME = step_pipeline.DATASET_NAME
 DATA_PATH = step_pipeline.DATA_PATH
 
@@ -231,6 +231,7 @@ def main() -> None:
                 batch_size = BATCH_SIZE if BATCH_SIZE is not None else params.get("batch", 32)
                 loaders = step_pipeline.build_loaders(split, pipeline_steps, batch_size)
                 input_shape = tuple(loaders[0].dataset.data_list.shape[1:])
+                print(f"模型实际输入形状: {input_shape}")
 
         # step 5-7: 在同一个预设处理结果上，依次训练和测试所有模型。
         for model_index, model_name in pending_models:

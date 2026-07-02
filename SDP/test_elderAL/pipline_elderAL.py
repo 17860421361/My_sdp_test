@@ -11,6 +11,7 @@
 ElderAL 当前源码逻辑：
 - 任务标签是 action_id。
 - 分组依据是 position_id。
+- `dataset="elderAL"` 使用幅度模型输入，不增加相位通道。
 """
 
 from __future__ import annotations
@@ -36,6 +37,7 @@ os.environ.setdefault("MPLCONFIGDIR", "/tmp/wsdp_mplconfig")
 sys.modules.setdefault("kagglehub", types.ModuleType("kagglehub"))
 
 from wsdp.core import pipeline as wsdp_pipeline
+from wsdp.dataset_policy import uses_phase_amplitude
 
 
 DATASET_NAME = "elderAL"
@@ -83,6 +85,13 @@ def main() -> None:
     algorithm_preset = None
     if PIPELINE_STEPS is None and PRESET_NAME != "baseprocessor":
         algorithm_preset = PRESET_NAME
+
+    input_representation = (
+        "幅度 + 相位"
+        if uses_phase_amplitude(DATASET_NAME)
+        else "幅度"
+    )
+    print(f"模型输入策略: {input_representation}")
 
     wsdp_pipeline(
         input_path=str(DATA_PATH),

@@ -114,7 +114,8 @@ def build_current_test_loader(csi_data_list, preset_name: str):
     test_dataset = CSIDataset(
         test_data,
         test_labels,
-        preserve_real_sign=False,
+        dataset_name=elder.DATASET_NAME,
+        pipeline_steps=pipeline_steps,
     )
     test_loader = DataLoader(
         test_dataset,
