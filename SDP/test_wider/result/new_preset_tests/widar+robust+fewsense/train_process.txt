@@ -1,0 +1,19 @@
+
+============================================================
+开始模型训练: preset=robust, model=fewsense (15/15)
+============================================================
+step 5: create_registered_model
+模型参数量 459043
+训练设备: cuda
+step 6: 开始训练 80 轮
+Epoch [1/80] | Train Loss: 0.9830, Train Acc: 50.43% | Val Loss: 0.9460, Val Acc: 44.54% | Duration: 2.60s | LR: 0.000300
+  -> new best acc: 44.54%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+robust+fewsense/best_checkpoint.pth
+Epoch [2/80] | Train Loss: 0.9316, Train Acc: 51.37% | Val Loss: 0.9326, Val Acc: 44.54% | Duration: 2.64s | LR: 0.000300
+Epoch [3/80] | Train Loss: 0.9014, Train Acc: 54.46% | Val Loss: 0.9642, Val Acc: 43.29% | Duration: 2.55s | LR: 0.000300
+Epoch [4/80] | Train Loss: 0.9052, Train Acc: 52.80% | Val Loss: 0.8675, Val Acc: 55.27% | Duration: 2.50s | LR: 0.000300
+  -> new best acc: 55.27%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+robust+fewsense/best_checkpoint.pth
+Epoch [5/80] | Train Loss: 0.8944, Train Acc: 53.46% | Val Loss: 0.9024, Val Acc: 52.75% | Duration: 2.55s | LR: 0.000300
+Epoch [6/80] | Train Loss: 0.8929, Train Acc: 52.93% | Val Loss: 0.8833, Val Acc: 52.46% | Duration: 2.56s | LR: 0.000300
+Epoch [7/80] | Train Loss: 0.8906, Train Acc: 54.90% | Val Loss: 0.8679, Val Acc: 56.14% | Duration: 2.55s | LR: 0.000300
+  -> new best acc: 56.14%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+robust+fewsense/best_checkpoint.pth
+Epoch [8/80] | Train Loss: 0.8887, Train Acc: 53.12% | Val Loss: 0.8614, Val Acc: 55.56% | Duration: 2.52s | LR: 0.000300
