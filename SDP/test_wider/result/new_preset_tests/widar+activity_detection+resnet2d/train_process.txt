@@ -1,0 +1,105 @@
+
+============================================================
+开始模型训练: preset=activity_detection, model=resnet2d (7/15)
+============================================================
+step 5: create_registered_model
+模型参数量 307459
+训练设备: cuda
+step 6: 开始训练 80 轮
+Epoch [1/80] | Train Loss: 0.8794, Train Acc: 55.11% | Val Loss: 0.8401, Val Acc: 55.27% | Duration: 53.25s | LR: 0.000300
+  -> new best acc: 55.27%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [2/80] | Train Loss: 0.8392, Train Acc: 56.15% | Val Loss: 0.8136, Val Acc: 58.94% | Duration: 53.25s | LR: 0.000300
+  -> new best acc: 58.94%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [3/80] | Train Loss: 0.8138, Train Acc: 57.14% | Val Loss: 0.8129, Val Acc: 58.74% | Duration: 53.48s | LR: 0.000300
+Epoch [4/80] | Train Loss: 0.8008, Train Acc: 57.25% | Val Loss: 0.7849, Val Acc: 58.94% | Duration: 53.46s | LR: 0.000300
+Epoch [5/80] | Train Loss: 0.7890, Train Acc: 58.48% | Val Loss: 0.7846, Val Acc: 60.10% | Duration: 53.46s | LR: 0.000300
+  -> new best acc: 60.10%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [6/80] | Train Loss: 0.7891, Train Acc: 58.96% | Val Loss: 0.7782, Val Acc: 58.55% | Duration: 53.55s | LR: 0.000300
+Epoch [7/80] | Train Loss: 0.7822, Train Acc: 59.34% | Val Loss: 0.7820, Val Acc: 60.19% | Duration: 53.50s | LR: 0.000300
+  -> new best acc: 60.19%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [8/80] | Train Loss: 0.7717, Train Acc: 59.98% | Val Loss: 0.8194, Val Acc: 58.16% | Duration: 53.61s | LR: 0.000300
+Epoch [9/80] | Train Loss: 0.7653, Train Acc: 60.08% | Val Loss: 0.7526, Val Acc: 62.22% | Duration: 53.57s | LR: 0.000300
+  -> new best acc: 62.22%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [10/80] | Train Loss: 0.7577, Train Acc: 61.14% | Val Loss: 0.7614, Val Acc: 62.13% | Duration: 53.57s | LR: 0.000300
+Epoch [11/80] | Train Loss: 0.7521, Train Acc: 61.44% | Val Loss: 0.7651, Val Acc: 60.68% | Duration: 53.51s | LR: 0.000300
+Epoch [12/80] | Train Loss: 0.7492, Train Acc: 61.67% | Val Loss: 0.7631, Val Acc: 60.87% | Duration: 53.50s | LR: 0.000300
+Epoch [13/80] | Train Loss: 0.7418, Train Acc: 62.52% | Val Loss: 0.7606, Val Acc: 61.35% | Duration: 53.44s | LR: 0.000300
+Epoch [14/80] | Train Loss: 0.7390, Train Acc: 62.26% | Val Loss: 0.8079, Val Acc: 57.29% | Duration: 53.45s | LR: 0.000300
+Epoch [15/80] | Train Loss: 0.7316, Train Acc: 63.56% | Val Loss: 0.7499, Val Acc: 62.03% | Duration: 53.43s | LR: 0.000300
+Epoch [16/80] | Train Loss: 0.7213, Train Acc: 64.44% | Val Loss: 0.7571, Val Acc: 59.13% | Duration: 53.44s | LR: 0.000300
+Epoch [17/80] | Train Loss: 0.7140, Train Acc: 65.46% | Val Loss: 0.7469, Val Acc: 61.84% | Duration: 53.46s | LR: 0.000300
+Epoch [18/80] | Train Loss: 0.7136, Train Acc: 65.29% | Val Loss: 0.7736, Val Acc: 60.19% | Duration: 53.45s | LR: 0.000300
+Epoch [19/80] | Train Loss: 0.7090, Train Acc: 65.50% | Val Loss: 0.7405, Val Acc: 62.42% | Duration: 53.53s | LR: 0.000300
+  -> new best acc: 62.42%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [20/80] | Train Loss: 0.7045, Train Acc: 66.12% | Val Loss: 0.7620, Val Acc: 62.90% | Duration: 53.58s | LR: 0.000300
+  -> new best acc: 62.90%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [21/80] | Train Loss: 0.6910, Train Acc: 66.69% | Val Loss: 0.7321, Val Acc: 64.54% | Duration: 53.49s | LR: 0.000300
+  -> new best acc: 64.54%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [22/80] | Train Loss: 0.6867, Train Acc: 67.09% | Val Loss: 0.7506, Val Acc: 64.15% | Duration: 53.53s | LR: 0.000300
+Epoch [23/80] | Train Loss: 0.6769, Train Acc: 67.92% | Val Loss: 0.7326, Val Acc: 64.93% | Duration: 53.50s | LR: 0.000300
+  -> new best acc: 64.93%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [24/80] | Train Loss: 0.6721, Train Acc: 68.04% | Val Loss: 0.7666, Val Acc: 63.29% | Duration: 53.58s | LR: 0.000300
+Epoch [25/80] | Train Loss: 0.6679, Train Acc: 68.74% | Val Loss: 0.7280, Val Acc: 63.38% | Duration: 53.58s | LR: 0.000300
+Epoch [26/80] | Train Loss: 0.6613, Train Acc: 68.95% | Val Loss: 0.7379, Val Acc: 64.06% | Duration: 53.54s | LR: 0.000300
+Epoch [27/80] | Train Loss: 0.6556, Train Acc: 69.57% | Val Loss: 0.7301, Val Acc: 64.73% | Duration: 53.47s | LR: 0.000300
+Epoch [28/80] | Train Loss: 0.6498, Train Acc: 69.76% | Val Loss: 0.7110, Val Acc: 65.99% | Duration: 53.48s | LR: 0.000300
+  -> new best acc: 65.99%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [29/80] | Train Loss: 0.6469, Train Acc: 69.48% | Val Loss: 0.7076, Val Acc: 66.09% | Duration: 53.56s | LR: 0.000300
+  -> new best acc: 66.09%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [30/80] | Train Loss: 0.6338, Train Acc: 70.65% | Val Loss: 0.6867, Val Acc: 66.96% | Duration: 53.49s | LR: 0.000300
+  -> new best acc: 66.96%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [31/80] | Train Loss: 0.6235, Train Acc: 72.40% | Val Loss: 0.7235, Val Acc: 64.73% | Duration: 53.45s | LR: 0.000300
+Epoch [32/80] | Train Loss: 0.6197, Train Acc: 71.70% | Val Loss: 0.7260, Val Acc: 64.73% | Duration: 53.50s | LR: 0.000300
+Epoch [33/80] | Train Loss: 0.5976, Train Acc: 74.52% | Val Loss: 0.7056, Val Acc: 66.18% | Duration: 53.44s | LR: 0.000300
+Epoch [34/80] | Train Loss: 0.5962, Train Acc: 73.74% | Val Loss: 0.7073, Val Acc: 65.41% | Duration: 53.44s | LR: 0.000300
+Epoch [35/80] | Train Loss: 0.5912, Train Acc: 74.65% | Val Loss: 0.7306, Val Acc: 66.28% | Duration: 53.55s | LR: 0.000300
+Epoch [36/80] | Train Loss: 0.5821, Train Acc: 75.03% | Val Loss: 0.7387, Val Acc: 66.57% | Duration: 53.52s | LR: 0.000300
+Epoch [37/80] | Train Loss: 0.5330, Train Acc: 78.73% | Val Loss: 0.6752, Val Acc: 69.66% | Duration: 53.53s | LR: 0.000030
+  -> new best acc: 69.66%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+Epoch [38/80] | Train Loss: 0.5216, Train Acc: 80.34% | Val Loss: 0.6696, Val Acc: 68.79% | Duration: 53.47s | LR: 0.000030
+Epoch [39/80] | Train Loss: 0.5180, Train Acc: 80.55% | Val Loss: 0.6727, Val Acc: 67.73% | Duration: 53.48s | LR: 0.000030
+Epoch [40/80] | Train Loss: 0.5136, Train Acc: 81.16% | Val Loss: 0.6769, Val Acc: 68.02% | Duration: 53.46s | LR: 0.000030
+Epoch [41/80] | Train Loss: 0.5061, Train Acc: 80.66% | Val Loss: 0.6710, Val Acc: 68.70% | Duration: 53.46s | LR: 0.000030
+Epoch [42/80] | Train Loss: 0.5025, Train Acc: 81.54% | Val Loss: 0.6866, Val Acc: 67.54% | Duration: 53.42s | LR: 0.000030
+Epoch [43/80] | Train Loss: 0.5033, Train Acc: 81.23% | Val Loss: 0.6737, Val Acc: 68.79% | Duration: 53.42s | LR: 0.000030
+Epoch [44/80] | Train Loss: 0.4991, Train Acc: 81.93% | Val Loss: 0.6696, Val Acc: 68.70% | Duration: 53.43s | LR: 0.000030
+Epoch [45/80] | Train Loss: 0.4918, Train Acc: 82.67% | Val Loss: 0.6687, Val Acc: 68.70% | Duration: 53.42s | LR: 0.000003
+Epoch [46/80] | Train Loss: 0.4873, Train Acc: 82.79% | Val Loss: 0.6712, Val Acc: 68.89% | Duration: 53.41s | LR: 0.000003
+Epoch [47/80] | Train Loss: 0.4922, Train Acc: 82.94% | Val Loss: 0.6710, Val Acc: 68.41% | Duration: 53.43s | LR: 0.000003
+Epoch [48/80] | Train Loss: 0.4907, Train Acc: 82.22% | Val Loss: 0.6698, Val Acc: 68.21% | Duration: 53.49s | LR: 0.000003
+Epoch [49/80] | Train Loss: 0.4871, Train Acc: 83.13% | Val Loss: 0.6707, Val Acc: 68.70% | Duration: 53.42s | LR: 0.000003
+Epoch [50/80] | Train Loss: 0.4887, Train Acc: 82.60% | Val Loss: 0.6711, Val Acc: 68.89% | Duration: 53.45s | LR: 0.000003
+Epoch [51/80] | Train Loss: 0.4915, Train Acc: 82.62% | Val Loss: 0.6708, Val Acc: 68.50% | Duration: 53.48s | LR: 0.000003
+Epoch [52/80] | Train Loss: 0.4871, Train Acc: 83.28% | Val Loss: 0.6703, Val Acc: 68.50% | Duration: 53.50s | LR: 0.000000
+Epoch [53/80] | Train Loss: 0.4863, Train Acc: 82.73% | Val Loss: 0.6715, Val Acc: 68.02% | Duration: 53.58s | LR: 0.000000
+Epoch [54/80] | Train Loss: 0.4898, Train Acc: 82.52% | Val Loss: 0.6698, Val Acc: 68.89% | Duration: 53.55s | LR: 0.000000
+Epoch [55/80] | Train Loss: 0.4902, Train Acc: 82.69% | Val Loss: 0.6699, Val Acc: 69.18% | Duration: 53.58s | LR: 0.000000
+Epoch [56/80] | Train Loss: 0.4868, Train Acc: 82.81% | Val Loss: 0.6702, Val Acc: 68.50% | Duration: 53.58s | LR: 0.000000
+Epoch [57/80] | Train Loss: 0.4930, Train Acc: 82.69% | Val Loss: 0.6695, Val Acc: 68.70% | Duration: 53.53s | LR: 0.000000
+Epoch [58/80] | Train Loss: 0.4842, Train Acc: 82.79% | Val Loss: 0.6690, Val Acc: 68.50% | Duration: 53.57s | LR: 0.000000
+Epoch [59/80] | Train Loss: 0.4872, Train Acc: 82.58% | Val Loss: 0.6704, Val Acc: 69.08% | Duration: 53.55s | LR: 0.000000
+Epoch [60/80] | Train Loss: 0.4876, Train Acc: 82.58% | Val Loss: 0.6728, Val Acc: 68.41% | Duration: 53.55s | LR: 0.000000
+Epoch [61/80] | Train Loss: 0.4917, Train Acc: 82.58% | Val Loss: 0.6713, Val Acc: 68.60% | Duration: 53.47s | LR: 0.000000
+Epoch [62/80] | Train Loss: 0.4879, Train Acc: 82.46% | Val Loss: 0.6685, Val Acc: 68.79% | Duration: 53.46s | LR: 0.000000
+Epoch [63/80] | Train Loss: 0.4880, Train Acc: 82.92% | Val Loss: 0.6710, Val Acc: 68.50% | Duration: 53.46s | LR: 0.000000
+Epoch [64/80] | Train Loss: 0.4841, Train Acc: 83.05% | Val Loss: 0.6697, Val Acc: 68.99% | Duration: 53.43s | LR: 0.000000
+Epoch [65/80] | Train Loss: 0.4858, Train Acc: 82.43% | Val Loss: 0.6692, Val Acc: 68.50% | Duration: 53.44s | LR: 0.000000
+Epoch [66/80] | Train Loss: 0.4866, Train Acc: 82.46% | Val Loss: 0.6698, Val Acc: 69.28% | Duration: 53.44s | LR: 0.000000
+Epoch [67/80] | Train Loss: 0.4917, Train Acc: 82.94% | Val Loss: 0.6708, Val Acc: 68.79% | Duration: 53.41s | LR: 0.000000
+Epoch [68/80] | Train Loss: 0.4877, Train Acc: 82.96% | Val Loss: 0.6697, Val Acc: 68.89% | Duration: 53.45s | LR: 0.000000
+Epoch [69/80] | Train Loss: 0.4868, Train Acc: 83.07% | Val Loss: 0.6718, Val Acc: 68.41% | Duration: 53.56s | LR: 0.000000
+Epoch [70/80] | Train Loss: 0.4902, Train Acc: 82.20% | Val Loss: 0.6702, Val Acc: 68.99% | Duration: 53.45s | LR: 0.000000
+Epoch [71/80] | Train Loss: 0.4889, Train Acc: 82.84% | Val Loss: 0.6686, Val Acc: 68.99% | Duration: 53.43s | LR: 0.000000
+Epoch [72/80] | Train Loss: 0.4906, Train Acc: 82.56% | Val Loss: 0.6736, Val Acc: 68.31% | Duration: 53.53s | LR: 0.000000
+Epoch [73/80] | Train Loss: 0.4883, Train Acc: 82.24% | Val Loss: 0.6712, Val Acc: 68.89% | Duration: 53.46s | LR: 0.000000
+Epoch [74/80] | Train Loss: 0.4851, Train Acc: 83.05% | Val Loss: 0.6703, Val Acc: 68.12% | Duration: 53.46s | LR: 0.000000
+Epoch [75/80] | Train Loss: 0.4862, Train Acc: 83.24% | Val Loss: 0.6713, Val Acc: 68.79% | Duration: 53.56s | LR: 0.000000
+Epoch [76/80] | Train Loss: 0.4872, Train Acc: 82.48% | Val Loss: 0.6688, Val Acc: 68.89% | Duration: 53.57s | LR: 0.000000
+Epoch [77/80] | Train Loss: 0.4853, Train Acc: 83.30% | Val Loss: 0.6700, Val Acc: 68.89% | Duration: 53.53s | LR: 0.000000
+Epoch [78/80] | Train Loss: 0.4899, Train Acc: 82.62% | Val Loss: 0.6707, Val Acc: 68.60% | Duration: 53.48s | LR: 0.000000
+Epoch [79/80] | Train Loss: 0.4875, Train Acc: 82.86% | Val Loss: 0.6704, Val Acc: 68.79% | Duration: 53.54s | LR: 0.000000
+Epoch [80/80] | Train Loss: 0.4897, Train Acc: 82.67% | Val Loss: 0.6706, Val Acc: 68.12% | Duration: 56.51s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+resnet2d/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.6966
+测试集准确率: 0.6707

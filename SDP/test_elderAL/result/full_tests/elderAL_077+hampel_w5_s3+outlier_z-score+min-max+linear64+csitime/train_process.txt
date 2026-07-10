@@ -1,0 +1,79 @@
+
+================================================================================
+当前算法组合: 77/80 | combo_id=elderAL_077 | model=csitime
+combo_name: hampel_w5_s3+outlier_z-score+min-max+linear64
+保存目录: /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime
+当前组合的具体算法:
+{
+  "denoise": {
+    "method": "hampel",
+    "window_size": 5,
+    "n_sigma": 3.0
+  },
+  "outliers": {
+    "method": "z-score",
+    "factor": 3.0
+  },
+  "normalize": {
+    "method": "min-max"
+  },
+  "interpolate": {
+    "method": "linear",
+    "target_K": 64
+  }
+}
+================================================================================
+step 2: process_data
+   处理完成: 2404 个样本
+   标签分布: {1: 398, 3: 405, 5: 405, 2: 387, 0: 404, 6: 405}
+   分组分布: {8: 270, 6: 268, 7: 268, 3: 265, 2: 266, 1: 264, 9: 267, 4: 267, 5: 269}
+   样本形状: (80, 64, 3)
+   类别数: 6 (原始标签: [0, 1, 2, 3, 5, 6])
+step 3: split_data
+训练集 1600 | 验证集 534 | 测试集 270
+step 4: 构造 DataLoader
+模型实际输入形状: (80, 64, 3)
+step 5: create_registered_model
+模型参数量 119558
+训练设备: cuda
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.6909, Train Acc: 31.38% | Val Loss: 1.6576, Val Acc: 32.58% | Duration: 0.62s | LR: 0.000300
+  -> new best acc: 32.58%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.5018, Train Acc: 47.31% | Val Loss: 1.5681, Val Acc: 38.39% | Duration: 0.61s | LR: 0.000300
+  -> new best acc: 38.39%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.3467, Train Acc: 56.75% | Val Loss: 1.5486, Val Acc: 41.95% | Duration: 0.66s | LR: 0.000300
+  -> new best acc: 41.95%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 1.1923, Train Acc: 65.50% | Val Loss: 1.4366, Val Acc: 45.51% | Duration: 0.65s | LR: 0.000300
+  -> new best acc: 45.51%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 1.0428, Train Acc: 72.94% | Val Loss: 1.4414, Val Acc: 50.37% | Duration: 0.61s | LR: 0.000300
+  -> new best acc: 50.37%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 0.8925, Train Acc: 79.00% | Val Loss: 1.5460, Val Acc: 43.26% | Duration: 0.64s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.7985, Train Acc: 81.81% | Val Loss: 1.7340, Val Acc: 46.25% | Duration: 0.55s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.6810, Train Acc: 86.75% | Val Loss: 1.3175, Val Acc: 50.94% | Duration: 0.60s | LR: 0.000300
+  -> new best acc: 50.94%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [9/20] | Train Loss: 0.5957, Train Acc: 89.31% | Val Loss: 1.6647, Val Acc: 51.87% | Duration: 0.65s | LR: 0.000300
+  -> new best acc: 51.87%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [10/20] | Train Loss: 0.5285, Train Acc: 90.75% | Val Loss: 1.4159, Val Acc: 53.56% | Duration: 0.64s | LR: 0.000300
+  -> new best acc: 53.56%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 0.4415, Train Acc: 93.69% | Val Loss: 1.4694, Val Acc: 50.37% | Duration: 0.59s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.3797, Train Acc: 94.94% | Val Loss: 1.2315, Val Acc: 58.61% | Duration: 0.65s | LR: 0.000300
+  -> new best acc: 58.61%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [13/20] | Train Loss: 0.3272, Train Acc: 96.56% | Val Loss: 1.2550, Val Acc: 54.68% | Duration: 0.64s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.2719, Train Acc: 97.62% | Val Loss: 1.2070, Val Acc: 60.67% | Duration: 0.63s | LR: 0.000300
+  -> new best acc: 60.67%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [15/20] | Train Loss: 0.2404, Train Acc: 98.12% | Val Loss: 1.0434, Val Acc: 63.11% | Duration: 0.60s | LR: 0.000300
+  -> new best acc: 63.11%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [16/20] | Train Loss: 0.2028, Train Acc: 98.94% | Val Loss: 1.1648, Val Acc: 62.92% | Duration: 0.65s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.1758, Train Acc: 99.12% | Val Loss: 1.5737, Val Acc: 54.49% | Duration: 0.64s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.1676, Train Acc: 99.06% | Val Loss: 1.1250, Val Acc: 63.48% | Duration: 0.61s | LR: 0.000300
+  -> new best acc: 63.48%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [19/20] | Train Loss: 0.1367, Train Acc: 99.56% | Val Loss: 1.0370, Val Acc: 63.30% | Duration: 0.64s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.1185, Train Acc: 99.81% | Val Loss: 1.1772, Val Acc: 60.49% | Duration: 0.59s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_077+hampel_w5_s3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.6348
+测试集准确率: 0.6481
+
+================================================================================
+组合完成: 77/80 | combo_id=elderAL_077 | best_val_acc=0.6348 | test_acc=0.6481 | duration=343.04s
+================================================================================

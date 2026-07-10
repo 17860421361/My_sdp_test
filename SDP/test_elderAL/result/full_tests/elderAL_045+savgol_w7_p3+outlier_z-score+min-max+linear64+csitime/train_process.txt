@@ -1,0 +1,75 @@
+
+================================================================================
+当前算法组合: 45/80 | combo_id=elderAL_045 | model=csitime
+combo_name: savgol_w7_p3+outlier_z-score+min-max+linear64
+保存目录: /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime
+当前组合的具体算法:
+{
+  "denoise": {
+    "method": "savgol",
+    "window_length": 7,
+    "polyorder": 3
+  },
+  "outliers": {
+    "method": "z-score",
+    "factor": 3.0
+  },
+  "normalize": {
+    "method": "min-max"
+  },
+  "interpolate": {
+    "method": "linear",
+    "target_K": 64
+  }
+}
+================================================================================
+step 2: process_data
+   处理完成: 2404 个样本
+   标签分布: {1: 398, 3: 405, 5: 405, 2: 387, 0: 404, 6: 405}
+   分组分布: {8: 270, 6: 268, 7: 268, 3: 265, 2: 266, 1: 264, 9: 267, 4: 267, 5: 269}
+   样本形状: (80, 64, 3)
+   类别数: 6 (原始标签: [0, 1, 2, 3, 5, 6])
+step 3: split_data
+训练集 1600 | 验证集 534 | 测试集 270
+step 4: 构造 DataLoader
+模型实际输入形状: (80, 64, 3)
+step 5: create_registered_model
+模型参数量 119558
+训练设备: cuda
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.5039, Train Acc: 45.56% | Val Loss: 1.4027, Val Acc: 55.06% | Duration: 0.33s | LR: 0.000300
+  -> new best acc: 55.06%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.1310, Train Acc: 67.69% | Val Loss: 1.2132, Val Acc: 63.48% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 63.48%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 0.9013, Train Acc: 79.25% | Val Loss: 0.8374, Val Acc: 80.71% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 80.71%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 0.7105, Train Acc: 84.19% | Val Loss: 0.7015, Val Acc: 82.40% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 82.40%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 0.5938, Train Acc: 88.81% | Val Loss: 0.6411, Val Acc: 82.96% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 82.96%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 0.4830, Train Acc: 91.44% | Val Loss: 0.9808, Val Acc: 72.66% | Duration: 0.34s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.4283, Train Acc: 93.75% | Val Loss: 0.7651, Val Acc: 76.97% | Duration: 0.34s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.3427, Train Acc: 95.50% | Val Loss: 0.4342, Val Acc: 87.08% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 87.08%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [9/20] | Train Loss: 0.2915, Train Acc: 95.69% | Val Loss: 0.4860, Val Acc: 87.08% | Duration: 0.34s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.2667, Train Acc: 96.44% | Val Loss: 0.5093, Val Acc: 83.52% | Duration: 0.35s | LR: 0.000300
+Epoch [11/20] | Train Loss: 0.2147, Train Acc: 97.31% | Val Loss: 0.3300, Val Acc: 92.32% | Duration: 0.35s | LR: 0.000300
+  -> new best acc: 92.32%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [12/20] | Train Loss: 0.1679, Train Acc: 98.50% | Val Loss: 0.2689, Val Acc: 95.13% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 95.13%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [13/20] | Train Loss: 0.1513, Train Acc: 98.75% | Val Loss: 0.2640, Val Acc: 94.01% | Duration: 0.34s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.1224, Train Acc: 99.12% | Val Loss: 0.4068, Val Acc: 86.33% | Duration: 0.35s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.1173, Train Acc: 99.12% | Val Loss: 0.3771, Val Acc: 89.51% | Duration: 0.34s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.1033, Train Acc: 99.19% | Val Loss: 0.3301, Val Acc: 91.20% | Duration: 0.35s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.0853, Train Acc: 99.62% | Val Loss: 0.2748, Val Acc: 92.51% | Duration: 0.37s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.0907, Train Acc: 99.38% | Val Loss: 0.4344, Val Acc: 85.96% | Duration: 0.36s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.0746, Train Acc: 99.69% | Val Loss: 0.2416, Val Acc: 93.45% | Duration: 0.37s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.0627, Train Acc: 99.88% | Val Loss: 0.2741, Val Acc: 92.13% | Duration: 0.35s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_elderAL/result/full_tests/elderAL_045+savgol_w7_p3+outlier_z-score+min-max+linear64+csitime/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.9513
+测试集准确率: 0.9037
+
+================================================================================
+组合完成: 45/80 | combo_id=elderAL_045 | best_val_acc=0.9513 | test_acc=0.9037 | duration=176.96s
+================================================================================

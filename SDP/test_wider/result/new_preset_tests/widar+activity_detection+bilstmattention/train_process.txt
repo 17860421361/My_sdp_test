@@ -1,0 +1,109 @@
+
+============================================================
+开始模型训练: preset=activity_detection, model=bilstmattention (8/15)
+============================================================
+step 5: create_registered_model
+模型参数量 1002627
+训练设备: cuda
+step 6: 开始训练 80 轮
+Epoch [1/80] | Train Loss: 1.0067, Train Acc: 45.99% | Val Loss: 0.8686, Val Acc: 56.71% | Duration: 13.33s | LR: 0.000300
+  -> new best acc: 56.71%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [2/80] | Train Loss: 0.8539, Train Acc: 54.86% | Val Loss: 0.8590, Val Acc: 55.65% | Duration: 13.09s | LR: 0.000300
+Epoch [3/80] | Train Loss: 0.8410, Train Acc: 56.19% | Val Loss: 0.8364, Val Acc: 55.85% | Duration: 13.13s | LR: 0.000300
+Epoch [4/80] | Train Loss: 0.8278, Train Acc: 55.79% | Val Loss: 0.8101, Val Acc: 56.43% | Duration: 13.17s | LR: 0.000300
+Epoch [5/80] | Train Loss: 0.8038, Train Acc: 57.02% | Val Loss: 0.7872, Val Acc: 55.85% | Duration: 13.21s | LR: 0.000300
+Epoch [6/80] | Train Loss: 0.7866, Train Acc: 58.07% | Val Loss: 0.7732, Val Acc: 59.52% | Duration: 13.10s | LR: 0.000300
+  -> new best acc: 59.52%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [7/80] | Train Loss: 0.7719, Train Acc: 59.34% | Val Loss: 0.7591, Val Acc: 62.03% | Duration: 13.09s | LR: 0.000300
+  -> new best acc: 62.03%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [8/80] | Train Loss: 0.7635, Train Acc: 59.30% | Val Loss: 0.7912, Val Acc: 54.88% | Duration: 13.10s | LR: 0.000300
+Epoch [9/80] | Train Loss: 0.7596, Train Acc: 59.70% | Val Loss: 0.7473, Val Acc: 62.90% | Duration: 13.17s | LR: 0.000300
+  -> new best acc: 62.90%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [10/80] | Train Loss: 0.7401, Train Acc: 61.54% | Val Loss: 0.7477, Val Acc: 62.42% | Duration: 13.21s | LR: 0.000300
+Epoch [11/80] | Train Loss: 0.7472, Train Acc: 61.31% | Val Loss: 0.7468, Val Acc: 63.09% | Duration: 13.21s | LR: 0.000300
+  -> new best acc: 63.09%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [12/80] | Train Loss: 0.7389, Train Acc: 62.03% | Val Loss: 0.7507, Val Acc: 60.19% | Duration: 13.13s | LR: 0.000300
+Epoch [13/80] | Train Loss: 0.7337, Train Acc: 61.86% | Val Loss: 0.7189, Val Acc: 64.35% | Duration: 13.18s | LR: 0.000300
+  -> new best acc: 64.35%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [14/80] | Train Loss: 0.7299, Train Acc: 62.10% | Val Loss: 0.7487, Val Acc: 63.00% | Duration: 13.13s | LR: 0.000300
+Epoch [15/80] | Train Loss: 0.7225, Train Acc: 62.58% | Val Loss: 0.7584, Val Acc: 60.48% | Duration: 13.15s | LR: 0.000300
+Epoch [16/80] | Train Loss: 0.7164, Train Acc: 62.52% | Val Loss: 0.7485, Val Acc: 60.19% | Duration: 13.12s | LR: 0.000300
+Epoch [17/80] | Train Loss: 0.7208, Train Acc: 61.90% | Val Loss: 0.7350, Val Acc: 65.70% | Duration: 13.15s | LR: 0.000300
+  -> new best acc: 65.70%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [18/80] | Train Loss: 0.7122, Train Acc: 62.54% | Val Loss: 0.7113, Val Acc: 62.71% | Duration: 13.13s | LR: 0.000300
+Epoch [19/80] | Train Loss: 0.7025, Train Acc: 64.51% | Val Loss: 0.7593, Val Acc: 61.26% | Duration: 13.13s | LR: 0.000300
+Epoch [20/80] | Train Loss: 0.7041, Train Acc: 63.89% | Val Loss: 0.7021, Val Acc: 66.57% | Duration: 13.12s | LR: 0.000300
+  -> new best acc: 66.57%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [21/80] | Train Loss: 0.7000, Train Acc: 63.81% | Val Loss: 0.7077, Val Acc: 65.41% | Duration: 13.15s | LR: 0.000300
+Epoch [22/80] | Train Loss: 0.6760, Train Acc: 66.03% | Val Loss: 0.6972, Val Acc: 63.19% | Duration: 13.14s | LR: 0.000300
+Epoch [23/80] | Train Loss: 0.6790, Train Acc: 66.58% | Val Loss: 0.7228, Val Acc: 64.06% | Duration: 13.15s | LR: 0.000300
+Epoch [24/80] | Train Loss: 0.6797, Train Acc: 66.07% | Val Loss: 0.7166, Val Acc: 63.86% | Duration: 13.13s | LR: 0.000300
+Epoch [25/80] | Train Loss: 0.6655, Train Acc: 66.75% | Val Loss: 0.6961, Val Acc: 64.93% | Duration: 13.17s | LR: 0.000300
+Epoch [26/80] | Train Loss: 0.6602, Train Acc: 67.37% | Val Loss: 0.6912, Val Acc: 65.70% | Duration: 13.16s | LR: 0.000300
+Epoch [27/80] | Train Loss: 0.6639, Train Acc: 66.96% | Val Loss: 0.6881, Val Acc: 66.57% | Duration: 13.12s | LR: 0.000300
+Epoch [28/80] | Train Loss: 0.6437, Train Acc: 66.84% | Val Loss: 0.7261, Val Acc: 62.22% | Duration: 13.17s | LR: 0.000300
+Epoch [29/80] | Train Loss: 0.6414, Train Acc: 67.70% | Val Loss: 0.6992, Val Acc: 65.31% | Duration: 13.12s | LR: 0.000300
+Epoch [30/80] | Train Loss: 0.6362, Train Acc: 68.55% | Val Loss: 0.6815, Val Acc: 65.99% | Duration: 13.12s | LR: 0.000300
+Epoch [31/80] | Train Loss: 0.6299, Train Acc: 69.48% | Val Loss: 0.7001, Val Acc: 66.18% | Duration: 13.15s | LR: 0.000300
+Epoch [32/80] | Train Loss: 0.6257, Train Acc: 69.33% | Val Loss: 0.7186, Val Acc: 63.96% | Duration: 13.16s | LR: 0.000300
+Epoch [33/80] | Train Loss: 0.6199, Train Acc: 69.90% | Val Loss: 0.6778, Val Acc: 67.25% | Duration: 13.23s | LR: 0.000300
+  -> new best acc: 67.25%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [34/80] | Train Loss: 0.6101, Train Acc: 69.78% | Val Loss: 0.7022, Val Acc: 67.05% | Duration: 13.28s | LR: 0.000300
+Epoch [35/80] | Train Loss: 0.6056, Train Acc: 70.65% | Val Loss: 0.8337, Val Acc: 63.19% | Duration: 13.31s | LR: 0.000300
+Epoch [36/80] | Train Loss: 0.6070, Train Acc: 70.58% | Val Loss: 0.6735, Val Acc: 67.63% | Duration: 13.28s | LR: 0.000300
+  -> new best acc: 67.63%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [37/80] | Train Loss: 0.5909, Train Acc: 71.09% | Val Loss: 0.7909, Val Acc: 63.19% | Duration: 13.24s | LR: 0.000300
+Epoch [38/80] | Train Loss: 0.5895, Train Acc: 71.26% | Val Loss: 0.6952, Val Acc: 67.83% | Duration: 13.27s | LR: 0.000300
+  -> new best acc: 67.83%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [39/80] | Train Loss: 0.5696, Train Acc: 72.21% | Val Loss: 0.7002, Val Acc: 68.31% | Duration: 13.23s | LR: 0.000300
+  -> new best acc: 68.31%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [40/80] | Train Loss: 0.5650, Train Acc: 73.16% | Val Loss: 0.6937, Val Acc: 67.44% | Duration: 13.23s | LR: 0.000300
+Epoch [41/80] | Train Loss: 0.5654, Train Acc: 73.27% | Val Loss: 0.6786, Val Acc: 68.89% | Duration: 13.23s | LR: 0.000300
+  -> new best acc: 68.89%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [42/80] | Train Loss: 0.5470, Train Acc: 73.38% | Val Loss: 0.7218, Val Acc: 65.80% | Duration: 13.24s | LR: 0.000300
+Epoch [43/80] | Train Loss: 0.4934, Train Acc: 77.82% | Val Loss: 0.6782, Val Acc: 69.28% | Duration: 13.22s | LR: 0.000030
+  -> new best acc: 69.28%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [44/80] | Train Loss: 0.4719, Train Acc: 79.24% | Val Loss: 0.6784, Val Acc: 69.86% | Duration: 13.26s | LR: 0.000030
+  -> new best acc: 69.86%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [45/80] | Train Loss: 0.4668, Train Acc: 78.73% | Val Loss: 0.6732, Val Acc: 70.82% | Duration: 13.17s | LR: 0.000030
+  -> new best acc: 70.82%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [46/80] | Train Loss: 0.4586, Train Acc: 78.88% | Val Loss: 0.6896, Val Acc: 70.14% | Duration: 13.18s | LR: 0.000030
+Epoch [47/80] | Train Loss: 0.4579, Train Acc: 79.72% | Val Loss: 0.6849, Val Acc: 70.63% | Duration: 13.19s | LR: 0.000030
+Epoch [48/80] | Train Loss: 0.4527, Train Acc: 79.94% | Val Loss: 0.7041, Val Acc: 68.79% | Duration: 13.15s | LR: 0.000030
+Epoch [49/80] | Train Loss: 0.4494, Train Acc: 80.17% | Val Loss: 0.6966, Val Acc: 69.57% | Duration: 13.19s | LR: 0.000030
+Epoch [50/80] | Train Loss: 0.4440, Train Acc: 80.61% | Val Loss: 0.7202, Val Acc: 69.95% | Duration: 13.18s | LR: 0.000030
+Epoch [51/80] | Train Loss: 0.4421, Train Acc: 80.76% | Val Loss: 0.6986, Val Acc: 70.92% | Duration: 13.14s | LR: 0.000030
+  -> new best acc: 70.92%. saved to /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+Epoch [52/80] | Train Loss: 0.4330, Train Acc: 81.02% | Val Loss: 0.7023, Val Acc: 70.63% | Duration: 13.19s | LR: 0.000003
+Epoch [53/80] | Train Loss: 0.4286, Train Acc: 81.33% | Val Loss: 0.7012, Val Acc: 70.43% | Duration: 13.15s | LR: 0.000003
+Epoch [54/80] | Train Loss: 0.4307, Train Acc: 80.97% | Val Loss: 0.7037, Val Acc: 70.34% | Duration: 13.15s | LR: 0.000003
+Epoch [55/80] | Train Loss: 0.4306, Train Acc: 81.27% | Val Loss: 0.7018, Val Acc: 70.24% | Duration: 13.20s | LR: 0.000003
+Epoch [56/80] | Train Loss: 0.4261, Train Acc: 81.19% | Val Loss: 0.7043, Val Acc: 70.43% | Duration: 13.23s | LR: 0.000003
+Epoch [57/80] | Train Loss: 0.4258, Train Acc: 81.27% | Val Loss: 0.7045, Val Acc: 70.24% | Duration: 13.24s | LR: 0.000003
+Epoch [58/80] | Train Loss: 0.4289, Train Acc: 80.85% | Val Loss: 0.7048, Val Acc: 70.34% | Duration: 13.25s | LR: 0.000000
+Epoch [59/80] | Train Loss: 0.4232, Train Acc: 81.40% | Val Loss: 0.7048, Val Acc: 70.24% | Duration: 13.29s | LR: 0.000000
+Epoch [60/80] | Train Loss: 0.4255, Train Acc: 81.27% | Val Loss: 0.7044, Val Acc: 70.14% | Duration: 13.24s | LR: 0.000000
+Epoch [61/80] | Train Loss: 0.4247, Train Acc: 81.63% | Val Loss: 0.7045, Val Acc: 70.14% | Duration: 13.16s | LR: 0.000000
+Epoch [62/80] | Train Loss: 0.4266, Train Acc: 81.35% | Val Loss: 0.7044, Val Acc: 70.14% | Duration: 13.19s | LR: 0.000000
+Epoch [63/80] | Train Loss: 0.4257, Train Acc: 81.06% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.16s | LR: 0.000000
+Epoch [64/80] | Train Loss: 0.4312, Train Acc: 80.97% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.18s | LR: 0.000000
+Epoch [65/80] | Train Loss: 0.4233, Train Acc: 81.27% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.25s | LR: 0.000000
+Epoch [66/80] | Train Loss: 0.4263, Train Acc: 81.21% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.17s | LR: 0.000000
+Epoch [67/80] | Train Loss: 0.4277, Train Acc: 80.55% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.15s | LR: 0.000000
+Epoch [68/80] | Train Loss: 0.4251, Train Acc: 80.78% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.18s | LR: 0.000000
+Epoch [69/80] | Train Loss: 0.4276, Train Acc: 81.02% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.16s | LR: 0.000000
+Epoch [70/80] | Train Loss: 0.4267, Train Acc: 80.99% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.18s | LR: 0.000000
+Epoch [71/80] | Train Loss: 0.4301, Train Acc: 80.95% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.24s | LR: 0.000000
+Epoch [72/80] | Train Loss: 0.4274, Train Acc: 80.95% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.23s | LR: 0.000000
+Epoch [73/80] | Train Loss: 0.4282, Train Acc: 81.27% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.24s | LR: 0.000000
+Epoch [74/80] | Train Loss: 0.4286, Train Acc: 81.25% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.21s | LR: 0.000000
+Epoch [75/80] | Train Loss: 0.4287, Train Acc: 80.89% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.24s | LR: 0.000000
+Epoch [76/80] | Train Loss: 0.4263, Train Acc: 81.38% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.23s | LR: 0.000000
+Epoch [77/80] | Train Loss: 0.4283, Train Acc: 81.23% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.16s | LR: 0.000000
+Epoch [78/80] | Train Loss: 0.4251, Train Acc: 81.76% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.16s | LR: 0.000000
+Epoch [79/80] | Train Loss: 0.4242, Train Acc: 81.57% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.17s | LR: 0.000000
+Epoch [80/80] | Train Loss: 0.4297, Train Acc: 80.95% | Val Loss: 0.7042, Val Acc: 70.05% | Duration: 13.24s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_wider/result/new_preset_tests/widar+activity_detection+bilstmattention/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.7092
+测试集准确率: 0.6929

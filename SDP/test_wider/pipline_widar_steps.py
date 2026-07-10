@@ -23,7 +23,7 @@ from collections import Counter
 from pathlib import Path
 
 # ==================== 环境设置 ====================
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/wsdp_mplconfig")
 
 import matplotlib

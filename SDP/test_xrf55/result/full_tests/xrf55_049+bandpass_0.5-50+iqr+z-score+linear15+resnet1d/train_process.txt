@@ -1,0 +1,112 @@
+
+================================================================================
+当前算法组合: 49/80 | combo_id=xrf55_049 | model=resnet1d
+combo_name: bandpass_0.5-50+iqr+z-score+linear15
+保存目录: /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d
+当前组合的具体算法:
+{
+  "denoise": {
+    "method": "bandpass",
+    "order": 4,
+    "low_freq": 0.5,
+    "high_freq": 50.0,
+    "fs": 1000.0
+  },
+  "outliers": {
+    "method": "iqr",
+    "factor": 1.5
+  },
+  "normalize": {
+    "method": "z-score"
+  },
+  "interpolate": {
+    "method": "linear",
+    "target_K": 15
+  }
+}
+================================================================================
+step 2: process_data
+   处理完成: 3300 个样本
+   标签分布: {1: 60, 2: 60, 3: 60, 4: 60, 5: 60, 6: 60, 7: 60, 8: 60, 9: 60, 10: 60, 11: 60, 12: 60, 13: 60, 14: 60, 15: 60, 16: 60, 17: 60, 18: 60, 19: 60, 20: 60, 21: 60, 22: 60, 23: 60, 24: 60, 25: 60, 26: 60, 27: 60, 28: 60, 29: 60, 30: 60, 31: 60, 32: 60, 33: 60, 34: 60, 35: 60, 36: 60, 37: 60, 38: 60, 39: 60, 40: 60, 41: 60, 42: 60, 43: 60, 44: 60, 45: 60, 46: 60, 47: 60, 48: 60, 49: 60, 50: 60, 51: 60, 52: 60, 53: 60, 54: 60, 55: 60}
+   分组分布: {1: 165, 2: 165, 3: 165, 4: 165, 5: 165, 6: 165, 7: 165, 8: 165, 9: 165, 10: 165, 11: 165, 12: 165, 13: 165, 14: 165, 15: 165, 16: 165, 17: 165, 18: 165, 19: 165, 20: 165}
+   样本形状: (1000, 15, 9)
+   类别数: 55 (原始标签: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55])
+step 3: split_data
+训练集 1980 | 验证集 660 | 测试集 660
+step 4: 构造 DataLoader
+模型实际输入形状: (1000, 15, 9)
+step 5: create_registered_model
+模型参数量 571959
+训练设备: cuda
+step 6: 开始训练 50 轮
+Epoch [1/50] | Train Loss: 3.6650, Train Acc: 9.44% | Val Loss: 3.3600, Val Acc: 14.39% | Duration: 0.64s | LR: 0.000300
+  -> new best acc: 14.39%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [2/50] | Train Loss: 3.1734, Train Acc: 19.70% | Val Loss: 3.0471, Val Acc: 19.09% | Duration: 0.62s | LR: 0.000300
+  -> new best acc: 19.09%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [3/50] | Train Loss: 2.8640, Train Acc: 24.60% | Val Loss: 2.8588, Val Acc: 25.15% | Duration: 0.58s | LR: 0.000300
+  -> new best acc: 25.15%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [4/50] | Train Loss: 2.6441, Train Acc: 32.02% | Val Loss: 2.7153, Val Acc: 26.21% | Duration: 0.65s | LR: 0.000300
+  -> new best acc: 26.21%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [5/50] | Train Loss: 2.4557, Train Acc: 37.02% | Val Loss: 2.6383, Val Acc: 28.03% | Duration: 0.58s | LR: 0.000300
+  -> new best acc: 28.03%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [6/50] | Train Loss: 2.3009, Train Acc: 40.91% | Val Loss: 2.5549, Val Acc: 31.06% | Duration: 0.63s | LR: 0.000300
+  -> new best acc: 31.06%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [7/50] | Train Loss: 2.1941, Train Acc: 43.59% | Val Loss: 2.4360, Val Acc: 33.48% | Duration: 0.57s | LR: 0.000300
+  -> new best acc: 33.48%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [8/50] | Train Loss: 2.0750, Train Acc: 45.86% | Val Loss: 2.4410, Val Acc: 31.06% | Duration: 0.58s | LR: 0.000300
+Epoch [9/50] | Train Loss: 1.9696, Train Acc: 48.03% | Val Loss: 2.3756, Val Acc: 36.21% | Duration: 0.59s | LR: 0.000300
+  -> new best acc: 36.21%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [10/50] | Train Loss: 1.8824, Train Acc: 52.58% | Val Loss: 2.3623, Val Acc: 34.09% | Duration: 0.56s | LR: 0.000300
+Epoch [11/50] | Train Loss: 1.7700, Train Acc: 54.24% | Val Loss: 2.3126, Val Acc: 34.85% | Duration: 0.60s | LR: 0.000300
+Epoch [12/50] | Train Loss: 1.6654, Train Acc: 58.69% | Val Loss: 2.2970, Val Acc: 36.52% | Duration: 0.62s | LR: 0.000300
+  -> new best acc: 36.52%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [13/50] | Train Loss: 1.6221, Train Acc: 59.34% | Val Loss: 2.3303, Val Acc: 35.30% | Duration: 0.56s | LR: 0.000300
+Epoch [14/50] | Train Loss: 1.5235, Train Acc: 62.78% | Val Loss: 2.2574, Val Acc: 34.39% | Duration: 0.58s | LR: 0.000300
+Epoch [15/50] | Train Loss: 1.4395, Train Acc: 64.60% | Val Loss: 2.2630, Val Acc: 35.61% | Duration: 0.62s | LR: 0.000300
+Epoch [16/50] | Train Loss: 1.3395, Train Acc: 68.54% | Val Loss: 2.1970, Val Acc: 37.88% | Duration: 0.57s | LR: 0.000300
+  -> new best acc: 37.88%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [17/50] | Train Loss: 1.3128, Train Acc: 68.59% | Val Loss: 2.2424, Val Acc: 35.45% | Duration: 0.53s | LR: 0.000300
+Epoch [18/50] | Train Loss: 1.2679, Train Acc: 69.75% | Val Loss: 2.2718, Val Acc: 33.33% | Duration: 0.65s | LR: 0.000300
+Epoch [19/50] | Train Loss: 1.1631, Train Acc: 73.33% | Val Loss: 2.2051, Val Acc: 35.76% | Duration: 0.57s | LR: 0.000300
+Epoch [20/50] | Train Loss: 1.1020, Train Acc: 74.60% | Val Loss: 2.2336, Val Acc: 37.27% | Duration: 0.60s | LR: 0.000300
+Epoch [21/50] | Train Loss: 1.0189, Train Acc: 77.63% | Val Loss: 2.1729, Val Acc: 38.79% | Duration: 0.63s | LR: 0.000300
+  -> new best acc: 38.79%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [22/50] | Train Loss: 0.9877, Train Acc: 78.54% | Val Loss: 2.2378, Val Acc: 36.52% | Duration: 0.56s | LR: 0.000300
+Epoch [23/50] | Train Loss: 0.9099, Train Acc: 81.41% | Val Loss: 2.1992, Val Acc: 37.88% | Duration: 0.62s | LR: 0.000300
+Epoch [24/50] | Train Loss: 0.8379, Train Acc: 84.80% | Val Loss: 2.2649, Val Acc: 35.00% | Duration: 0.60s | LR: 0.000300
+Epoch [25/50] | Train Loss: 0.7955, Train Acc: 84.04% | Val Loss: 2.2005, Val Acc: 35.76% | Duration: 0.69s | LR: 0.000300
+Epoch [26/50] | Train Loss: 0.7457, Train Acc: 87.22% | Val Loss: 2.2124, Val Acc: 34.55% | Duration: 0.66s | LR: 0.000300
+Epoch [27/50] | Train Loss: 0.7386, Train Acc: 85.76% | Val Loss: 2.1950, Val Acc: 37.88% | Duration: 0.70s | LR: 0.000300
+Epoch [28/50] | Train Loss: 0.5566, Train Acc: 93.99% | Val Loss: 2.0913, Val Acc: 39.55% | Duration: 0.61s | LR: 0.000030
+  -> new best acc: 39.55%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [29/50] | Train Loss: 0.5099, Train Acc: 94.95% | Val Loss: 2.0778, Val Acc: 39.55% | Duration: 0.62s | LR: 0.000030
+Epoch [30/50] | Train Loss: 0.4885, Train Acc: 96.01% | Val Loss: 2.0887, Val Acc: 39.70% | Duration: 0.62s | LR: 0.000030
+  -> new best acc: 39.70%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+Epoch [31/50] | Train Loss: 0.4874, Train Acc: 95.51% | Val Loss: 2.0874, Val Acc: 39.39% | Duration: 0.69s | LR: 0.000030
+Epoch [32/50] | Train Loss: 0.4718, Train Acc: 96.26% | Val Loss: 2.0896, Val Acc: 39.55% | Duration: 0.60s | LR: 0.000030
+Epoch [33/50] | Train Loss: 0.4685, Train Acc: 96.21% | Val Loss: 2.0803, Val Acc: 38.64% | Duration: 0.82s | LR: 0.000030
+Epoch [34/50] | Train Loss: 0.4578, Train Acc: 96.06% | Val Loss: 2.0961, Val Acc: 38.33% | Duration: 0.72s | LR: 0.000030
+Epoch [35/50] | Train Loss: 0.4683, Train Acc: 96.06% | Val Loss: 2.0885, Val Acc: 39.09% | Duration: 0.64s | LR: 0.000030
+Epoch [36/50] | Train Loss: 0.4446, Train Acc: 95.96% | Val Loss: 2.0963, Val Acc: 38.79% | Duration: 0.71s | LR: 0.000003
+Epoch [37/50] | Train Loss: 0.4419, Train Acc: 96.16% | Val Loss: 2.1206, Val Acc: 39.39% | Duration: 0.69s | LR: 0.000003
+Epoch [38/50] | Train Loss: 0.4134, Train Acc: 98.23% | Val Loss: 2.0981, Val Acc: 38.94% | Duration: 0.74s | LR: 0.000003
+Epoch [39/50] | Train Loss: 0.4161, Train Acc: 97.22% | Val Loss: 2.0921, Val Acc: 39.39% | Duration: 0.75s | LR: 0.000003
+Epoch [40/50] | Train Loss: 0.4401, Train Acc: 96.46% | Val Loss: 2.1198, Val Acc: 39.09% | Duration: 0.62s | LR: 0.000003
+Epoch [41/50] | Train Loss: 0.4178, Train Acc: 97.63% | Val Loss: 2.1004, Val Acc: 38.64% | Duration: 0.58s | LR: 0.000003
+Epoch [42/50] | Train Loss: 0.4345, Train Acc: 96.97% | Val Loss: 2.0957, Val Acc: 38.18% | Duration: 0.67s | LR: 0.000000
+Epoch [43/50] | Train Loss: 0.4313, Train Acc: 96.67% | Val Loss: 2.0932, Val Acc: 38.64% | Duration: 0.62s | LR: 0.000000
+Epoch [44/50] | Train Loss: 0.4329, Train Acc: 97.07% | Val Loss: 2.1253, Val Acc: 38.48% | Duration: 0.65s | LR: 0.000000
+Epoch [45/50] | Train Loss: 0.4474, Train Acc: 96.57% | Val Loss: 2.0959, Val Acc: 39.09% | Duration: 0.58s | LR: 0.000000
+Epoch [46/50] | Train Loss: 0.4215, Train Acc: 97.88% | Val Loss: 2.0952, Val Acc: 39.24% | Duration: 0.64s | LR: 0.000000
+Epoch [47/50] | Train Loss: 0.4221, Train Acc: 97.37% | Val Loss: 2.1111, Val Acc: 38.48% | Duration: 0.58s | LR: 0.000000
+Epoch [48/50] | Train Loss: 0.4387, Train Acc: 96.87% | Val Loss: 2.1018, Val Acc: 39.39% | Duration: 0.64s | LR: 0.000000
+Epoch [49/50] | Train Loss: 0.4195, Train Acc: 97.47% | Val Loss: 2.1003, Val Acc: 38.94% | Duration: 0.65s | LR: 0.000000
+Epoch [50/50] | Train Loss: 0.4443, Train Acc: 96.82% | Val Loss: 2.0983, Val Acc: 39.24% | Duration: 0.60s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_049+bandpass_0.5-50+iqr+z-score+linear15+resnet1d/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.3970
+测试集准确率: 0.3939
+
+================================================================================
+组合完成: 49/80 | combo_id=xrf55_049 | best_val_acc=0.3970 | test_acc=0.3939 | duration=216.42s
+================================================================================

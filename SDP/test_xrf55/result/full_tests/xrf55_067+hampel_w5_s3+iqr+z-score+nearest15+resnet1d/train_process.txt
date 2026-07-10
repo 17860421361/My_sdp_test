@@ -1,0 +1,113 @@
+
+================================================================================
+当前算法组合: 67/80 | combo_id=xrf55_067 | model=resnet1d
+combo_name: hampel_w5_s3+iqr+z-score+nearest15
+保存目录: /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d
+当前组合的具体算法:
+{
+  "denoise": {
+    "method": "hampel",
+    "window_size": 5,
+    "n_sigma": 3.0
+  },
+  "outliers": {
+    "method": "iqr",
+    "factor": 1.5
+  },
+  "normalize": {
+    "method": "z-score"
+  },
+  "interpolate": {
+    "method": "nearest",
+    "target_K": 15
+  }
+}
+================================================================================
+step 2: process_data
+   处理完成: 3300 个样本
+   标签分布: {1: 60, 2: 60, 3: 60, 4: 60, 5: 60, 6: 60, 7: 60, 8: 60, 9: 60, 10: 60, 11: 60, 12: 60, 13: 60, 14: 60, 15: 60, 16: 60, 17: 60, 18: 60, 19: 60, 20: 60, 21: 60, 22: 60, 23: 60, 24: 60, 25: 60, 26: 60, 27: 60, 28: 60, 29: 60, 30: 60, 31: 60, 32: 60, 33: 60, 34: 60, 35: 60, 36: 60, 37: 60, 38: 60, 39: 60, 40: 60, 41: 60, 42: 60, 43: 60, 44: 60, 45: 60, 46: 60, 47: 60, 48: 60, 49: 60, 50: 60, 51: 60, 52: 60, 53: 60, 54: 60, 55: 60}
+   分组分布: {1: 165, 2: 165, 3: 165, 4: 165, 5: 165, 6: 165, 7: 165, 8: 165, 9: 165, 10: 165, 11: 165, 12: 165, 13: 165, 14: 165, 15: 165, 16: 165, 17: 165, 18: 165, 19: 165, 20: 165}
+   样本形状: (1000, 15, 9)
+   类别数: 55 (原始标签: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55])
+step 3: split_data
+训练集 1980 | 验证集 660 | 测试集 660
+step 4: 构造 DataLoader
+模型实际输入形状: (1000, 15, 9)
+step 5: create_registered_model
+模型参数量 571959
+训练设备: cuda
+step 6: 开始训练 50 轮
+Epoch [1/50] | Train Loss: 3.2717, Train Acc: 18.18% | Val Loss: 2.5168, Val Acc: 33.33% | Duration: 0.62s | LR: 0.000300
+  -> new best acc: 33.33%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [2/50] | Train Loss: 2.2746, Train Acc: 41.62% | Val Loss: 2.0215, Val Acc: 46.21% | Duration: 0.63s | LR: 0.000300
+  -> new best acc: 46.21%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [3/50] | Train Loss: 1.7703, Train Acc: 53.89% | Val Loss: 1.5727, Val Acc: 58.79% | Duration: 0.55s | LR: 0.000300
+  -> new best acc: 58.79%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [4/50] | Train Loss: 1.4340, Train Acc: 62.47% | Val Loss: 1.3644, Val Acc: 64.09% | Duration: 0.57s | LR: 0.000300
+  -> new best acc: 64.09%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [5/50] | Train Loss: 1.1543, Train Acc: 71.72% | Val Loss: 1.1763, Val Acc: 69.70% | Duration: 0.58s | LR: 0.000300
+  -> new best acc: 69.70%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [6/50] | Train Loss: 0.9723, Train Acc: 75.76% | Val Loss: 1.1279, Val Acc: 68.94% | Duration: 0.53s | LR: 0.000300
+Epoch [7/50] | Train Loss: 0.8678, Train Acc: 77.73% | Val Loss: 0.9515, Val Acc: 73.64% | Duration: 0.53s | LR: 0.000300
+  -> new best acc: 73.64%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [8/50] | Train Loss: 0.7876, Train Acc: 79.65% | Val Loss: 0.9407, Val Acc: 73.64% | Duration: 0.59s | LR: 0.000300
+Epoch [9/50] | Train Loss: 0.6834, Train Acc: 82.63% | Val Loss: 0.8553, Val Acc: 76.21% | Duration: 0.56s | LR: 0.000300
+  -> new best acc: 76.21%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [10/50] | Train Loss: 0.6443, Train Acc: 83.03% | Val Loss: 0.7730, Val Acc: 77.27% | Duration: 0.56s | LR: 0.000300
+  -> new best acc: 77.27%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [11/50] | Train Loss: 0.5223, Train Acc: 87.53% | Val Loss: 0.7489, Val Acc: 77.42% | Duration: 0.62s | LR: 0.000300
+  -> new best acc: 77.42%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [12/50] | Train Loss: 0.5074, Train Acc: 87.22% | Val Loss: 0.7517, Val Acc: 78.18% | Duration: 0.56s | LR: 0.000300
+  -> new best acc: 78.18%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [13/50] | Train Loss: 0.4567, Train Acc: 88.28% | Val Loss: 0.6576, Val Acc: 82.42% | Duration: 0.61s | LR: 0.000300
+  -> new best acc: 82.42%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [14/50] | Train Loss: 0.4022, Train Acc: 89.85% | Val Loss: 0.6465, Val Acc: 82.88% | Duration: 0.55s | LR: 0.000300
+  -> new best acc: 82.88%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [15/50] | Train Loss: 0.3920, Train Acc: 89.75% | Val Loss: 0.7562, Val Acc: 77.58% | Duration: 0.53s | LR: 0.000300
+Epoch [16/50] | Train Loss: 0.3799, Train Acc: 90.05% | Val Loss: 0.7222, Val Acc: 78.48% | Duration: 0.60s | LR: 0.000300
+Epoch [17/50] | Train Loss: 0.3550, Train Acc: 90.96% | Val Loss: 0.5968, Val Acc: 81.67% | Duration: 0.57s | LR: 0.000300
+Epoch [18/50] | Train Loss: 0.3374, Train Acc: 90.71% | Val Loss: 0.6504, Val Acc: 82.27% | Duration: 0.55s | LR: 0.000300
+Epoch [19/50] | Train Loss: 0.3311, Train Acc: 90.96% | Val Loss: 0.6775, Val Acc: 80.91% | Duration: 0.54s | LR: 0.000300
+Epoch [20/50] | Train Loss: 0.2722, Train Acc: 93.28% | Val Loss: 0.5602, Val Acc: 85.30% | Duration: 0.50s | LR: 0.000300
+  -> new best acc: 85.30%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [21/50] | Train Loss: 0.2671, Train Acc: 92.88% | Val Loss: 0.5567, Val Acc: 84.85% | Duration: 0.51s | LR: 0.000300
+Epoch [22/50] | Train Loss: 0.2758, Train Acc: 92.63% | Val Loss: 0.5510, Val Acc: 84.24% | Duration: 0.57s | LR: 0.000300
+Epoch [23/50] | Train Loss: 0.2100, Train Acc: 95.61% | Val Loss: 0.5215, Val Acc: 87.58% | Duration: 0.67s | LR: 0.000300
+  -> new best acc: 87.58%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [24/50] | Train Loss: 0.2069, Train Acc: 95.15% | Val Loss: 0.5305, Val Acc: 84.70% | Duration: 0.63s | LR: 0.000300
+Epoch [25/50] | Train Loss: 0.2164, Train Acc: 93.59% | Val Loss: 0.6052, Val Acc: 83.03% | Duration: 0.62s | LR: 0.000300
+Epoch [26/50] | Train Loss: 0.2005, Train Acc: 95.86% | Val Loss: 0.5372, Val Acc: 85.00% | Duration: 0.68s | LR: 0.000300
+Epoch [27/50] | Train Loss: 0.1988, Train Acc: 95.00% | Val Loss: 0.7535, Val Acc: 82.27% | Duration: 0.61s | LR: 0.000300
+Epoch [28/50] | Train Loss: 0.2311, Train Acc: 93.74% | Val Loss: 0.4918, Val Acc: 85.76% | Duration: 0.64s | LR: 0.000300
+Epoch [29/50] | Train Loss: 0.1585, Train Acc: 96.41% | Val Loss: 0.5367, Val Acc: 86.67% | Duration: 0.62s | LR: 0.000300
+Epoch [30/50] | Train Loss: 0.1461, Train Acc: 96.57% | Val Loss: 0.5347, Val Acc: 86.36% | Duration: 0.61s | LR: 0.000300
+Epoch [31/50] | Train Loss: 0.1849, Train Acc: 95.20% | Val Loss: 0.5745, Val Acc: 84.85% | Duration: 0.65s | LR: 0.000300
+Epoch [32/50] | Train Loss: 0.1706, Train Acc: 95.91% | Val Loss: 0.7197, Val Acc: 81.97% | Duration: 0.64s | LR: 0.000300
+Epoch [33/50] | Train Loss: 0.1749, Train Acc: 95.51% | Val Loss: 0.6254, Val Acc: 83.64% | Duration: 0.65s | LR: 0.000300
+Epoch [34/50] | Train Loss: 0.1746, Train Acc: 95.25% | Val Loss: 0.5272, Val Acc: 86.52% | Duration: 0.62s | LR: 0.000300
+Epoch [35/50] | Train Loss: 0.1189, Train Acc: 97.63% | Val Loss: 0.4173, Val Acc: 90.45% | Duration: 0.62s | LR: 0.000030
+  -> new best acc: 90.45%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [36/50] | Train Loss: 0.0803, Train Acc: 98.69% | Val Loss: 0.4107, Val Acc: 89.85% | Duration: 0.69s | LR: 0.000030
+Epoch [37/50] | Train Loss: 0.0779, Train Acc: 98.38% | Val Loss: 0.4083, Val Acc: 89.70% | Duration: 0.64s | LR: 0.000030
+Epoch [38/50] | Train Loss: 0.0687, Train Acc: 99.14% | Val Loss: 0.3854, Val Acc: 90.61% | Duration: 0.66s | LR: 0.000030
+  -> new best acc: 90.61%. saved to /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+Epoch [39/50] | Train Loss: 0.0655, Train Acc: 98.89% | Val Loss: 0.3928, Val Acc: 90.30% | Duration: 0.63s | LR: 0.000030
+Epoch [40/50] | Train Loss: 0.0640, Train Acc: 98.99% | Val Loss: 0.3875, Val Acc: 90.15% | Duration: 0.73s | LR: 0.000030
+Epoch [41/50] | Train Loss: 0.0655, Train Acc: 99.09% | Val Loss: 0.3832, Val Acc: 89.85% | Duration: 0.62s | LR: 0.000030
+Epoch [42/50] | Train Loss: 0.0635, Train Acc: 99.09% | Val Loss: 0.3855, Val Acc: 90.30% | Duration: 0.65s | LR: 0.000030
+Epoch [43/50] | Train Loss: 0.0610, Train Acc: 99.34% | Val Loss: 0.3829, Val Acc: 90.30% | Duration: 0.62s | LR: 0.000030
+Epoch [44/50] | Train Loss: 0.0637, Train Acc: 98.84% | Val Loss: 0.3939, Val Acc: 89.39% | Duration: 0.62s | LR: 0.000030
+Epoch [45/50] | Train Loss: 0.0669, Train Acc: 99.09% | Val Loss: 0.3948, Val Acc: 90.45% | Duration: 0.62s | LR: 0.000030
+Epoch [46/50] | Train Loss: 0.0537, Train Acc: 99.24% | Val Loss: 0.3873, Val Acc: 90.00% | Duration: 0.62s | LR: 0.000030
+Epoch [47/50] | Train Loss: 0.0563, Train Acc: 99.19% | Val Loss: 0.3898, Val Acc: 90.00% | Duration: 0.70s | LR: 0.000030
+Epoch [48/50] | Train Loss: 0.0541, Train Acc: 99.19% | Val Loss: 0.3966, Val Acc: 89.55% | Duration: 0.70s | LR: 0.000030
+Epoch [49/50] | Train Loss: 0.0519, Train Acc: 99.24% | Val Loss: 0.3941, Val Acc: 90.15% | Duration: 0.66s | LR: 0.000030
+Epoch [50/50] | Train Loss: 0.0631, Train Acc: 99.14% | Val Loss: 0.3983, Val Acc: 89.55% | Duration: 0.82s | LR: 0.000003
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_xrf55/result/full_tests/xrf55_067+hampel_w5_s3+iqr+z-score+nearest15+resnet1d/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.9061
+测试集准确率: 0.8409
+
+================================================================================
+组合完成: 67/80 | combo_id=xrf55_067 | best_val_acc=0.9061 | test_acc=0.8409 | duration=4528.59s
+================================================================================
