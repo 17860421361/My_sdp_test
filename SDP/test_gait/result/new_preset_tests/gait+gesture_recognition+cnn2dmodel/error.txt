@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "/home/test/bupt_hjk/SDP/test_gait/full_test_presets_models_gait.py", line 244, in main
+    row = train_and_evaluate_model(
+        preset_name,
+    ...<6 lines>...
+        input_shape,
+    )
+  File "/home/test/bupt_hjk/SDP/test_gait/full_test_presets_models_gait.py", line 118, in train_and_evaluate_model
+    checkpoint_path = step_pipeline.train_registered_model(
+        model,
+    ...<9 lines>...
+        model_name,
+    )
+  File "/home/test/bupt_hjk/SDP/test_gait/pipline_gait_steps.py", line 302, in train_registered_model
+    history = train_model(
+        model,
+    ...<8 lines>...
+        padding_length,
+    )
+  File "/home/test/bupt_hjk/SDP/SDP-Sensing-Data-Protocol-for-Scalable-Wireless-Sensing-main/src/wsdp/utils/train_func.py", line 72, in train_model
+    predictions = model(csi_data)
+  File "/home/test/.conda/envs/sdp0425/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/test/.conda/envs/sdp0425/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/test/bupt_hjk/SDP/SDP-Sensing-Data-Protocol-for-Scalable-Wireless-Sensing-main/src/wsdp/models/baselines.py", line 220, in forward
+    x = self.spatial_temporal(x)  # (B, ch, 1, 1)
+  File "/home/test/.conda/envs/sdp0425/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/test/.conda/envs/sdp0425/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/test/.conda/envs/sdp0425/lib/python3.13/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/home/test/.conda/envs/sdp0425/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/test/.conda/envs/sdp0425/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/test/.conda/envs/sdp0425/lib/python3.13/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/test/.conda/envs/sdp0425/lib/python3.13/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+           ~~~~~~~~^
+        input, weight, bias, self.stride, self.padding, self.dilation, self.groups
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 23.44 GiB. GPU 0 has a total capacity of 79.25 GiB of which 18.41 GiB is free. Including non-PyTorch memory, this process has 60.82 GiB memory in use. Of the allocated memory 60.21 GiB is allocated by PyTorch, and 111.38 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

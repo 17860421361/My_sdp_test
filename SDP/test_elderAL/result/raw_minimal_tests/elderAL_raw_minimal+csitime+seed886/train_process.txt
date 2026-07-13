@@ -1,0 +1,42 @@
+{"pipeline_steps": {}}
+step 2: raw-minimal process_data
+处理完成: 2404 个样本
+标签分布: {1: 398, 3: 405, 5: 405, 2: 387, 0: 404, 6: 405}
+分组分布: {8: 270, 6: 268, 7: 268, 3: 265, 2: 266, 1: 264, 9: 267, 4: 267, 5: 269}
+样本形状: (80, 512, 3)
+类别数: 6 (原始标签: [0, 1, 2, 3, 5, 6])
+step 3: group split
+训练集 1603 | 验证集 532 | 测试集 269
+step 4: build DataLoader
+模型实际输入形状: (80, 512, 3)
+step 5: create_registered_model
+模型参数量 635654
+训练设备: cuda
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.0874, Train Acc: 72.49% | Val Loss: 0.8252, Val Acc: 85.71% | Duration: 0.87s | LR: 0.000300
+  -> new best acc: 85.71%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/raw_minimal_tests/elderAL_raw_minimal+csitime+seed886/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 0.4822, Train Acc: 96.63% | Val Loss: 0.5403, Val Acc: 87.97% | Duration: 0.46s | LR: 0.000300
+  -> new best acc: 87.97%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/raw_minimal_tests/elderAL_raw_minimal+csitime+seed886/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 0.2749, Train Acc: 99.38% | Val Loss: 0.4841, Val Acc: 84.77% | Duration: 0.44s | LR: 0.000300
+Epoch [4/20] | Train Loss: 0.2181, Train Acc: 99.75% | Val Loss: 0.3838, Val Acc: 97.18% | Duration: 0.47s | LR: 0.000300
+  -> new best acc: 97.18%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/raw_minimal_tests/elderAL_raw_minimal+csitime+seed886/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 0.1588, Train Acc: 99.88% | Val Loss: 0.4284, Val Acc: 81.77% | Duration: 0.42s | LR: 0.000300
+Epoch [6/20] | Train Loss: 0.1151, Train Acc: 99.94% | Val Loss: 0.2266, Val Acc: 97.37% | Duration: 0.46s | LR: 0.000300
+  -> new best acc: 97.37%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/raw_minimal_tests/elderAL_raw_minimal+csitime+seed886/best_checkpoint.pth
+Epoch [7/20] | Train Loss: 0.0949, Train Acc: 99.94% | Val Loss: 0.5549, Val Acc: 87.22% | Duration: 0.46s | LR: 0.000300
+Epoch [8/20] | Train Loss: 0.1530, Train Acc: 99.50% | Val Loss: 0.5439, Val Acc: 89.85% | Duration: 0.45s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.1013, Train Acc: 99.94% | Val Loss: 0.5012, Val Acc: 84.96% | Duration: 0.44s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.0934, Train Acc: 99.88% | Val Loss: 0.3063, Val Acc: 90.98% | Duration: 0.41s | LR: 0.000300
+Epoch [11/20] | Train Loss: 0.0640, Train Acc: 100.00% | Val Loss: 0.2356, Val Acc: 95.30% | Duration: 0.44s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.0761, Train Acc: 99.94% | Val Loss: 0.2112, Val Acc: 97.18% | Duration: 0.47s | LR: 0.000300
+Epoch [13/20] | Train Loss: 0.0541, Train Acc: 99.94% | Val Loss: 0.2567, Val Acc: 96.99% | Duration: 0.49s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.0488, Train Acc: 99.88% | Val Loss: 0.3983, Val Acc: 85.15% | Duration: 0.43s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.0820, Train Acc: 99.44% | Val Loss: 0.5870, Val Acc: 79.89% | Duration: 0.41s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.1198, Train Acc: 98.75% | Val Loss: 0.3506, Val Acc: 88.35% | Duration: 0.38s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.0565, Train Acc: 100.00% | Val Loss: 0.2073, Val Acc: 92.48% | Duration: 0.38s | LR: 0.000300
+Epoch [18/20] | Train Loss: 0.0372, Train Acc: 100.00% | Val Loss: 0.1392, Val Acc: 96.99% | Duration: 0.40s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.0292, Train Acc: 100.00% | Val Loss: 0.1678, Val Acc: 96.05% | Duration: 0.42s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.0393, Train Acc: 100.00% | Val Loss: 0.2838, Val Acc: 86.09% | Duration: 0.46s | LR: 0.000300
+step 7: 测试集评估
+最佳验证准确率: 0.9737
+测试集准确率: 1.0000
