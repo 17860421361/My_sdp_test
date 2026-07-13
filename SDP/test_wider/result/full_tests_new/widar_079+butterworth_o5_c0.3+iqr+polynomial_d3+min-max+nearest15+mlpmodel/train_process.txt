@@ -1,0 +1,50 @@
+
+================================================================================
+当前算法组合: 79/320 | combo_id=widar_079 | model=mlpmodel
+combo_name: butterworth_o5_c0.3+iqr+polynomial_d3+min-max+nearest15
+保存目录: /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_079+butterworth_o5_c0.3+iqr+polynomial_d3+min-max+nearest15+mlpmodel
+公共前缀: 10/40 | butterworth_o5_c0.3+iqr+polynomial_d3
+公共前缀 pipeline_steps（本组只处理一次）:
+{
+  "denoise": {
+    "method": "butterworth",
+    "order": 5,
+    "cutoff": 0.3
+  },
+  "outliers": {
+    "method": "iqr",
+    "factor": 1.5
+  },
+  "calibrate": {
+    "method": "polynomial",
+    "degree": 3
+  }
+}
+公共前缀处理耗时: 512.34s
+当前输入缓存: 公共前缀+min-max共享缓存（当前组合只执行 interpolate）
+实际执行顺序: butterworth_o5_c0.3 -> iqr -> polynomial_d3 -> min-max -> nearest15 -> 训练
+当前组合的完整 pipeline_steps:
+{
+  "denoise": {
+    "method": "butterworth",
+    "order": 5,
+    "cutoff": 0.3
+  },
+  "outliers": {
+    "method": "iqr",
+    "factor": 1.5
+  },
+  "calibrate": {
+    "method": "polynomial",
+    "degree": 3
+  },
+  "normalize": {
+    "method": "min-max"
+  },
+  "interpolate": {
+    "method": "nearest",
+    "target_K": 15
+  }
+}
+================================================================================
+step 2: 从公共缓存生成当前组合的最终处理数据

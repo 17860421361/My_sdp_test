@@ -1,0 +1,12 @@
+
+============================================================
+开始模型训练: preset=activity_detection, model=lstmmodel (5/15)
+============================================================
+step 5: create_registered_model
+模型参数量 729289
+训练设备: cuda
+step 6: 开始训练 60 轮
+Epoch [1/60] | Train Loss: 2.0814, Train Acc: 19.07% | Val Loss: 2.1669, Val Acc: 17.35% | Duration: 67.82s | LR: 0.000300
+  -> new best acc: 17.35%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+lstmmodel/best_checkpoint.pth
+Epoch [2/60] | Train Loss: 1.9816, Train Acc: 24.51% | Val Loss: 2.1660, Val Acc: 17.45% | Duration: 67.92s | LR: 0.000300
+  -> new best acc: 17.45%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+lstmmodel/best_checkpoint.pth
