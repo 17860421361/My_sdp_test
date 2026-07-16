@@ -1,0 +1,82 @@
+
+============================================================
+开始模型训练: preset=activity_detection, model=that (9/15)
+============================================================
+step 5: create_registered_model
+模型参数量 604169
+训练设备: cuda
+step 6: 开始训练 60 轮
+Epoch [1/60] | Train Loss: 1.3136, Train Acc: 49.16% | Val Loss: 1.2495, Val Acc: 52.45% | Duration: 23.51s | LR: 0.000300
+  -> new best acc: 52.45%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [2/60] | Train Loss: 0.6232, Train Acc: 72.62% | Val Loss: 0.7012, Val Acc: 70.09% | Duration: 23.51s | LR: 0.000300
+  -> new best acc: 70.09%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [3/60] | Train Loss: 0.4594, Train Acc: 80.71% | Val Loss: 0.6255, Val Acc: 74.21% | Duration: 22.92s | LR: 0.000300
+  -> new best acc: 74.21%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [4/60] | Train Loss: 0.3640, Train Acc: 85.19% | Val Loss: 0.7679, Val Acc: 70.19% | Duration: 23.46s | LR: 0.000300
+Epoch [5/60] | Train Loss: 0.2510, Train Acc: 90.64% | Val Loss: 0.5469, Val Acc: 78.43% | Duration: 22.87s | LR: 0.000300
+  -> new best acc: 78.43%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [6/60] | Train Loss: 0.2032, Train Acc: 92.86% | Val Loss: 0.8340, Val Acc: 73.44% | Duration: 23.35s | LR: 0.000300
+Epoch [7/60] | Train Loss: 0.1461, Train Acc: 94.97% | Val Loss: 0.5894, Val Acc: 79.30% | Duration: 23.02s | LR: 0.000300
+  -> new best acc: 79.30%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [8/60] | Train Loss: 0.1068, Train Acc: 96.45% | Val Loss: 0.7715, Val Acc: 76.79% | Duration: 23.33s | LR: 0.000300
+Epoch [9/60] | Train Loss: 0.0807, Train Acc: 97.33% | Val Loss: 0.7735, Val Acc: 74.40% | Duration: 23.13s | LR: 0.000300
+Epoch [10/60] | Train Loss: 0.0832, Train Acc: 97.22% | Val Loss: 0.6769, Val Acc: 79.88% | Duration: 23.06s | LR: 0.000300
+  -> new best acc: 79.88%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [11/60] | Train Loss: 0.0675, Train Acc: 97.83% | Val Loss: 0.7060, Val Acc: 79.23% | Duration: 23.07s | LR: 0.000300
+Epoch [12/60] | Train Loss: 0.0210, Train Acc: 99.44% | Val Loss: 0.6193, Val Acc: 82.03% | Duration: 23.10s | LR: 0.000030
+  -> new best acc: 82.03%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [13/60] | Train Loss: 0.0135, Train Acc: 99.69% | Val Loss: 0.6599, Val Acc: 81.55% | Duration: 23.32s | LR: 0.000030
+Epoch [14/60] | Train Loss: 0.0096, Train Acc: 99.84% | Val Loss: 0.6644, Val Acc: 82.00% | Duration: 23.15s | LR: 0.000030
+Epoch [15/60] | Train Loss: 0.0085, Train Acc: 99.86% | Val Loss: 0.6753, Val Acc: 82.20% | Duration: 24.42s | LR: 0.000030
+  -> new best acc: 82.20%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [16/60] | Train Loss: 0.0067, Train Acc: 99.89% | Val Loss: 0.6995, Val Acc: 82.10% | Duration: 24.42s | LR: 0.000030
+Epoch [17/60] | Train Loss: 0.0066, Train Acc: 99.87% | Val Loss: 0.7168, Val Acc: 82.39% | Duration: 24.18s | LR: 0.000030
+  -> new best acc: 82.39%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [18/60] | Train Loss: 0.0056, Train Acc: 99.92% | Val Loss: 0.7214, Val Acc: 82.23% | Duration: 23.65s | LR: 0.000003
+Epoch [19/60] | Train Loss: 0.0056, Train Acc: 99.91% | Val Loss: 0.7254, Val Acc: 82.13% | Duration: 23.66s | LR: 0.000003
+Epoch [20/60] | Train Loss: 0.0056, Train Acc: 99.93% | Val Loss: 0.7617, Val Acc: 81.62% | Duration: 23.07s | LR: 0.000003
+Epoch [21/60] | Train Loss: 0.0053, Train Acc: 99.93% | Val Loss: 0.7265, Val Acc: 82.10% | Duration: 23.58s | LR: 0.000003
+Epoch [22/60] | Train Loss: 0.0059, Train Acc: 99.87% | Val Loss: 0.7583, Val Acc: 81.58% | Duration: 23.15s | LR: 0.000003
+Epoch [23/60] | Train Loss: 0.0046, Train Acc: 99.93% | Val Loss: 0.7345, Val Acc: 82.03% | Duration: 23.26s | LR: 0.000003
+Epoch [24/60] | Train Loss: 0.0043, Train Acc: 99.95% | Val Loss: 0.7381, Val Acc: 81.91% | Duration: 23.78s | LR: 0.000000
+Epoch [25/60] | Train Loss: 0.0043, Train Acc: 99.94% | Val Loss: 0.7203, Val Acc: 82.36% | Duration: 23.65s | LR: 0.000000
+Epoch [26/60] | Train Loss: 0.0045, Train Acc: 99.94% | Val Loss: 0.7187, Val Acc: 82.29% | Duration: 23.83s | LR: 0.000000
+Epoch [27/60] | Train Loss: 0.0051, Train Acc: 99.93% | Val Loss: 0.7266, Val Acc: 81.97% | Duration: 23.70s | LR: 0.000000
+Epoch [28/60] | Train Loss: 0.0038, Train Acc: 99.98% | Val Loss: 0.7256, Val Acc: 81.91% | Duration: 22.85s | LR: 0.000000
+Epoch [29/60] | Train Loss: 0.0045, Train Acc: 99.97% | Val Loss: 0.7422, Val Acc: 81.81% | Duration: 23.40s | LR: 0.000000
+Epoch [30/60] | Train Loss: 0.0039, Train Acc: 99.98% | Val Loss: 0.7377, Val Acc: 81.68% | Duration: 23.41s | LR: 0.000000
+Epoch [31/60] | Train Loss: 0.0049, Train Acc: 99.94% | Val Loss: 0.7342, Val Acc: 82.03% | Duration: 22.88s | LR: 0.000000
+Epoch [32/60] | Train Loss: 0.0050, Train Acc: 99.92% | Val Loss: 0.7354, Val Acc: 81.87% | Duration: 23.21s | LR: 0.000000
+Epoch [33/60] | Train Loss: 0.0042, Train Acc: 99.95% | Val Loss: 0.7409, Val Acc: 81.71% | Duration: 23.18s | LR: 0.000000
+Epoch [34/60] | Train Loss: 0.0059, Train Acc: 99.90% | Val Loss: 0.7365, Val Acc: 81.81% | Duration: 22.85s | LR: 0.000000
+Epoch [35/60] | Train Loss: 0.0044, Train Acc: 99.94% | Val Loss: 0.7367, Val Acc: 81.71% | Duration: 22.84s | LR: 0.000000
+Epoch [36/60] | Train Loss: 0.0050, Train Acc: 99.91% | Val Loss: 0.7274, Val Acc: 82.07% | Duration: 22.84s | LR: 0.000000
+Epoch [37/60] | Train Loss: 0.0049, Train Acc: 99.94% | Val Loss: 0.7313, Val Acc: 81.94% | Duration: 22.57s | LR: 0.000000
+Epoch [38/60] | Train Loss: 0.0045, Train Acc: 99.94% | Val Loss: 0.7204, Val Acc: 82.20% | Duration: 22.73s | LR: 0.000000
+Epoch [39/60] | Train Loss: 0.0042, Train Acc: 99.95% | Val Loss: 0.7494, Val Acc: 81.46% | Duration: 22.67s | LR: 0.000000
+Epoch [40/60] | Train Loss: 0.0046, Train Acc: 99.95% | Val Loss: 0.7325, Val Acc: 82.00% | Duration: 22.70s | LR: 0.000000
+Epoch [41/60] | Train Loss: 0.0049, Train Acc: 99.91% | Val Loss: 0.7301, Val Acc: 81.94% | Duration: 22.67s | LR: 0.000000
+Epoch [42/60] | Train Loss: 0.0040, Train Acc: 99.97% | Val Loss: 0.7204, Val Acc: 82.39% | Duration: 22.52s | LR: 0.000000
+Epoch [43/60] | Train Loss: 0.0042, Train Acc: 99.97% | Val Loss: 0.7292, Val Acc: 82.00% | Duration: 22.59s | LR: 0.000000
+Epoch [44/60] | Train Loss: 0.0044, Train Acc: 99.94% | Val Loss: 0.7199, Val Acc: 82.61% | Duration: 22.79s | LR: 0.000000
+  -> new best acc: 82.61%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+Epoch [45/60] | Train Loss: 0.0047, Train Acc: 99.95% | Val Loss: 0.7337, Val Acc: 82.20% | Duration: 22.82s | LR: 0.000000
+Epoch [46/60] | Train Loss: 0.0045, Train Acc: 99.93% | Val Loss: 0.7267, Val Acc: 82.16% | Duration: 22.84s | LR: 0.000000
+Epoch [47/60] | Train Loss: 0.0051, Train Acc: 99.91% | Val Loss: 0.7353, Val Acc: 82.03% | Duration: 22.88s | LR: 0.000000
+Epoch [48/60] | Train Loss: 0.0045, Train Acc: 99.94% | Val Loss: 0.7371, Val Acc: 81.68% | Duration: 22.92s | LR: 0.000000
+Epoch [49/60] | Train Loss: 0.0043, Train Acc: 99.97% | Val Loss: 0.7371, Val Acc: 81.87% | Duration: 22.71s | LR: 0.000000
+Epoch [50/60] | Train Loss: 0.0038, Train Acc: 99.97% | Val Loss: 0.7262, Val Acc: 82.26% | Duration: 22.62s | LR: 0.000000
+Epoch [51/60] | Train Loss: 0.0044, Train Acc: 99.95% | Val Loss: 0.7363, Val Acc: 81.97% | Duration: 22.65s | LR: 0.000000
+Epoch [52/60] | Train Loss: 0.0045, Train Acc: 99.94% | Val Loss: 0.7346, Val Acc: 82.13% | Duration: 22.59s | LR: 0.000000
+Epoch [53/60] | Train Loss: 0.0047, Train Acc: 99.93% | Val Loss: 0.7367, Val Acc: 81.75% | Duration: 22.74s | LR: 0.000000
+Epoch [54/60] | Train Loss: 0.0040, Train Acc: 99.98% | Val Loss: 0.7420, Val Acc: 81.97% | Duration: 22.60s | LR: 0.000000
+Epoch [55/60] | Train Loss: 0.0052, Train Acc: 99.96% | Val Loss: 0.7292, Val Acc: 82.03% | Duration: 22.68s | LR: 0.000000
+Epoch [56/60] | Train Loss: 0.0042, Train Acc: 99.95% | Val Loss: 0.7269, Val Acc: 81.94% | Duration: 22.64s | LR: 0.000000
+Epoch [57/60] | Train Loss: 0.0050, Train Acc: 99.88% | Val Loss: 0.7542, Val Acc: 81.58% | Duration: 22.60s | LR: 0.000000
+Epoch [58/60] | Train Loss: 0.0048, Train Acc: 99.94% | Val Loss: 0.7343, Val Acc: 81.81% | Duration: 22.59s | LR: 0.000000
+Epoch [59/60] | Train Loss: 0.0044, Train Acc: 99.92% | Val Loss: 0.7407, Val Acc: 81.81% | Duration: 22.58s | LR: 0.000000
+Epoch [60/60] | Train Loss: 0.0051, Train Acc: 99.90% | Val Loss: 0.7470, Val Acc: 82.00% | Duration: 22.73s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+that/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.8261
+测试集准确率: 0.8696

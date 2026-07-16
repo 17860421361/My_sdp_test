@@ -1,0 +1,159 @@
+
+================================================================================
+当前算法组合: 131/320 | combo_id=widar_131 | model=mlpmodel
+combo_name: savgol_w7_p3+iqr+linear+z-score+nearest15
+保存目录: /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel
+公共前缀: 17/40 | savgol_w7_p3+iqr+linear
+公共前缀 pipeline_steps（本组只处理一次）:
+{
+  "denoise": {
+    "method": "savgol",
+    "window_length": 7,
+    "polyorder": 3
+  },
+  "outliers": {
+    "method": "iqr",
+    "factor": 1.5
+  },
+  "calibrate": {
+    "method": "linear"
+  }
+}
+公共前缀处理耗时: 496.47s
+当前输入缓存: 公共前缀缓存（当前组合再执行 interpolate -> z-score）
+实际执行顺序: savgol_w7_p3 -> iqr -> linear -> nearest15 -> z-score -> 训练
+当前组合的完整 pipeline_steps:
+{
+  "denoise": {
+    "method": "savgol",
+    "window_length": 7,
+    "polyorder": 3
+  },
+  "outliers": {
+    "method": "iqr",
+    "factor": 1.5
+  },
+  "calibrate": {
+    "method": "linear"
+  },
+  "normalize": {
+    "method": "z-score"
+  },
+  "interpolate": {
+    "method": "nearest",
+    "target_K": 15
+  }
+}
+================================================================================
+step 2: 从公共缓存生成当前组合的最终处理数据
+   处理完成: 6750 个样本
+   标签分布: {3: 2250, 1: 2250, 2: 2250}
+   分组分布: {1205: 45, 2405: 45, 3104: 45, 5504: 45, 2302: 45, 1203: 45, 1502: 45, 2103: 45, 3302: 45, 4202: 45, 2502: 45, 4301: 45, 2406: 45, 3504: 45, 3204: 45, 1306: 45, 1303: 45, 1102: 45, 3301: 45, 2104: 45, 3506: 45, 3406: 45, 1404: 45, 3402: 45, 3502: 45, 5102: 45, 4502: 45, 1106: 45, 3101: 45, 5501: 45, 5304: 45, 1105: 45, 3202: 45, 4501: 45, 2401: 45, 4206: 45, 5305: 45, 1501: 45, 4404: 45, 5205: 45, 2202: 45, 5104: 45, 2501: 45, 4101: 45, 2102: 45, 4304: 45, 2301: 45, 3201: 45, 5203: 45, 5202: 45, 2305: 45, 5506: 45, 5503: 45, 4402: 45, 1405: 45, 4303: 45, 4504: 45, 4105: 45, 5303: 45, 5302: 45, 4405: 45, 2201: 45, 4104: 45, 4203: 45, 3106: 45, 2504: 45, 2204: 45, 4403: 45, 3404: 45, 5404: 45, 1302: 45, 3306: 45, 5405: 45, 5403: 45, 1104: 45, 5201: 45, 3305: 45, 5505: 45, 4306: 45, 4204: 45, 3401: 45, 1103: 45, 1506: 45, 2402: 45, 2403: 45, 1401: 45, 3403: 45, 1206: 45, 1504: 45, 3102: 45, 5402: 45, 1204: 45, 2404: 45, 2203: 45, 1202: 45, 2303: 45, 2106: 45, 5204: 45, 3503: 45, 2306: 45, 2304: 45, 5401: 45, 5101: 45, 3205: 45, 4205: 45, 2503: 45, 4106: 45, 2101: 45, 4305: 45, 2506: 45, 1201: 45, 3303: 45, 5105: 45, 4401: 45, 3405: 45, 5502: 45, 5301: 45, 1305: 45, 4503: 45, 4201: 45, 2205: 45, 1402: 45, 3304: 45, 1301: 45, 4506: 45, 1503: 45, 3103: 45, 3501: 45, 1304: 45, 3105: 45, 5406: 45, 5103: 45, 1406: 45, 4505: 45, 3505: 45, 3203: 45, 4302: 45, 2505: 45, 1101: 45, 5306: 45, 2206: 45, 5206: 45, 2105: 45, 1505: 45, 4103: 45, 3206: 45, 4102: 45, 4406: 45, 1403: 45, 5106: 45}
+   样本形状: (1500, 15, 6)
+   类别数: 3 (原始标签: [1, 2, 3])
+step 3: split_data
+训练集 4725 | 验证集 1035 | 测试集 990
+step 4: 构造 DataLoader
+模型实际输入形状: (1500, 15, 6)
+step 5: create_registered_model
+模型参数量 663619
+训练设备: cuda
+step 6: 开始训练 80 轮
+Epoch [1/80] | Train Loss: 0.8353, Train Acc: 60.36% | Val Loss: 0.8396, Val Acc: 55.85% | Duration: 15.91s | LR: 0.000300
+  -> new best acc: 55.85%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [2/80] | Train Loss: 0.7895, Train Acc: 63.01% | Val Loss: 0.9967, Val Acc: 56.43% | Duration: 14.86s | LR: 0.000300
+  -> new best acc: 56.43%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [3/80] | Train Loss: 0.7533, Train Acc: 65.27% | Val Loss: 0.8206, Val Acc: 58.16% | Duration: 14.81s | LR: 0.000300
+  -> new best acc: 58.16%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [4/80] | Train Loss: 0.7335, Train Acc: 65.04% | Val Loss: 0.7446, Val Acc: 64.35% | Duration: 14.37s | LR: 0.000300
+  -> new best acc: 64.35%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [5/80] | Train Loss: 0.7005, Train Acc: 67.30% | Val Loss: 0.8773, Val Acc: 60.00% | Duration: 14.41s | LR: 0.000300
+Epoch [6/80] | Train Loss: 0.6919, Train Acc: 67.77% | Val Loss: 0.8077, Val Acc: 63.29% | Duration: 14.41s | LR: 0.000300
+Epoch [7/80] | Train Loss: 0.6671, Train Acc: 69.27% | Val Loss: 0.7069, Val Acc: 65.70% | Duration: 14.43s | LR: 0.000300
+  -> new best acc: 65.70%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [8/80] | Train Loss: 0.6425, Train Acc: 70.75% | Val Loss: 0.7128, Val Acc: 65.12% | Duration: 14.46s | LR: 0.000300
+Epoch [9/80] | Train Loss: 0.6268, Train Acc: 70.88% | Val Loss: 0.8201, Val Acc: 62.51% | Duration: 14.49s | LR: 0.000300
+Epoch [10/80] | Train Loss: 0.6113, Train Acc: 71.85% | Val Loss: 0.7471, Val Acc: 66.47% | Duration: 14.52s | LR: 0.000300
+  -> new best acc: 66.47%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [11/80] | Train Loss: 0.5942, Train Acc: 73.63% | Val Loss: 1.9409, Val Acc: 49.37% | Duration: 14.52s | LR: 0.000300
+Epoch [12/80] | Train Loss: 0.6025, Train Acc: 72.91% | Val Loss: 0.6699, Val Acc: 69.28% | Duration: 14.47s | LR: 0.000300
+  -> new best acc: 69.28%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [13/80] | Train Loss: 0.5656, Train Acc: 75.11% | Val Loss: 0.8983, Val Acc: 57.58% | Duration: 14.47s | LR: 0.000300
+Epoch [14/80] | Train Loss: 0.5489, Train Acc: 75.64% | Val Loss: 0.7389, Val Acc: 65.51% | Duration: 14.51s | LR: 0.000300
+Epoch [15/80] | Train Loss: 0.5339, Train Acc: 76.47% | Val Loss: 0.7426, Val Acc: 66.38% | Duration: 14.47s | LR: 0.000300
+Epoch [16/80] | Train Loss: 0.5349, Train Acc: 76.80% | Val Loss: 0.9004, Val Acc: 63.29% | Duration: 14.54s | LR: 0.000300
+Epoch [17/80] | Train Loss: 0.5340, Train Acc: 76.91% | Val Loss: 0.9689, Val Acc: 56.62% | Duration: 14.48s | LR: 0.000300
+Epoch [18/80] | Train Loss: 0.5096, Train Acc: 77.76% | Val Loss: 1.1024, Val Acc: 62.51% | Duration: 14.42s | LR: 0.000300
+Epoch [19/80] | Train Loss: 0.4730, Train Acc: 80.08% | Val Loss: 0.5497, Val Acc: 76.33% | Duration: 14.47s | LR: 0.000030
+  -> new best acc: 76.33%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [20/80] | Train Loss: 0.4524, Train Acc: 81.25% | Val Loss: 0.5470, Val Acc: 76.62% | Duration: 14.66s | LR: 0.000030
+  -> new best acc: 76.62%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [21/80] | Train Loss: 0.4447, Train Acc: 81.44% | Val Loss: 0.5547, Val Acc: 75.27% | Duration: 14.62s | LR: 0.000030
+Epoch [22/80] | Train Loss: 0.4500, Train Acc: 81.14% | Val Loss: 0.5389, Val Acc: 76.62% | Duration: 14.71s | LR: 0.000030
+Epoch [23/80] | Train Loss: 0.4438, Train Acc: 81.86% | Val Loss: 0.5552, Val Acc: 74.98% | Duration: 14.48s | LR: 0.000030
+Epoch [24/80] | Train Loss: 0.4364, Train Acc: 82.14% | Val Loss: 0.5549, Val Acc: 75.07% | Duration: 14.61s | LR: 0.000030
+Epoch [25/80] | Train Loss: 0.4315, Train Acc: 82.22% | Val Loss: 0.5533, Val Acc: 74.30% | Duration: 14.47s | LR: 0.000030
+Epoch [26/80] | Train Loss: 0.4269, Train Acc: 82.26% | Val Loss: 0.5524, Val Acc: 75.75% | Duration: 14.52s | LR: 0.000030
+Epoch [27/80] | Train Loss: 0.4283, Train Acc: 81.80% | Val Loss: 0.5504, Val Acc: 75.46% | Duration: 14.62s | LR: 0.000030
+Epoch [28/80] | Train Loss: 0.4207, Train Acc: 83.11% | Val Loss: 0.5360, Val Acc: 77.20% | Duration: 14.50s | LR: 0.000030
+  -> new best acc: 77.20%. saved to /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+Epoch [29/80] | Train Loss: 0.4194, Train Acc: 82.73% | Val Loss: 0.5454, Val Acc: 75.56% | Duration: 14.51s | LR: 0.000030
+Epoch [30/80] | Train Loss: 0.4137, Train Acc: 82.96% | Val Loss: 0.5506, Val Acc: 76.71% | Duration: 14.65s | LR: 0.000030
+Epoch [31/80] | Train Loss: 0.4185, Train Acc: 82.94% | Val Loss: 0.5578, Val Acc: 74.88% | Duration: 14.53s | LR: 0.000030
+Epoch [32/80] | Train Loss: 0.4079, Train Acc: 83.56% | Val Loss: 0.5663, Val Acc: 76.04% | Duration: 14.60s | LR: 0.000030
+Epoch [33/80] | Train Loss: 0.3983, Train Acc: 83.41% | Val Loss: 0.5678, Val Acc: 75.65% | Duration: 14.53s | LR: 0.000030
+Epoch [34/80] | Train Loss: 0.4082, Train Acc: 83.45% | Val Loss: 0.5406, Val Acc: 76.91% | Duration: 14.54s | LR: 0.000030
+Epoch [35/80] | Train Loss: 0.3993, Train Acc: 83.32% | Val Loss: 0.5454, Val Acc: 75.85% | Duration: 14.49s | LR: 0.000003
+Epoch [36/80] | Train Loss: 0.4006, Train Acc: 83.45% | Val Loss: 0.5479, Val Acc: 75.85% | Duration: 14.62s | LR: 0.000003
+Epoch [37/80] | Train Loss: 0.3995, Train Acc: 83.66% | Val Loss: 0.5403, Val Acc: 76.52% | Duration: 14.63s | LR: 0.000003
+Epoch [38/80] | Train Loss: 0.3997, Train Acc: 83.58% | Val Loss: 0.5448, Val Acc: 76.23% | Duration: 14.65s | LR: 0.000003
+Epoch [39/80] | Train Loss: 0.3936, Train Acc: 83.66% | Val Loss: 0.5379, Val Acc: 76.91% | Duration: 14.53s | LR: 0.000003
+Epoch [40/80] | Train Loss: 0.3998, Train Acc: 83.89% | Val Loss: 0.5435, Val Acc: 76.14% | Duration: 14.63s | LR: 0.000003
+Epoch [41/80] | Train Loss: 0.3958, Train Acc: 83.85% | Val Loss: 0.5433, Val Acc: 77.00% | Duration: 14.50s | LR: 0.000000
+Epoch [42/80] | Train Loss: 0.4008, Train Acc: 83.60% | Val Loss: 0.5395, Val Acc: 76.23% | Duration: 14.57s | LR: 0.000000
+Epoch [43/80] | Train Loss: 0.3997, Train Acc: 82.86% | Val Loss: 0.5427, Val Acc: 75.56% | Duration: 14.54s | LR: 0.000000
+Epoch [44/80] | Train Loss: 0.3983, Train Acc: 83.47% | Val Loss: 0.5383, Val Acc: 76.91% | Duration: 14.53s | LR: 0.000000
+Epoch [45/80] | Train Loss: 0.3980, Train Acc: 84.17% | Val Loss: 0.5463, Val Acc: 76.43% | Duration: 14.51s | LR: 0.000000
+Epoch [46/80] | Train Loss: 0.3848, Train Acc: 84.15% | Val Loss: 0.5476, Val Acc: 76.43% | Duration: 14.51s | LR: 0.000000
+Epoch [47/80] | Train Loss: 0.3922, Train Acc: 83.70% | Val Loss: 0.5430, Val Acc: 76.71% | Duration: 14.48s | LR: 0.000000
+Epoch [48/80] | Train Loss: 0.3932, Train Acc: 84.15% | Val Loss: 0.5413, Val Acc: 76.91% | Duration: 14.65s | LR: 0.000000
+Epoch [49/80] | Train Loss: 0.3933, Train Acc: 83.66% | Val Loss: 0.5452, Val Acc: 76.62% | Duration: 14.51s | LR: 0.000000
+Epoch [50/80] | Train Loss: 0.3990, Train Acc: 83.81% | Val Loss: 0.5377, Val Acc: 76.43% | Duration: 14.55s | LR: 0.000000
+Epoch [51/80] | Train Loss: 0.3927, Train Acc: 84.15% | Val Loss: 0.5434, Val Acc: 76.62% | Duration: 14.63s | LR: 0.000000
+Epoch [52/80] | Train Loss: 0.3922, Train Acc: 84.11% | Val Loss: 0.5373, Val Acc: 77.00% | Duration: 14.60s | LR: 0.000000
+Epoch [53/80] | Train Loss: 0.3904, Train Acc: 83.87% | Val Loss: 0.5386, Val Acc: 77.10% | Duration: 14.43s | LR: 0.000000
+Epoch [54/80] | Train Loss: 0.3975, Train Acc: 83.72% | Val Loss: 0.5389, Val Acc: 76.04% | Duration: 14.71s | LR: 0.000000
+Epoch [55/80] | Train Loss: 0.3954, Train Acc: 83.43% | Val Loss: 0.5394, Val Acc: 76.62% | Duration: 14.54s | LR: 0.000000
+Epoch [56/80] | Train Loss: 0.4078, Train Acc: 82.92% | Val Loss: 0.5405, Val Acc: 76.71% | Duration: 14.55s | LR: 0.000000
+Epoch [57/80] | Train Loss: 0.3915, Train Acc: 83.66% | Val Loss: 0.5356, Val Acc: 76.52% | Duration: 14.48s | LR: 0.000000
+Epoch [58/80] | Train Loss: 0.3917, Train Acc: 84.53% | Val Loss: 0.5394, Val Acc: 76.23% | Duration: 14.49s | LR: 0.000000
+Epoch [59/80] | Train Loss: 0.3914, Train Acc: 84.42% | Val Loss: 0.5404, Val Acc: 76.62% | Duration: 14.47s | LR: 0.000000
+Epoch [60/80] | Train Loss: 0.3924, Train Acc: 83.81% | Val Loss: 0.5408, Val Acc: 76.81% | Duration: 14.52s | LR: 0.000000
+Epoch [61/80] | Train Loss: 0.3868, Train Acc: 84.49% | Val Loss: 0.5433, Val Acc: 76.62% | Duration: 14.51s | LR: 0.000000
+Epoch [62/80] | Train Loss: 0.4025, Train Acc: 83.58% | Val Loss: 0.5448, Val Acc: 76.23% | Duration: 14.51s | LR: 0.000000
+Epoch [63/80] | Train Loss: 0.3943, Train Acc: 84.08% | Val Loss: 0.5391, Val Acc: 76.91% | Duration: 14.55s | LR: 0.000000
+Epoch [64/80] | Train Loss: 0.4012, Train Acc: 83.05% | Val Loss: 0.5423, Val Acc: 76.43% | Duration: 14.45s | LR: 0.000000
+Epoch [65/80] | Train Loss: 0.3975, Train Acc: 83.85% | Val Loss: 0.5470, Val Acc: 76.52% | Duration: 14.59s | LR: 0.000000
+Epoch [66/80] | Train Loss: 0.3992, Train Acc: 83.83% | Val Loss: 0.5473, Val Acc: 76.62% | Duration: 14.56s | LR: 0.000000
+Epoch [67/80] | Train Loss: 0.3924, Train Acc: 84.02% | Val Loss: 0.5471, Val Acc: 76.23% | Duration: 14.51s | LR: 0.000000
+Epoch [68/80] | Train Loss: 0.3919, Train Acc: 83.56% | Val Loss: 0.5389, Val Acc: 76.81% | Duration: 14.42s | LR: 0.000000
+Epoch [69/80] | Train Loss: 0.3938, Train Acc: 84.00% | Val Loss: 0.5412, Val Acc: 77.00% | Duration: 14.51s | LR: 0.000000
+Epoch [70/80] | Train Loss: 0.3949, Train Acc: 83.60% | Val Loss: 0.5495, Val Acc: 75.65% | Duration: 14.85s | LR: 0.000000
+Epoch [71/80] | Train Loss: 0.3946, Train Acc: 83.81% | Val Loss: 0.5394, Val Acc: 77.10% | Duration: 14.94s | LR: 0.000000
+Epoch [72/80] | Train Loss: 0.3843, Train Acc: 85.06% | Val Loss: 0.5426, Val Acc: 75.75% | Duration: 14.56s | LR: 0.000000
+Epoch [73/80] | Train Loss: 0.3891, Train Acc: 84.66% | Val Loss: 0.5447, Val Acc: 76.33% | Duration: 14.54s | LR: 0.000000
+Epoch [74/80] | Train Loss: 0.3855, Train Acc: 84.68% | Val Loss: 0.5475, Val Acc: 76.81% | Duration: 14.50s | LR: 0.000000
+Epoch [75/80] | Train Loss: 0.4031, Train Acc: 83.64% | Val Loss: 0.5454, Val Acc: 76.33% | Duration: 14.50s | LR: 0.000000
+Epoch [76/80] | Train Loss: 0.3849, Train Acc: 84.93% | Val Loss: 0.5444, Val Acc: 76.71% | Duration: 14.50s | LR: 0.000000
+Epoch [77/80] | Train Loss: 0.3969, Train Acc: 83.03% | Val Loss: 0.5419, Val Acc: 76.52% | Duration: 14.47s | LR: 0.000000
+Epoch [78/80] | Train Loss: 0.3888, Train Acc: 84.11% | Val Loss: 0.5469, Val Acc: 76.04% | Duration: 14.54s | LR: 0.000000
+Epoch [79/80] | Train Loss: 0.3988, Train Acc: 84.17% | Val Loss: 0.5416, Val Acc: 77.20% | Duration: 14.66s | LR: 0.000000
+Epoch [80/80] | Train Loss: 0.3883, Train Acc: 84.06% | Val Loss: 0.5432, Val Acc: 76.52% | Duration: 14.49s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_131+savgol_w7_p3+iqr+linear+z-score+nearest15+mlpmodel/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.7720
+测试集准确率: 0.7556
+
+================================================================================
+组合完成: 131/320 | combo_id=widar_131 | best_val_acc=0.7720 | test_acc=0.7556 | 当前组合耗时=1498.55s
+================================================================================

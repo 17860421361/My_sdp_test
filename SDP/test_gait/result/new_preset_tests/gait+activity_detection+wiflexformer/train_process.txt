@@ -1,0 +1,83 @@
+
+============================================================
+开始模型训练: preset=activity_detection, model=wiflexformer (12/15)
+============================================================
+step 5: create_registered_model
+模型参数量 138417
+训练设备: cuda
+step 6: 开始训练 60 轮
+Epoch [1/60] | Train Loss: 1.4608, Train Acc: 46.35% | Val Loss: 0.8641, Val Acc: 63.59% | Duration: 20.69s | LR: 0.000300
+  -> new best acc: 63.59%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [2/60] | Train Loss: 0.6541, Train Acc: 74.27% | Val Loss: 0.5743, Val Acc: 76.59% | Duration: 20.66s | LR: 0.000300
+  -> new best acc: 76.59%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [3/60] | Train Loss: 0.4519, Train Acc: 81.21% | Val Loss: 0.7446, Val Acc: 71.09% | Duration: 20.27s | LR: 0.000300
+Epoch [4/60] | Train Loss: 0.3605, Train Acc: 84.48% | Val Loss: 0.4920, Val Acc: 81.04% | Duration: 20.56s | LR: 0.000300
+  -> new best acc: 81.04%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [5/60] | Train Loss: 0.3080, Train Acc: 86.62% | Val Loss: 0.5202, Val Acc: 82.78% | Duration: 20.64s | LR: 0.000300
+  -> new best acc: 82.78%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [6/60] | Train Loss: 0.2738, Train Acc: 87.95% | Val Loss: 0.5189, Val Acc: 81.33% | Duration: 20.35s | LR: 0.000300
+Epoch [7/60] | Train Loss: 0.2470, Train Acc: 88.79% | Val Loss: 0.3410, Val Acc: 87.28% | Duration: 20.24s | LR: 0.000300
+  -> new best acc: 87.28%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [8/60] | Train Loss: 0.2223, Train Acc: 89.57% | Val Loss: 0.3258, Val Acc: 87.89% | Duration: 20.65s | LR: 0.000300
+  -> new best acc: 87.89%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [9/60] | Train Loss: 0.2070, Train Acc: 90.45% | Val Loss: 0.4278, Val Acc: 85.03% | Duration: 20.44s | LR: 0.000300
+Epoch [10/60] | Train Loss: 0.1980, Train Acc: 91.04% | Val Loss: 0.3772, Val Acc: 86.38% | Duration: 20.89s | LR: 0.000300
+Epoch [11/60] | Train Loss: 0.1881, Train Acc: 91.33% | Val Loss: 0.3557, Val Acc: 87.86% | Duration: 21.71s | LR: 0.000300
+Epoch [12/60] | Train Loss: 0.1772, Train Acc: 92.04% | Val Loss: 0.6795, Val Acc: 82.07% | Duration: 20.99s | LR: 0.000300
+Epoch [13/60] | Train Loss: 0.1615, Train Acc: 92.78% | Val Loss: 0.3216, Val Acc: 87.99% | Duration: 20.75s | LR: 0.000300
+  -> new best acc: 87.99%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [14/60] | Train Loss: 0.1663, Train Acc: 92.53% | Val Loss: 0.4252, Val Acc: 86.32% | Duration: 20.34s | LR: 0.000300
+Epoch [15/60] | Train Loss: 0.1476, Train Acc: 93.36% | Val Loss: 0.3144, Val Acc: 89.63% | Duration: 20.29s | LR: 0.000300
+  -> new best acc: 89.63%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [16/60] | Train Loss: 0.1485, Train Acc: 93.33% | Val Loss: 0.4527, Val Acc: 85.29% | Duration: 20.48s | LR: 0.000300
+Epoch [17/60] | Train Loss: 0.1381, Train Acc: 94.05% | Val Loss: 0.3322, Val Acc: 89.09% | Duration: 20.21s | LR: 0.000300
+Epoch [18/60] | Train Loss: 0.1353, Train Acc: 94.04% | Val Loss: 0.5324, Val Acc: 84.67% | Duration: 20.18s | LR: 0.000300
+Epoch [19/60] | Train Loss: 0.1330, Train Acc: 94.04% | Val Loss: 0.3641, Val Acc: 88.92% | Duration: 20.12s | LR: 0.000300
+Epoch [20/60] | Train Loss: 0.1211, Train Acc: 94.62% | Val Loss: 0.3824, Val Acc: 88.02% | Duration: 20.17s | LR: 0.000300
+Epoch [21/60] | Train Loss: 0.1202, Train Acc: 94.63% | Val Loss: 0.3764, Val Acc: 88.22% | Duration: 20.15s | LR: 0.000300
+Epoch [22/60] | Train Loss: 0.0881, Train Acc: 96.32% | Val Loss: 0.2860, Val Acc: 90.99% | Duration: 20.17s | LR: 0.000030
+  -> new best acc: 90.99%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [23/60] | Train Loss: 0.0806, Train Acc: 96.48% | Val Loss: 0.2855, Val Acc: 90.92% | Duration: 20.98s | LR: 0.000030
+Epoch [24/60] | Train Loss: 0.0777, Train Acc: 96.68% | Val Loss: 0.3101, Val Acc: 90.82% | Duration: 20.17s | LR: 0.000030
+Epoch [25/60] | Train Loss: 0.0757, Train Acc: 96.72% | Val Loss: 0.3376, Val Acc: 90.24% | Duration: 20.21s | LR: 0.000030
+Epoch [26/60] | Train Loss: 0.0759, Train Acc: 96.74% | Val Loss: 0.3325, Val Acc: 90.44% | Duration: 20.53s | LR: 0.000030
+Epoch [27/60] | Train Loss: 0.0735, Train Acc: 97.05% | Val Loss: 0.3126, Val Acc: 90.95% | Duration: 20.14s | LR: 0.000030
+Epoch [28/60] | Train Loss: 0.0716, Train Acc: 97.06% | Val Loss: 0.3467, Val Acc: 90.05% | Duration: 20.10s | LR: 0.000030
+Epoch [29/60] | Train Loss: 0.0721, Train Acc: 96.87% | Val Loss: 0.3747, Val Acc: 89.79% | Duration: 20.15s | LR: 0.000030
+Epoch [30/60] | Train Loss: 0.0700, Train Acc: 97.08% | Val Loss: 0.3484, Val Acc: 90.41% | Duration: 21.04s | LR: 0.000003
+Epoch [31/60] | Train Loss: 0.0676, Train Acc: 97.18% | Val Loss: 0.3504, Val Acc: 90.21% | Duration: 20.89s | LR: 0.000003
+Epoch [32/60] | Train Loss: 0.0650, Train Acc: 97.26% | Val Loss: 0.3621, Val Acc: 89.73% | Duration: 20.88s | LR: 0.000003
+Epoch [33/60] | Train Loss: 0.0654, Train Acc: 97.26% | Val Loss: 0.3207, Val Acc: 91.05% | Duration: 21.00s | LR: 0.000003
+  -> new best acc: 91.05%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [34/60] | Train Loss: 0.0651, Train Acc: 97.21% | Val Loss: 0.3342, Val Acc: 90.57% | Duration: 21.18s | LR: 0.000003
+Epoch [35/60] | Train Loss: 0.0661, Train Acc: 97.23% | Val Loss: 0.3347, Val Acc: 90.70% | Duration: 21.58s | LR: 0.000003
+Epoch [36/60] | Train Loss: 0.0654, Train Acc: 97.40% | Val Loss: 0.3495, Val Acc: 90.44% | Duration: 21.31s | LR: 0.000000
+Epoch [37/60] | Train Loss: 0.0662, Train Acc: 97.21% | Val Loss: 0.3297, Val Acc: 90.76% | Duration: 21.45s | LR: 0.000000
+Epoch [38/60] | Train Loss: 0.0667, Train Acc: 97.34% | Val Loss: 0.3228, Val Acc: 91.15% | Duration: 20.86s | LR: 0.000000
+  -> new best acc: 91.15%. saved to /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+Epoch [39/60] | Train Loss: 0.0653, Train Acc: 97.42% | Val Loss: 0.3356, Val Acc: 91.11% | Duration: 21.21s | LR: 0.000000
+Epoch [40/60] | Train Loss: 0.0691, Train Acc: 97.08% | Val Loss: 0.3273, Val Acc: 90.99% | Duration: 20.51s | LR: 0.000000
+Epoch [41/60] | Train Loss: 0.0647, Train Acc: 97.19% | Val Loss: 0.3418, Val Acc: 90.47% | Duration: 21.20s | LR: 0.000000
+Epoch [42/60] | Train Loss: 0.0626, Train Acc: 97.48% | Val Loss: 0.3297, Val Acc: 90.92% | Duration: 20.69s | LR: 0.000000
+Epoch [43/60] | Train Loss: 0.0630, Train Acc: 97.44% | Val Loss: 0.3816, Val Acc: 89.34% | Duration: 20.94s | LR: 0.000000
+Epoch [44/60] | Train Loss: 0.0665, Train Acc: 97.27% | Val Loss: 0.3319, Val Acc: 90.76% | Duration: 20.96s | LR: 0.000000
+Epoch [45/60] | Train Loss: 0.0629, Train Acc: 97.55% | Val Loss: 0.3284, Val Acc: 91.08% | Duration: 20.95s | LR: 0.000000
+Epoch [46/60] | Train Loss: 0.0632, Train Acc: 97.48% | Val Loss: 0.3157, Val Acc: 91.11% | Duration: 20.93s | LR: 0.000000
+Epoch [47/60] | Train Loss: 0.0654, Train Acc: 97.26% | Val Loss: 0.3190, Val Acc: 91.15% | Duration: 20.93s | LR: 0.000000
+Epoch [48/60] | Train Loss: 0.0662, Train Acc: 97.21% | Val Loss: 0.3331, Val Acc: 90.53% | Duration: 20.90s | LR: 0.000000
+Epoch [49/60] | Train Loss: 0.0662, Train Acc: 97.25% | Val Loss: 0.3261, Val Acc: 91.05% | Duration: 20.89s | LR: 0.000000
+Epoch [50/60] | Train Loss: 0.0632, Train Acc: 97.40% | Val Loss: 0.3361, Val Acc: 90.66% | Duration: 20.91s | LR: 0.000000
+Epoch [51/60] | Train Loss: 0.0649, Train Acc: 97.33% | Val Loss: 0.3347, Val Acc: 90.66% | Duration: 20.94s | LR: 0.000000
+Epoch [52/60] | Train Loss: 0.0653, Train Acc: 97.17% | Val Loss: 0.3455, Val Acc: 90.28% | Duration: 20.78s | LR: 0.000000
+Epoch [53/60] | Train Loss: 0.0641, Train Acc: 97.41% | Val Loss: 0.3286, Val Acc: 90.60% | Duration: 20.41s | LR: 0.000000
+Epoch [54/60] | Train Loss: 0.0668, Train Acc: 97.22% | Val Loss: 0.3394, Val Acc: 90.50% | Duration: 20.58s | LR: 0.000000
+Epoch [55/60] | Train Loss: 0.0673, Train Acc: 97.27% | Val Loss: 0.3320, Val Acc: 90.63% | Duration: 21.58s | LR: 0.000000
+Epoch [56/60] | Train Loss: 0.0660, Train Acc: 97.27% | Val Loss: 0.3048, Val Acc: 91.11% | Duration: 21.50s | LR: 0.000000
+Epoch [57/60] | Train Loss: 0.0664, Train Acc: 97.32% | Val Loss: 0.3490, Val Acc: 90.37% | Duration: 21.26s | LR: 0.000000
+Epoch [58/60] | Train Loss: 0.0656, Train Acc: 97.41% | Val Loss: 0.3423, Val Acc: 90.53% | Duration: 20.56s | LR: 0.000000
+Epoch [59/60] | Train Loss: 0.0664, Train Acc: 97.18% | Val Loss: 0.3355, Val Acc: 90.82% | Duration: 20.36s | LR: 0.000000
+Epoch [60/60] | Train Loss: 0.0667, Train Acc: 97.26% | Val Loss: 0.3451, Val Acc: 90.47% | Duration: 20.80s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_gait/result/new_preset_tests/gait+activity_detection+wiflexformer/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.9115
+测试集准确率: 0.9327

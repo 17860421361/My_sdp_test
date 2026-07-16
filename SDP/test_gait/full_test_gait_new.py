@@ -36,7 +36,7 @@ from multiprocessing import get_context
 from pathlib import Path
 
 # ==================== 环境设置 ====================
-os.environ.setdefault("CUDA_VISIBLE_DEVICES", "1")
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0")
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/wsdp_mplconfig")
 
 import matplotlib
@@ -86,7 +86,7 @@ DATASET_NAME = "gait"
 DATA_PATH = DATA_ROOT / "Gait_Dataset" / "CSI_Gait"
 
 RUN_NAME = "gait_320_pipeline_optimized"
-MODEL_NAME = "resnet2d"
+MODEL_NAME = "mlpmodel"
 
 BATCH_SIZE = None
 LEARNING_RATE = None
