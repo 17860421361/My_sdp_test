@@ -22,6 +22,9 @@ from typing import Iterable, Optional
 import numpy as np
 
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+
+
 REPO_ROOT = Path(__file__).resolve().parent
 ELDER_TEST_DIR = REPO_ROOT / "SDP" / "test_elderAL"
 WSDP_SRC = (

@@ -37,6 +37,7 @@ import contextlib
 import csv
 import gc
 import json
+import os
 import statistics
 import sys
 import time
@@ -45,6 +46,8 @@ from concurrent.futures import ProcessPoolExecutor
 from functools import partial
 from pathlib import Path
 
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 ROOT = Path(__file__).resolve().parent
 TEST_DIR = ROOT / "SDP" / "test_xrf55"

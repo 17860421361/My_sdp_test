@@ -26,6 +26,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/wsdp_mplconfig")
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 import numpy as np
 import torch
