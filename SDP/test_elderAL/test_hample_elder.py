@@ -23,13 +23,13 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RUN_NAME = "elderAL_hampel_w2_iqr_minmax_linear64"
 MODEL_NAME = "csitime"
 DATA_PATH = PROJECT_ROOT.parent / "sdp_dataset" / "elderAL"
-RESULT_DIR = Path(__file__).resolve().parent / "result" / "hampel_elder_w2"
+RESULT_DIR = Path(__file__).resolve().parent / "result" / "hampel_elder_w3"
 SUMMARY_PATH = RESULT_DIR / f"{RUN_NAME}_{MODEL_NAME}_summary.csv"
 
 COMBO = {
     "combo_index": 1,
     "combo_id": "elderAL_hampel_w2",
-    "combo_name": "hampel_w2_s3+iqr+min-max+linear64",
+    "combo_name": "hampel_w2_s3+zscore+min-max+linear64",
     "denoise": "hampel_w2_s3",
     "outliers": "iqr",
     "normalize": "min-max",
@@ -37,9 +37,10 @@ COMBO = {
     "pipeline_steps": {
         "denoise": {
             "method": "hampel",
-            "window_size": 2,
+            "window_size": 3,
             "n_sigma": 3.0,
         },
+        # "outlier":{"method": "z-score", "factor": 3.0},
         "outliers": {"method": "iqr", "factor": 1.5},
         "normalize": {"method": "min-max"},
         "interpolate": {"method": "linear", "target_K": 64},
@@ -63,7 +64,7 @@ def validate_configuration() -> None:
 
     if denoise.get("method") != "hampel":
         raise ValueError("denoise method must be Hampel")
-    if denoise.get("window_size") != 2:
+    if denoise.get("window_size") != 3:
         raise ValueError("Hampel window_size must be 2 (full window: 5 frames)")
     if "calibrate" in pipeline_steps:
         raise ValueError("this ElderAL experiment must not use phase calibration")

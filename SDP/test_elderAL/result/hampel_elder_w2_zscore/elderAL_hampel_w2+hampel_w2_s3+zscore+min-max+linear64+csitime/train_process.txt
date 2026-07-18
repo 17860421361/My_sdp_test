@@ -1,0 +1,79 @@
+
+================================================================================
+当前算法组合: 1/1 | combo_id=elderAL_hampel_w2 | model=csitime
+combo_name: hampel_w2_s3+zscore+min-max+linear64
+保存目录: /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime
+当前组合的具体算法:
+{
+  "denoise": {
+    "method": "hampel",
+    "window_size": 2,
+    "n_sigma": 3.0
+  },
+  "outlier": {
+    "method": "z-score",
+    "factor": 3.0
+  },
+  "normalize": {
+    "method": "min-max"
+  },
+  "interpolate": {
+    "method": "linear",
+    "target_K": 64
+  }
+}
+================================================================================
+step 2: process_data
+   处理完成: 2404 个样本
+   标签分布: {1: 398, 3: 405, 5: 405, 2: 387, 0: 404, 6: 405}
+   分组分布: {8: 270, 6: 268, 7: 268, 3: 265, 2: 266, 1: 264, 9: 267, 4: 267, 5: 269}
+   样本形状: (80, 64, 3)
+   类别数: 6 (原始标签: [0, 1, 2, 3, 5, 6])
+step 3: split_data
+训练集 1600 | 验证集 534 | 测试集 270
+step 4: 构造 DataLoader
+模型实际输入形状: (80, 64, 3)
+step 5: create_registered_model
+模型参数量 119558
+训练设备: cuda
+step 6: 开始训练 20 轮
+Epoch [1/20] | Train Loss: 1.6990, Train Acc: 29.69% | Val Loss: 1.6604, Val Acc: 31.27% | Duration: 0.59s | LR: 0.000300
+  -> new best acc: 31.27%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.5080, Train Acc: 44.50% | Val Loss: 1.5785, Val Acc: 37.83% | Duration: 0.31s | LR: 0.000300
+  -> new best acc: 37.83%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.3402, Train Acc: 55.12% | Val Loss: 1.5392, Val Acc: 41.20% | Duration: 0.31s | LR: 0.000300
+  -> new best acc: 41.20%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [4/20] | Train Loss: 1.2009, Train Acc: 65.44% | Val Loss: 1.4864, Val Acc: 42.88% | Duration: 0.31s | LR: 0.000300
+  -> new best acc: 42.88%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 1.0525, Train Acc: 71.31% | Val Loss: 1.4904, Val Acc: 41.20% | Duration: 0.31s | LR: 0.000300
+Epoch [6/20] | Train Loss: 0.9261, Train Acc: 76.12% | Val Loss: 1.6191, Val Acc: 37.83% | Duration: 0.32s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.8458, Train Acc: 77.62% | Val Loss: 1.6688, Val Acc: 49.06% | Duration: 0.33s | LR: 0.000300
+  -> new best acc: 49.06%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [8/20] | Train Loss: 0.7307, Train Acc: 82.62% | Val Loss: 1.2816, Val Acc: 53.18% | Duration: 0.32s | LR: 0.000300
+  -> new best acc: 53.18%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [9/20] | Train Loss: 0.6307, Train Acc: 86.88% | Val Loss: 1.4339, Val Acc: 53.93% | Duration: 0.32s | LR: 0.000300
+  -> new best acc: 53.93%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [10/20] | Train Loss: 0.5545, Train Acc: 89.69% | Val Loss: 1.4553, Val Acc: 56.93% | Duration: 0.32s | LR: 0.000300
+  -> new best acc: 56.93%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 0.4781, Train Acc: 92.38% | Val Loss: 1.5131, Val Acc: 47.00% | Duration: 0.32s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.4126, Train Acc: 93.88% | Val Loss: 1.2715, Val Acc: 59.36% | Duration: 0.32s | LR: 0.000300
+  -> new best acc: 59.36%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [13/20] | Train Loss: 0.3600, Train Acc: 95.31% | Val Loss: 1.5534, Val Acc: 47.57% | Duration: 0.32s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.3112, Train Acc: 96.50% | Val Loss: 1.2126, Val Acc: 56.55% | Duration: 0.33s | LR: 0.000300
+Epoch [15/20] | Train Loss: 0.2745, Train Acc: 97.19% | Val Loss: 1.2538, Val Acc: 56.37% | Duration: 0.33s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.2393, Train Acc: 98.12% | Val Loss: 1.3862, Val Acc: 59.74% | Duration: 0.32s | LR: 0.000300
+  -> new best acc: 59.74%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [17/20] | Train Loss: 0.2191, Train Acc: 97.94% | Val Loss: 1.1232, Val Acc: 61.80% | Duration: 0.32s | LR: 0.000300
+  -> new best acc: 61.80%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [18/20] | Train Loss: 0.1929, Train Acc: 98.31% | Val Loss: 1.3260, Val Acc: 61.42% | Duration: 0.32s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.1583, Train Acc: 99.00% | Val Loss: 1.1840, Val Acc: 63.11% | Duration: 0.32s | LR: 0.000300
+  -> new best acc: 63.11%. saved to /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+Epoch [20/20] | Train Loss: 0.1280, Train Acc: 99.44% | Val Loss: 1.1911, Val Acc: 62.36% | Duration: 0.32s | LR: 0.000300
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_elderAL/result/hampel_elder_w2_zscore/elderAL_hampel_w2+hampel_w2_s3+zscore+min-max+linear64+csitime/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.6311
+测试集准确率: 0.6407
+
+================================================================================
+组合完成: 1/1 | combo_id=elderAL_hampel_w2 | best_val_acc=0.6311 | test_acc=0.6407 | duration=326.91s
+================================================================================
