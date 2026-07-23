@@ -22,7 +22,7 @@ XRF55 的标称采样率为 200 packets/s，每个 5 秒动作约有 1000 个 CS
 * 只使用前 3 个用户；
 * repetition 1--12 为训练集，13--16 为验证集，17--20 为测试集；
 * z-score 只使用训练集统计量；
-* 默认运行 3 个模型随机种子，数据划分保持不变。
+* 为控制运行时间，默认只运行模型随机种子 42，数据划分保持不变。
 
 输出
 ----
@@ -31,7 +31,7 @@ XRF55 的标称采样率为 200 packets/s，每个 5 秒动作约有 1000 个 CS
 * ``signal_diagnostics.csv``：替换率、连续替换长度、波形相关性、
   总变化量和动态峰值保留率；
 * ``training_summary.csv``：每个半窗口、每个模型 seed 的训练结果；
-* ``training_aggregate.csv``：跨 seed 均值和标准差；
+* ``training_aggregate.csv``：按窗口汇总单 seed 结果（仍兼容手动多 seed）；
 * ``figures/*.png`` 与 ``figures/*.pdf``：600 dpi 位图和矢量科研图；
 * ``runs/``：训练日志、最佳 checkpoint、训练历史和混淆矩阵。
 
@@ -144,7 +144,7 @@ IQR_FACTOR = 1.5
 TARGET_SUBCARRIERS = 15
 PADDING_LENGTH = 1000
 DEFAULT_WINDOWS = (1, 2, 5, 10, 25, 50)
-DEFAULT_MODEL_SEEDS = (42, 49, 514)
+DEFAULT_MODEL_SEEDS = (42,)
 DEFAULT_SPLIT_SEED = 42
 
 SIGNAL_DIAGNOSTIC_PATH = RESULT_ROOT / "signal_diagnostics.csv"
@@ -980,7 +980,7 @@ def plot_accuracy_results(
             edgecolors="white",
             linewidths=0.5,
             zorder=4,
-            label="Individual seeds" if half_window == min(grouped) else None,
+            label="Run seed" if half_window == min(grouped) else None,
         )
     ax.set_xlabel("Full Hampel window (frames)")
     ax.set_ylabel("Test accuracy (%)")
@@ -1382,7 +1382,7 @@ def train_one_seed(
 
 
 # ---------------------------------------------------------------------------
-# 跨 seed 汇总与断点续跑
+# 按窗口汇总与断点续跑（默认单 seed，兼容手动多 seed）
 # ---------------------------------------------------------------------------
 
 def completed_window_seeds() -> set[tuple[int, int]]:
@@ -1504,7 +1504,7 @@ def parse_args() -> argparse.Namespace:
         type=int,
         nargs="+",
         default=list(DEFAULT_MODEL_SEEDS),
-        help="模型随机种子",
+        help="模型随机种子；默认只运行 42，手动传入多个值时仍可做多 seed",
     )
     parser.add_argument("--split-seed", type=int, default=DEFAULT_SPLIT_SEED)
     parser.add_argument("--epochs", type=int, default=50)
@@ -1717,7 +1717,7 @@ def main() -> None:
     regenerate_summary_figures()
     print("\n实验完成")
     print(f"逐 seed 结果: {TRAINING_SUMMARY_PATH}")
-    print(f"跨 seed 汇总: {TRAINING_AGGREGATE_PATH}")
+    print(f"按窗口汇总: {TRAINING_AGGREGATE_PATH}")
     print(f"科研图表: {FIGURE_DIR}")
 
 
