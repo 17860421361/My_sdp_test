@@ -1,0 +1,68 @@
+================================================================================
+条件: hampel_w2
+{
+  "denoise": {
+    "method": "hampel",
+    "window_size": 2,
+    "n_sigma": 3.0
+  },
+  "outliers": {
+    "method": "iqr",
+    "factor": 1.5
+  },
+  "normalize": {
+    "method": "min-max"
+  },
+  "interpolate": {
+    "method": "linear",
+    "target_K": 64
+  }
+}
+================================================================================
+预处理: 200/2405
+预处理: 400/2405
+预处理: 600/2405
+预处理: 800/2405
+预处理: 1000/2405
+预处理: 1200/2405
+预处理: 1400/2405
+预处理: 1600/2405
+预处理: 1800/2405
+预处理: 2000/2405
+预处理: 2200/2405
+预处理: 2400/2405
+预处理: 2405/2405
+位置划分: train=[1, 3, 4, 5, 7, 9], val=[2, 6], test=[8]
+CSI-Time 输入形状: (80, 64, 3)
+训练设备: cuda:0; CUDA_VISIBLE_DEVICES=0
+模型参数量: 119558
+Epoch [1/20] | Train Loss: 1.7165, Train Acc: 27.81% | Val Loss: 1.6960, Val Acc: 28.28% | Duration: 0.33s | LR: 0.000300
+  -> new best acc: 28.28%. saved to /home/test/bupt_hjk/ablation/ablation_elder_hampel_result/runs/hampel_w2/best_checkpoint.pth
+Epoch [2/20] | Train Loss: 1.5815, Train Acc: 43.56% | Val Loss: 1.6397, Val Acc: 33.71% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 33.71%. saved to /home/test/bupt_hjk/ablation/ablation_elder_hampel_result/runs/hampel_w2/best_checkpoint.pth
+Epoch [3/20] | Train Loss: 1.4399, Train Acc: 53.50% | Val Loss: 1.5453, Val Acc: 33.52% | Duration: 0.34s | LR: 0.000300
+Epoch [4/20] | Train Loss: 1.2723, Train Acc: 63.75% | Val Loss: 1.4691, Val Acc: 43.82% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 43.82%. saved to /home/test/bupt_hjk/ablation/ablation_elder_hampel_result/runs/hampel_w2/best_checkpoint.pth
+Epoch [5/20] | Train Loss: 1.1177, Train Acc: 69.56% | Val Loss: 1.4192, Val Acc: 51.31% | Duration: 0.22s | LR: 0.000300
+  -> new best acc: 51.31%. saved to /home/test/bupt_hjk/ablation/ablation_elder_hampel_result/runs/hampel_w2/best_checkpoint.pth
+Epoch [6/20] | Train Loss: 0.9721, Train Acc: 76.25% | Val Loss: 1.4275, Val Acc: 49.25% | Duration: 0.32s | LR: 0.000300
+Epoch [7/20] | Train Loss: 0.8263, Train Acc: 82.56% | Val Loss: 1.3364, Val Acc: 54.68% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 54.68%. saved to /home/test/bupt_hjk/ablation/ablation_elder_hampel_result/runs/hampel_w2/best_checkpoint.pth
+Epoch [8/20] | Train Loss: 0.6908, Train Acc: 88.38% | Val Loss: 1.4748, Val Acc: 48.31% | Duration: 0.34s | LR: 0.000300
+Epoch [9/20] | Train Loss: 0.5913, Train Acc: 90.94% | Val Loss: 1.3672, Val Acc: 53.18% | Duration: 0.34s | LR: 0.000300
+Epoch [10/20] | Train Loss: 0.4912, Train Acc: 94.06% | Val Loss: 1.1648, Val Acc: 56.55% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 56.55%. saved to /home/test/bupt_hjk/ablation/ablation_elder_hampel_result/runs/hampel_w2/best_checkpoint.pth
+Epoch [11/20] | Train Loss: 0.4052, Train Acc: 96.00% | Val Loss: 1.2673, Val Acc: 54.87% | Duration: 0.34s | LR: 0.000300
+Epoch [12/20] | Train Loss: 0.3429, Train Acc: 96.94% | Val Loss: 1.0968, Val Acc: 60.86% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 60.86%. saved to /home/test/bupt_hjk/ablation/ablation_elder_hampel_result/runs/hampel_w2/best_checkpoint.pth
+Epoch [13/20] | Train Loss: 0.2775, Train Acc: 98.44% | Val Loss: 1.1112, Val Acc: 60.11% | Duration: 0.34s | LR: 0.000300
+Epoch [14/20] | Train Loss: 0.2208, Train Acc: 99.25% | Val Loss: 1.0928, Val Acc: 62.55% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 62.55%. saved to /home/test/bupt_hjk/ablation/ablation_elder_hampel_result/runs/hampel_w2/best_checkpoint.pth
+Epoch [15/20] | Train Loss: 0.1923, Train Acc: 99.50% | Val Loss: 1.1724, Val Acc: 59.18% | Duration: 0.34s | LR: 0.000300
+Epoch [16/20] | Train Loss: 0.1736, Train Acc: 99.56% | Val Loss: 1.2212, Val Acc: 60.30% | Duration: 0.34s | LR: 0.000300
+Epoch [17/20] | Train Loss: 0.1368, Train Acc: 99.88% | Val Loss: 1.0245, Val Acc: 64.42% | Duration: 0.34s | LR: 0.000300
+  -> new best acc: 64.42%. saved to /home/test/bupt_hjk/ablation/ablation_elder_hampel_result/runs/hampel_w2/best_checkpoint.pth
+Epoch [18/20] | Train Loss: 0.1139, Train Acc: 99.75% | Val Loss: 1.0327, Val Acc: 61.61% | Duration: 0.34s | LR: 0.000300
+Epoch [19/20] | Train Loss: 0.1071, Train Acc: 99.94% | Val Loss: 1.2704, Val Acc: 59.93% | Duration: 0.36s | LR: 0.000300
+Epoch [20/20] | Train Loss: 0.0910, Train Acc: 99.88% | Val Loss: 1.1032, Val Acc: 60.86% | Duration: 0.33s | LR: 0.000300
+完成: best_val_acc=0.6442, test_acc=0.7037
