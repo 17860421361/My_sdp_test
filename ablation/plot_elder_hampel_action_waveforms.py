@@ -7,9 +7,7 @@
 
 服务器运行示例：
 
-    python ablation/plot_elder_hampel_action_waveforms.py \
-        --data-path /home/test/bupt_hjk/sdp_dataset/elderAL \
-        --timestamp-unit us
+    python ablation/plot_elder_hampel_action_waveforms.py
 """
 
 from __future__ import annotations
@@ -30,6 +28,7 @@ import numpy as np
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 FIGURE_DIR = SCRIPT_DIR / "ablation_elder_hampel_result" / "figures"
+DEFAULT_DATA_PATH = SCRIPT_DIR.parent / "sdp_dataset" / "elderAL"
 N_SIGMA = 3.0
 
 OKABE_ITO = {
@@ -420,8 +419,11 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--data-path",
-        required=True,
-        help="服务器上的 ElderAL 原始数据目录",
+        default=str(DEFAULT_DATA_PATH),
+        help=(
+            "ElderAL原始数据目录；默认自动使用项目中的"
+            "sdp_dataset/elderAL"
+        ),
     )
     parser.add_argument(
         "--output-dir",
