@@ -1,0 +1,95 @@
+================================================================================
+XRF55 Hampel 半窗口单变量消融
+half_window=2
+full_window=5 frames
+nominal_duration=25.0 ms
+model_seed=42; split_seed=42
+input_shape=(1000, 15, 9); device=cuda
+{
+  "denoise": {
+    "method": "hampel",
+    "window_size": 2,
+    "n_sigma": 3.0
+  },
+  "outliers": {
+    "method": "iqr",
+    "factor": 1.5
+  },
+  "normalize": {
+    "method": "z-score"
+  },
+  "interpolate": {
+    "method": "cubic",
+    "target_K": 15
+  }
+}
+================================================================================
+Epoch [1/50] | Train Loss: 3.2763, Train Acc: 19.14% | Val Loss: 2.5449, Val Acc: 30.45% | Duration: 0.60s | LR: 0.000300
+  -> new best acc: 30.45%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [2/50] | Train Loss: 2.2566, Train Acc: 42.73% | Val Loss: 2.0183, Val Acc: 46.06% | Duration: 0.61s | LR: 0.000300
+  -> new best acc: 46.06%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [3/50] | Train Loss: 1.7104, Train Acc: 55.51% | Val Loss: 1.5325, Val Acc: 56.52% | Duration: 0.61s | LR: 0.000300
+  -> new best acc: 56.52%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [4/50] | Train Loss: 1.3383, Train Acc: 65.61% | Val Loss: 1.2718, Val Acc: 60.45% | Duration: 0.59s | LR: 0.000300
+  -> new best acc: 60.45%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [5/50] | Train Loss: 1.1457, Train Acc: 71.46% | Val Loss: 1.1582, Val Acc: 66.67% | Duration: 0.61s | LR: 0.000300
+  -> new best acc: 66.67%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [6/50] | Train Loss: 0.9757, Train Acc: 74.44% | Val Loss: 1.0154, Val Acc: 70.76% | Duration: 0.61s | LR: 0.000300
+  -> new best acc: 70.76%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [7/50] | Train Loss: 0.8319, Train Acc: 79.70% | Val Loss: 0.9864, Val Acc: 70.61% | Duration: 0.62s | LR: 0.000300
+Epoch [8/50] | Train Loss: 0.7123, Train Acc: 83.38% | Val Loss: 0.9098, Val Acc: 71.82% | Duration: 0.58s | LR: 0.000300
+  -> new best acc: 71.82%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [9/50] | Train Loss: 0.6547, Train Acc: 83.23% | Val Loss: 0.9253, Val Acc: 73.79% | Duration: 0.60s | LR: 0.000300
+  -> new best acc: 73.79%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [10/50] | Train Loss: 0.6042, Train Acc: 83.89% | Val Loss: 0.8740, Val Acc: 75.61% | Duration: 0.64s | LR: 0.000300
+  -> new best acc: 75.61%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [11/50] | Train Loss: 0.5555, Train Acc: 86.36% | Val Loss: 0.7350, Val Acc: 79.70% | Duration: 0.66s | LR: 0.000300
+  -> new best acc: 79.70%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [12/50] | Train Loss: 0.4955, Train Acc: 86.97% | Val Loss: 0.7476, Val Acc: 76.36% | Duration: 0.65s | LR: 0.000300
+Epoch [13/50] | Train Loss: 0.4611, Train Acc: 87.98% | Val Loss: 0.7024, Val Acc: 80.61% | Duration: 0.68s | LR: 0.000300
+  -> new best acc: 80.61%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [14/50] | Train Loss: 0.3860, Train Acc: 90.66% | Val Loss: 0.7689, Val Acc: 76.52% | Duration: 0.64s | LR: 0.000300
+Epoch [15/50] | Train Loss: 0.4113, Train Acc: 89.04% | Val Loss: 0.6481, Val Acc: 79.70% | Duration: 0.65s | LR: 0.000300
+Epoch [16/50] | Train Loss: 0.3934, Train Acc: 89.24% | Val Loss: 0.6945, Val Acc: 80.00% | Duration: 0.62s | LR: 0.000300
+Epoch [17/50] | Train Loss: 0.3393, Train Acc: 91.67% | Val Loss: 0.5836, Val Acc: 83.64% | Duration: 0.65s | LR: 0.000300
+  -> new best acc: 83.64%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [18/50] | Train Loss: 0.3192, Train Acc: 91.36% | Val Loss: 0.5870, Val Acc: 84.55% | Duration: 0.63s | LR: 0.000300
+  -> new best acc: 84.55%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [19/50] | Train Loss: 0.2835, Train Acc: 93.38% | Val Loss: 0.5570, Val Acc: 83.94% | Duration: 0.65s | LR: 0.000300
+Epoch [20/50] | Train Loss: 0.2712, Train Acc: 93.23% | Val Loss: 0.6059, Val Acc: 81.52% | Duration: 0.61s | LR: 0.000300
+Epoch [21/50] | Train Loss: 0.2657, Train Acc: 93.59% | Val Loss: 0.6412, Val Acc: 82.73% | Duration: 0.60s | LR: 0.000300
+Epoch [22/50] | Train Loss: 0.2325, Train Acc: 94.80% | Val Loss: 0.5223, Val Acc: 86.36% | Duration: 0.59s | LR: 0.000300
+  -> new best acc: 86.36%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [23/50] | Train Loss: 0.2294, Train Acc: 94.65% | Val Loss: 0.6278, Val Acc: 82.42% | Duration: 0.65s | LR: 0.000300
+Epoch [24/50] | Train Loss: 0.2498, Train Acc: 94.04% | Val Loss: 0.5521, Val Acc: 86.21% | Duration: 0.58s | LR: 0.000300
+Epoch [25/50] | Train Loss: 0.2294, Train Acc: 94.60% | Val Loss: 0.5230, Val Acc: 84.85% | Duration: 0.58s | LR: 0.000300
+Epoch [26/50] | Train Loss: 0.2205, Train Acc: 94.24% | Val Loss: 0.6629, Val Acc: 82.27% | Duration: 0.58s | LR: 0.000300
+Epoch [27/50] | Train Loss: 0.2041, Train Acc: 95.20% | Val Loss: 0.4319, Val Acc: 88.18% | Duration: 0.58s | LR: 0.000300
+  -> new best acc: 88.18%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [28/50] | Train Loss: 0.2058, Train Acc: 94.80% | Val Loss: 0.5650, Val Acc: 83.33% | Duration: 0.58s | LR: 0.000300
+Epoch [29/50] | Train Loss: 0.1973, Train Acc: 94.65% | Val Loss: 0.5586, Val Acc: 83.79% | Duration: 0.58s | LR: 0.000300
+Epoch [30/50] | Train Loss: 0.1586, Train Acc: 96.52% | Val Loss: 0.5913, Val Acc: 83.33% | Duration: 0.57s | LR: 0.000300
+Epoch [31/50] | Train Loss: 0.1742, Train Acc: 95.25% | Val Loss: 0.5030, Val Acc: 85.76% | Duration: 0.58s | LR: 0.000300
+Epoch [32/50] | Train Loss: 0.1490, Train Acc: 96.21% | Val Loss: 0.4703, Val Acc: 86.82% | Duration: 0.58s | LR: 0.000300
+Epoch [33/50] | Train Loss: 0.1479, Train Acc: 96.36% | Val Loss: 0.4642, Val Acc: 86.97% | Duration: 0.58s | LR: 0.000300
+Epoch [34/50] | Train Loss: 0.0899, Train Acc: 98.33% | Val Loss: 0.3764, Val Acc: 89.39% | Duration: 0.58s | LR: 0.000030
+  -> new best acc: 89.39%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [35/50] | Train Loss: 0.0714, Train Acc: 98.84% | Val Loss: 0.3637, Val Acc: 90.30% | Duration: 0.58s | LR: 0.000030
+  -> new best acc: 90.30%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [36/50] | Train Loss: 0.0719, Train Acc: 99.14% | Val Loss: 0.3694, Val Acc: 90.15% | Duration: 0.58s | LR: 0.000030
+Epoch [37/50] | Train Loss: 0.0665, Train Acc: 99.04% | Val Loss: 0.3768, Val Acc: 90.00% | Duration: 0.58s | LR: 0.000030
+Epoch [38/50] | Train Loss: 0.0675, Train Acc: 98.99% | Val Loss: 0.3654, Val Acc: 90.30% | Duration: 0.58s | LR: 0.000030
+Epoch [39/50] | Train Loss: 0.0594, Train Acc: 99.60% | Val Loss: 0.3586, Val Acc: 91.06% | Duration: 0.58s | LR: 0.000030
+  -> new best acc: 91.06%. saved to /home/test/bupt_hjk/ablation/ablation_xrf55_hampel_result/runs/half_window_2/seed_42/best_checkpoint.pth
+Epoch [40/50] | Train Loss: 0.0630, Train Acc: 99.19% | Val Loss: 0.3685, Val Acc: 90.76% | Duration: 0.58s | LR: 0.000030
+Epoch [41/50] | Train Loss: 0.0673, Train Acc: 98.99% | Val Loss: 0.3817, Val Acc: 90.30% | Duration: 0.58s | LR: 0.000030
+Epoch [42/50] | Train Loss: 0.0638, Train Acc: 99.04% | Val Loss: 0.3754, Val Acc: 89.70% | Duration: 0.58s | LR: 0.000030
+Epoch [43/50] | Train Loss: 0.0565, Train Acc: 99.34% | Val Loss: 0.3587, Val Acc: 90.91% | Duration: 0.58s | LR: 0.000030
+Epoch [44/50] | Train Loss: 0.0614, Train Acc: 99.09% | Val Loss: 0.3742, Val Acc: 90.30% | Duration: 0.58s | LR: 0.000030
+Epoch [45/50] | Train Loss: 0.0542, Train Acc: 99.39% | Val Loss: 0.3658, Val Acc: 90.30% | Duration: 0.58s | LR: 0.000030
+Epoch [46/50] | Train Loss: 0.0583, Train Acc: 99.49% | Val Loss: 0.3554, Val Acc: 90.61% | Duration: 0.58s | LR: 0.000003
+Epoch [47/50] | Train Loss: 0.0572, Train Acc: 99.55% | Val Loss: 0.3603, Val Acc: 90.76% | Duration: 0.58s | LR: 0.000003
+Epoch [48/50] | Train Loss: 0.0483, Train Acc: 99.60% | Val Loss: 0.3598, Val Acc: 90.76% | Duration: 0.58s | LR: 0.000003
+Epoch [49/50] | Train Loss: 0.0516, Train Acc: 99.29% | Val Loss: 0.3571, Val Acc: 90.61% | Duration: 0.54s | LR: 0.000003
+Epoch [50/50] | Train Loss: 0.0509, Train Acc: 99.49% | Val Loss: 0.3461, Val Acc: 90.91% | Duration: 0.54s | LR: 0.000003
+完成: best_val_acc=0.9106, test_acc=0.8288
