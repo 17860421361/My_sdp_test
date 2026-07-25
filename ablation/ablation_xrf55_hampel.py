@@ -789,7 +789,7 @@ def plot_representative_waveforms(
         1,
         figsize=(7.2, 2.1 * len(selected_windows)),
         sharex=True,
-        constrained_layout=True,
+        constrained_layout=False,
     )
     axes = np.atleast_1d(axes)
     for ax, window in zip(axes, selected_windows):
@@ -842,11 +842,20 @@ def plot_representative_waveforms(
         ax.grid(True)
     axes[-1].set_xlabel("Time (s)")
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper center", ncol=3, frameon=False)
     fig.suptitle(
         f"Representative XRF55 channel: F={frequency_index}, A={antenna_index}",
-        y=1.03,
+        y=0.985,
     )
+    fig.legend(
+        handles,
+        labels,
+        loc="upper center",
+        bbox_to_anchor=(0.5, 0.950),
+        ncol=3,
+        frameon=False,
+    )
+    # 为标题、全局图例各预留一行，避免 bbox_inches="tight" 保存时发生重叠。
+    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.905))
     save_publication_figure(fig, "figure_3_representative_waveforms")
     write_json(
         RESULT_ROOT / "representative_waveform_metadata.json",
