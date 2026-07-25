@@ -777,22 +777,30 @@ def plot_representative_waveforms(
         default_window,
         diagnostic_samples,
     )
-    selected_windows = sorted(set((min(windows), default_window, max(windows))))
+    # 展示全部待比较窗口；默认设置下为 3×2 的六窗口对比图。
+    selected_windows = sorted(set(windows))
     time_seconds = np.arange(raw.shape[0], dtype=float) / NOMINAL_FS_HZ
     raw_signal = raw[:, frequency_index, antenna_index].astype(float)
     center = float(np.median(raw_signal))
     scale = max(float(np.std(raw_signal)), 1e-12)
     normalized_raw = (raw_signal - center) / scale
 
+    ncols = 2 if len(selected_windows) > 1 else 1
+    nrows = math.ceil(len(selected_windows) / ncols)
     fig, axes = plt.subplots(
-        len(selected_windows),
-        1,
-        figsize=(7.2, 2.1 * len(selected_windows)),
+        nrows,
+        ncols,
+        figsize=(7.2, 2.0 * nrows + 0.6),
         sharex=True,
+        sharey=True,
+        squeeze=False,
         constrained_layout=False,
     )
-    axes = np.atleast_1d(axes)
-    for ax, window in zip(axes, selected_windows):
+    axes_flat = axes.ravel()
+    normalized_filtered_by_window: dict[int, np.ndarray] = {}
+    changed_by_window: dict[int, np.ndarray] = {}
+
+    for ax, window in zip(axes_flat, selected_windows):
         filtered = hampel_filter(raw, window_size=window, n_sigma=N_SIGMA)
         filtered_signal = filtered[:, frequency_index, antenna_index].astype(float)
         normalized_filtered = (filtered_signal - center) / scale
@@ -803,6 +811,8 @@ def plot_representative_waveforms(
             atol=1e-12,
             equal_nan=True,
         )
+        normalized_filtered_by_window[window] = normalized_filtered
+        changed_by_window[window] = changed
         ax.plot(
             time_seconds,
             normalized_raw,
@@ -827,36 +837,122 @@ def plot_representative_waveforms(
                 label="Replaced",
                 zorder=3,
             )
-        ax.set_ylabel("Normalized amplitude")
-        ax.text(
-            0.01,
-            0.95,
+        is_default = window == default_window
+        ax.set_title(
             (
                 f"{full_window_frames(window)} frames, "
                 f"{nominal_window_duration_ms(window):.0f} ms"
+                + (" (default)" if is_default else "")
             ),
-            transform=ax.transAxes,
-            ha="left",
-            va="top",
+            loc="left",
+            pad=4,
+            fontweight="bold" if is_default else "normal",
         )
+        if is_default:
+            ax.set_facecolor("#FFF7DE")
+            for spine in ax.spines.values():
+                spine.set_color(OKABE_ITO["orange"])
+                spine.set_linewidth(1.4)
         ax.grid(True)
-    axes[-1].set_xlabel("Time (s)")
-    handles, labels = axes[0].get_legend_handles_labels()
+
+    for ax in axes_flat[len(selected_windows) :]:
+        ax.set_visible(False)
+
+    handles, labels = axes_flat[0].get_legend_handles_labels()
     fig.suptitle(
-        f"Representative XRF55 channel: F={frequency_index}, A={antenna_index}",
-        y=0.985,
+        (
+            "Hampel window comparison on a representative XRF55 channel: "
+            f"F={frequency_index}, A={antenna_index}"
+        ),
+        y=0.990,
     )
     fig.legend(
         handles,
         labels,
         loc="upper center",
-        bbox_to_anchor=(0.5, 0.950),
+        bbox_to_anchor=(0.5, 0.958),
         ncol=3,
         frameon=False,
     )
-    # 为标题、全局图例各预留一行，避免 bbox_inches="tight" 保存时发生重叠。
-    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.905))
+    fig.supxlabel("Time (s)", y=0.015)
+    fig.supylabel("Normalized amplitude", x=0.015)
+    # 为标题、全局图例及共享坐标标题预留空间。
+    fig.tight_layout(rect=(0.035, 0.035, 1.0, 0.910))
     save_publication_figure(fig, "figure_3_representative_waveforms")
+
+    # 单独放大默认窗口中处理前后差异最大的尖刺附近，便于观察替换范围。
+    normalized_default = normalized_filtered_by_window[default_window]
+    changed_default = changed_by_window[default_window]
+    absolute_difference = np.abs(normalized_default - normalized_raw)
+    finite_difference = np.where(
+        np.isfinite(absolute_difference),
+        absolute_difference,
+        -np.inf,
+    )
+    focus_index = (
+        int(np.argmax(finite_difference))
+        if np.any(np.isfinite(absolute_difference))
+        else raw_signal.shape[0] // 2
+    )
+    zoom_frames = min(raw_signal.shape[0], int(round(0.5 * NOMINAL_FS_HZ)))
+    zoom_start = max(0, focus_index - zoom_frames // 2)
+    zoom_end = min(raw_signal.shape[0], zoom_start + zoom_frames)
+    zoom_start = max(0, zoom_end - zoom_frames)
+    zoom_slice = slice(zoom_start, zoom_end)
+    zoom_changed = changed_default[zoom_slice]
+
+    zoom_fig, zoom_ax = plt.subplots(figsize=(7.2, 3.2), constrained_layout=True)
+    zoom_ax.plot(
+        time_seconds[zoom_slice],
+        normalized_raw[zoom_slice],
+        color=OKABE_ITO["black"],
+        alpha=0.60,
+        label="Raw",
+    )
+    zoom_ax.plot(
+        time_seconds[zoom_slice],
+        normalized_default[zoom_slice],
+        color=OKABE_ITO["blue"],
+        label="Hampel",
+    )
+    if np.any(zoom_changed):
+        zoom_time = time_seconds[zoom_slice][zoom_changed]
+        zoom_raw = normalized_raw[zoom_slice][zoom_changed]
+        zoom_filtered = normalized_default[zoom_slice][zoom_changed]
+        zoom_ax.vlines(
+            zoom_time,
+            zoom_filtered,
+            zoom_raw,
+            color=OKABE_ITO["vermillion"],
+            alpha=0.35,
+            linewidth=0.8,
+        )
+        zoom_ax.scatter(
+            zoom_time,
+            zoom_raw,
+            s=24,
+            facecolors="none",
+            edgecolors=OKABE_ITO["vermillion"],
+            linewidths=1.0,
+            label="Replaced",
+            zorder=3,
+        )
+    zoom_ax.set_title(
+        (
+            f"Default Hampel window: {full_window_frames(default_window)} frames, "
+            f"{nominal_window_duration_ms(default_window):.0f} ms"
+        )
+    )
+    zoom_ax.set_xlabel("Time (s)")
+    zoom_ax.set_ylabel("Normalized amplitude")
+    zoom_ax.set_facecolor("#FFF7DE")
+    for spine in zoom_ax.spines.values():
+        spine.set_color(OKABE_ITO["orange"])
+        spine.set_linewidth(1.2)
+    zoom_ax.grid(True)
+    zoom_ax.legend(frameon=False, ncol=3)
+    save_publication_figure(zoom_fig, "figure_3b_default_window_zoom")
+
     write_json(
         RESULT_ROOT / "representative_waveform_metadata.json",
         {
@@ -864,6 +960,12 @@ def plot_representative_waveforms(
             "frequency_index": frequency_index,
             "antenna_index": antenna_index,
             "selected_half_windows": selected_windows,
+            "default_zoom_half_window": default_window,
+            "default_zoom_frame_range": [zoom_start, zoom_end],
+            "default_zoom_time_seconds": [
+                float(time_seconds[zoom_start]),
+                float(time_seconds[zoom_end - 1]),
+            ],
             "selection_rule": (
                 "channel with the largest absolute Hampel change under "
                 f"half_window={default_window} among diagnostic samples"
