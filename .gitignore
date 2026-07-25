@@ -1,3 +1,6 @@
 # Local datasets
 /sdp_dataset/
 /temp_sdp_data/
+
+# Generated experiment caches that are too large for GitHub.
+processed_source_dtype.npy

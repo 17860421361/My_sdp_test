@@ -1,0 +1,87 @@
+==============================================================================
+case=bp_fs200_signed; seed=42; hash=9c81e33dfaf7be9a
+input_shape=(1000, 15, 9); device=cuda
+{
+  "case": "bp_fs200_signed",
+  "denoiser": "bandpass",
+  "fs_hz": 200.0,
+  "iqr_mode": "signed",
+  "normalization_input": "signed",
+  "role": "main_2x2"
+}
+==============================================================================
+Epoch [1/50] | Train Loss: 3.7397, Train Acc: 6.16% | Val Loss: 3.4946, Val Acc: 10.00% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 10.00%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [2/50] | Train Loss: 3.2962, Train Acc: 15.25% | Val Loss: 3.0801, Val Acc: 19.55% | Duration: 0.54s | LR: 0.000300
+  -> new best acc: 19.55%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [3/50] | Train Loss: 2.9643, Train Acc: 25.05% | Val Loss: 2.8308, Val Acc: 23.48% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 23.48%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [4/50] | Train Loss: 2.6869, Train Acc: 30.51% | Val Loss: 2.5949, Val Acc: 32.27% | Duration: 0.50s | LR: 0.000300
+  -> new best acc: 32.27%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [5/50] | Train Loss: 2.4650, Train Acc: 38.33% | Val Loss: 2.4309, Val Acc: 35.15% | Duration: 0.50s | LR: 0.000300
+  -> new best acc: 35.15%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [6/50] | Train Loss: 2.2583, Train Acc: 42.02% | Val Loss: 2.2466, Val Acc: 40.61% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 40.61%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [7/50] | Train Loss: 2.0606, Train Acc: 48.74% | Val Loss: 2.1224, Val Acc: 42.58% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 42.58%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [8/50] | Train Loss: 1.9428, Train Acc: 49.90% | Val Loss: 2.0070, Val Acc: 46.06% | Duration: 0.51s | LR: 0.000300
+  -> new best acc: 46.06%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [9/50] | Train Loss: 1.7764, Train Acc: 57.27% | Val Loss: 1.9394, Val Acc: 48.64% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 48.64%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [10/50] | Train Loss: 1.6928, Train Acc: 57.22% | Val Loss: 1.8530, Val Acc: 51.67% | Duration: 0.51s | LR: 0.000300
+  -> new best acc: 51.67%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [11/50] | Train Loss: 1.5624, Train Acc: 63.59% | Val Loss: 1.7553, Val Acc: 53.79% | Duration: 0.51s | LR: 0.000300
+  -> new best acc: 53.79%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [12/50] | Train Loss: 1.4789, Train Acc: 65.81% | Val Loss: 1.7554, Val Acc: 51.52% | Duration: 0.52s | LR: 0.000300
+Epoch [13/50] | Train Loss: 1.3757, Train Acc: 68.59% | Val Loss: 1.6821, Val Acc: 53.48% | Duration: 0.53s | LR: 0.000300
+Epoch [14/50] | Train Loss: 1.2776, Train Acc: 72.37% | Val Loss: 1.5797, Val Acc: 58.64% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 58.64%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [15/50] | Train Loss: 1.2385, Train Acc: 71.62% | Val Loss: 1.5800, Val Acc: 56.52% | Duration: 0.51s | LR: 0.000300
+Epoch [16/50] | Train Loss: 1.1105, Train Acc: 76.92% | Val Loss: 1.4920, Val Acc: 58.94% | Duration: 0.51s | LR: 0.000300
+  -> new best acc: 58.94%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [17/50] | Train Loss: 1.0277, Train Acc: 78.59% | Val Loss: 1.4572, Val Acc: 61.36% | Duration: 0.51s | LR: 0.000300
+  -> new best acc: 61.36%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [18/50] | Train Loss: 0.9907, Train Acc: 79.34% | Val Loss: 1.4271, Val Acc: 64.39% | Duration: 0.51s | LR: 0.000300
+  -> new best acc: 64.39%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [19/50] | Train Loss: 0.9039, Train Acc: 81.92% | Val Loss: 1.4088, Val Acc: 60.91% | Duration: 0.51s | LR: 0.000300
+Epoch [20/50] | Train Loss: 0.8693, Train Acc: 82.27% | Val Loss: 1.3455, Val Acc: 64.24% | Duration: 0.52s | LR: 0.000300
+Epoch [21/50] | Train Loss: 0.7975, Train Acc: 84.85% | Val Loss: 1.3560, Val Acc: 63.94% | Duration: 0.51s | LR: 0.000300
+Epoch [22/50] | Train Loss: 0.7472, Train Acc: 86.31% | Val Loss: 1.3146, Val Acc: 63.03% | Duration: 0.51s | LR: 0.000300
+Epoch [23/50] | Train Loss: 0.7021, Train Acc: 87.98% | Val Loss: 1.3730, Val Acc: 60.30% | Duration: 0.52s | LR: 0.000300
+Epoch [24/50] | Train Loss: 0.6511, Train Acc: 89.19% | Val Loss: 1.3459, Val Acc: 62.42% | Duration: 0.51s | LR: 0.000300
+Epoch [25/50] | Train Loss: 0.6314, Train Acc: 89.24% | Val Loss: 1.2609, Val Acc: 65.45% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 65.45%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [26/50] | Train Loss: 0.5589, Train Acc: 91.97% | Val Loss: 1.2429, Val Acc: 65.91% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 65.91%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [27/50] | Train Loss: 0.5086, Train Acc: 92.22% | Val Loss: 1.2677, Val Acc: 63.33% | Duration: 0.52s | LR: 0.000300
+Epoch [28/50] | Train Loss: 0.4872, Train Acc: 92.98% | Val Loss: 1.1949, Val Acc: 67.73% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 67.73%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [29/50] | Train Loss: 0.4328, Train Acc: 94.29% | Val Loss: 1.1591, Val Acc: 66.82% | Duration: 0.52s | LR: 0.000300
+Epoch [30/50] | Train Loss: 0.4145, Train Acc: 94.95% | Val Loss: 1.1725, Val Acc: 67.12% | Duration: 0.52s | LR: 0.000300
+Epoch [31/50] | Train Loss: 0.4012, Train Acc: 94.70% | Val Loss: 1.2065, Val Acc: 63.79% | Duration: 0.52s | LR: 0.000300
+Epoch [32/50] | Train Loss: 0.3523, Train Acc: 96.52% | Val Loss: 1.1430, Val Acc: 67.58% | Duration: 0.52s | LR: 0.000300
+Epoch [33/50] | Train Loss: 0.3501, Train Acc: 96.41% | Val Loss: 1.1438, Val Acc: 67.88% | Duration: 0.53s | LR: 0.000300
+  -> new best acc: 67.88%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [34/50] | Train Loss: 0.3265, Train Acc: 96.21% | Val Loss: 1.1121, Val Acc: 66.67% | Duration: 0.53s | LR: 0.000300
+Epoch [35/50] | Train Loss: 0.2718, Train Acc: 97.63% | Val Loss: 1.1513, Val Acc: 67.73% | Duration: 0.52s | LR: 0.000300
+Epoch [36/50] | Train Loss: 0.2785, Train Acc: 97.22% | Val Loss: 1.1660, Val Acc: 65.61% | Duration: 0.52s | LR: 0.000300
+Epoch [37/50] | Train Loss: 0.2583, Train Acc: 97.73% | Val Loss: 1.0785, Val Acc: 70.00% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 70.00%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [38/50] | Train Loss: 0.2278, Train Acc: 98.13% | Val Loss: 1.0922, Val Acc: 69.55% | Duration: 0.51s | LR: 0.000300
+Epoch [39/50] | Train Loss: 0.2211, Train Acc: 98.28% | Val Loss: 1.0555, Val Acc: 70.00% | Duration: 0.52s | LR: 0.000300
+Epoch [40/50] | Train Loss: 0.2017, Train Acc: 98.64% | Val Loss: 1.0892, Val Acc: 68.48% | Duration: 0.52s | LR: 0.000300
+Epoch [41/50] | Train Loss: 0.1963, Train Acc: 98.69% | Val Loss: 1.0446, Val Acc: 70.30% | Duration: 0.53s | LR: 0.000300
+  -> new best acc: 70.30%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [42/50] | Train Loss: 0.1646, Train Acc: 99.09% | Val Loss: 1.0447, Val Acc: 70.15% | Duration: 0.53s | LR: 0.000300
+Epoch [43/50] | Train Loss: 0.1606, Train Acc: 99.44% | Val Loss: 1.0743, Val Acc: 68.33% | Duration: 0.53s | LR: 0.000300
+Epoch [44/50] | Train Loss: 0.1660, Train Acc: 98.43% | Val Loss: 1.0540, Val Acc: 69.39% | Duration: 0.52s | LR: 0.000300
+Epoch [45/50] | Train Loss: 0.1380, Train Acc: 99.24% | Val Loss: 1.0472, Val Acc: 68.48% | Duration: 0.52s | LR: 0.000300
+Epoch [46/50] | Train Loss: 0.1227, Train Acc: 99.55% | Val Loss: 1.0269, Val Acc: 71.06% | Duration: 0.53s | LR: 0.000300
+  -> new best acc: 71.06%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [47/50] | Train Loss: 0.1228, Train Acc: 99.09% | Val Loss: 1.0348, Val Acc: 71.21% | Duration: 0.52s | LR: 0.000300
+  -> new best acc: 71.21%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [48/50] | Train Loss: 0.1112, Train Acc: 99.44% | Val Loss: 1.0107, Val Acc: 70.76% | Duration: 0.52s | LR: 0.000300
+Epoch [49/50] | Train Loss: 0.1095, Train Acc: 99.60% | Val Loss: 1.0028, Val Acc: 71.67% | Duration: 0.53s | LR: 0.000300
+  -> new best acc: 71.67%. saved to /home/test/bupt_hjk/ablation/bandpass_server_results/sign_ablation/runs/bp_fs200_signed/config_9c81e33dfaf7be9a/seed_42/best_checkpoint.pth
+Epoch [50/50] | Train Loss: 0.1011, Train Acc: 99.29% | Val Loss: 1.0158, Val Acc: 70.15% | Duration: 0.53s | LR: 0.000300
+Completed: val=0.7167, test=0.6470
