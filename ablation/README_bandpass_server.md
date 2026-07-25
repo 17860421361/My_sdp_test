@@ -5,6 +5,25 @@
 - `sdp_dataset/elderAL`
 - `sdp_dataset/xrf55/wifi`
 
+所有结果统一写入一个新目录：
+
+```text
+ablation/bandpass_server_results/
+├── signal_analysis/   # 信号统计、Elder/XRF55 科研图
+├── sign_ablation/     # 7×5 分类消融、模型和配对效应
+└── final_report/      # 最终合并报告与完整性审计
+```
+
+四个文件的分工：
+
+- `bandpass_server_signal_analysis.py`：不训练模型，只验证 Elder 旁路机制，
+  并统计 XRF55 七种方法的负值和方向变化；XRF55 默认只使用前三个用户。
+- `bandpass_server_sign_ablation.py`：训练模型，用 2×2 和补充分支验证
+  “采样率”和“符号折叠”是否真的影响准确率。
+- `bandpass_server_final_report.py`：不读数据、不训练，只检查前两步是否跑完整，
+  然后合并成一份可汇报结论。
+- `README_bandpass_server.md`：运行顺序、指标含义和判定标准。
+
 本地只需要做无数据自检：
 
 ```bash
@@ -18,8 +37,18 @@ python ablation/bandpass_server_sign_ablation.py --self-test
 python ablation/bandpass_server_signal_analysis.py \
   --elder-root sdp_dataset/elderAL \
   --xrf-root sdp_dataset/xrf55/wifi \
+  --xrf-user-count 3 \
   --workers 8 \
   --resume
+```
+
+XRF55 只选择文件名中数值排序后的前三个用户。标准数据应为
+`3 × 55动作 × 20次重复 = 3300` 个文件，而不是全部11个用户的12100个文件。
+
+结果目录：
+
+```text
+ablation/bandpass_server_results/signal_analysis/
 ```
 
 它回答三个问题：
@@ -59,6 +88,12 @@ python ablation/bandpass_server_sign_ablation.py \
   --workers 4 \
   --gpu 1 \
   --resume
+```
+
+结果目录：
+
+```text
+ablation/bandpass_server_results/sign_ablation/
 ```
 
 正式实验为 7 个分支、5 个模型 seed。核心是严格的 2×2：
@@ -160,15 +195,13 @@ sampling_effect_signed
 两套实验都跑完后执行：
 
 ```bash
-python ablation/bandpass_server_final_report.py \
-  --signal-dir result/ablations/bandpass_server_signal \
-  --sign-dir result/ablations/bandpass_server_sign
+python ablation/bandpass_server_final_report.py
 ```
 
 输出：
 
-- `result/ablations/bandpass_server_final/bandpass_final_report.md`
-- `result/ablations/bandpass_server_final/bandpass_result_audit.json`
+- `ablation/bandpass_server_results/final_report/bandpass_final_report.md`
+- `ablation/bandpass_server_results/final_report/bandpass_result_audit.json`
 
 只有完整扫描、四组核心科研图、官方 7 case × 5 seed、50 epochs、3 个用户
 以及所有 checkpoint/预测/测试清单均通过检查时，报告才会标记 `COMPLETE`。

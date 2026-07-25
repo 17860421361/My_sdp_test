@@ -84,7 +84,9 @@ WSDP_SRC = (
     / "src"
 )
 DEFAULT_DATA_PATH = REPO_ROOT / "sdp_dataset" / "xrf55" / "wifi"
-DEFAULT_OUTPUT_DIR = REPO_ROOT / "result" / "ablations" / "bandpass_server_sign"
+DEFAULT_OUTPUT_DIR = (
+    REPO_ROOT / "ablation" / "bandpass_server_results" / "sign_ablation"
+)
 
 DATASET_NAME = "xrf55"
 MODEL_NAME = "resnet1d"
@@ -676,6 +678,9 @@ def zscore_three_way(
 
 def synthetic_self_test() -> None:
     """Pure-numpy checks; never imports the dataset reader or torch."""
+    assert DEFAULT_OUTPUT_DIR == (
+        REPO_ROOT / "ablation" / "bandpass_server_results" / "sign_ablation"
+    )
     validate_case_definitions()
     values = np.asarray(
         [

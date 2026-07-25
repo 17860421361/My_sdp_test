@@ -43,6 +43,7 @@ import importlib.util
 import json
 import multiprocessing as mp
 import platform
+import re
 import sys
 import time
 import traceback
@@ -63,7 +64,12 @@ WSDP_ROOT = (
 WSDP_SRC = WSDP_ROOT / "src"
 DEFAULT_ELDER_ROOT = REPO_ROOT / "sdp_dataset" / "elderAL"
 DEFAULT_XRF_ROOT = REPO_ROOT / "sdp_dataset" / "xrf55" / "wifi"
-DEFAULT_OUTPUT_ROOT = REPO_ROOT / "result" / "ablations" / "bandpass_server_signal"
+DEFAULT_OUTPUT_ROOT = (
+    REPO_ROOT / "ablation" / "bandpass_server_results" / "signal_analysis"
+)
+DEFAULT_XRF_USER_COUNT = 3
+XRF_ACTION_IDS = tuple(range(1, 56))
+XRF_REPETITION_IDS = tuple(range(1, 21))
 
 BANDPASS_ORDER = 4
 BANDPASS_LOW_HZ = 0.5
@@ -209,7 +215,16 @@ def parse_args() -> argparse.Namespace:
         "--max-xrf-files",
         type=int,
         default=0,
-        help="0 means all files; positive values are smoke-test limits",
+        help="0 means all files from selected users; positive values are smoke-test limits",
+    )
+    parser.add_argument(
+        "--xrf-user-count",
+        type=int,
+        default=DEFAULT_XRF_USER_COUNT,
+        help=(
+            "Use the first N numeric XRF55 user IDs; default 3 matches the "
+            "classification experiment"
+        ),
     )
     parser.add_argument(
         "--meaningful-negative-relative-tol",
@@ -1034,15 +1049,68 @@ def run_elder(
     return summary
 
 
-def discover_xrf_files(root: Path, max_files: int) -> list[Path]:
-    files = [
-        path
-        for path in sorted(root.rglob("*"))
-        if path.is_file() and "truth" not in path.name.lower()
+def parse_xrf_file_ids(path: Path) -> tuple[int, int, int] | None:
+    match = re.search(r"(\d+)_(\d+)_(\d+)", path.stem)
+    if match is None:
+        return None
+    return tuple(int(match.group(index)) for index in range(1, 4))
+
+
+def discover_xrf_files(
+    root: Path,
+    max_files: int,
+    user_count: int,
+) -> tuple[list[Path], dict[str, Any]]:
+    candidates: list[tuple[Path, tuple[int, int, int]]] = []
+    for path in sorted(root.rglob("*")):
+        if not path.is_file() or "truth" in path.name.lower():
+            continue
+        identifiers = parse_xrf_file_ids(path)
+        if identifiers is not None:
+            candidates.append((path, identifiers))
+    available_users = sorted({identifiers[0] for _, identifiers in candidates})
+    selected_users = available_users[:user_count]
+    if len(selected_users) != user_count:
+        raise RuntimeError(
+            f"Requested {user_count} XRF55 users, found "
+            f"{len(available_users)}: {available_users}"
+        )
+    selected_user_set = set(selected_users)
+    selected_candidates = [
+        (path, identifiers)
+        for path, identifiers in candidates
+        if identifiers[0] in selected_user_set
     ]
+    observed_grid = Counter(identifiers for _, identifiers in selected_candidates)
+    expected_grid = {
+        (user_id, action_id, repetition_id)
+        for user_id in selected_users
+        for action_id in XRF_ACTION_IDS
+        for repetition_id in XRF_REPETITION_IDS
+    }
+    missing_grid = sorted(expected_grid - set(observed_grid))
+    unexpected_grid = sorted(set(observed_grid) - expected_grid)
+    duplicate_grid = sorted(
+        (key, count) for key, count in observed_grid.items() if count != 1
+    )
+    files = [path for path, _ in selected_candidates]
+    selected_files_before_limit = len(files)
     if max_files > 0:
         files = files[:max_files]
-    return files
+    return files, {
+        "candidate_files_all_users": len(candidates),
+        "selected_files_before_limit": selected_files_before_limit,
+        "selected_user_ids": selected_users,
+        "available_user_ids": available_users,
+        "requested_user_count": user_count,
+        "expected_selected_files": len(expected_grid),
+        "complete_user_action_repetition_grid": not (
+            missing_grid or unexpected_grid or duplicate_grid
+        ),
+        "missing_grid_cells_preview": missing_grid[:10],
+        "unexpected_grid_cells_preview": unexpected_grid[:10],
+        "duplicate_grid_cells_preview": duplicate_grid[:10],
+    }
 
 
 def prepare_xrf_input(
@@ -1688,6 +1756,7 @@ def run_xrf(
     runtime: dict[str, Any],
     *,
     max_files: int,
+    user_count: int,
     relative_tolerance: float,
     complex_policy: str,
     resume: bool,
@@ -1696,12 +1765,18 @@ def run_xrf(
 ) -> dict[str, Any]:
     if not root.is_dir():
         raise FileNotFoundError(f"XRF55 directory not found: {root}")
-    files = discover_xrf_files(root, max_files)
+    files, selection = discover_xrf_files(root, max_files, user_count)
+    selected_users = list(selection["selected_user_ids"])
+    available_users = list(selection["available_user_ids"])
+    selected_files_before_limit = int(selection["selected_files_before_limit"])
     if not files:
         raise RuntimeError(f"No XRF55 files discovered under {root}")
     run_signature = stable_hash(
         {
             "data_path": str(root),
+            "selected_user_ids": selected_users,
+            "available_user_ids": available_users,
+            "requested_user_count": user_count,
             "files": [
                 {
                     "relative_path": str(path.relative_to(root)),
@@ -1760,6 +1835,7 @@ def run_xrf(
     discovery = {
         "data_path": str(root),
         "discovered_files": len(files),
+        **selection,
         "supported_files": 0,
         "successfully_decoded_files": 0,
         "format_mismatch_files": 0,
@@ -1778,7 +1854,11 @@ def run_xrf(
     representation_counts: Counter[str] = Counter()
     seen_record_keys: set[tuple[str, int]] = set()
     print(f"[XRF55] data: {root}")
-    print(f"[XRF55] discovered files: {len(files)}")
+    print(
+        f"[XRF55] selected users: {selected_users}; "
+        f"files: {len(files)}/{selected_files_before_limit} "
+        "(selected scope)"
+    )
     completed_by_file: dict[str, dict[int, list[str]]] = defaultdict(
         lambda: defaultdict(list)
     )
@@ -1932,6 +2012,10 @@ def run_xrf(
 
 def synthetic_self_test() -> None:
     """Test the exact Bandpass source file without importing top-level wsdp."""
+    assert DEFAULT_OUTPUT_ROOT == (
+        REPO_ROOT / "ablation" / "bandpass_server_results" / "signal_analysis"
+    )
+    assert parse_xrf_file_ids(Path("03_55_20.npy")) == (3, 55, 20)
     module_path = WSDP_SRC / "wsdp" / "algorithms" / "denoising_butterworth.py"
     if not module_path.is_file():
         raise FileNotFoundError(module_path)
@@ -2006,6 +2090,7 @@ def synthetic_self_test() -> None:
         "only": "all",
         "max_elder_files": 0,
         "max_xrf_files": 0,
+        "xrf_user_count": DEFAULT_XRF_USER_COUNT,
     }
     complete_elder = {
         "valid_samples": 10,
@@ -2027,6 +2112,12 @@ def synthetic_self_test() -> None:
             "partially_analyzed_records": 0,
             "successfully_decoded_files": 10,
             "files_with_at_least_one_fully_analyzed_record": 10,
+            "selected_user_ids": [1, 2, 3],
+            "available_user_ids": [1, 2, 3, 4],
+            "requested_user_count": DEFAULT_XRF_USER_COUNT,
+            "selected_files_before_limit": 3300,
+            "expected_selected_files": 3300,
+            "complete_user_action_repetition_grid": True,
         },
         "methods": [{"method": method, "samples": 10} for method in METHOD_ORDER],
     }
@@ -2075,6 +2166,10 @@ def evaluate_signal_completion(
         reasons.append("Official completion requires --max-elder-files=0.")
     if int(config.get("max_xrf_files", 0)) != 0:
         reasons.append("Official completion requires --max-xrf-files=0.")
+    if int(config.get("xrf_user_count", 0)) != DEFAULT_XRF_USER_COUNT:
+        reasons.append(
+            "Official completion requires the first 3 XRF55 users (--xrf-user-count=3)."
+        )
 
     if elder is None:
         reasons.append("ElderAL results are missing.")
@@ -2101,6 +2196,25 @@ def evaluate_signal_completion(
         reasons.append("XRF55 results are missing.")
     else:
         discovery = xrf.get("discovery", {})
+        selected_users = [
+            int(value) for value in discovery.get("selected_user_ids", [])
+        ]
+        available_users = [
+            int(value) for value in discovery.get("available_user_ids", [])
+        ]
+        if selected_users != available_users[:DEFAULT_XRF_USER_COUNT]:
+            reasons.append("XRF55 selection is not the first 3 numeric user IDs.")
+        if int(discovery.get("requested_user_count", 0)) != (DEFAULT_XRF_USER_COUNT):
+            reasons.append("XRF55 discovery does not record user_count=3.")
+        if not bool(discovery.get("complete_user_action_repetition_grid", False)):
+            reasons.append(
+                "XRF55 does not contain exactly one file for every selected "
+                "user × action(1..55) × repetition(1..20)."
+            )
+        if int(discovery.get("selected_files_before_limit", 0)) != int(
+            discovery.get("expected_selected_files", -1)
+        ):
+            reasons.append("XRF55 selected-file count is not the official 3300.")
         if int(discovery.get("failed_files", 0)) != 0:
             reasons.append("One or more supported XRF55 files failed.")
         if int(discovery.get("skipped_short_records", 0)) != 0:
@@ -2150,6 +2264,20 @@ def signal_coverage(
         },
         "xrf55": {
             "discovered_files": int(xrf_discovery.get("discovered_files", 0)),
+            "selected_user_ids": list(xrf_discovery.get("selected_user_ids", [])),
+            "available_user_ids": list(xrf_discovery.get("available_user_ids", [])),
+            "selected_files_before_limit": int(
+                xrf_discovery.get("selected_files_before_limit", 0)
+            ),
+            "expected_selected_files": int(
+                xrf_discovery.get("expected_selected_files", 0)
+            ),
+            "complete_user_action_repetition_grid": bool(
+                xrf_discovery.get(
+                    "complete_user_action_repetition_grid",
+                    False,
+                )
+            ),
             "successfully_decoded_files": int(
                 xrf_discovery.get("successfully_decoded_files", 0)
             ),
@@ -2247,6 +2375,8 @@ def write_signal_plain_language_report(
             [
                 "## XRF55",
                 "",
+                f"- 为与分类实验一致，只统计数值排序后的前三个用户："
+                f"{discovery.get('selected_user_ids', [])}。",
                 f"- 完整分析记录数：{discovery.get('fully_analyzed_records', 0)}；"
                 f"其中原始值全非负的记录数："
                 f"{discovery.get('raw_nonnegative_records', 0)}。",
@@ -2289,6 +2419,8 @@ def main() -> None:
         raise ValueError("--meaningful-negative-relative-tol must be > 0")
     if args.max_elder_files < 0 or args.max_xrf_files < 0:
         raise ValueError("file limits must be >= 0")
+    if args.xrf_user_count < 1:
+        raise ValueError("--xrf-user-count must be >= 1")
     if args.workers < 1:
         raise ValueError("--workers must be >= 1")
 
@@ -2304,6 +2436,7 @@ def main() -> None:
         "xrf_complex_policy": args.xrf_complex_policy,
         "max_elder_files": args.max_elder_files,
         "max_xrf_files": args.max_xrf_files,
+        "xrf_user_count": args.xrf_user_count,
         "workers": args.workers,
         "meaningful_negative_relative_tolerance": (
             args.meaningful_negative_relative_tol
@@ -2344,6 +2477,7 @@ def main() -> None:
             output_dir,
             runtime,
             max_files=args.max_xrf_files,
+            user_count=args.xrf_user_count,
             relative_tolerance=args.meaningful_negative_relative_tol,
             complex_policy=args.xrf_complex_policy,
             resume=args.resume,

@@ -29,9 +29,10 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_SIGNAL_DIR = REPO_ROOT / "result" / "ablations" / "bandpass_server_signal"
-DEFAULT_SIGN_DIR = REPO_ROOT / "result" / "ablations" / "bandpass_server_sign"
-DEFAULT_OUTPUT_DIR = REPO_ROOT / "result" / "ablations" / "bandpass_server_final"
+DEFAULT_RESULT_ROOT = REPO_ROOT / "ablation" / "bandpass_server_results"
+DEFAULT_SIGNAL_DIR = DEFAULT_RESULT_ROOT / "signal_analysis"
+DEFAULT_SIGN_DIR = DEFAULT_RESULT_ROOT / "sign_ablation"
+DEFAULT_OUTPUT_DIR = DEFAULT_RESULT_ROOT / "final_report"
 
 EXPECTED_SEEDS = (42, 49, 514, 654, 886)
 EXPECTED_METHODS = (
@@ -153,13 +154,13 @@ def parse_args() -> argparse.Namespace:
         "--signal-dir",
         type=Path,
         default=DEFAULT_SIGNAL_DIR,
-        help="Existing bandpass_server_signal result directory",
+        help="Existing signal_analysis result directory",
     )
     parser.add_argument(
         "--sign-dir",
         type=Path,
         default=DEFAULT_SIGN_DIR,
-        help="Existing bandpass_server_sign result directory",
+        help="Existing sign_ablation result directory",
     )
     parser.add_argument(
         "--output-dir",
@@ -678,6 +679,7 @@ def audit_xrf_signal(signal_dir: Path, log: AuditLog) -> dict[str, Any]:
     discovery = summary.get("discovery")
     fully_analyzed = None
     raw_nonnegative = None
+    selected_user_ids: list[int] = []
     if not isinstance(discovery, dict):
         log.error(
             "xrf_discovery_missing",
@@ -697,6 +699,54 @@ def audit_xrf_signal(signal_dir: Path, log: AuditLog) -> dict[str, Any]:
             log=log,
             code="xrf_discovery_invalid",
         )
+        try:
+            selected_user_ids = [
+                int(value) for value in discovery.get("selected_user_ids", [])
+            ]
+            available_user_ids = [
+                int(value) for value in discovery.get("available_user_ids", [])
+            ]
+        except (TypeError, ValueError):
+            selected_user_ids = []
+            available_user_ids = []
+        if (
+            len(selected_user_ids) != 3
+            or selected_user_ids != available_user_ids[:3]
+            or as_int(
+                discovery.get("requested_user_count"),
+                name="XRF discovery.requested_user_count",
+                log=log,
+                code="xrf_discovery_invalid",
+            )
+            != 3
+        ):
+            log.error(
+                "xrf_user_scope_invalid",
+                "XRF 信号统计必须使用数值排序后的前三个用户。",
+                summary_path,
+            )
+        selected_files = as_int(
+            discovery.get("selected_files_before_limit"),
+            name="XRF discovery.selected_files_before_limit",
+            log=log,
+            code="xrf_discovery_invalid",
+        )
+        expected_files = as_int(
+            discovery.get("expected_selected_files"),
+            name="XRF discovery.expected_selected_files",
+            log=log,
+            code="xrf_discovery_invalid",
+        )
+        if (
+            as_bool(discovery.get("complete_user_action_repetition_grid")) is not True
+            or selected_files != 3300
+            or expected_files != 3300
+        ):
+            log.error(
+                "xrf_grid_incomplete",
+                "XRF 信号统计不是完整的 3用户×55动作×20重复=3300 文件。",
+                summary_path,
+            )
         for field in (
             "failed_files",
             "partially_analyzed_records",
@@ -789,6 +839,8 @@ def audit_xrf_signal(signal_dir: Path, log: AuditLog) -> dict[str, Any]:
             "xrf_incomplete_records",
             "xrf_no_complete_records",
             "xrf_discovery_count_mismatch",
+            "xrf_user_scope_invalid",
+            "xrf_grid_incomplete",
             "xrf_method_csv_set_mismatch",
             "xrf_method_csv_invalid",
             "xrf_method_csv_mismatch",
@@ -836,6 +888,7 @@ def audit_xrf_signal(signal_dir: Path, log: AuditLog) -> dict[str, Any]:
             "complete": complete,
             "fully_analyzed_records": fully_analyzed,
             "raw_nonnegative_records": raw_nonnegative,
+            "selected_user_ids": selected_user_ids,
             "methods": audited_methods,
             "bandpass_vs_other_negative_rate_separation": separation,
             "mechanism_support": mechanism,
@@ -1308,6 +1361,7 @@ def audit_training(sign_dir: Path, log: AuditLog) -> dict[str, Any]:
         {
             "complete": complete,
             "official_complete": official_flag(completion_payload),
+            "selected_user_ids": settings.get("selected_user_ids", []),
             "missing_case_seed_pairs": missing_pairs,
             "artifact_failures": artifact_failures,
             "cases": case_results,
@@ -1393,6 +1447,11 @@ def audit_results(
     elder = audit_elder(signal_dir, log)
     xrf = audit_xrf_signal(signal_dir, log)
     training = audit_training(sign_dir, log)
+    if xrf.get("selected_user_ids") != training.get("selected_user_ids"):
+        log.error(
+            "xrf_user_scope_mismatch",
+            "信号统计与分类消融使用的 XRF55 用户不一致。",
+        )
     complete = not log.errors
     verdict = verdict_from_evidence(complete, elder, xrf, training)
     return {
@@ -1511,6 +1570,9 @@ def render_markdown(audit: dict[str, Any]) -> str:
             "因此 ElderAL 上的结果不能直接解释成“Bandpass 特别适合该数据集”。",
             "",
             "## 2. XRF55：去噪后负值和 abs 方向折叠",
+            "",
+            f"- 与分类实验一致，信号统计使用前三个用户："
+            f"{xrf.get('selected_user_ids', [])}。",
             "",
             "| 方法 | 有意义负值率 | 负值能量占比 | abs后方向改变或丢失率 |",
             "|---|---:|---:|---:|",
@@ -1798,6 +1860,12 @@ def build_synthetic_results(
             "discovery": {
                 "fully_analyzed_records": 10,
                 "raw_nonnegative_records": 10,
+                "selected_user_ids": [1, 2, 3],
+                "available_user_ids": [1, 2, 3, 4],
+                "requested_user_count": 3,
+                "selected_files_before_limit": 3300,
+                "expected_selected_files": 3300,
+                "complete_user_action_repetition_grid": True,
                 "failed_files": 0,
                 "partially_analyzed_records": 0,
                 "rejected_corrupt_rows_at_summary": 0,
@@ -1821,6 +1889,7 @@ def build_synthetic_results(
             "official_complete": True,
             "epochs": 50,
             "user_count": 3,
+            "selected_user_ids": [1, 2, 3],
             "case_hashes": hashes,
         },
     )
@@ -1903,6 +1972,10 @@ def build_synthetic_results(
 
 
 def synthetic_self_test() -> None:
+    assert DEFAULT_RESULT_ROOT == (REPO_ROOT / "ablation" / "bandpass_server_results")
+    assert DEFAULT_SIGNAL_DIR == DEFAULT_RESULT_ROOT / "signal_analysis"
+    assert DEFAULT_SIGN_DIR == DEFAULT_RESULT_ROOT / "sign_ablation"
+    assert DEFAULT_OUTPUT_DIR == DEFAULT_RESULT_ROOT / "final_report"
     with tempfile.TemporaryDirectory(prefix="bandpass_final_audit_") as temp:
         root = Path(temp)
         strong_signal, strong_sign = build_synthetic_results(
