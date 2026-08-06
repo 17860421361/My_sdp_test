@@ -1,0 +1,32 @@
+{
+  "status": "ok",
+  "datasets": {
+    "gait": {
+      "dataset": "gait",
+      "status": "ok",
+      "duration_sec": 87.45505094528198,
+      "samples": 36,
+      "diagnostic_samples": 36,
+      "probe_run": false,
+      "source_equivalence": {
+        "samples": 1,
+        "max_complex_absolute_error": 0.0,
+        "max_complex_relative_error": 0.0
+      }
+    },
+    "widar": {
+      "dataset": "widar",
+      "status": "ok",
+      "duration_sec": 6.713668346405029,
+      "samples": 4,
+      "diagnostic_samples": 4,
+      "probe_run": false,
+      "source_equivalence": {
+        "samples": 1,
+        "max_complex_absolute_error": 0.0,
+        "max_complex_relative_error": 0.0
+      }
+    }
+  },
+  "summary_audit": true
+}

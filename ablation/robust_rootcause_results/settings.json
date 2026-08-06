@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "dataset": "all",
+  "prefix": "savgol_iqr",
+  "max_samples_gait": 36,
+  "max_samples_widar": 4,
+  "diagnostic_samples": 36,
+  "equivalence_samples": 1,
+  "variants": [
+    "no_calibration",
+    "linear_reference",
+    "common_only",
+    "detrend_first50_only",
+    "detrend_fullspan50_only",
+    "robust_shared_first50",
+    "robust_window_limited",
+    "robust_fullspan50",
+    "robust_first50"
+  ],
+  "probe": "ExtraTreesClassifier, one GroupShuffleSplit seed",
+  "output_dir": "E:\\py_code\\bupt_hjk\\sdp_test\\My_sdp_test\\ablation\\robust_rootcause_results"
+}

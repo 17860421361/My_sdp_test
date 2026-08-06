@@ -1,0 +1,113 @@
+{
+  "dataset": "gait",
+  "path": "E:\\py_code\\bupt_hjk\\sdp_test\\My_sdp_test\\sdp_dataset\\gait",
+  "available_files": 242,
+  "selected_files": 36,
+  "selected_valid_samples": 36,
+  "labels": [
+    "1"
+  ],
+  "label_distribution": {
+    "1": 36
+  },
+  "groups": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "204",
+    "205",
+    "206",
+    "302",
+    "303",
+    "304",
+    "305",
+    "306",
+    "401",
+    "402",
+    "403",
+    "406"
+  ],
+  "group_distribution": {
+    "304": 2,
+    "406": 3,
+    "403": 5,
+    "205": 2,
+    "105": 6,
+    "302": 1,
+    "104": 2,
+    "402": 2,
+    "306": 1,
+    "103": 2,
+    "204": 2,
+    "305": 2,
+    "101": 1,
+    "303": 1,
+    "106": 1,
+    "206": 1,
+    "102": 1,
+    "401": 1
+  },
+  "length": {
+    "n": 36,
+    "mean": 2984.6666666666665,
+    "median": 3008.0,
+    "std": 110.62951183517394,
+    "p10": 2843.0,
+    "p90": 3110.0,
+    "min": 2675.0,
+    "max": 3189.0
+  },
+  "first_shape": [
+    3009,
+    30,
+    3
+  ],
+  "timestamp_note": "Intel 5300 timestamp_low ticks are treated as microseconds; the robust implementation itself discards timestamps and uses frame indices.",
+  "timing": {
+    "median_frame_interval_ticks": {
+      "n": 36,
+      "mean": 1000.0,
+      "median": 1000.0,
+      "std": 0.0,
+      "p10": 1000.0,
+      "p90": 1000.0,
+      "min": 1000.0,
+      "max": 1000.0
+    },
+    "first50_span_ticks": {
+      "n": 36,
+      "mean": 48997.88888888889,
+      "median": 48983.0,
+      "std": 72.58090419883861,
+      "p10": 48979.5,
+      "p90": 48998.0,
+      "min": 48975.0,
+      "max": 49424.0
+    },
+    "full_span_ticks": {
+      "n": 36,
+      "mean": 2985291.361111111,
+      "median": 3008990.0,
+      "std": 110358.60933821177,
+      "p10": 2843496.5,
+      "p90": 3109994.5,
+      "min": 2677023.0,
+      "max": 3188966.0
+    }
+  },
+  "prefix": "savgol_iqr",
+  "prefix_steps": {
+    "denoise": {
+      "method": "savgol",
+      "window_length": 7,
+      "polyorder": 3
+    },
+    "outliers": {
+      "method": "iqr",
+      "factor": 1.5
+    }
+  }
+}

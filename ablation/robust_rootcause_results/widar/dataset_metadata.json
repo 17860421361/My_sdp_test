@@ -1,0 +1,85 @@
+{
+  "dataset": "widar",
+  "path": "E:\\py_code\\bupt_hjk\\sdp_test\\My_sdp_test\\sdp_dataset\\widar",
+  "available_files": 4,
+  "selected_files": 4,
+  "selected_valid_samples": 4,
+  "labels": [
+    "1"
+  ],
+  "label_distribution": {
+    "1": 4
+  },
+  "groups": [
+    "1101",
+    "1102",
+    "1103",
+    "1104"
+  ],
+  "group_distribution": {
+    "1101": 1,
+    "1102": 1,
+    "1103": 1,
+    "1104": 1
+  },
+  "length": {
+    "n": 4,
+    "mean": 1945.25,
+    "median": 1938.5,
+    "std": 25.849323008543184,
+    "p10": 1922.1,
+    "p90": 1973.8,
+    "min": 1917.0,
+    "max": 1987.0
+  },
+  "first_shape": [
+    1934,
+    30,
+    3
+  ],
+  "timestamp_note": "Intel 5300 timestamp_low ticks are treated as microseconds; the robust implementation itself discards timestamps and uses frame indices.",
+  "timing": {
+    "median_frame_interval_ticks": {
+      "n": 4,
+      "mean": 1000.0,
+      "median": 1000.0,
+      "std": 0.0,
+      "p10": 1000.0,
+      "p90": 1000.0,
+      "min": 1000.0,
+      "max": 1000.0
+    },
+    "first50_span_ticks": {
+      "n": 4,
+      "mean": 53524.25,
+      "median": 54990.0,
+      "std": 2539.330854280316,
+      "p10": 50885.2,
+      "p90": 54990.7,
+      "min": 49126.0,
+      "max": 54991.0
+    },
+    "full_span_ticks": {
+      "n": 4,
+      "mean": 1993989.5,
+      "median": 1993991.0,
+      "std": 7.262919523166975,
+      "p10": 1993981.6,
+      "p90": 1993996.2,
+      "min": 1993978.0,
+      "max": 1993998.0
+    }
+  },
+  "prefix": "savgol_iqr",
+  "prefix_steps": {
+    "denoise": {
+      "method": "savgol",
+      "window_length": 7,
+      "polyorder": 3
+    },
+    "outliers": {
+      "method": "iqr",
+      "factor": 1.5
+    }
+  }
+}
