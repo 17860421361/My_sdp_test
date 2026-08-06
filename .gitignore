@@ -4,3 +4,8 @@
 
 # Generated experiment caches that are too large for GitHub.
 processed_source_dtype.npy
+
+# Local Codex runtimes and paper-work artifacts.
+/.cache/
+/.codex_tmp/
+/tmp/

@@ -679,7 +679,10 @@ def plot_elder_overview(
     nrmse = np.asarray([float(row["nrmse"]) for row in rows])
     bypass = frames < min_length
 
-    fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.8))
+    # Keep the two panels comfortably separated: the original compact layout
+    # placed the scatter legend and the exact-match annotation in the same
+    # upper-right corner, which made the exported figure unreadable.
+    fig, axes = plt.subplots(1, 2, figsize=(7.4, 3.0))
     ax = axes[0]
     max_frame = int(np.max(frames))
     if max_frame - int(np.min(frames)) <= 120:
@@ -719,6 +722,14 @@ def plot_elder_overview(
         transform=ax.transAxes,
         ha="right",
         va="top",
+        fontsize=7.2,
+        bbox={
+            "boxstyle": "round,pad=0.25",
+            "facecolor": "white",
+            "edgecolor": "0.8",
+            "linewidth": 0.5,
+            "alpha": 0.92,
+        },
     )
     panel_label(ax, "a")
 
@@ -752,22 +763,38 @@ def plot_elder_overview(
     ax.axhline(0, color=OKABE_ITO["black"], linewidth=0.7)
     ax.set_xlabel("Raw sequence length, $T$ (frames)")
     ax.set_ylabel("Normalized RMSE")
-    ax.legend(loc="best", frameon=False)
+    ax.set_ylim(bottom=-0.055)
+    ax.legend(
+        loc="lower right",
+        frameon=True,
+        framealpha=0.92,
+        edgecolor="0.8",
+        borderpad=0.35,
+        handletextpad=0.45,
+    )
     ax.text(
-        0.98,
-        0.95,
+        0.03,
+        0.07,
         (
-            "Exact match among bypassed:\n"
+            "Exact bypass match\n"
             f"{summary['bypass_exact_matches']}/"
             f"{summary['bypass_samples']} "
             f"({summary['bypass_exact_match_rate'] * 100:.1f}%)"
         ),
         transform=ax.transAxes,
-        ha="right",
-        va="top",
+        ha="left",
+        va="bottom",
+        fontsize=7.2,
+        bbox={
+            "boxstyle": "round,pad=0.25",
+            "facecolor": "white",
+            "edgecolor": "0.8",
+            "linewidth": 0.5,
+            "alpha": 0.92,
+        },
     )
     panel_label(ax, "b")
-    fig.subplots_adjust(left=0.09, right=0.99, bottom=0.18, top=0.96, wspace=0.28)
+    fig.subplots_adjust(left=0.085, right=0.985, bottom=0.19, top=0.93, wspace=0.34)
     outputs = save_publication_figure(
         fig, output_dir / "elder_bandpass_bypass_overview"
     )
