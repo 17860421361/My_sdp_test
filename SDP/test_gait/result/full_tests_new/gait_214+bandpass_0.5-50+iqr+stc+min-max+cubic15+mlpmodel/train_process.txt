@@ -107,3 +107,37 @@ Epoch [32/60] | Train Loss: 0.1824, Train Acc: 93.12% | Val Loss: 0.4103, Val Ac
 Epoch [33/60] | Train Loss: 0.1834, Train Acc: 92.91% | Val Loss: 0.4034, Val Acc: 86.03% | Duration: 39.18s | LR: 0.000003
 Epoch [34/60] | Train Loss: 0.1874, Train Acc: 92.65% | Val Loss: 0.4149, Val Acc: 85.67% | Duration: 38.95s | LR: 0.000003
 Epoch [35/60] | Train Loss: 0.1872, Train Acc: 92.70% | Val Loss: 0.4110, Val Acc: 85.45% | Duration: 39.17s | LR: 0.000003
+Epoch [36/60] | Train Loss: 0.1816, Train Acc: 92.88% | Val Loss: 0.4185, Val Acc: 84.87% | Duration: 39.15s | LR: 0.000003
+Epoch [37/60] | Train Loss: 0.1775, Train Acc: 93.02% | Val Loss: 0.4183, Val Acc: 85.58% | Duration: 38.93s | LR: 0.000003
+Epoch [38/60] | Train Loss: 0.1784, Train Acc: 93.02% | Val Loss: 0.4107, Val Acc: 85.54% | Duration: 38.99s | LR: 0.000000
+Epoch [39/60] | Train Loss: 0.1768, Train Acc: 93.11% | Val Loss: 0.4130, Val Acc: 85.32% | Duration: 39.17s | LR: 0.000000
+Epoch [40/60] | Train Loss: 0.1814, Train Acc: 93.09% | Val Loss: 0.4149, Val Acc: 85.09% | Duration: 39.31s | LR: 0.000000
+Epoch [41/60] | Train Loss: 0.1834, Train Acc: 92.97% | Val Loss: 0.4052, Val Acc: 85.25% | Duration: 39.10s | LR: 0.000000
+Epoch [42/60] | Train Loss: 0.1777, Train Acc: 93.24% | Val Loss: 0.4058, Val Acc: 85.61% | Duration: 39.41s | LR: 0.000000
+Epoch [43/60] | Train Loss: 0.1782, Train Acc: 92.93% | Val Loss: 0.3986, Val Acc: 85.99% | Duration: 39.06s | LR: 0.000000
+Epoch [44/60] | Train Loss: 0.1802, Train Acc: 93.08% | Val Loss: 0.4105, Val Acc: 85.45% | Duration: 38.75s | LR: 0.000000
+Epoch [45/60] | Train Loss: 0.1757, Train Acc: 93.35% | Val Loss: 0.4239, Val Acc: 85.32% | Duration: 39.73s | LR: 0.000000
+Epoch [46/60] | Train Loss: 0.1799, Train Acc: 93.07% | Val Loss: 0.4140, Val Acc: 85.03% | Duration: 39.05s | LR: 0.000000
+Epoch [47/60] | Train Loss: 0.1763, Train Acc: 93.09% | Val Loss: 0.4071, Val Acc: 85.51% | Duration: 39.17s | LR: 0.000000
+Epoch [48/60] | Train Loss: 0.1788, Train Acc: 93.11% | Val Loss: 0.4142, Val Acc: 85.25% | Duration: 39.55s | LR: 0.000000
+Epoch [49/60] | Train Loss: 0.1814, Train Acc: 92.93% | Val Loss: 0.4010, Val Acc: 85.99% | Duration: 39.31s | LR: 0.000000
+Epoch [50/60] | Train Loss: 0.1810, Train Acc: 93.23% | Val Loss: 0.4045, Val Acc: 85.87% | Duration: 39.14s | LR: 0.000000
+Epoch [51/60] | Train Loss: 0.1807, Train Acc: 93.02% | Val Loss: 0.4122, Val Acc: 85.35% | Duration: 39.08s | LR: 0.000000
+Epoch [52/60] | Train Loss: 0.1818, Train Acc: 92.82% | Val Loss: 0.4022, Val Acc: 85.93% | Duration: 39.14s | LR: 0.000000
+Epoch [53/60] | Train Loss: 0.1777, Train Acc: 93.29% | Val Loss: 0.4004, Val Acc: 86.22% | Duration: 39.29s | LR: 0.000000
+  -> new best acc: 86.22%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new/gait_214+bandpass_0.5-50+iqr+stc+min-max+cubic15+mlpmodel/best_checkpoint.pth
+Epoch [54/60] | Train Loss: 0.1824, Train Acc: 93.03% | Val Loss: 0.4090, Val Acc: 85.29% | Duration: 38.87s | LR: 0.000000
+Epoch [55/60] | Train Loss: 0.1740, Train Acc: 93.24% | Val Loss: 0.4075, Val Acc: 85.58% | Duration: 38.71s | LR: 0.000000
+Epoch [56/60] | Train Loss: 0.1775, Train Acc: 93.04% | Val Loss: 0.4034, Val Acc: 85.93% | Duration: 38.67s | LR: 0.000000
+Epoch [57/60] | Train Loss: 0.1764, Train Acc: 93.31% | Val Loss: 0.4055, Val Acc: 85.42% | Duration: 38.59s | LR: 0.000000
+Epoch [58/60] | Train Loss: 0.1810, Train Acc: 93.07% | Val Loss: 0.4093, Val Acc: 85.58% | Duration: 38.81s | LR: 0.000000
+Epoch [59/60] | Train Loss: 0.1775, Train Acc: 92.88% | Val Loss: 0.4076, Val Acc: 85.67% | Duration: 38.73s | LR: 0.000000
+Epoch [60/60] | Train Loss: 0.1785, Train Acc: 93.18% | Val Loss: 0.4084, Val Acc: 85.32% | Duration: 38.78s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new/gait_214+bandpass_0.5-50+iqr+stc+min-max+cubic15+mlpmodel/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.8622
+测试集准确率: 0.8760
+
+================================================================================
+组合完成: 214/320 | combo_id=gait_214 | best_val_acc=0.8622 | test_acc=0.8760 | duration=6578.23s
+================================================================================
