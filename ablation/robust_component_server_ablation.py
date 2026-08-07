@@ -2115,7 +2115,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--learning-rate", type=float, default=None)
     parser.add_argument("--weight-decay", type=float, default=None)
     parser.add_argument("--workers", type=int, default=4)
-    parser.add_argument("--device", default="auto", help="auto, cpu, cuda, cuda:0, ...")
+    parser.add_argument("--device", default="cuda:1", help="auto, cpu, cuda, cuda:0, ...")
     parser.add_argument(
         "--allow-cpu",
         action="store_true",

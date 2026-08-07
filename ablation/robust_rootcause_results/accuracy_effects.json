@@ -1,7 +1,7 @@
 {
   "widar": {
     "status": "ok",
-    "path": "E:\\py_code\\bupt_hjk\\sdp_test\\My_sdp_test\\SDP\\test_wider\\result\\full_tests_new\\widar_320_pipeline_optimized_mlpmodel_summary.csv",
+    "path": "/home/test/bupt_hjk/SDP/test_wider/result/full_tests_new/widar_320_pipeline_optimized_mlpmodel_summary.csv",
     "completed_table_rows": 320,
     "paired_rows": 80,
     "overall_robust_minus_linear": {
@@ -123,8 +123,8 @@
   },
   "gait": {
     "status": "ok",
-    "path": "E:\\py_code\\bupt_hjk\\sdp_test\\My_sdp_test\\SDP\\test_gait\\result\\full_tests_new\\gait_320_pipeline_optimized_mlpmodel_summary.csv",
-    "completed_table_rows": 201,
+    "path": "/home/test/bupt_hjk/SDP/test_gait/result/full_tests_new/gait_320_pipeline_optimized_mlpmodel_summary.csv",
+    "completed_table_rows": 202,
     "paired_rows": 48,
     "overall_robust_minus_linear": {
       "n": 48,
@@ -202,9 +202,9 @@
     },
     "minmax_x_robust_interaction": {
       "n": 24,
-      "mean": -0.21045605041119297,
+      "mean": -0.210456050411193,
       "median": -0.21275232297340596,
-      "std": 0.0623266100194788,
+      "std": 0.062326610019478805,
       "p10": -0.2678308234540212,
       "p90": -0.15325216276834353,
       "min": -0.32393463633450825,
@@ -215,7 +215,7 @@
         "n": 12,
         "mean": -0.10052867670618389,
         "median": -0.07721884011534763,
-        "std": 0.04958894473714781,
+        "std": 0.04958894473714782,
         "p10": -0.1932073053508492,
         "p90": -0.059404037167574385,
         "min": -0.20217878884972762,
@@ -223,7 +223,7 @@
       },
       "decimate15": {
         "n": 12,
-        "mean": -0.20396774538075402,
+        "mean": -0.20396774538075405,
         "median": -0.18231336110221086,
         "std": 0.08748178891857644,
         "p10": -0.36635693687920545,

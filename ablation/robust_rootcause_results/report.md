@@ -13,8 +13,8 @@ A negative interaction means min-max amplifies the loss caused by robust.
 
 ## Signal/component runs
 
-- gait: ok, samples=36, probe=False, duration=87.5s
-- widar: ok, samples=4, probe=False, duration=6.7s
+- gait: ok, samples=180, probe=True, duration=181.6s
+- widar: ok, samples=180, probe=True, duration=123.4s
 
 ## Interpretation rule
 

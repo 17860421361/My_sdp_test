@@ -4,12 +4,12 @@
     "gait": {
       "dataset": "gait",
       "status": "ok",
-      "duration_sec": 87.45505094528198,
-      "samples": 36,
-      "diagnostic_samples": 36,
-      "probe_run": false,
+      "duration_sec": 181.62126421928406,
+      "samples": 180,
+      "diagnostic_samples": 64,
+      "probe_run": true,
       "source_equivalence": {
-        "samples": 1,
+        "samples": 2,
         "max_complex_absolute_error": 0.0,
         "max_complex_relative_error": 0.0
       }
@@ -17,12 +17,12 @@
     "widar": {
       "dataset": "widar",
       "status": "ok",
-      "duration_sec": 6.713668346405029,
-      "samples": 4,
-      "diagnostic_samples": 4,
-      "probe_run": false,
+      "duration_sec": 123.37136697769165,
+      "samples": 180,
+      "diagnostic_samples": 64,
+      "probe_run": true,
       "source_equivalence": {
-        "samples": 1,
+        "samples": 2,
         "max_complex_absolute_error": 0.0,
         "max_complex_relative_error": 0.0
       }
