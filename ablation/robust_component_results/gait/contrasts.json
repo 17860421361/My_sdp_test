@@ -1,0 +1,10 @@
+{
+  "test_accuracy": {
+    "linear_reference": 0.9586670938801666,
+    "robust_first50": 0.6731816725408523,
+    "no_calibration": 0.9583466837552067
+  },
+  "delta_pp": {
+    "robust_minus_linear": -28.54854213393143
+  }
+}
