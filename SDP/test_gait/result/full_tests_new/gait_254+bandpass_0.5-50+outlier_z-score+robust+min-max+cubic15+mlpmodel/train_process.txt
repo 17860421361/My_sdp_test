@@ -1,0 +1,49 @@
+
+================================================================================
+当前算法组合: 254/320 | 公共前缀: 32/40 | combo_id=gait_254 | model=mlpmodel
+combo_name: bandpass_0.5-50+outlier_z-score+robust+min-max+cubic15
+实际执行流程: bandpass_0.5-50 -> outlier_z-score -> robust -> min-max -> cubic15 -> 训练
+公共前缀步骤（本组8个组合只计算一次）:
+{
+  "denoise": {
+    "method": "bandpass",
+    "order": 4,
+    "low_freq": 0.5,
+    "high_freq": 50.0,
+    "fs": 1000.0
+  },
+  "outliers": {
+    "method": "z-score",
+    "factor": 3.0
+  },
+  "calibrate": {
+    "method": "robust"
+  }
+}
+当前分支复用的缓存: 公共前缀生成的共享 min-max 缓存；随后只执行当前 interpolate
+保存目录: /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new/gait_254+bandpass_0.5-50+outlier_z-score+robust+min-max+cubic15+mlpmodel
+当前组合的完整 pipeline_steps:
+{
+  "denoise": {
+    "method": "bandpass",
+    "order": 4,
+    "low_freq": 0.5,
+    "high_freq": 50.0,
+    "fs": 1000.0
+  },
+  "outliers": {
+    "method": "z-score",
+    "factor": 3.0
+  },
+  "calibrate": {
+    "method": "robust"
+  },
+  "normalize": {
+    "method": "min-max"
+  },
+  "interpolate": {
+    "method": "cubic",
+    "target_K": 15
+  }
+}
+================================================================================
