@@ -9,6 +9,7 @@ denoise(5) -> outliers(2) -> calibrate(4) -> normalize(2) -> interpolate(4)
 优化方式：
 - 原始数据只读取并解析一次；
 - denoise -> outliers -> calibrate 的 40 个公共前缀各处理一次；
+- Hampel 去噪结果在其 8 个 outliers -> calibrate 前缀之间复用；
 - 每个公共前缀派生 8 个最终组合；
 - Gait + z-score 保持源码真实顺序：prefix -> interpolate -> z-score；
 - min-max 保持普通 pipeline 顺序：prefix -> min-max -> interpolate。
@@ -36,7 +37,10 @@ from multiprocessing import get_context
 from pathlib import Path
 
 # ==================== 环境设置 ====================
-os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0")
+os.environ["CUDA_VISIBLE_DEVICES"] = os.environ.get(
+    "GAIT_CUDA_VISIBLE_DEVICES",
+    "0",
+)
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/wsdp_mplconfig")
 
 import matplotlib
@@ -72,6 +76,7 @@ from wsdp import readers
 from wsdp.algorithms import execute_pipeline
 from wsdp.algorithms.amplitude import normalize_amplitude
 from wsdp.core import _create_data_split, _evaluate_model
+from wsdp.dataset_policy import real_if_negligible_imaginary
 from wsdp.datasets import CSIDataset
 from wsdp.models import create_model
 from wsdp.processors.base_processor import (
@@ -85,7 +90,7 @@ from wsdp.utils import load_params, resize_csi_to_fixed_length, train_model
 DATASET_NAME = "gait"
 DATA_PATH = DATA_ROOT / "Gait_Dataset" / "CSI_Gait"
 
-RUN_NAME = "gait_320_pipeline_optimized"
+RUN_NAME = os.environ.get("GAIT_RUN_NAME", "gait_320_pipeline_optimized")
 MODEL_NAME = "mlpmodel"
 
 BATCH_SIZE = None
@@ -96,9 +101,22 @@ PADDING_LENGTH = 1500
 TEST_SPLIT = 0.3
 VAL_SPLIT = 0.5
 SEED = 42
-PROCESS_WORKERS = 4
+COMBO_START = int(os.environ.get("GAIT_COMBO_START", "258"))
+COMBO_END = int(os.environ.get("GAIT_COMBO_END", "289"))
+PROCESS_WORKERS = int(
+    os.environ.get("GAIT_PROCESS_WORKERS", str(min(16, os.cpu_count() or 1)))
+)
+PROCESS_CHUNKSIZE = int(os.environ.get("GAIT_PROCESS_CHUNKSIZE", "16"))
 
-RESULT_DIR = Path(__file__).resolve().parent / "result" / "full_tests_new"
+if not 1 <= COMBO_START <= COMBO_END <= 320:
+    raise ValueError("GAIT_COMBO_START and GAIT_COMBO_END must define a range within 1..320")
+if PROCESS_WORKERS < 1:
+    raise ValueError("GAIT_PROCESS_WORKERS must be at least 1")
+if PROCESS_CHUNKSIZE < 1:
+    raise ValueError("GAIT_PROCESS_CHUNKSIZE must be at least 1")
+
+RESULT_DIR_NAME = os.environ.get("GAIT_RESULT_DIR_NAME", "full_tests_new")
+RESULT_DIR = Path(__file__).resolve().parent / "result" / RESULT_DIR_NAME
 SUMMARY_PATH = RESULT_DIR / f"{RUN_NAME}_{MODEL_NAME}_summary.csv"
 
 SUMMARY_FIELDS = [
@@ -254,10 +272,29 @@ def build_prefix_groups(combinations: list[dict]) -> list[list[dict]]:
     return groups
 
 
+def is_selected_combo(combo: dict) -> bool:
+    """Return whether a combination belongs to this process's assigned range."""
+    return COMBO_START <= combo["combo_index"] <= COMBO_END
+
+
 def prefix_steps_for(combo: dict) -> dict:
     steps = combo["pipeline_steps"]
     return {
         "denoise": steps["denoise"].copy(),
+        "outliers": steps["outliers"].copy(),
+        "calibrate": steps["calibrate"].copy(),
+    }
+
+
+def is_hampel_prefix(prefix_combos: list[dict]) -> bool:
+    """Return whether a shared prefix starts with the Hampel denoiser."""
+    return prefix_combos[0]["pipeline_steps"]["denoise"].get("method") == "hampel"
+
+
+def post_hampel_prefix_steps_for(combo: dict) -> dict:
+    """Build the per-prefix work that follows the shared Hampel cache."""
+    steps = combo["pipeline_steps"]
+    return {
         "outliers": steps["outliers"].copy(),
         "calibrate": steps["calibrate"].copy(),
     }
@@ -293,9 +330,94 @@ def _parse_single_raw_sample(csi_data):
     return whole_csi, label, group
 
 
+def _vectorized_hampel_real(csi: np.ndarray, window_size: int, n_sigma: float) -> np.ndarray:
+    """Apply WSDP's Hampel rule to all trailing channels at once."""
+    frame_count = csi.shape[0]
+    result = csi.copy()
+
+    if frame_count > 2 * window_size:
+        windows = np.lib.stride_tricks.sliding_window_view(
+            csi,
+            window_shape=2 * window_size + 1,
+            axis=0,
+        )
+        medians = np.median(windows, axis=-1)
+        median_absolute_deviations = np.median(
+            np.abs(windows - medians[..., None]),
+            axis=-1,
+        )
+        centers = csi[window_size:-window_size]
+        thresholds = n_sigma * 1.4826 * median_absolute_deviations
+        result[window_size:-window_size] = np.where(
+            np.abs(centers - medians) > thresholds,
+            medians,
+            centers,
+        )
+        edge_indices = list(range(window_size))
+        edge_indices.extend(range(frame_count - window_size, frame_count))
+    else:
+        edge_indices = range(frame_count)
+
+    # WSDP truncates the sliding window at both ends. Only these few edge
+    # positions need a small loop; all channels remain vectorized.
+    for index in edge_indices:
+        lower = max(0, index - window_size)
+        upper = min(frame_count, index + window_size + 1)
+        window = csi[lower:upper]
+        median = np.median(window, axis=0)
+        median_absolute_deviation = np.median(np.abs(window - median), axis=0)
+        threshold = n_sigma * 1.4826 * median_absolute_deviation
+        result[index] = np.where(
+            np.abs(csi[index] - median) > threshold,
+            median,
+            csi[index],
+        )
+
+    return result
+
+
+def vectorized_hampel_filter(csi, window_size=5, n_sigma=3.0):
+    """Exact batched equivalent of WSDP's scalar Hampel implementation."""
+    if csi.size == 0:
+        return csi.copy()
+    if csi.ndim < 2:
+        raise ValueError(f"Expected at least 2D array, got shape {csi.shape}")
+    if window_size < 1:
+        raise ValueError(f"window_size must be >= 1, got {window_size}")
+    if n_sigma <= 0:
+        raise ValueError(f"n_sigma must be > 0, got {n_sigma}")
+    if csi.ndim not in (2, 3):
+        raise ValueError(f"Expected 2D or 3D array, got shape {csi.shape}")
+
+    if csi.shape[0] < 3:
+        return csi.copy()
+
+    result = np.empty_like(csi)
+    if np.iscomplexobj(csi):
+        result.real = _vectorized_hampel_real(csi.real, window_size, n_sigma)
+        result.imag = _vectorized_hampel_real(csi.imag, window_size, n_sigma)
+    else:
+        result[...] = _vectorized_hampel_real(csi, window_size, n_sigma)
+    return result
+
+
 def _execute_sample(csi, pipeline_steps: dict, return_phase_channels: bool):
     """子进程中处理一个已解析的 CSI 样本。"""
-    result = execute_pipeline(csi, pipeline_steps, dataset=DATASET_NAME)
+    denoise = pipeline_steps.get("denoise")
+    if denoise and denoise.get("method") == "hampel":
+        hampel_params = denoise.copy()
+        hampel_params.pop("method")
+        result = vectorized_hampel_filter(csi, **hampel_params)
+        result = real_if_negligible_imaginary(result, DATASET_NAME)
+        remaining_steps = {
+            category: config
+            for category, config in pipeline_steps.items()
+            if category != "denoise"
+        }
+        if remaining_steps:
+            result = execute_pipeline(result, remaining_steps, dataset=DATASET_NAME)
+    else:
+        result = execute_pipeline(csi, pipeline_steps, dataset=DATASET_NAME)
     if return_phase_channels:
         result = normalize_amplitude(
             result,
@@ -317,7 +439,11 @@ def parse_raw_data_once(executor: ProcessPoolExecutor, csi_data_list):
     print("step 2: parse_raw_data_once")
     raw_arrays, raw_labels, raw_groups = [], [], []
 
-    for csi, label, group in executor.map(_parse_single_raw_sample, csi_data_list):
+    for csi, label, group in executor.map(
+        _parse_single_raw_sample,
+        csi_data_list,
+        chunksize=PROCESS_CHUNKSIZE,
+    ):
         if csi is not None:
             raw_arrays.append(csi)
             raw_labels.append(label)
@@ -355,7 +481,7 @@ def parallel_execute(
         pipeline_steps=pipeline_steps,
         return_phase_channels=return_phase_channels,
     )
-    return list(executor.map(worker, data_list))
+    return list(executor.map(worker, data_list, chunksize=PROCESS_CHUNKSIZE))
 
 
 def prepare_model_data(
@@ -765,12 +891,17 @@ def main() -> None:
     params = load_params(DATASET_NAME)
 
     print(f"Gait 全量 pipeline 组合数: {combo_total}")
+    print(f"本进程组合范围: gait_{COMBO_START:03d} - gait_{COMBO_END:03d}")
     print(f"公共前缀数: {len(prefix_groups)}，每个前缀最多派生 8 个组合")
     print(f"固定模型: {MODEL_NAME}")
     print(f"CUDA_VISIBLE_DEVICES: {os.environ.get('CUDA_VISIBLE_DEVICES')}")
     print(f"结果目录: {RESULT_DIR}")
     print(f"summary: {SUMMARY_PATH}")
     print(f"断点续跑已完成(status=ok): {len(ok_records)}")
+    print(
+        f"预处理并行配置: workers={PROCESS_WORKERS}, "
+        f"chunksize={PROCESS_CHUNKSIZE}"
+    )
 
     # 常驻进程池只创建一次；原始数据也只读取、解析一次。
     # 显式使用 spawn：进程池在第一次提交任务时才真正启动，此时原始数据可能
@@ -791,13 +922,22 @@ def main() -> None:
         del csi_data_list
         gc.collect()
 
+        hampel_data = None
         for prefix_index, prefix_combos in enumerate(prefix_groups, start=1):
-            pending = [combo for combo in prefix_combos if combo["combo_id"] not in ok_records]
+            pending = [
+                combo
+                for combo in prefix_combos
+                if is_selected_combo(combo) and combo["combo_id"] not in ok_records
+            ]
             if not pending:
-                print(f"\n跳过公共前缀 {prefix_index}/40：对应 8 个组合均已完成")
+                print(
+                    f"\n跳过公共前缀 {prefix_index}/40："
+                    "没有当前范围内的待运行组合"
+                )
                 continue
 
             prefix_steps = prefix_steps_for(prefix_combos[0])
+            hampel_prefix = is_hampel_prefix(prefix_combos)
             prefix_name = "+".join(
                 [
                     prefix_combos[0]["denoise"],
@@ -813,7 +953,38 @@ def main() -> None:
             print("#" * 80)
 
             try:
-                prefix_data = parallel_execute(executor, raw_arrays, prefix_steps)
+                if hampel_prefix:
+                    if hampel_data is None:
+                        hampel_start = time.time()
+                        shared_hampel_steps = {
+                            "denoise": prefix_steps["denoise"].copy()
+                        }
+                        print("计算一次共享 Hampel 去噪缓存，供后续 8 个公共前缀复用")
+                        hampel_data = parallel_execute(
+                            executor,
+                            raw_arrays,
+                            shared_hampel_steps,
+                        )
+                        print(
+                            "共享 Hampel 去噪缓存完成，"
+                            f"耗时 {time.time() - hampel_start:.2f}s"
+                        )
+                        if all(
+                            is_hampel_prefix(group)
+                            for group in prefix_groups[prefix_index - 1 :]
+                        ):
+                            # Hampel 位于当前组合定义的末尾，后续不再需要原始 CSI。
+                            raw_arrays = None
+                            gc.collect()
+                            print("原始 CSI 缓存已释放，保留共享 Hampel 缓存")
+
+                    prefix_data = parallel_execute(
+                        executor,
+                        hampel_data,
+                        post_hampel_prefix_steps_for(prefix_combos[0]),
+                    )
+                else:
+                    prefix_data = parallel_execute(executor, raw_arrays, prefix_steps)
                 print(
                     f"公共前缀 {prefix_index}/40 处理完成，"
                     f"耗时 {time.time() - prefix_start:.2f}s"
@@ -837,6 +1008,12 @@ def main() -> None:
             try:
                 # combo 顺序保持 gait_001 ... gait_320，不因缓存优化而改变。
                 for combo in prefix_combos:
+                    if not is_selected_combo(combo):
+                        print(
+                            f"跳过范围外组合: {combo['combo_index']}/{combo_total}"
+                            f" | {combo['combo_id']}"
+                        )
+                        continue
                     if combo["combo_id"] in ok_records:
                         print(
                             f"跳过已完成组合: {combo['combo_index']}/{combo_total}"
@@ -868,7 +1045,8 @@ def main() -> None:
                             affected = [
                                 item
                                 for item in prefix_combos
-                                if item["normalize"] == "min-max"
+                                if is_selected_combo(item)
+                                and item["normalize"] == "min-max"
                                 and item["combo_id"] not in ok_records
                             ]
                             for item in affected:
@@ -917,6 +1095,11 @@ def main() -> None:
                     del minmax_data
                 clear_runtime_cache()
                 print(f"公共前缀 {prefix_index}/40 的缓存已释放")
+
+        if hampel_data is not None:
+            del hampel_data
+            clear_runtime_cache()
+            print("共享 Hampel 去噪缓存已释放")
 
     print(f"\n本轮执行结束，汇总已保存到: {SUMMARY_PATH}")
     print("下次启动时只跳过 summary 中 status=ok 的组合，failed 会重新运行。")
