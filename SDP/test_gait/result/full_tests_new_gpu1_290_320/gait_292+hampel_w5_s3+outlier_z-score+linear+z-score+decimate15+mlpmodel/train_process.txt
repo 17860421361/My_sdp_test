@@ -1,0 +1,143 @@
+
+================================================================================
+当前算法组合: 292/320 | 公共前缀: 37/40 | combo_id=gait_292 | model=mlpmodel
+combo_name: hampel_w5_s3+outlier_z-score+linear+z-score+decimate15
+实际执行流程: hampel_w5_s3 -> outlier_z-score -> linear -> decimate15 -> z-score -> 训练
+公共前缀步骤（本组8个组合只计算一次）:
+{
+  "denoise": {
+    "method": "hampel",
+    "window_size": 5,
+    "n_sigma": 3.0
+  },
+  "outliers": {
+    "method": "z-score",
+    "factor": 3.0
+  },
+  "calibrate": {
+    "method": "linear"
+  }
+}
+当前分支复用的缓存: 公共前缀缓存；随后执行当前 interpolate 和特殊 z-score
+保存目录: /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel
+当前组合的完整 pipeline_steps:
+{
+  "denoise": {
+    "method": "hampel",
+    "window_size": 5,
+    "n_sigma": 3.0
+  },
+  "outliers": {
+    "method": "z-score",
+    "factor": 3.0
+  },
+  "calibrate": {
+    "method": "linear"
+  },
+  "normalize": {
+    "method": "z-score"
+  },
+  "interpolate": {
+    "method": "decimate",
+    "target_K": 15
+  }
+}
+================================================================================
+分支处理: interpolate -> z-score -> 实数[归一化幅度, 相位]
+   处理完成: 18657 个样本
+   标签分布: {4: 2400, 2: 2400, 1: 2400, 9: 1200, 8: 1200, 3: 2400, 5: 1858, 7: 2399, 6: 2400}
+   分组分布: {204: 781, 106: 773, 203: 781, 405: 775, 402: 774, 206: 779, 103: 775, 304: 781, 406: 772, 105: 773, 202: 779, 104: 773, 302: 782, 305: 780, 403: 773, 303: 784, 404: 773, 401: 776, 205: 780, 306: 783, 102: 774, 101: 774, 201: 779, 301: 783}
+   样本形状: (1500, 15, 6)
+   类别数: 9 (原始标签: [1, 2, 3, 4, 5, 6, 7, 8, 9])
+step 3: split_data
+训练集 12430 | 验证集 3106 | 测试集 3121
+step 4: 构造 DataLoader
+模型实际输入形状: (1500, 15, 6)
+step 5: create_registered_model
+模型参数量 665161
+训练设备: cuda
+step 6: 开始训练 60 轮
+Epoch [1/60] | Train Loss: 1.3920, Train Acc: 50.76% | Val Loss: 1.5008, Val Acc: 47.26% | Duration: 40.59s | LR: 0.000300
+  -> new best acc: 47.26%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [2/60] | Train Loss: 0.6298, Train Acc: 78.38% | Val Loss: 1.6740, Val Acc: 48.58% | Duration: 41.76s | LR: 0.000300
+  -> new best acc: 48.58%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [3/60] | Train Loss: 0.4355, Train Acc: 83.95% | Val Loss: 1.2162, Val Acc: 59.69% | Duration: 39.25s | LR: 0.000300
+  -> new best acc: 59.69%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [4/60] | Train Loss: 0.3478, Train Acc: 87.09% | Val Loss: 1.1202, Val Acc: 62.33% | Duration: 38.85s | LR: 0.000300
+  -> new best acc: 62.33%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [5/60] | Train Loss: 0.2972, Train Acc: 88.79% | Val Loss: 1.2950, Val Acc: 61.08% | Duration: 39.18s | LR: 0.000300
+Epoch [6/60] | Train Loss: 0.2594, Train Acc: 90.09% | Val Loss: 0.9918, Val Acc: 68.48% | Duration: 39.51s | LR: 0.000300
+  -> new best acc: 68.48%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [7/60] | Train Loss: 0.2347, Train Acc: 91.09% | Val Loss: 0.8369, Val Acc: 72.09% | Duration: 39.08s | LR: 0.000300
+  -> new best acc: 72.09%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [8/60] | Train Loss: 0.2067, Train Acc: 92.24% | Val Loss: 1.9744, Val Acc: 43.34% | Duration: 40.72s | LR: 0.000300
+Epoch [9/60] | Train Loss: 0.2101, Train Acc: 91.83% | Val Loss: 1.4774, Val Acc: 62.20% | Duration: 39.54s | LR: 0.000300
+Epoch [10/60] | Train Loss: 0.1989, Train Acc: 92.27% | Val Loss: 1.2243, Val Acc: 65.42% | Duration: 42.11s | LR: 0.000300
+Epoch [11/60] | Train Loss: 0.1744, Train Acc: 93.31% | Val Loss: 0.8776, Val Acc: 71.12% | Duration: 40.02s | LR: 0.000300
+Epoch [12/60] | Train Loss: 0.1651, Train Acc: 93.69% | Val Loss: 0.7779, Val Acc: 73.18% | Duration: 40.42s | LR: 0.000300
+  -> new best acc: 73.18%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [13/60] | Train Loss: 0.1607, Train Acc: 93.60% | Val Loss: 0.9377, Val Acc: 71.06% | Duration: 38.73s | LR: 0.000300
+Epoch [14/60] | Train Loss: 0.1533, Train Acc: 94.16% | Val Loss: 0.6326, Val Acc: 78.53% | Duration: 39.81s | LR: 0.000300
+  -> new best acc: 78.53%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [15/60] | Train Loss: 0.1475, Train Acc: 94.55% | Val Loss: 0.4417, Val Acc: 85.03% | Duration: 41.38s | LR: 0.000300
+  -> new best acc: 85.03%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [16/60] | Train Loss: 0.1316, Train Acc: 94.82% | Val Loss: 0.7564, Val Acc: 77.37% | Duration: 41.01s | LR: 0.000300
+Epoch [17/60] | Train Loss: 0.1354, Train Acc: 94.75% | Val Loss: 2.0059, Val Acc: 53.93% | Duration: 40.60s | LR: 0.000300
+Epoch [18/60] | Train Loss: 0.1308, Train Acc: 94.94% | Val Loss: 1.4198, Val Acc: 65.58% | Duration: 38.70s | LR: 0.000300
+Epoch [19/60] | Train Loss: 0.1226, Train Acc: 95.21% | Val Loss: 0.9933, Val Acc: 70.48% | Duration: 39.99s | LR: 0.000300
+Epoch [20/60] | Train Loss: 0.1193, Train Acc: 95.16% | Val Loss: 2.4598, Val Acc: 44.11% | Duration: 39.31s | LR: 0.000300
+Epoch [21/60] | Train Loss: 0.1168, Train Acc: 95.75% | Val Loss: 1.2136, Val Acc: 67.48% | Duration: 38.60s | LR: 0.000300
+Epoch [22/60] | Train Loss: 0.0863, Train Acc: 96.88% | Val Loss: 0.3905, Val Acc: 87.35% | Duration: 39.16s | LR: 0.000030
+  -> new best acc: 87.35%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [23/60] | Train Loss: 0.0761, Train Acc: 97.36% | Val Loss: 0.3954, Val Acc: 87.35% | Duration: 41.71s | LR: 0.000030
+Epoch [24/60] | Train Loss: 0.0723, Train Acc: 97.42% | Val Loss: 0.3945, Val Acc: 87.86% | Duration: 39.94s | LR: 0.000030
+  -> new best acc: 87.86%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [25/60] | Train Loss: 0.0702, Train Acc: 97.52% | Val Loss: 0.3860, Val Acc: 87.73% | Duration: 39.79s | LR: 0.000030
+Epoch [26/60] | Train Loss: 0.0639, Train Acc: 97.86% | Val Loss: 0.4066, Val Acc: 87.09% | Duration: 39.89s | LR: 0.000030
+Epoch [27/60] | Train Loss: 0.0644, Train Acc: 97.78% | Val Loss: 0.3816, Val Acc: 87.41% | Duration: 38.89s | LR: 0.000030
+Epoch [28/60] | Train Loss: 0.0665, Train Acc: 97.54% | Val Loss: 0.4111, Val Acc: 86.90% | Duration: 38.46s | LR: 0.000030
+Epoch [29/60] | Train Loss: 0.0619, Train Acc: 97.67% | Val Loss: 0.4056, Val Acc: 87.51% | Duration: 38.47s | LR: 0.000030
+Epoch [30/60] | Train Loss: 0.0605, Train Acc: 97.84% | Val Loss: 0.3885, Val Acc: 87.64% | Duration: 39.31s | LR: 0.000030
+Epoch [31/60] | Train Loss: 0.0610, Train Acc: 97.83% | Val Loss: 0.3840, Val Acc: 87.96% | Duration: 39.18s | LR: 0.000030
+  -> new best acc: 87.96%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [32/60] | Train Loss: 0.0599, Train Acc: 97.80% | Val Loss: 0.3904, Val Acc: 87.83% | Duration: 38.63s | LR: 0.000030
+Epoch [33/60] | Train Loss: 0.0559, Train Acc: 98.04% | Val Loss: 0.3945, Val Acc: 87.41% | Duration: 39.15s | LR: 0.000030
+Epoch [34/60] | Train Loss: 0.0527, Train Acc: 98.16% | Val Loss: 0.3843, Val Acc: 88.18% | Duration: 39.59s | LR: 0.000003
+  -> new best acc: 88.18%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [35/60] | Train Loss: 0.0560, Train Acc: 98.02% | Val Loss: 0.3875, Val Acc: 88.06% | Duration: 39.32s | LR: 0.000003
+Epoch [36/60] | Train Loss: 0.0530, Train Acc: 98.09% | Val Loss: 0.3816, Val Acc: 87.89% | Duration: 39.23s | LR: 0.000003
+Epoch [37/60] | Train Loss: 0.0540, Train Acc: 98.08% | Val Loss: 0.3918, Val Acc: 87.64% | Duration: 38.43s | LR: 0.000003
+Epoch [38/60] | Train Loss: 0.0522, Train Acc: 98.21% | Val Loss: 0.3909, Val Acc: 87.83% | Duration: 38.51s | LR: 0.000003
+Epoch [39/60] | Train Loss: 0.0549, Train Acc: 98.17% | Val Loss: 0.3872, Val Acc: 87.83% | Duration: 38.62s | LR: 0.000003
+Epoch [40/60] | Train Loss: 0.0522, Train Acc: 98.09% | Val Loss: 0.4002, Val Acc: 87.25% | Duration: 39.32s | LR: 0.000003
+Epoch [41/60] | Train Loss: 0.0524, Train Acc: 98.24% | Val Loss: 0.3873, Val Acc: 87.38% | Duration: 39.32s | LR: 0.000003
+Epoch [42/60] | Train Loss: 0.0516, Train Acc: 98.25% | Val Loss: 0.3914, Val Acc: 87.99% | Duration: 39.05s | LR: 0.000003
+Epoch [43/60] | Train Loss: 0.0500, Train Acc: 98.38% | Val Loss: 0.3782, Val Acc: 88.31% | Duration: 39.44s | LR: 0.000000
+  -> new best acc: 88.31%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [44/60] | Train Loss: 0.0491, Train Acc: 98.27% | Val Loss: 0.3849, Val Acc: 87.73% | Duration: 39.14s | LR: 0.000000
+Epoch [45/60] | Train Loss: 0.0520, Train Acc: 98.15% | Val Loss: 0.4096, Val Acc: 87.09% | Duration: 40.04s | LR: 0.000000
+Epoch [46/60] | Train Loss: 0.0520, Train Acc: 98.08% | Val Loss: 0.3936, Val Acc: 87.54% | Duration: 39.24s | LR: 0.000000
+Epoch [47/60] | Train Loss: 0.0521, Train Acc: 98.20% | Val Loss: 0.3951, Val Acc: 87.70% | Duration: 40.38s | LR: 0.000000
+Epoch [48/60] | Train Loss: 0.0514, Train Acc: 98.24% | Val Loss: 0.4170, Val Acc: 87.12% | Duration: 39.26s | LR: 0.000000
+Epoch [49/60] | Train Loss: 0.0521, Train Acc: 98.26% | Val Loss: 0.3880, Val Acc: 87.86% | Duration: 38.77s | LR: 0.000000
+Epoch [50/60] | Train Loss: 0.0493, Train Acc: 98.39% | Val Loss: 0.3828, Val Acc: 87.96% | Duration: 38.79s | LR: 0.000000
+Epoch [51/60] | Train Loss: 0.0531, Train Acc: 98.21% | Val Loss: 0.3896, Val Acc: 87.89% | Duration: 39.28s | LR: 0.000000
+Epoch [52/60] | Train Loss: 0.0512, Train Acc: 98.17% | Val Loss: 0.3832, Val Acc: 88.12% | Duration: 39.60s | LR: 0.000000
+Epoch [53/60] | Train Loss: 0.0522, Train Acc: 98.19% | Val Loss: 0.3801, Val Acc: 88.41% | Duration: 40.27s | LR: 0.000000
+  -> new best acc: 88.41%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [54/60] | Train Loss: 0.0515, Train Acc: 98.20% | Val Loss: 0.4033, Val Acc: 87.51% | Duration: 38.85s | LR: 0.000000
+Epoch [55/60] | Train Loss: 0.0493, Train Acc: 98.30% | Val Loss: 0.3625, Val Acc: 88.35% | Duration: 39.64s | LR: 0.000000
+Epoch [56/60] | Train Loss: 0.0505, Train Acc: 98.17% | Val Loss: 0.3789, Val Acc: 87.96% | Duration: 38.64s | LR: 0.000000
+Epoch [57/60] | Train Loss: 0.0512, Train Acc: 98.14% | Val Loss: 0.3633, Val Acc: 88.47% | Duration: 38.92s | LR: 0.000000
+  -> new best acc: 88.47%. saved to /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+Epoch [58/60] | Train Loss: 0.0503, Train Acc: 98.25% | Val Loss: 0.3916, Val Acc: 87.41% | Duration: 38.56s | LR: 0.000000
+Epoch [59/60] | Train Loss: 0.0529, Train Acc: 98.18% | Val Loss: 0.3923, Val Acc: 87.89% | Duration: 39.44s | LR: 0.000000
+Epoch [60/60] | Train Loss: 0.0516, Train Acc: 98.25% | Val Loss: 0.3652, Val Acc: 88.06% | Duration: 38.86s | LR: 0.000000
+训练完成，最佳模型保存至: /home/test/bupt_hjk/SDP/test_gait/result/full_tests_new_gpu1_290_320/gait_292+hampel_w5_s3+outlier_z-score+linear+z-score+decimate15+mlpmodel/best_checkpoint.pth
+step 7: 测试集评估
+最佳验证准确率: 0.8847
+测试集准确率: 0.9205
+
+================================================================================
+组合完成: 292/320 | combo_id=gait_292 | best_val_acc=0.8847 | test_acc=0.9205 | duration=2632.93s
+================================================================================
