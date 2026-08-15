@@ -1,199 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="740" viewBox="0 0 1800 740" role="img" aria-labelledby="fig-title fig-desc">
-  <title id="fig-title">Why configurable CSI preprocessing must be evaluated</title>
-  <desc id="fig-desc">An editable four-panel publication figure. Raw CSI mixes motion information, phase drift, and noise. Operators impose different priors. Processing can retain or attenuate a fast motion signature. The same model and split can therefore produce different measured outcomes.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="960" viewBox="0 0 1800 960" role="img" aria-labelledby="title desc">
+  <title id="title">Motivation for configurable WiFi CSI preprocessing</title>
+  <desc id="desc">Four aligned panels show mixed raw CSI, configurable preprocessing operators, information preserved or distorted by different processing, and different conclusions from the same downstream model.</desc>
   <defs>
     <style>
-      .panel-label { font-family: Arial, Helvetica, sans-serif; font-size: 29px; font-weight: 700; fill: #111111; }
-      .panel-title { font-family: Arial, Helvetica, sans-serif; font-size: 26px; font-weight: 700; fill: #111111; }
-      .body { font-family: Arial, Helvetica, sans-serif; font-size: 21px; fill: #222222; }
-      .body-sm { font-family: Arial, Helvetica, sans-serif; font-size: 18px; fill: #30343a; }
-      .small { font-family: Arial, Helvetica, sans-serif; font-size: 18px; fill: #4d545c; }
-      .italic { font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: italic; fill: #4d545c; }
-      .axis { stroke: #40464d; stroke-width: 1.4; }
-      .grid { stroke: #d8dde3; stroke-width: 1; stroke-dasharray: 3.5 4; }
-      .divider { stroke: #d2d6db; stroke-width: 1.3; }
-      .frame { fill: #fbfcfd; stroke: #c7cdd4; stroke-width: 1.2; }
-      .block { fill: #eef4fa; stroke: #3775ba; stroke-width: 1.6; }
-      .control { fill: #f0f2f4; stroke: #767e87; stroke-width: 1.4; }
-      .good { fill: #edf7ed; stroke: #4f9161; stroke-width: 1.6; }
-      .bad { fill: #fbeeee; stroke: #b64342; stroke-width: 1.6; }
-      .main-arrow { fill: none; stroke: #555b62; stroke-width: 2; marker-end: url(#arrow-gray); }
-      .thin-arrow { fill: none; stroke: #656d75; stroke-width: 1.4; marker-end: url(#arrow-gray); }
-      .green-arrow { fill: none; stroke: #4f9161; stroke-width: 2; marker-end: url(#arrow-green); }
-      .red-arrow { fill: none; stroke: #b64342; stroke-width: 2; marker-end: url(#arrow-red); }
+      .head { font-family: Arial, Helvetica, sans-serif; font-size: 27px; font-weight: 700; fill: #202428; }
+      .head-sm { font-family: Arial, Helvetica, sans-serif; font-size: 23px; font-weight: 700; fill: #202428; }
+      .body { font-family: Arial, Helvetica, sans-serif; font-size: 21px; fill: #252a2f; }
+      .body-sm { font-family: Arial, Helvetica, sans-serif; font-size: 18px; fill: #3c444c; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 17px; fill: #3c444c; }
+      .axis { stroke: #263039; stroke-width: 1.8; }
+      .grid { stroke: #d9dde2; stroke-width: 1.1; stroke-dasharray: 4 5; }
+      .connector { fill: none; stroke: #2b3137; stroke-width: 2.1; marker-end: url(#arrow-black); }
+      .connector-thin { fill: none; stroke: #626c76; stroke-width: 1.5; marker-end: url(#arrow-gray); }
+      .blue-box { fill: #ffffff; stroke: #4f9eae; stroke-width: 2.3; }
+      .green-box { fill: #fcfffd; stroke: #7abb86; stroke-width: 2.2; }
+      .orange-box { fill: #fffefd; stroke: #efa65b; stroke-width: 2.2; }
+      .red-box { fill: #fffdfd; stroke: #e78686; stroke-width: 2.2; }
+      .model-box { fill: #ffffff; stroke: #7f8a96; stroke-width: 2.1; }
+      .green-text { fill: #4f9161; } .orange-text { fill: #d5822d; }
+      .red-text { fill: #bd5151; } .blue-text { fill: #2e6ead; }
     </style>
-    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M0,0 L10,5 L0,10 Z" fill="#555b62"/>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#2b3137"/>
     </marker>
-    <marker id="arrow-green" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M0,0 L10,5 L0,10 Z" fill="#4f9161"/>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#626c76"/>
     </marker>
-    <marker id="arrow-red" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M0,0 L10,5 L0,10 Z" fill="#b64342"/>
-    </marker>
-    <clipPath id="a-wave-clip"><rect x="58" y="118" width="335" height="213"/></clipPath>
   </defs>
 
-  <!-- panel guides: intentionally subtle so the figure remains open and paper-like -->
-  <line class="divider" x1="445" y1="44" x2="445" y2="646"/>
-  <line class="divider" x1="900" y1="44" x2="900" y2="646"/>
-  <line class="divider" x1="1335" y1="44" x2="1335" y2="646"/>
-
-  <!-- (a) Raw CSI -->
+  <!-- (a) Mixed raw CSI -->
   <g id="panel-a">
-    <text class="panel-label" x="48" y="63">a</text>
-    <text class="panel-title" x="80" y="63">Raw CSI contains mixed information</text>
-    <rect class="frame" x="58" y="95" width="335" height="238"/>
-    <text class="small" x="74" y="116">amplitude, representative subcarrier</text>
-    <line class="axis" x1="78" y1="299" x2="369" y2="299"/>
-    <line class="axis" x1="78" y1="134" x2="78" y2="299"/>
-    <line class="grid" x1="78" y1="174" x2="369" y2="174"/>
-    <line class="grid" x1="78" y1="216" x2="369" y2="216"/>
-    <line class="grid" x1="78" y1="258" x2="369" y2="258"/>
-    <text class="small" x="208" y="320">time</text>
-    <text class="small" x="53" y="235" transform="rotate(-90 53,235)">CSI</text>
-    <rect x="194" y="132" width="82" height="167" fill="#f6cfcB" opacity="0.62"/>
-    <g clip-path="url(#a-wave-clip)">
-      <path d="M78 266 C94 258 111 261 126 254 C142 247 158 251 174 242 C188 235 198 238 207 249 C215 262 221 214 230 257 C239 300 247 206 257 254 C267 292 275 214 284 245 C294 271 305 227 316 236 C333 236 349 221 369 216" fill="none" stroke="#2d3339" stroke-width="3.2" stroke-linecap="round"/>
-      <path d="M78 273 C136 260 194 244 247 244 C294 241 332 230 369 216" fill="none" stroke="#3775ba" stroke-width="1.8" stroke-dasharray="6 4"/>
-    </g>
-    <circle cx="329" cy="270" r="5.2" fill="#b64342"/>
-    <path d="M288 154 L265 228" class="thin-arrow"/>
-    <text class="body-sm" x="285" y="145">fast motion</text>
-    <path d="M353 259 L333 269" class="thin-arrow"/>
-    <text class="body-sm" x="277" y="286" fill="#b64342">impulse</text>
+    <text class="head blue-text" x="69" y="73">(a) Raw CSI contains</text>
+    <text class="head blue-text" x="135" y="105">mixed variations</text>
 
-    <!-- phase inset -->
-    <rect class="frame" x="58" y="360" width="335" height="70"/>
-    <text class="small" x="74" y="382">measured phase</text>
-    <path d="M100 415 L137 409 L170 403 L204 395 L237 388 L273 381 L350 369" fill="none" stroke="#7b5b97" stroke-width="2.5"/>
-    <path d="M292 403 L265 387" class="thin-arrow"/>
-    <text class="body-sm" x="217" y="421">phase drift</text>
+    <text class="body-sm" x="58" y="235">CSI Amplitude</text>
+    <text class="body-sm" x="58" y="258">(dB)</text>
+    <line class="axis" x1="74" y1="624" x2="371" y2="624"/>
+    <line class="axis" x1="74" y1="279" x2="74" y2="624"/>
+    <line class="grid" x1="74" y1="354" x2="371" y2="354"/>
+    <line class="grid" x1="74" y1="434" x2="371" y2="434"/>
+    <line class="grid" x1="74" y1="514" x2="371" y2="514"/>
+    <text class="body-sm" x="346" y="652">Time</text>
+    <path d="M69 285 L74 277 L79 285" fill="#263039"/>
+    <path d="M380 619 L372 624 L380 629" fill="#263039"/>
 
-    <line x1="63" y1="473" x2="92" y2="473" stroke="#d27a21" stroke-width="4"/>
-    <text class="body" x="103" y="480">motion-related dynamics</text>
-    <line x1="63" y1="512" x2="92" y2="512" stroke="#7b5b97" stroke-width="4"/>
-    <text class="body" x="103" y="519">hardware phase variation</text>
-    <line x1="63" y1="551" x2="92" y2="551" stroke="#b64342" stroke-width="4"/>
-    <text class="body" x="103" y="558">measurement noise / outlier</text>
+    <!-- raw amplitude: blue trace, orange drift, red impulse -->
+    <path d="M74 540 C84 526 95 535 106 511 C115 488 125 510 134 477 C144 506 155 449 165 487 C174 452 185 509 196 481 C207 497 216 523 228 496 C239 481 248 500 257 478 C267 511 278 467 288 491 C300 511 310 473 322 488 C332 511 342 456 352 491 C360 505 365 477 371 484" fill="none" stroke="#3775ba" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M75 549 C129 526 181 505 234 486 C282 469 325 451 371 430" fill="none" stroke="#e59648" stroke-width="3" stroke-dasharray="7 5"/>
+    <path d="M269 477 L274 326 L279 478" fill="none" stroke="#b64342" stroke-width="4"/>
+    <circle cx="274" cy="326" r="6" fill="#b64342"/>
+
+    <!-- annotations -->
+    <text class="body-sm blue-text" x="100" y="403">Human-motion</text>
+    <text class="body-sm blue-text" x="122" y="428">response</text>
+    <path class="connector-thin" d="M167 433 L155 475"/>
+    <text class="body-sm red-text" x="306" y="201">Impulsive</text>
+    <text class="body-sm red-text" x="320" y="226">noise</text>
+    <path class="connector-thin" d="M333 233 L279 322"/>
+    <text class="body-sm orange-text" x="307" y="405">Hardware</text>
+    <text class="body-sm orange-text" x="327" y="429">drift</text>
+    <path class="connector-thin" d="M343 437 L337 450"/>
+
+    <!-- sampling markers -->
+    <circle cx="77" cy="624" r="4" fill="#263039"/><circle cx="111" cy="624" r="4" fill="#263039"/><circle cx="147" cy="624" r="4" fill="#263039"/>
+    <circle cx="207" cy="624" r="4" fill="#263039"/><circle cx="251" cy="624" r="4" fill="#263039"/><circle cx="302" cy="624" r="4" fill="#263039"/><circle cx="355" cy="624" r="4" fill="#263039"/>
+    <text class="body-sm" x="162" y="706" fill="#74518f">Sampling</text>
+    <text class="body-sm" x="145" y="731" fill="#74518f">irregularity</text>
+    <path class="connector-thin" d="M227 695 L251 634"/>
+
   </g>
 
-  <!-- (b) Operator priors -->
+  <!-- (b) Configurable pipeline -->
   <g id="panel-b">
-    <text class="panel-label" x="477" y="63">b</text>
-    <text class="panel-title" x="509" y="63">Different operators make different assumptions</text>
-    <polygon points="511,105 653,105 669,126 527,126" class="control"/>
-    <text class="body" x="554" y="124">raw CSI</text>
-    <path class="main-arrow" d="M591 131 L591 162"/>
-    <text class="small" x="525" y="155">configurable operator set</text>
+    <text class="head" x="498" y="73" fill="#34816e">(b) Preprocessing imposes</text>
+    <text class="head" x="549" y="105" fill="#34816e">assumptions</text>
 
-    <!-- five configuration options use one common input but no imposed serial order -->
-    <path d="M591 170 L591 194 L527 194 L527 210" class="thin-arrow"/>
-    <path d="M591 170 L591 194 L756 194 L756 210" class="thin-arrow"/>
-    <path d="M591 170 L591 326 L527 326 L527 342" class="thin-arrow"/>
-    <path d="M591 170 L591 326 L756 326 L756 342" class="thin-arrow"/>
-    <path d="M591 170 L591 458" class="thin-arrow"/>
+    <text class="body" x="595" y="172">Raw CSI</text>
+    <polygon points="554,189 740,189 760,213 574,213" fill="#f2f4f6" stroke="#707a84" stroke-width="1.8"/>
+    <text class="body-sm" x="632" y="208">H(t,k)</text>
+    <text class="note" x="547" y="153">example configurable pipeline</text>
 
-    <rect class="block" x="478" y="212" width="177" height="89"/>
-    <text class="body" x="516" y="242">Denoising</text>
-    <text class="small" x="507" y="272">smoothness prior</text>
+    <rect class="blue-box" x="529" y="248" width="268" height="57" rx="7"/>
+    <text class="body" x="608" y="285">Denoising</text>
+    <path class="connector" d="M663 214 L663 244"/>
+    <rect class="blue-box" x="529" y="344" width="268" height="57" rx="7"/>
+    <text class="body" x="585" y="381">Outlier handling</text>
+    <path class="connector" d="M663 307 L663 340"/>
+    <rect class="blue-box" x="529" y="440" width="268" height="57" rx="7"/>
+    <text class="body" x="581" y="477">Phase calibration</text>
+    <path class="connector" d="M663 403 L663 436"/>
+    <rect class="blue-box" x="529" y="536" width="268" height="57" rx="7"/>
+    <text class="body" x="598" y="573">Normalization</text>
+    <path class="connector" d="M663 499 L663 532"/>
+    <rect class="blue-box" x="529" y="632" width="268" height="57" rx="7"/>
+    <text class="body" x="606" y="669">Interpolation</text>
+    <path class="connector" d="M663 595 L663 628"/>
+    <path class="connector" d="M663 691 L663 720"/>
 
-    <rect class="block" x="678" y="212" width="177" height="89"/>
-    <text class="body" x="698" y="242">Outlier repair</text>
-    <text class="small" x="689" y="272">local-continuity prior</text>
-
-    <rect class="block" x="478" y="344" width="177" height="89"/>
-    <text class="body" x="490" y="374">Phase calibration</text>
-    <text class="small" x="500" y="404">hardware-phase prior*</text>
-
-    <rect class="block" x="678" y="344" width="177" height="89"/>
-    <text class="body" x="704" y="374">Normalization</text>
-    <text class="small" x="696" y="404">scale-invariance prior</text>
-
-    <rect class="block" x="578" y="476" width="177" height="89"/>
-    <text class="body" x="599" y="506">Interpolation</text>
-    <text class="small" x="600" y="536">grid-alignment prior</text>
-
-    <text class="italic" x="480" y="608">* applicable to complex CSI only</text>
   </g>
 
-  <!-- (c) information consequence -->
+  <!-- (c) Information consequence -->
   <g id="panel-c">
-    <text class="panel-label" x="932" y="63">c</text>
-    <text class="panel-title" x="964" y="63">Preprocessing can preserve or remove information</text>
-    <text class="body-sm" x="944" y="106">same local CSI segment</text>
-    <rect class="frame" x="944" y="120" width="335" height="78"/>
-    <line class="axis" x1="961" y1="177" x2="1264" y2="177"/>
-    <rect x="1057" y="125" width="72" height="52" fill="#f6cfcB" opacity="0.75"/>
-    <path d="M961 160 C979 156 993 163 1009 158 C1025 153 1039 162 1053 157 C1062 144 1070 186 1079 141 C1088 191 1097 141 1107 157 C1120 164 1138 151 1154 157 C1186 158 1222 147 1264 150" fill="none" stroke="#2d3339" stroke-width="3"/>
-    <text class="small" x="1062" y="144" fill="#9d5b17">rapid variation</text>
+    <text class="head orange-text" x="922" y="73">(c) Different preprocessing</text>
+    <text class="head orange-text" x="938" y="105">preserves different information</text>
 
-    <path d="M1110 202 L1110 226 L974 226 L974 242" class="green-arrow"/>
-    <path d="M1110 202 L1110 414 L974 414 L974 430" class="red-arrow"/>
+    <!-- proper preprocessing -->
+    <rect class="green-box" x="919" y="139" width="358" height="192" rx="8"/>
+    <circle cx="946" cy="169" r="15" fill="#4f9161"/><text class="body-sm" x="941" y="176" fill="#ffffff">1</text>
+    <text class="head-sm green-text" x="976" y="177">Proper preprocessing</text>
+    <line class="axis" x1="981" y1="270" x2="1239" y2="270"/>
+    <line class="axis" x1="981" y1="207" x2="981" y2="270"/>
+    <text class="note" x="929" y="224">|CSI|</text>
+    <path d="M994 252 L1007 239 L1021 246 L1035 218 L1049 253 L1063 230 L1077 243 L1091 208 L1105 246 L1119 234 L1133 252 L1148 219 L1162 245 L1177 231 L1192 249" fill="none" stroke="#3775ba" stroke-width="3.2"/>
+    <text class="note" x="1206" y="289">Time</text>
+    <text class="note" x="977" y="304">Noise reduced, motion</text>
+    <text class="note" x="1000" y="323">structure preserved.</text>
 
-    <rect class="good" x="944" y="244" width="335" height="129"/>
-    <text class="body" x="965" y="274" fill="#2f7643">Matched prior</text>
-    <text class="body-sm" x="965" y="299">task-relevant transient is retained</text>
-    <line class="axis" x1="966" y1="347" x2="1257" y2="347"/>
-    <path d="M966 331 C992 326 1011 334 1028 328 C1047 323 1065 333 1080 326 C1088 307 1096 356 1106 299 C1116 357 1127 301 1139 326 C1155 333 1177 318 1195 324 C1215 329 1236 318 1257 321" fill="none" stroke="#4f9161" stroke-width="3.2"/>
-    <path d="M1011 350 L1020 359 L1037 338" fill="none" stroke="#4f9161" stroke-width="3"/>
+    <!-- over-processing -->
+    <rect class="orange-box" x="919" y="357" width="358" height="192" rx="8"/>
+    <circle cx="946" cy="387" r="15" fill="#e59648"/><text class="body-sm" x="941" y="394" fill="#ffffff">2</text>
+    <text class="head-sm orange-text" x="976" y="395">Over-processing</text>
+    <line class="axis" x1="981" y1="488" x2="1239" y2="488"/>
+    <line class="axis" x1="981" y1="425" x2="981" y2="488"/>
+    <text class="note" x="929" y="442">|CSI|</text>
+    <path d="M994 467 C1013 453 1033 476 1052 461 C1074 447 1095 470 1115 457 C1137 445 1159 466 1195 457" fill="none" stroke="#78a4de" stroke-width="3.2"/>
+    <text class="note" x="1206" y="507">Time</text>
+    <text class="note" x="965" y="522">Motion peaks weakened</text>
+    <text class="note" x="988" y="541">or removed.</text>
 
-    <rect class="bad" x="944" y="432" width="335" height="129"/>
-    <text class="body" x="965" y="462" fill="#a33232">Mismatched prior</text>
-    <text class="body-sm" x="965" y="487">task-relevant transient is attenuated</text>
-    <line class="axis" x1="966" y1="535" x2="1257" y2="535"/>
-    <path d="M966 520 C996 516 1025 521 1051 516 C1080 513 1108 518 1136 513 C1163 511 1192 516 1221 511 C1234 511 1247 510 1257 509" fill="none" stroke="#b64342" stroke-width="3.2"/>
-    <path d="M1091 499 L1110 520 M1110 499 L1091 520" stroke="#b64342" stroke-width="2.8"/>
+    <!-- semantic/phase distortion -->
+    <rect class="red-box" x="919" y="575" width="358" height="192" rx="8"/>
+    <circle cx="946" cy="605" r="15" fill="#b64342"/><text class="body-sm" x="941" y="612" fill="#ffffff">3</text>
+    <text class="head-sm red-text" x="976" y="613">Phase distortion</text>
+    <text class="body-sm" x="962" y="657">φ<tspan baseline-shift="sub" font-size="13">meas</tspan>(t,k) = φ<tspan baseline-shift="sub" font-size="13">motion</tspan>(t,k) + φ<tspan baseline-shift="sub" font-size="13">hw</tspan>(t,k)</text>
+    <path class="connector" d="M1090 674 L1090 699"/>
+    <text class="body-sm" x="1012" y="729">calibration may alter a</text>
+    <text class="body-sm" x="981" y="751">phase-related sensing cue.</text>
   </g>
 
-  <!-- (d) Evaluation consequence -->
+  <!-- (d) Same model, different conclusion -->
   <g id="panel-d">
-    <text class="panel-label" x="1367" y="63">d</text>
-    <text class="panel-title" x="1399" y="63">Same model, different conclusion</text>
-    <rect class="control" x="1380" y="94" width="338" height="62"/>
-    <text class="body" x="1450" y="122">fixed model M and split S</text>
-    <text class="small" x="1482" y="145">only pipeline changes</text>
+    <text class="head blue-text" x="1370" y="73">(d) Same model, different</text>
+    <text class="head blue-text" x="1432" y="105">conclusions</text>
 
-    <!-- experiment A -->
-    <rect class="good" x="1378" y="207" width="104" height="76"/>
-    <text class="body" x="1405" y="240" fill="#2f7643">P<tspan baseline-shift="sub" font-size="15">A</tspan></text>
-    <text class="small" x="1393" y="265">matched</text>
-    <path class="green-arrow" d="M1484 245 L1534 245"/>
-    <rect class="block" x="1538" y="207" width="84" height="76"/>
-    <text class="body" x="1568" y="242">M</text>
-    <text class="small" x="1550" y="265">same M</text>
-    <path class="green-arrow" d="M1624 245 L1650 245"/>
-    <rect class="frame" x="1655" y="207" width="72" height="76"/>
-    <line class="axis" x1="1665" y1="266" x2="1717" y2="266"/>
-    <rect x="1672" y="227" width="14" height="39" fill="#4f9161"/>
-    <rect x="1697" y="218" width="14" height="48" fill="#3775ba"/>
-    <text class="small" x="1655" y="302">higher score</text>
+    <!-- three representations -->
+    <rect class="green-box" x="1367" y="175" width="98" height="74" rx="7"/>
+    <path d="M1379 221 L1389 205 L1400 217 L1410 190 L1420 222 L1430 207 L1440 218 L1451 196" fill="none" stroke="#3775ba" stroke-width="2.8"/>
+    <rect class="orange-box" x="1367" y="373" width="98" height="74" rx="7"/>
+    <path d="M1379 418 C1391 404 1401 427 1412 412 C1424 399 1437 421 1451 408" fill="none" stroke="#78a4de" stroke-width="2.8"/>
+    <rect class="red-box" x="1367" y="571" width="98" height="74" rx="7"/>
+    <path d="M1379 614 C1392 607 1404 619 1415 612 C1427 604 1438 617 1451 609" fill="none" stroke="#78a4de" stroke-width="2.8"/>
 
-    <!-- experiment B -->
-    <rect class="bad" x="1378" y="390" width="104" height="76"/>
-    <text class="body" x="1405" y="423" fill="#a33232">P<tspan baseline-shift="sub" font-size="15">B</tspan></text>
-    <text class="small" x="1385" y="448">mismatched</text>
-    <path class="red-arrow" d="M1484 428 L1534 428"/>
-    <rect class="block" x="1538" y="390" width="84" height="76"/>
-    <text class="body" x="1568" y="425">M</text>
-    <text class="small" x="1550" y="448">same M</text>
-    <path class="red-arrow" d="M1624 428 L1650 428"/>
-    <rect class="frame" x="1655" y="390" width="72" height="76"/>
-    <line class="axis" x1="1665" y1="449" x2="1717" y2="449"/>
-    <rect x="1672" y="431" width="14" height="18" fill="#b64342"/>
-    <rect x="1697" y="437" width="14" height="12" fill="#cfcECE"/>
-    <text class="small" x="1656" y="485">lower score</text>
+    <!-- same model -->
+    <rect class="model-box" x="1519" y="310" width="121" height="250" rx="9"/>
+    <text class="body-sm" x="1539" y="344">Same</text>
+    <text class="body-sm" x="1529" y="367">downstream</text>
+    <text class="body-sm" x="1550" y="390">model</text>
+    <circle cx="1545" cy="447" r="7" fill="#f1f3f5" stroke="#65717d" stroke-width="1.4"/>
+    <circle cx="1545" cy="482" r="7" fill="#f1f3f5" stroke="#65717d" stroke-width="1.4"/>
+    <circle cx="1584" cy="426" r="7" fill="#f1f3f5" stroke="#65717d" stroke-width="1.4"/>
+    <circle cx="1584" cy="464" r="7" fill="#f1f3f5" stroke="#65717d" stroke-width="1.4"/>
+    <circle cx="1584" cy="502" r="7" fill="#f1f3f5" stroke="#65717d" stroke-width="1.4"/>
+    <path d="M1552 447 L1577 426 M1552 447 L1577 464 M1552 482 L1577 464 M1552 482 L1577 502" stroke="#65717d" stroke-width="1.2"/>
 
-    <line x1="1378" y1="334" x2="1728" y2="334" stroke="#d2d6db" stroke-width="1.2" stroke-dasharray="5 4"/>
-    <rect x="1380" y="536" width="338" height="56" fill="#fff8e8" stroke="#d18a26" stroke-width="1.4"/>
-    <text class="body-sm" x="1416" y="560">Preprocessing changes the input</text>
-    <text class="body-sm" x="1432" y="582">and may change the conclusion.</text>
+    <!-- inputs join same model -->
+    <path class="connector" d="M1467 212 L1490 212 L1490 392 L1515 392"/>
+    <path class="connector" d="M1467 410 L1515 410"/>
+    <path class="connector" d="M1467 608 L1490 608 L1490 518 L1515 518"/>
+
+    <!-- score output -->
+    <path class="connector" d="M1642 435 L1661 435 L1661 255 L1680 255"/>
+    <path class="connector" d="M1642 435 L1661 435 L1661 452 L1680 452"/>
+    <path class="connector" d="M1642 435 L1661 435 L1661 649 L1680 649"/>
+    <rect class="green-box" x="1684" y="224" width="58" height="61" rx="7"/>
+    <text class="body-sm green-text" x="1694" y="261">High</text>
+    <rect class="orange-box" x="1684" y="421" width="58" height="61" rx="7"/>
+    <text class="body-sm orange-text" x="1688" y="458">Med.</text>
+    <rect class="red-box" x="1684" y="618" width="58" height="61" rx="7"/>
+    <text class="body-sm red-text" x="1695" y="655">Low</text>
+
   </g>
-
-  <!-- narrative arrows between panels -->
-  <path class="main-arrow" d="M415 620 L438 620"/>
-  <path class="main-arrow" d="M870 620 L893 620"/>
-  <path class="main-arrow" d="M1305 620 L1328 620"/>
-  <text class="italic" x="52" y="684">Motivation: evaluate preprocessing as a configurable and data-dependent component of the CSI sensing pipeline.</text>
 </svg>

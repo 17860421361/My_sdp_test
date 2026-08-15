@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+  <title id="title">Raw CSI: motion response and measurement artifacts</title>
+  <desc id="desc">A publication-style illustration of a raw CSI amplitude trace containing human-motion response, a slow hardware baseline drift, an impulsive noise spike, and a phase-error-induced ICI disturbance.</desc>
+  <defs>
+    <style>
+      .panel-title { font-family: Arial, Helvetica, sans-serif; font-size: 32px; font-weight: 700; fill: #181d22; }
+      .axis-label { font-family: Arial, Helvetica, sans-serif; font-size: 25px; font-weight: 700; fill: #252b31; }
+      .callout { font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: 700; fill: #252b31; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 18px; fill: #59636d; }
+      .axis { fill: none; stroke: #151a1f; stroke-width: 3.2; }
+      .tick { stroke: #151a1f; stroke-width: 2.4; }
+      .grid { stroke: #d8dde2; stroke-width: 1.5; stroke-dasharray: 5 6; }
+      .annotation { fill: none; stroke: #4e5963; stroke-width: 2.1; marker-end: url(#arrow-gray); }
+      .annotation-red { fill: none; stroke: #c83e3e; stroke-width: 2.1; marker-end: url(#arrow-red); }
+      .blue-text { fill: #2875b9; }
+      .red-text { fill: #c83e3e; }
+    </style>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#4e5963"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#c83e3e"/>
+    </marker>
+  </defs>
+
+  <!-- Panel title -->
+  <text class="panel-title" x="80" y="64">(a) Raw CSI</text>
+
+  <!-- Axes and unobtrusive grid -->
+  <line class="grid" x1="105" y1="250" x2="878" y2="250"/>
+  <line class="grid" x1="105" y1="390" x2="878" y2="390"/>
+  <line class="grid" x1="105" y1="530" x2="878" y2="530"/>
+  <path class="axis" d="M105 630 L105 128"/>
+  <path d="M94 145 L105 116 L116 145 Z" fill="#151a1f"/>
+  <path class="axis" d="M105 630 L894 630"/>
+  <path d="M876 619 L907 630 L876 641 Z" fill="#151a1f"/>
+  <line class="tick" x1="105" y1="250" x2="119" y2="250"/>
+  <line class="tick" x1="105" y1="390" x2="119" y2="390"/>
+  <line class="tick" x1="105" y1="530" x2="119" y2="530"/>
+  <line class="tick" x1="190" y1="630" x2="190" y2="616"/>
+  <line class="tick" x1="285" y1="630" x2="285" y2="616"/>
+  <line class="tick" x1="380" y1="630" x2="380" y2="616"/>
+  <line class="tick" x1="475" y1="630" x2="475" y2="616"/>
+  <line class="tick" x1="570" y1="630" x2="570" y2="616"/>
+  <line class="tick" x1="665" y1="630" x2="665" y2="616"/>
+  <line class="tick" x1="760" y1="630" x2="760" y2="616"/>
+  <line class="tick" x1="855" y1="630" x2="855" y2="616"/>
+  <text class="axis-label" x="470" y="690">Time</text>
+  <text class="axis-label" x="48" y="428" transform="rotate(-90 48,428)">CSI Amplitude</text>
+
+  <!-- A slow non-target baseline trend -->
+  <path d="M106 548 C270 524 440 501 606 478 C731 460 806 445 878 430" fill="none" stroke="#9aa3ac" stroke-width="3.2" stroke-dasharray="10 7"/>
+
+  <!-- Observed CSI amplitude: motion dynamics plus local high-frequency disturbance -->
+  <path d="M106 522 C119 486 133 442 148 408 C163 444 179 494 194 521 C208 489 222 448 237 412 C253 448 268 504 284 533 C298 500 314 462 328 425 C343 452 358 501 374 529 C390 502 404 460 419 423 C434 459 448 512 463 536 C477 504 489 451 500 418 L505 527 L511 237 L517 532 C529 501 542 461 557 430 C572 468 587 512 602 538 C617 505 631 464 646 429 C660 467 674 510 689 532 C699 502 707 451 715 390 L721 474 L727 350 L733 479 L740 335 L747 471 L754 362 L761 487 L768 347 L775 478 L782 380 L789 503 C804 481 818 451 833 424 C849 463 863 506 878 536" fill="none" stroke="#2875b9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Highlighted impulsive artifact -->
+  <path d="M505 527 L511 237 L517 532" fill="none" stroke="#c83e3e" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="511" cy="237" r="6" fill="#c83e3e"/>
+
+  <!-- English-only scientific annotations -->
+  <text class="callout blue-text" x="135" y="205">Human-motion response</text>
+  <path class="annotation" d="M303 214 L285 398"/>
+
+  <text class="callout red-text" x="442" y="132">Impulsive noise</text>
+  <path class="annotation-red" d="M540 140 L516 225"/>
+
+  <text class="callout" x="676" y="154">Hardware</text>
+  <text class="callout" x="676" y="184">baseline drift</text>
+  <path class="annotation" d="M825 193 L799 449"/>
+
+  <text class="callout" x="540" y="585">Phase-error-induced ICI</text>
+  <path class="annotation" d="M712 570 L755 492"/>
+</svg>

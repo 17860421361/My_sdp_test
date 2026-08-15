@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="720" viewBox="0 0 1800 720" role="img" aria-labelledby="title desc">
+  <title id="title">Why configurable CSI preprocessing matters</title>
+  <desc id="desc">A four-panel, Visio-style research schematic. Raw CSI mixes sensing cues and artifacts; plug-in preprocessing operators make different assumptions; they can preserve or attenuate sensing cues; and the same downstream model can yield different measured outcomes.</desc>
+  <defs>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 700; fill: #1f2933; }
+      .title-small { font-family: Arial, Helvetica, sans-serif; font-size: 26px; font-weight: 700; fill: #1f2933; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 21px; font-weight: 700; fill: #26313b; }
+      .body { font-family: Arial, Helvetica, sans-serif; font-size: 20px; fill: #33404b; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 18px; fill: #59646f; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #66717d; }
+      .axis { fill: none; stroke: #424c56; stroke-width: 1.6; }
+      .grid { fill: none; stroke: #e2e7eb; stroke-width: 1.2; stroke-dasharray: 4 5; }
+      .flow { fill: none; stroke: #46515b; stroke-width: 1.9; marker-end: url(#arrow); }
+      .flow-thin { fill: none; stroke: #7b8791; stroke-width: 1.35; marker-end: url(#arrow-thin); }
+      .panel-flow { fill: none; stroke: #aeb7bf; stroke-width: 1.7; marker-end: url(#arrow-light); }
+      .tile { fill: #ffffff; stroke: #7d8993; stroke-width: 1.45; }
+      .card { fill: #ffffff; stroke: #c7d0d7; stroke-width: 1.35; }
+      .model { fill: #fbfcfd; stroke: #5d6974; stroke-width: 1.7; }
+      .control { fill: #f3f5f7; stroke: #7d8993; stroke-width: 1.35; }
+      .blue-text { fill: #2875b9; }
+      .green-text { fill: #39785e; }
+      .orange-text { fill: #ad692d; }
+      .red-text { fill: #a23e3e; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#46515b"/>
+    </marker>
+    <marker id="arrow-thin" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="5.3" markerHeight="5.3" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#7b8791"/>
+    </marker>
+    <marker id="arrow-light" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="5.8" markerHeight="5.8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#aeb7bf"/>
+    </marker>
+  </defs>
+
+  <!-- subtle reading-order arrows; there are intentionally no enclosing panel borders -->
+  <path class="panel-flow" d="M425 360 L453 360"/>
+  <path class="panel-flow" d="M846 360 L876 360"/>
+  <path class="panel-flow" d="M1310 360 L1340 360"/>
+
+  <!-- (a) Raw CSI -->
+  <g id="panel-a-raw-csi">
+    <rect x="42" y="28" width="30" height="30" rx="4" fill="#1f6fad"/>
+    <text x="53" y="50" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#ffffff">a</text>
+    <text class="title" x="85" y="50">Raw CSI contains</text>
+    <text class="title" x="85" y="78">mixed variations</text>
+
+    <text class="note" x="63" y="138">CSI amplitude</text>
+    <line class="axis" x1="82" y1="540" x2="397" y2="540"/>
+    <line class="axis" x1="82" y1="170" x2="82" y2="540"/>
+    <path d="M77 178 L82 165 L87 178" fill="#424c56"/>
+    <path d="M391 535 L404 540 L391 545" fill="#424c56"/>
+    <line class="grid" x1="82" y1="250" x2="397" y2="250"/>
+    <line class="grid" x1="82" y1="340" x2="397" y2="340"/>
+    <line class="grid" x1="82" y1="430" x2="397" y2="430"/>
+    <text class="tiny" x="372" y="565">time</text>
+
+    <!-- observed signal, low-frequency hardware trend, and impulse artifact -->
+    <path d="M82 466 C94 456 102 460 111 435 C121 405 130 455 141 425 C151 395 161 455 171 423 C181 442 190 470 202 437 C213 410 222 459 233 425 C243 399 253 449 264 423 C274 454 285 427 295 411 C305 438 315 404 326 419 C336 447 345 401 356 424 C366 447 379 410 397 417" fill="none" stroke="#2875b9" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M82 486 C140 468 201 450 261 432 C308 418 354 405 397 391" fill="none" stroke="#d4873b" stroke-width="2.7" stroke-dasharray="7 5"/>
+    <path d="M287 420 L292 232 L297 419" fill="none" stroke="#c64949" stroke-width="3.8" stroke-linecap="round"/>
+    <circle cx="292" cy="232" r="5.5" fill="#c64949"/>
+
+    <text class="body blue-text" x="104" y="282">motion-induced</text>
+    <text class="body blue-text" x="118" y="306">variation</text>
+    <path class="flow-thin" d="M178 310 L164 405"/>
+
+    <text class="body red-text" x="298" y="184">impulsive</text>
+    <text class="body red-text" x="313" y="208">artifact</text>
+    <path class="flow-thin" d="M331 210 L296 228"/>
+
+    <text class="body orange-text" x="306" y="325">hardware</text>
+    <text class="body orange-text" x="324" y="349">drift</text>
+    <path class="flow-thin" d="M343 352 L351 404"/>
+
+    <!-- intentionally irregular sampling locations -->
+    <circle cx="92" cy="540" r="3.3" fill="#424c56"/>
+    <circle cx="127" cy="540" r="3.3" fill="#424c56"/>
+    <circle cx="177" cy="540" r="3.3" fill="#424c56"/>
+    <circle cx="209" cy="540" r="3.3" fill="#424c56"/>
+    <circle cx="273" cy="540" r="3.3" fill="#424c56"/>
+    <circle cx="328" cy="540" r="3.3" fill="#424c56"/>
+    <circle cx="378" cy="540" r="3.3" fill="#424c56"/>
+    <text class="body" x="145" y="607">sampling irregularity</text>
+    <path class="flow-thin" d="M251 594 L272 549"/>
+  </g>
+
+  <!-- (b) Plug-in operator library -->
+  <g id="panel-b-operators">
+    <rect x="466" y="28" width="30" height="30" rx="4" fill="#1f6fad"/>
+    <text x="477" y="50" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#ffffff">b</text>
+    <text class="title-small" x="508" y="50">Preprocessing operators</text>
+    <text class="title-small" x="508" y="78">impose distinct assumptions</text>
+
+    <text class="note" x="604" y="125">Raw CSI</text>
+    <polygon points="568,139 716,139 732,156 584,156" fill="#f4f6f8" stroke="#6f7a84" stroke-width="1.35"/>
+    <text class="tiny" x="632" y="153">H(t, k)</text>
+    <path class="flow" d="M650 158 L650 205"/>
+    <text class="label" x="541" y="230">Plug-in operator library</text>
+    <path d="M510 243 L790 243" stroke="#c9d1d8" stroke-width="1.2"/>
+    <path d="M650 206 L650 252 M650 252 L552 252 L552 266 M650 252 L748 252 L748 266 M650 252 L650 455" fill="none" stroke="#7b8791" stroke-width="1.35"/>
+
+    <!-- the five tiles are alternatives, not an implied fixed serial pipeline -->
+    <rect class="tile" x="478" y="270" width="155" height="72" rx="5"/>
+    <rect x="491" y="284" width="6" height="42" rx="3" fill="#2875b9"/>
+    <text class="label" x="508" y="299">Denoising</text>
+    <text class="tiny" x="508" y="325">smooth fluctuation</text>
+
+    <rect class="tile" x="667" y="270" width="155" height="72" rx="5"/>
+    <rect x="680" y="284" width="6" height="42" rx="3" fill="#c64949"/>
+    <text class="label" x="697" y="299">Outlier repair</text>
+    <text class="tiny" x="697" y="325">isolated jump = artifact</text>
+
+    <rect class="tile" x="478" y="372" width="155" height="72" rx="5"/>
+    <rect x="491" y="386" width="6" height="42" rx="3" fill="#8265a6"/>
+    <text class="label" x="508" y="399">Phase</text>
+    <text class="label" x="508" y="421">calibration</text>
+    <text class="tiny" x="508" y="438">hardware trend</text>
+
+    <rect class="tile" x="667" y="372" width="155" height="72" rx="5"/>
+    <rect x="680" y="386" width="6" height="42" rx="3" fill="#4d9a78"/>
+    <text class="label" x="697" y="401">Normalization</text>
+    <text class="tiny" x="697" y="428">scale shift</text>
+
+    <rect class="tile" x="572" y="474" width="155" height="72" rx="5"/>
+    <rect x="585" y="488" width="6" height="42" rx="3" fill="#c58b32"/>
+    <text class="label" x="602" y="503">Interpolation</text>
+    <text class="tiny" x="602" y="530">grid alignment</text>
+    <path d="M650 452 L650 470" fill="none" stroke="#7b8791" stroke-width="1.35"/>
+  </g>
+
+  <!-- (c) Signal information may be retained or attenuated -->
+  <g id="panel-c-information">
+    <rect x="894" y="28" width="30" height="30" rx="4" fill="#1f6fad"/>
+    <text x="905" y="50" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#ffffff">c</text>
+    <text class="title-small" x="936" y="50">Different preprocessing</text>
+    <text class="title-small" x="936" y="78">changes retained cues</text>
+
+    <!-- compatible operation -->
+    <rect class="card" x="900" y="132" width="385" height="132" rx="6"/>
+    <circle cx="926" cy="159" r="12" fill="#4d9a78"/>
+    <path d="M920 159 L924 164 L933 153" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="label green-text" x="949" y="165">Task-compatible operation</text>
+    <line x1="974" y1="223" x2="1254" y2="223" stroke="#7d8993" stroke-width="1.1"/>
+    <line x1="974" y1="184" x2="974" y2="223" stroke="#7d8993" stroke-width="1.1"/>
+    <path d="M988 211 L1001 198 L1015 208 L1028 181 L1041 213 L1054 194 L1067 204 L1080 177 L1093 209 L1106 193 L1119 211 L1133 184 L1147 207 L1160 192 L1174 208 L1188 182 L1202 205" fill="none" stroke="#2875b9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="note" x="975" y="246">Motion-related structure retained</text>
+
+    <!-- over-smoothing -->
+    <rect class="card" x="900" y="298" width="385" height="132" rx="6"/>
+    <circle cx="926" cy="325" r="12" fill="#d4873b"/>
+    <path d="M920 319 L932 331 M932 319 L920 331" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round"/>
+    <text class="label orange-text" x="949" y="331">Over-smoothing</text>
+    <line x1="974" y1="389" x2="1254" y2="389" stroke="#7d8993" stroke-width="1.1"/>
+    <line x1="974" y1="350" x2="974" y2="389" stroke="#7d8993" stroke-width="1.1"/>
+    <path d="M988 375 C1006 363 1023 382 1040 371 C1058 360 1076 380 1095 370 C1113 360 1132 379 1151 370 C1169 361 1188 378 1203 371" fill="none" stroke="#7fa7dc" stroke-width="3" stroke-linecap="round"/>
+    <text class="note" x="975" y="412">Fast variation attenuated</text>
+
+    <!-- phase-sensitive information -->
+    <rect class="card" x="900" y="464" width="385" height="132" rx="6"/>
+    <circle cx="926" cy="491" r="12" fill="#c64949"/>
+    <path d="M920 485 L932 497 M932 485 L920 497" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round"/>
+    <text class="label red-text" x="949" y="497">Phase-sensitive cue altered</text>
+    <path d="M984 544 C1000 520 1016 568 1032 544 C1048 520 1064 568 1080 544 C1096 520 1112 568 1128 544" fill="none" stroke="#8265a6" stroke-width="2.6"/>
+    <path class="flow" d="M1142 544 L1172 544"/>
+    <path d="M1180 544 C1198 534 1214 554 1231 544 C1244 538 1250 542 1260 544" fill="none" stroke="#c64949" stroke-width="2.6"/>
+    <text class="note" x="975" y="576">Phase-related cue may be distorted</text>
+  </g>
+
+  <!-- (d) Same downstream model, different measured outcomes -->
+  <g id="panel-d-outcome">
+    <rect x="1352" y="28" width="30" height="30" rx="4" fill="#1f6fad"/>
+    <text x="1363" y="50" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#ffffff">d</text>
+    <text class="title-small" x="1394" y="50">Same model, different</text>
+    <text class="title-small" x="1394" y="78">measured outcomes</text>
+
+    <rect class="control" x="1376" y="104" width="397" height="34" rx="5"/>
+    <text class="note" x="1454" y="127">fixed M and split; pipeline only</text>
+    <!-- three neutral input sketches -->
+    <rect class="card" x="1376" y="148" width="91" height="64" rx="5"/>
+    <text class="tiny" x="1384" y="165">P1</text>
+    <path d="M1387 196 L1397 180 L1408 191 L1419 170 L1431 198 L1442 182 L1455 194" fill="none" stroke="#2875b9" stroke-width="2.6" stroke-linecap="round"/>
+    <rect class="card" x="1376" y="314" width="91" height="64" rx="5"/>
+    <text class="tiny" x="1384" y="331">P2</text>
+    <path d="M1387 362 C1399 351 1410 371 1421 360 C1433 350 1444 370 1455 359" fill="none" stroke="#7fa7dc" stroke-width="2.6" stroke-linecap="round"/>
+    <rect class="card" x="1376" y="480" width="91" height="64" rx="5"/>
+    <text class="tiny" x="1384" y="497">P3</text>
+    <path d="M1387 528 C1399 522 1410 533 1421 528 C1433 522 1444 533 1455 528" fill="none" stroke="#c64949" stroke-width="2.6" stroke-linecap="round"/>
+
+    <!-- shared model -->
+    <rect class="model" x="1530" y="248" width="123" height="200" rx="7"/>
+    <text class="label" x="1591" y="278" text-anchor="middle">Same model</text>
+    <circle cx="1561" cy="326" r="6" fill="#e7ebef" stroke="#687480" stroke-width="1.2"/>
+    <circle cx="1561" cy="368" r="6" fill="#e7ebef" stroke="#687480" stroke-width="1.2"/>
+    <circle cx="1592" cy="305" r="6" fill="#e7ebef" stroke="#687480" stroke-width="1.2"/>
+    <circle cx="1592" cy="347" r="6" fill="#e7ebef" stroke="#687480" stroke-width="1.2"/>
+    <circle cx="1592" cy="389" r="6" fill="#e7ebef" stroke="#687480" stroke-width="1.2"/>
+    <circle cx="1623" cy="326" r="6" fill="#e7ebef" stroke="#687480" stroke-width="1.2"/>
+    <circle cx="1623" cy="368" r="6" fill="#e7ebef" stroke="#687480" stroke-width="1.2"/>
+    <path d="M1567 326 L1586 305 M1567 326 L1586 347 M1567 368 L1586 347 M1567 368 L1586 389 M1598 305 L1617 326 M1598 347 L1617 326 M1598 347 L1617 368 M1598 389 L1617 368" fill="none" stroke="#687480" stroke-width="1.05"/>
+    <text class="tiny" x="1591" y="424" text-anchor="middle">fixed architecture / split</text>
+
+    <!-- each representation is separately evaluated by the same model -->
+    <path class="flow" d="M1469 180 L1503 180 L1503 295 L1525 295"/>
+    <path class="flow" d="M1469 346 L1525 346"/>
+    <path class="flow" d="M1469 512 L1503 512 L1503 401 L1525 401"/>
+
+    <text class="note" x="1688" y="126">measured score</text>
+    <path class="flow" d="M1655 325 L1676 325 L1676 180 L1692 180"/>
+    <path class="flow" d="M1655 347 L1692 347"/>
+    <path class="flow" d="M1655 370 L1676 370 L1676 514 L1692 514"/>
+
+    <!-- qualitative scores; no fabricated values -->
+    <rect class="card" x="1696" y="148" width="77" height="64" rx="5"/>
+    <rect x="1708" y="188" width="47" height="7" rx="3" fill="#4d9a78"/>
+    <text x="1734" y="174" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#39785e">Higher</text>
+    <rect class="card" x="1696" y="314" width="77" height="64" rx="5"/>
+    <rect x="1708" y="354" width="31" height="7" rx="3" fill="#d4873b"/>
+    <text x="1734" y="340" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ad692d">Medium</text>
+    <rect class="card" x="1696" y="480" width="77" height="64" rx="5"/>
+    <rect x="1708" y="520" width="15" height="7" rx="3" fill="#c64949"/>
+    <text x="1734" y="506" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#a23e3e">Lower</text>
+  </g>
+</svg>

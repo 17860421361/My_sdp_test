@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1100" viewBox="0 0 1900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Preprocessing-centric CSI evaluation framework</title>
+  <desc id="desc">Four heterogeneous CSI datasets are standardized through SDP, mapped to a data-availability-aware plug-in preprocessing pipeline, and evaluated through cross-model preset screening followed by fine-grained preprocessing-combination analysis.</desc>
+  <defs>
+    <style>
+      .zone { fill: #ffffff; stroke: #b9c3cc; stroke-width: 1.8; stroke-dasharray: 9 7; }
+      .zone-title { font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 700; fill: #1f2933; }
+      .section-title { font-family: Arial, Helvetica, sans-serif; font-size: 25px; font-weight: 700; fill: #25313b; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 22px; font-weight: 700; fill: #27323c; }
+      .body { font-family: Arial, Helvetica, sans-serif; font-size: 20px; fill: #3f4b55; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 17px; fill: #5f6c76; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size: 15px; fill: #697681; }
+      .dataset { fill: #ffffff; stroke: #87939e; stroke-width: 1.5; }
+      .standard { fill: #f4f8fc; stroke: #3676b5; stroke-width: 1.8; }
+      .operator { fill: #ffffff; stroke: #6695c2; stroke-width: 1.45; }
+      .control { fill: #f3f5f7; stroke: #7d8993; stroke-width: 1.55; }
+      .stage-one { fill: #f6faff; stroke: #3676b5; stroke-width: 1.8; }
+      .stage-two { fill: #f6fbf7; stroke: #4f9161; stroke-width: 1.8; }
+      .evidence { fill: #fbfcfd; stroke: #82909b; stroke-width: 1.6; }
+      .result { fill: #edf7ed; stroke: #4f9161; stroke-width: 1.7; }
+      .flow { fill: none; stroke: #45515b; stroke-width: 2.2; marker-end: url(#arrow-dark); }
+      .flow-blue { fill: none; stroke: #3676b5; stroke-width: 2.4; marker-end: url(#arrow-blue); }
+      .flow-green { fill: none; stroke: #4f9161; stroke-width: 2.4; marker-end: url(#arrow-green); }
+      .control-link { fill: none; stroke: #84919b; stroke-width: 1.6; stroke-dasharray: 6 5; marker-end: url(#arrow-gray); }
+      .bus { fill: #edf4fb; stroke: #5d91c0; stroke-width: 1.55; }
+      .blue-text { fill: #286fad; }
+      .green-text { fill: #39785e; }
+    </style>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#45515b"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#3676b5"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#4f9161"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#84919b"/>
+    </marker>
+  </defs>
+
+  <!-- 1. Data standardization and input construction -->
+  <g id="data-standardization">
+    <rect class="zone" x="42" y="38" width="1816" height="334" rx="11"/>
+    <rect x="73" y="66" width="35" height="35" rx="4" fill="#3676b5"/>
+    <text x="91" y="91" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#ffffff">1</text>
+    <text class="zone-title" x="124" y="92">Data Standardization and Configurable Input Construction</text>
+
+    <!-- source datasets -->
+    <text class="section-title" x="74" y="139">Four heterogeneous CSI datasets</text>
+    <rect class="dataset" x="74" y="158" width="158" height="64" rx="5"/>
+    <rect x="74" y="158" width="7" height="64" rx="3" fill="#3676b5"/>
+    <text class="label" x="94" y="185">Widar3.0</text>
+    <text class="tiny" x="94" y="208">gesture recognition</text>
+    <rect class="dataset" x="248" y="158" width="158" height="64" rx="5"/>
+    <rect x="248" y="158" width="7" height="64" rx="3" fill="#5a8dbe"/>
+    <text class="label" x="268" y="185">GaitID</text>
+    <text class="tiny" x="268" y="208">gait identification</text>
+    <rect class="dataset" x="74" y="239" width="158" height="64" rx="5"/>
+    <rect x="74" y="239" width="7" height="64" rx="3" fill="#7b9eaf"/>
+    <text class="label" x="94" y="266">XRF55</text>
+    <text class="tiny" x="94" y="289">activity recognition</text>
+    <rect class="dataset" x="248" y="239" width="158" height="64" rx="5"/>
+    <rect x="248" y="239" width="7" height="64" rx="3" fill="#78927f"/>
+    <text class="label" x="268" y="266">ElderAL-CSI</text>
+    <text class="tiny" x="268" y="289">elderly activity</text>
+
+    <path class="flow" d="M410 230 L454 230"/>
+    <!-- SDP interface -->
+    <rect class="standard" x="460" y="159" width="204" height="137" rx="7"/>
+    <text class="label blue-text" x="562" y="195" text-anchor="middle">SDP unified</text>
+    <text class="label blue-text" x="562" y="221" text-anchor="middle">reader &amp; parser</text>
+    <line x1="484" y1="238" x2="640" y2="238" stroke="#b8c8d6" stroke-width="1.25"/>
+    <text class="note" x="562" y="266" text-anchor="middle">format-aware loading</text>
+    <text class="note" x="562" y="287" text-anchor="middle">and label parsing</text>
+
+    <path class="flow" d="M668 227 L717 227"/>
+    <!-- standardized representation -->
+    <rect class="standard" x="723" y="159" width="230" height="137" rx="7"/>
+    <text class="label blue-text" x="838" y="195" text-anchor="middle">CSI representation</text>
+    <text class="label blue-text" x="838" y="221" text-anchor="middle">+ task labels</text>
+    <line x1="746" y1="238" x2="929" y2="238" stroke="#b8c8d6" stroke-width="1.25"/>
+    <text class="note" x="838" y="266" text-anchor="middle">standardized data interface</text>
+
+    <path class="flow" d="M957 227 L1003 227"/>
+    <!-- applicability mapping -->
+    <rect class="control" x="1009" y="159" width="207" height="137" rx="7"/>
+    <text class="label" x="1112" y="194" text-anchor="middle">Signal availability</text>
+    <text class="note" x="1112" y="224" text-anchor="middle">amplitude · phase · grid</text>
+    <line x1="1032" y1="241" x2="1193" y2="241" stroke="#c7cfd6" stroke-width="1.25"/>
+    <text class="note" x="1112" y="268" text-anchor="middle">valid operator set</text>
+    <text class="tiny" x="1112" y="289" text-anchor="middle">phase only where available</text>
+
+    <path class="flow-blue" d="M1220 227 L1247 227"/>
+    <!-- configurable preprocessing pipeline -->
+    <rect class="standard" x="1253" y="129" width="442" height="201" rx="7"/>
+    <text class="label blue-text" x="1474" y="161" text-anchor="middle">Configurable preprocessing pipeline</text>
+    <text class="note" x="1474" y="185" text-anchor="middle">fixed order · selectable and composable</text>
+
+    <rect class="operator" x="1271" y="205" width="119" height="42" rx="4"/>
+    <text class="note" x="1330" y="232" text-anchor="middle">Denoising</text>
+    <rect class="operator" x="1414" y="205" width="119" height="42" rx="4"/>
+    <text class="tiny" x="1474" y="223" text-anchor="middle">Outlier</text>
+    <text class="tiny" x="1474" y="241" text-anchor="middle">handling</text>
+    <rect class="operator" x="1557" y="205" width="119" height="42" rx="4"/>
+    <text class="tiny" x="1617" y="223" text-anchor="middle">Phase</text>
+    <text class="tiny" x="1617" y="241" text-anchor="middle">calibration*</text>
+    <path class="flow-blue" d="M1392 226 L1411 226"/>
+    <path class="flow-blue" d="M1535 226 L1554 226"/>
+    <path class="flow-blue" d="M1617 250 L1617 268 L1475 268 L1475 278"/>
+    <rect class="operator" x="1415" y="280" width="119" height="42" rx="4"/>
+    <text class="note" x="1475" y="307" text-anchor="middle">Normalization</text>
+    <rect class="operator" x="1557" y="280" width="119" height="42" rx="4"/>
+    <text class="note" x="1617" y="307" text-anchor="middle">Interpolation</text>
+    <path class="flow-blue" d="M1536 301 L1554 301"/>
+    <text class="tiny" x="1280" y="307">* reliable complex CSI only</text>
+
+    <path class="flow" d="M1699 227 L1732 227"/>
+    <rect class="standard" x="1738" y="159" width="95" height="137" rx="7"/>
+    <text class="label blue-text" x="1785" y="202" text-anchor="middle">Model-</text>
+    <text class="label blue-text" x="1785" y="228" text-anchor="middle">ready</text>
+    <text class="label blue-text" x="1785" y="254" text-anchor="middle">input</text>
+  </g>
+
+  <!-- Input handoff to the experimental protocol -->
+  <path class="flow-blue" d="M1785 300 L1785 430 L945 430 L945 529"/>
+  <text class="note" x="1300" y="416" text-anchor="middle">model-ready inputs and task labels</text>
+
+  <!-- 2. Controlled two-stage evaluation -->
+  <g id="two-stage-evaluation">
+    <rect class="zone" x="42" y="452" width="1816" height="606" rx="11"/>
+    <rect x="73" y="480" width="35" height="35" rx="4" fill="#3676b5"/>
+    <text x="91" y="505" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#ffffff">2</text>
+    <text class="zone-title" x="124" y="506">Controlled Two-Stage Evaluation and Analysis</text>
+
+    <rect class="bus" x="83" y="533" width="1734" height="47" rx="6"/>
+    <text class="label blue-text" x="950" y="564" text-anchor="middle">Unified model input and task labels</text>
+    <rect class="control" x="83" y="597" width="1734" height="45" rx="6"/>
+    <text class="body" x="950" y="626" text-anchor="middle">Shared protocol: identical data split · training configuration · evaluation metrics</text>
+
+    <path class="flow-blue" d="M355 582 L355 677"/>
+
+    <!-- common controls are intentionally shown as dependencies, not serial data transforms -->
+    <path class="control-link" d="M314 644 L314 678"/>
+    <path class="control-link" d="M959 644 L959 678"/>
+    <path class="control-link" d="M1562 644 L1562 678"/>
+
+    <!-- Stage I -->
+    <rect class="stage-one" x="83" y="682" width="548" height="247" rx="8"/>
+    <text class="section-title blue-text" x="108" y="719">Stage I</text>
+    <text class="body" x="212" y="719">Predefined presets × multiple models</text>
+    <line x1="108" y1="737" x2="606" y2="737" stroke="#b9cce0" stroke-width="1.25"/>
+    <rect class="dataset" x="111" y="765" width="135" height="84" rx="5"/>
+    <text class="label" x="178" y="797" text-anchor="middle">Preset</text>
+    <text class="note" x="178" y="822" text-anchor="middle">pipelines</text>
+    <path class="flow" d="M249 807 L278 807"/>
+    <rect class="dataset" x="284" y="765" width="135" height="84" rx="5"/>
+    <text class="label" x="351" y="797" text-anchor="middle">Multiple</text>
+    <text class="note" x="351" y="822" text-anchor="middle">learning models</text>
+    <path class="flow" d="M422 807 L451 807"/>
+    <rect class="standard" x="457" y="765" width="145" height="84" rx="5"/>
+    <text class="label blue-text" x="529" y="797" text-anchor="middle">Cross-model</text>
+    <text class="note" x="529" y="822" text-anchor="middle">comparison</text>
+    <text class="note" x="357" y="891" text-anchor="middle">model–preprocessing dependency</text>
+
+    <!-- representative selection -->
+    <path class="flow-green" d="M635 807 L687 807"/>
+    <text class="note green-text" x="661" y="784" text-anchor="middle">select m* per dataset</text>
+
+    <!-- Stage II -->
+    <rect class="stage-two" x="693" y="682" width="566" height="247" rx="8"/>
+    <text class="section-title green-text" x="718" y="719">Stage II</text>
+    <text class="body" x="824" y="719">Fine-grained preprocessing combinations</text>
+    <line x1="718" y1="737" x2="1234" y2="737" stroke="#bcd6c2" stroke-width="1.25"/>
+    <rect class="dataset" x="721" y="765" width="167" height="84" rx="5"/>
+    <text class="label" x="804" y="797" text-anchor="middle">Operator</text>
+    <text class="note" x="804" y="822" text-anchor="middle">combinations</text>
+    <path class="flow" d="M891 807 L920 807"/>
+    <rect class="dataset" x="926" y="765" width="139" height="84" rx="5"/>
+    <text class="label" x="995" y="797" text-anchor="middle">Selected</text>
+    <text class="note" x="995" y="822" text-anchor="middle">model(s)</text>
+    <path class="flow" d="M1068 807 L1097 807"/>
+    <rect class="standard" x="1103" y="765" width="128" height="84" rx="5"/>
+    <text class="label blue-text" x="1167" y="797" text-anchor="middle">Controlled</text>
+    <text class="note" x="1167" y="822" text-anchor="middle">evaluation</text>
+    <text class="note" x="976" y="891" text-anchor="middle">per-dataset fine-grained comparison</text>
+
+    <!-- Evidence integration and final interpretation -->
+    <path class="flow" d="M1263 807 L1312 807"/>
+    <rect class="evidence" x="1318" y="682" width="499" height="247" rx="8"/>
+    <text class="section-title" x="1343" y="719">Evidence integration</text>
+    <line x1="1343" y1="737" x2="1791" y2="737" stroke="#c4cdd4" stroke-width="1.25"/>
+    <rect class="dataset" x="1344" y="762" width="136" height="59" rx="5"/>
+    <text class="label" x="1412" y="798" text-anchor="middle">Accuracy</text>
+    <rect class="dataset" x="1500" y="762" width="139" height="59" rx="5"/>
+    <text class="note" x="1570" y="787" text-anchor="middle">CSI waveform</text>
+    <text class="note" x="1570" y="808" text-anchor="middle">changes</text>
+    <rect class="dataset" x="1659" y="762" width="132" height="59" rx="5"/>
+    <text class="note" x="1725" y="787" text-anchor="middle">Component</text>
+    <text class="note" x="1725" y="808" text-anchor="middle">ablation</text>
+    <path class="flow-green" d="M1570 824 L1570 852"/>
+    <rect class="result" x="1344" y="858" width="447" height="47" rx="6"/>
+    <text class="note green-text" x="1568" y="880" text-anchor="middle">Preprocessing effects and interactions</text>
+    <text class="note green-text" x="1568" y="900" text-anchor="middle">Applicability conditions</text>
+  </g>
+</svg>
