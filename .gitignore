@@ -9,3 +9,7 @@ processed_source_dtype.npy
 /.cache/
 /.codex_tmp/
 /tmp/
+
+# Python bytecode caches are local build artifacts.
+**/__pycache__/
+*.py[cod]
